@@ -46,7 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\GUIManager.cs" />
+     <Compile Include="Assets\scripts\GUIManager.cs" />
      <Compile Include="Assets\scripts\ObjectClickChecker.cs" />
      <Compile Include="Assets\scripts\Region.cs" />
      <Compile Include="Assets\scripts\cameraMovementScript.cs" />
