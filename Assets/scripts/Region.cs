@@ -4,6 +4,8 @@ using System.Collections;
 public class Region : MonoBehaviour {
 
 	public bool selected;
+	public Sprite spanishRegionSprite;
+	public Sprite naziRegionSprite;
 
 	// Use this for initialization
 	void Start () {
@@ -23,5 +25,17 @@ public class Region : MonoBehaviour {
 
 	public bool isSelected(){
 		return selected;
+	}
+
+	public void SetRegionSprite(bool naziConquered){
+
+		SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+		
+		if(naziConquered){
+			spriteRenderer.sprite = naziRegionSprite;
+		}
+		else{
+			spriteRenderer.sprite = spanishRegionSprite;
+		}
 	}
 }

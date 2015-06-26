@@ -1,0 +1,2786 @@
+fileFormatVersion: 2
+guid: d12fb967d6e64e34c8af7add86901a79
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: tanks_0
+    21300002: tanks_1
+    21300004: tanks_2
+    21300006: tanks_3
+    21300008: tanks_4
+    21300010: tanks_5
+    21300012: tanks_6
+    21300014: tanks_7
+    21300016: tanks_8
+    21300018: tanks_9
+    21300020: tanks_10
+    21300022: tanks_11
+    21300024: tanks_12
+    21300026: tanks_13
+    21300028: tanks_14
+    21300030: tanks_15
+    21300032: tanks_16
+    21300034: tanks_17
+    21300036: tanks_18
+    21300038: tanks_19
+    21300040: tanks_20
+    21300042: tanks_21
+    21300044: tanks_22
+    21300046: tanks_23
+    21300048: tanks_24
+    21300050: tanks_25
+    21300052: tanks_26
+    21300054: tanks_27
+    21300056: tanks_28
+    21300058: tanks_29
+    21300060: tanks_30
+    21300062: tanks_31
+    21300064: tanks_32
+    21300066: tanks_33
+    21300068: tanks_34
+    21300070: tanks_35
+    21300072: tanks_36
+    21300074: tanks_37
+    21300076: tanks_38
+    21300078: tanks_39
+    21300080: tanks_40
+    21300082: tanks_41
+    21300084: tanks_42
+    21300086: tanks_43
+    21300088: tanks_44
+    21300090: tanks_45
+    21300092: tanks_46
+    21300094: tanks_47
+    21300096: tanks_48
+    21300098: tanks_49
+    21300100: tanks_50
+    21300102: tanks_51
+    21300104: tanks_52
+    21300106: tanks_53
+    21300108: tanks_54
+    21300110: tanks_55
+    21300112: tanks_56
+    21300114: tanks_57
+    21300116: tanks_58
+    21300118: tanks_59
+    21300120: tanks_60
+    21300122: tanks_61
+    21300124: tanks_62
+    21300126: tanks_63
+    21300128: tanks_64
+    21300130: tanks_65
+    21300132: tanks_66
+    21300134: tanks_67
+    21300136: tanks_68
+    21300138: tanks_69
+    21300140: tanks_70
+    21300142: tanks_71
+    21300144: tanks_72
+    21300146: tanks_73
+    21300148: tanks_74
+    21300150: tanks_75
+    21300152: tanks_76
+    21300154: tanks_77
+    21300156: tanks_78
+    21300158: tanks_79
+    21300160: tanks_80
+    21300162: tanks_81
+    21300164: tanks_82
+    21300166: tanks_83
+    21300168: tanks_84
+    21300170: tanks_85
+    21300172: tanks_86
+    21300174: tanks_87
+    21300176: tanks_88
+    21300178: tanks_89
+    21300180: tanks_90
+    21300182: tanks_91
+    21300184: tanks_92
+    21300186: tanks_93
+    21300188: tanks_94
+    21300190: tanks_95
+    21300192: tanks_96
+    21300194: tanks_97
+    21300196: tanks_98
+    21300198: tanks_99
+    21300200: tanks_100
+    21300202: tanks_101
+    21300204: tanks_102
+    21300206: tanks_103
+    21300208: tanks_104
+    21300210: tanks_105
+    21300212: tanks_106
+    21300214: tanks_107
+    21300216: tanks_108
+    21300218: tanks_109
+    21300220: tanks_110
+    21300222: tanks_111
+    21300224: tanks_112
+    21300226: tanks_113
+    21300228: tanks_114
+    21300230: tanks_115
+    21300232: tanks_116
+    21300234: tanks_117
+    21300236: tanks_118
+    21300238: tanks_119
+    21300240: tanks_120
+    21300242: tanks_121
+    21300244: tanks_122
+    21300246: tanks_123
+    21300248: tanks_124
+    21300250: tanks_125
+    21300252: tanks_126
+    21300254: tanks_127
+    21300256: tanks_128
+    21300258: tanks_129
+    21300260: tanks_130
+    21300262: tanks_131
+    21300264: tanks_132
+    21300266: tanks_133
+    21300268: tanks_134
+    21300270: tanks_135
+    21300272: tanks_136
+    21300274: tanks_137
+    21300276: tanks_138
+    21300278: tanks_139
+    21300280: tanks_140
+    21300282: tanks_141
+    21300284: tanks_142
+    21300286: tanks_143
+    21300288: tanks_144
+    21300290: tanks_145
+    21300292: tanks_146
+    21300294: tanks_147
+    21300296: tanks_148
+    21300298: tanks_149
+    21300300: tanks_150
+    21300302: tanks_151
+    21300304: tanks_152
+    21300306: tanks_153
+    21300308: tanks_154
+    21300310: tanks_155
+    21300312: tanks_156
+    21300314: tanks_157
+    21300316: tanks_158
+    21300318: tanks_159
+    21300320: tanks_160
+    21300322: tanks_161
+    21300324: tanks_162
+    21300326: tanks_163
+    21300328: tanks_164
+    21300330: tanks_165
+    21300332: tanks_166
+    21300334: tanks_167
+    21300336: tanks_168
+    21300338: tanks_169
+    21300340: tanks_170
+    21300342: tanks_171
+    21300344: tanks_172
+    21300346: tanks_173
+    21300348: tanks_174
+    21300350: tanks_175
+    21300352: tanks_176
+    21300354: tanks_177
+    21300356: tanks_178
+    21300358: tanks_179
+    21300360: tanks_180
+    21300362: tanks_181
+    21300364: tanks_182
+    21300366: tanks_183
+    21300368: tanks_184
+    21300370: tanks_185
+    21300372: tanks_186
+    21300374: tanks_187
+    21300376: tanks_188
+    21300378: tanks_189
+    21300380: tanks_190
+    21300382: tanks_191
+    21300384: tanks_192
+    21300386: tanks_193
+    21300388: tanks_194
+    21300390: tanks_195
+    21300392: tanks_196
+    21300394: tanks_197
+    21300396: tanks_198
+    21300398: tanks_199
+    21300400: tanks_200
+    21300402: tanks_201
+    21300404: tanks_202
+    21300406: tanks_203
+    21300408: tanks_204
+    21300410: tanks_205
+    21300412: tanks_206
+    21300414: tanks_207
+    21300416: tanks_208
+    21300418: tanks_209
+    21300420: tanks_210
+    21300422: tanks_211
+    21300424: tanks_212
+    21300426: tanks_213
+    21300428: tanks_214
+    21300430: tanks_215
+    21300432: tanks_216
+    21300434: tanks_217
+    21300436: tanks_218
+    21300438: tanks_219
+    21300440: tanks_220
+    21300442: tanks_221
+    21300444: tanks_222
+    21300446: tanks_223
+    21300448: tanks_224
+    21300450: tanks_225
+    21300452: tanks_226
+    21300454: tanks_227
+    21300456: tanks_228
+    21300458: tanks_229
+    21300460: tanks_230
+    21300462: tanks_231
+    21300464: tanks_232
+    21300466: tanks_233
+    21300468: tanks_234
+    21300470: tanks_235
+    21300472: tanks_236
+    21300474: tanks_237
+    21300476: tanks_238
+    21300478: tanks_239
+    21300480: tanks_240
+    21300482: tanks_241
+    21300484: tanks_242
+    21300486: tanks_243
+    21300488: tanks_244
+    21300490: tanks_245
+    21300492: tanks_246
+    21300494: tanks_247
+    21300496: tanks_248
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: tanks_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 678
+        width: 156
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_1
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 678
+        width: 153
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_2
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 678
+        width: 167
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_3
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 678
+        width: 215
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_4
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 678
+        width: 112
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_5
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 678
+        width: 121
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_6
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 595
+        width: 161
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_7
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 595
+        width: 131
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_8
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 595
+        width: 157
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_9
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 595
+        width: 178
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_10
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 595
+        width: 120
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_11
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 595
+        width: 104
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_12
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 504
+        width: 154
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_13
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 504
+        width: 147
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_14
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 504
+        width: 133
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_15
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 504
+        width: 149
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_16
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 504
+        width: 197
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_17
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 503
+        width: 115
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_18
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 417
+        width: 173
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_19
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 417
+        width: 172
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_20
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 417
+        width: 204
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_21
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 417
+        width: 173
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_22
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 417
+        width: 196
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_23
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 329
+        width: 147
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_24
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 329
+        width: 182
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_25
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 329
+        width: 165
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_26
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 329
+        width: 124
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_27
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 329
+        width: 133
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_28
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 329
+        width: 146
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_29
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 241
+        width: 172
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_30
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 241
+        width: 159
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_31
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 241
+        width: 101
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_32
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 241
+        width: 187
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_33
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 256
+        width: 100
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_34
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 143
+        width: 164
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_35
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 143
+        width: 152
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_36
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 142
+        width: 150
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_37
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 95
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_38
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 95
+        width: 4
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_39
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 95
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_40
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 95
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_41
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 95
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_42
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 95
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_43
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 95
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_44
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 95
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_45
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 95
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_46
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 95
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_47
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 95
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_48
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 95
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_49
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 95
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_50
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 95
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_51
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 95
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_52
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 95
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_53
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 95
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_54
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 95
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_55
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 95
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_56
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 95
+        width: 5
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_57
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 92
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_58
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 95
+        width: 23
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_59
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 95
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_60
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 95
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_61
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 95
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_62
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 95
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_63
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 95
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_64
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 95
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_65
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 95
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_66
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 95
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_67
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 95
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_68
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 95
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_69
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 92
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_70
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 95
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_71
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 95
+        width: 5
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_72
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 92
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_73
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 95
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_74
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 95
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_75
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 95
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_76
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 73
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_77
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 72
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_78
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 72
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_79
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 72
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_80
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 73
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_81
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 72
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_82
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 72
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_83
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 72
+        width: 41
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_84
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 72
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_85
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 72
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_86
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 72
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_87
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 73
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_88
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 72
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_89
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 72
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_90
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 72
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_91
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 73
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_92
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 73
+        width: 4
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_93
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 72
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_94
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 72
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_95
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 72
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_96
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 72
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_97
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 72
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_98
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 72
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_99
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 72
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_100
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 73
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_101
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 72
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_102
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 72
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_103
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 72
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_104
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 73
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_105
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 72
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_106
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 73
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_107
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 73
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_108
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 72
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_109
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 70
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_110
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 50
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_111
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 50
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_112
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 50
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_113
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 50
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_114
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 46
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_115
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 50
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_116
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 50
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_117
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 50
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_118
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 50
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_119
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 50
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_120
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 50
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_121
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 50
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_122
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 50
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_123
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 50
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_124
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 46
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_125
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 50
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_126
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 50
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_127
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 50
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_128
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 50
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_129
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 50
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_130
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 50
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_131
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 50
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_132
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 46
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_133
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 50
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_134
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 50
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_135
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 50
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_136
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 47
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_137
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 50
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_138
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 50
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_139
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 46
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_140
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 50
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_141
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 50
+        width: 34
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_142
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 50
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_143
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 50
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_144
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 46
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_145
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 50
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_146
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 50
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_147
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 50
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_148
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 50
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_149
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 50
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_150
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 50
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_151
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 27
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_152
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 23
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_153
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 27
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_154
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 27
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_155
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 27
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_156
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 27
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_157
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 27
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_158
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 27
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_159
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 27
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_160
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 27
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_161
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 27
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_162
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 27
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_163
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 27
+        width: 4
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_164
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 27
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_165
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 23
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_166
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 27
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_167
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 27
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_168
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 27
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_169
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 27
+        width: 4
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_170
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 27
+        width: 4
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_171
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 27
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_172
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 27
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_173
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 27
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_174
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 27
+        width: 42
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_175
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 23
+        width: 29
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_176
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 27
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_177
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 27
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_178
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 27
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_179
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 27
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_180
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 27
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_181
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 27
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_182
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 27
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_183
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 27
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_184
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 27
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_185
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 23
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_186
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 27
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_187
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 27
+        width: 54
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_188
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 27
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_189
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 27
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_190
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 27
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_191
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 27
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_192
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 27
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_193
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 27
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_194
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 27
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_195
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 27
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_196
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 27
+        width: 23
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_197
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 27
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_198
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 27
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_199
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 27
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_200
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 27
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_201
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 25
+        width: 27
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_202
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 15
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_203
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 4
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_204
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 4
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_205
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 15
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_206
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 4
+        width: 32
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_207
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 4
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_208
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 15
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_209
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 4
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_210
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 4
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_211
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 4
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_212
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 4
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_213
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 4
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_214
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 4
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_215
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 4
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_216
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 15
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_217
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 4
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_218
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 4
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_219
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 4
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_220
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 4
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_221
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 0
+        width: 25
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_222
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 3
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_223
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 4
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_224
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 4
+        width: 4
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_225
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 4
+        width: 4
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_226
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 4
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_227
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 15
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_228
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 4
+        width: 4
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_229
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 4
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_230
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 4
+        width: 33
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_231
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 4
+        width: 4
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_232
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 4
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_233
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 4
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_234
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 4
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_235
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 4
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_236
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 0
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_237
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 4
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_238
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 0
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_239
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 4
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_240
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 4
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_241
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 0
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_242
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 4
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_243
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 4
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_244
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 10
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_245
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 4
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_246
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 4
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_247
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 4
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanks_248
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 4
+        width: 35
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
