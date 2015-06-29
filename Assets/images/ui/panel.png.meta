@@ -1,9 +1,7 @@
 fileFormatVersion: 2
-guid: b405c79e075e4a441adac03b961fb03f
+guid: cdaca8d3955fb89419f294643f151e2e
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: infoItem_0
-    21300002: infoItem_1
+  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -27,7 +25,7 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: 16
+    aniso: -1
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -36,34 +34,14 @@ TextureImporter:
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: .497459352, y: .326388896}
-  spriteBorder: {x: 14, y: 10, z: 13, w: 113}
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 12, y: 15, z: 13, w: 85}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites:
-    - name: infoItem_0
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 48
-        width: 451
-        height: 330
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: infoItem_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 47
-        width: 453
-        height: 329
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 6, y: 7, z: 5, w: 114}
+    sprites: []
   spritePackingTag: 
   userData: 
