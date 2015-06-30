@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\EconomyManager.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\Region.cs">
     <Files>
-      <File FileName="Assets\EconomyManager.cs" Line="23" Column="9" />
+      <File FileName="Assets\scripts\UIManager.cs" Line="27" Column="40" />
+      <File FileName="Assets\scripts\Region.cs" Line="31" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

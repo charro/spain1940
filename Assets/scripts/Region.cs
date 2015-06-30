@@ -21,6 +21,13 @@ public class Region : MonoBehaviour {
 		selected = !selected;
 		Animator animator = GetComponent<Animator>();
 		animator.SetBool ("selected", selected);
+
+		if(selected){
+			UIManager.regionSelected();
+		}
+		else{
+			UIManager.regionUnselected();
+		}
 	}
 
 	public bool isSelected(){
