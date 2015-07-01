@@ -49,6 +49,8 @@
      <Compile Include="Assets\scripts\EconomyManager.cs" />
      <Compile Include="Assets\scripts\GUIManager.cs" />
      <Compile Include="Assets\scripts\ObjectClickChecker.cs" />
+     <Compile Include="Assets\scripts\RecruitedUnitGroup.cs" />
+     <Compile Include="Assets\scripts\RecruitmentManager.cs" />
      <Compile Include="Assets\scripts\Region.cs" />
      <Compile Include="Assets\scripts\UIManager.cs" />
      <Compile Include="Assets\scripts\cameraMovementScript.cs" />
