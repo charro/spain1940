@@ -42,6 +42,11 @@ public class ObjectClickChecker : MonoBehaviour {
 			if ( region ) {
 				regionTouched(region);
 			}
+
+			/* RecruitedUnitGroup recruitedUnitGroup = touched.GetComponent<RecruitedUnitGroup>();
+			if( recruitedUnitGroup ){
+				recruitedUnitGroup.Touched();
+			}*/
 		}
 		//}
 

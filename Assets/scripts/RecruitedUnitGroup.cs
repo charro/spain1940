@@ -2,6 +2,9 @@
 using UnityEngine.UI;
 using System.Collections;
 
+/**
+ * Represents a Unit that is being recruited in the Recruiting screen
+ **/
 public class RecruitedUnitGroup : MonoBehaviour {
 
 	public Text unitAmountText;
@@ -21,22 +24,6 @@ public class RecruitedUnitGroup : MonoBehaviour {
 		set { unitType = value; }
 	}
 
-	public RecruitedUnitGroup(int unitType){
-		this.unitType = unitType;
-	}
-
-	public void AddUnit(){
-		unitAmount++;
-	}
-
-	public void RemoveUnit(){
-		unitAmount--;
-
-		if(unitAmount < 0){
-			unitAmount = 0;
-		}
-	}
-
 	// Use this for initialization
 	void Start () {
 		// unitAmountText = GetComponent<Text> () as Text; 
@@ -48,4 +35,20 @@ public class RecruitedUnitGroup : MonoBehaviour {
 		unitAmountText.text = "" + unitAmount;
 	}
 
+	public void AddUnit(){
+		unitAmount++;
+	}
+	
+	public void RemoveUnit(){
+		unitAmount--;
+		(FindObjectOfType<RecruitmentManager>() as RecruitmentManager).OnRemoveUnit (this);
+	}
+
+	/* public void Touched(){
+		RemoveUnit();
+
+		if(unitAmount == 0){
+			Destroy(this);
+		}
+	}*/
 }

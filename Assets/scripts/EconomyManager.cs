@@ -7,6 +7,15 @@ public class EconomyManager : MonoBehaviour {
 
 	private static EconomyManager singleton;
 
+	private static EconomyManager GetSingleton()
+	{
+		if(singleton == null){
+			singleton = new EconomyManager();
+		}
+
+		return singleton; 
+	}
+
 	private int recruitmentPoints;
 
 	// Use this for initialization
@@ -21,14 +30,14 @@ public class EconomyManager : MonoBehaviour {
 	}
 
 	public static int getRecruitmentPoints(){
-		return singleton.recruitmentPoints;
+		return GetSingleton().recruitmentPoints;
 	}
 
 	public static void addRecruitmentPoints(int amount){
-		singleton.recruitmentPoints += amount;
+		GetSingleton().recruitmentPoints += amount;
 	}
 
 	public static void decreaseRecruitmentPoints(int amount){
-		singleton.recruitmentPoints -= amount;
+		GetSingleton().recruitmentPoints -= amount;
 	}
 }
