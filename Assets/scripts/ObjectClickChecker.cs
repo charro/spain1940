@@ -65,7 +65,6 @@ public class ObjectClickChecker : MonoBehaviour {
 	// Actions to do if we touched a Region
 	void regionTouched(Region region){
 		region.toggleSelected();
-		GUIManager.showMainActions (region.isSelected());
 	}
 }
 

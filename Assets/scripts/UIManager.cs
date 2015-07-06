@@ -3,6 +3,9 @@ using System.Collections;
 
 public class UIManager : MonoBehaviour {
 
+	public GameObject mainActionsPanel;
+	public GameObject mainEnemyActionsPanel;
+	public GameObject fightPanel;
 	public GameObject midBackground;
 
 	private static UIManager singleton;
@@ -17,6 +20,19 @@ public class UIManager : MonoBehaviour {
 	
 	}
 
+	public static void showMainActions(){
+		singleton.mainActionsPanel.SetActive (true);
+	}
+
+	public static void showMainEnemyActions(){
+		singleton.mainEnemyActionsPanel.SetActive (true);
+	}
+
+	public static void hideMainActionPanels(){
+		singleton.mainActionsPanel.SetActive (false);
+		singleton.mainEnemyActionsPanel.SetActive (false);
+	}
+
 	public static void showMidBackground(bool show){
 		singleton.midBackground.SetActive (show);
 	}
@@ -24,12 +40,12 @@ public class UIManager : MonoBehaviour {
 	public static void regionSelected(){
 		showMidBackground(true);
 
-		// Disable here input for all regions
+		// Disable here input for rest of regions
 	}
 
 	public static void regionUnselected(){
 		showMidBackground(false);
 
-		// Enable here input again for all regions
+		// Enable here input again for rest of regions
 	}
 }

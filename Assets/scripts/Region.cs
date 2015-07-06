@@ -4,6 +4,7 @@ using System.Collections;
 public class Region : MonoBehaviour {
 
 	public bool selected;
+	public bool isNazi;
 	public Sprite spanishRegionSprite;
 	public Sprite naziRegionSprite;
 
@@ -24,9 +25,17 @@ public class Region : MonoBehaviour {
 
 		if(selected){
 			UIManager.regionSelected();
+			if(isNazi){
+				UIManager.showMainEnemyActions();
+			}
+			else{
+				UIManager.showMainActions();
+			}
 		}
 		else{
 			UIManager.regionUnselected();
+
+			UIManager.hideMainActionPanels();
 		}
 	}
 
@@ -34,11 +43,11 @@ public class Region : MonoBehaviour {
 		return selected;
 	}
 
-	public void SetRegionSprite(bool naziConquered){
-
+	public void SetNaziConquered(bool naziConquered){
+		isNazi = naziConquered;
 		SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
 		
-		if(naziConquered){
+		if(isNazi){
 			spriteRenderer.sprite = naziRegionSprite;
 		}
 		else{
