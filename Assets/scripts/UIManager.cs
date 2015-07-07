@@ -6,6 +6,7 @@ public class UIManager : MonoBehaviour {
 	public GameObject mainActionsPanel;
 	public GameObject mainEnemyActionsPanel;
 	public GameObject fightPanel;
+	public GameObject infoPanel;
 	public GameObject midBackground;
 
 	private static UIManager singleton;
@@ -20,32 +21,48 @@ public class UIManager : MonoBehaviour {
 	
 	}
 
-	public static void showMainActions(){
-		singleton.mainActionsPanel.SetActive (true);
-	}
+	public static void showMainActions(bool isNazi){
+		hideAllPanels ();
 
-	public static void showMainEnemyActions(){
-		singleton.mainEnemyActionsPanel.SetActive (true);
-	}
+		if(isNazi){
+			singleton.mainEnemyActionsPanel.SetActive (true);
+		}
+		else{
+			singleton.mainActionsPanel.SetActive (true);
+		}
 
-	public static void hideMainActionPanels(){
-		singleton.mainActionsPanel.SetActive (false);
-		singleton.mainEnemyActionsPanel.SetActive (false);
 	}
 
 	public static void showMidBackground(bool show){
 		singleton.midBackground.SetActive (show);
 	}
 
-	public static void regionSelected(){
-		showMidBackground(true);
+	public void ShowInfoPanel(){
+		hideAllPanels ();
+		infoPanel.SetActive(true);
+		
+		InfoPanel info = infoPanel.GetComponent<InfoPanel>();
+		info.UpdatePanelValues ();
+	}
 
+	public static void regionSelected(bool isNazi){
+		showMidBackground(true);
+		hideAllPanels ();
+		showMainActions (isNazi);
 		// Disable here input for rest of regions
 	}
 
 	public static void regionUnselected(){
 		showMidBackground(false);
-
+		hideAllPanels ();
 		// Enable here input again for rest of regions
+	}
+
+	public static void hideAllPanels(){
+		singleton.mainActionsPanel.SetActive(false);
+		singleton.mainEnemyActionsPanel.SetActive(false);
+		singleton.fightPanel.SetActive(false);
+		singleton.infoPanel.SetActive(false);
+		singleton.midBackground.SetActive(false);
 	}
 }

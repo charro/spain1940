@@ -17,8 +17,8 @@ public class RecruitedUnitGroup : MonoBehaviour {
 		set { unitAmount = value; }
 	}
 
-	private int unitType;
-	public int UnitType
+	private ArmyType unitType;
+	public ArmyType UnitType
 	{
 		get { return unitType; }
 		set { unitType = value; }

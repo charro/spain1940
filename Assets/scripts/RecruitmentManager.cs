@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 public class RecruitmentManager : MonoBehaviour {
 
-	public int[] UNIT_TYPE_PRICES;
+	public Dictionary<ArmyType, int> unitPrices;
 
 	public Text recruitmentPointsText;
 	public RectTransform recruitmentPanel;
@@ -18,6 +19,7 @@ public class RecruitmentManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		ResetUnits ();
+		SetUnitPrices ();
 	}
 	
 	// Update is called once per frame
@@ -25,7 +27,8 @@ public class RecruitmentManager : MonoBehaviour {
 		recruitmentPointsText.text = "" + EconomyManager.getRecruitmentPoints();
 	}
 
-	public void AddToUnit(int unitType){
+	public void AddToUnit(int unitTypeInt){
+		ArmyType unitType = (ArmyType) unitTypeInt;
 
 		GameObject selectedUnitGroupGameObject = null;
 
@@ -63,11 +66,11 @@ public class RecruitmentManager : MonoBehaviour {
 			selectedUnitGroupGameObject.GetComponent<RecruitedUnitGroup>() as RecruitedUnitGroup;
 		selectedUnitGroup.AddUnit ();
 
-		EconomyManager.decreaseRecruitmentPoints (UNIT_TYPE_PRICES[unitType]);
+		EconomyManager.decreaseRecruitmentPoints (unitPrices[unitType]);
 	}
 
 	public void OnRemoveUnit(RecruitedUnitGroup unit){
-		EconomyManager.addRecruitmentPoints(UNIT_TYPE_PRICES[unit.UnitType]);
+		EconomyManager.addRecruitmentPoints(unitPrices[unit.UnitType]);
 
 		if(unit.UnitAmount <= 0){
 			RemoveEmptyRecruitedGroups ();
@@ -121,4 +124,31 @@ public class RecruitmentManager : MonoBehaviour {
 		PlaceRecruitedUnitsInContainer ();
 	}
 
+	/**
+	 * Perform the recruitment, making the changes permanent **/
+	public void PerformRecruitment(){
+		GameManager gameManager = FindObjectOfType<GameManager> ();
+		Region selectedRegion = gameManager.GetSelectedRegion ();
+
+		foreach(GameObject unitGroupGameObject in recruitedUnitGroups){
+			RecruitedUnitGroup unitGroup = 
+				unitGroupGameObject.GetComponent<RecruitedUnitGroup>() as RecruitedUnitGroup;
+
+			selectedRegion.AddUnitsToArmy(unitGroup.UnitType, unitGroup.UnitAmount);
+		}
+	}
+
+	/**
+	 * Rollback all changes and come back */
+	public void CancelRecruitment(){
+
+	}
+
+	private void SetUnitPrices(){
+		unitPrices = new Dictionary<ArmyType, int>();
+
+		unitPrices.Add (ArmyType.Soldier, 15);
+		unitPrices.Add (ArmyType.TankToro, 25);
+		unitPrices.Add (ArmyType.TankBisonte, 45);
+	}
 }
