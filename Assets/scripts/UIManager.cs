@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour {
 	public GameObject mainEnemyActionsPanel;
 	public GameObject fightPanel;
 	public GameObject infoPanel;
+	public GameObject recruitPanel;
 	public GameObject midBackground;
 
 	private static UIManager singleton;
@@ -45,18 +46,23 @@ public class UIManager : MonoBehaviour {
 		info.UpdatePanelValues ();
 	}
 
-	public static void regionSelected(bool isNazi){
+	public static void ShowUIPanelsOnRegionSelected(bool isNazi){
 		showMidBackground(true);
 		hideAllPanels ();
 		showMainActions (isNazi);
 		// Disable here input for rest of regions
 	}
 
-	public static void regionUnselected(){
+	public static void HidePanelsOnRegionUnselected(){
 		showMidBackground(false);
 		hideAllPanels ();
 		// Enable here input again for rest of regions
 	}
+
+	/*
+	public static void RefreshInfoPanel(){
+		singleton.infoPanel.GetComponent<InfoPanel>().UpdatePanelValues ();
+	}*/
 
 	public static void hideAllPanels(){
 		singleton.mainActionsPanel.SetActive(false);
@@ -65,4 +71,17 @@ public class UIManager : MonoBehaviour {
 		singleton.infoPanel.SetActive(false);
 		singleton.midBackground.SetActive(false);
 	}
+
+	public static bool IsMainActionsShown(){
+		return 	singleton.mainActionsPanel.activeInHierarchy ||
+			singleton.mainEnemyActionsPanel.activeInHierarchy;
+	}
+
+	public static bool IsAnyGUIPanelShown(){
+		return IsMainActionsShown () ||
+				singleton.fightPanel.activeInHierarchy ||
+				singleton.infoPanel.activeInHierarchy ||
+				singleton.recruitPanel.activeInHierarchy;
+	}
+
 }

@@ -40,7 +40,12 @@ public class ObjectClickChecker : MonoBehaviour {
 			// Check the kind of component touched and act in consequence
 			Region region = touched.GetComponent<Region>();
 			if ( region ) {
-				regionTouched(region);
+				if(FindObjectOfType<GameManager>().CanRegionBeTouched(region)){
+					regionTouched(region);
+				}
+				else{
+					Debug.Log("Touched Region " + touched.name + " but no action must be done at current status");
+				}
 			}
 
 			/* RecruitedUnitGroup recruitedUnitGroup = touched.GetComponent<RecruitedUnitGroup>();

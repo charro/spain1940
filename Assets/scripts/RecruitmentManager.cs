@@ -151,4 +151,5 @@ public class RecruitmentManager : MonoBehaviour {
 		unitPrices.Add (ArmyType.TankToro, 25);
 		unitPrices.Add (ArmyType.TankBisonte, 45);
 	}
+
 }
