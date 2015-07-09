@@ -10,6 +10,9 @@ public class UIManager : MonoBehaviour {
 	public GameObject recruitPanel;
 	public GameObject midBackground;
 
+	public Material defaultSpriteMaterial;
+	public Material disabledSpriteMaterial;
+
 	private static UIManager singleton;
 
 	// Use this for initialization
@@ -23,7 +26,6 @@ public class UIManager : MonoBehaviour {
 	}
 
 	public static void showMainActions(bool isNazi){
-		hideAllPanels ();
 
 		if(isNazi){
 			singleton.mainEnemyActionsPanel.SetActive (true);
@@ -47,14 +49,12 @@ public class UIManager : MonoBehaviour {
 	}
 
 	public static void ShowUIPanelsOnRegionSelected(bool isNazi){
-		showMidBackground(true);
 		hideAllPanels ();
 		showMainActions (isNazi);
 		// Disable here input for rest of regions
 	}
 
 	public static void HidePanelsOnRegionUnselected(){
-		showMidBackground(false);
 		hideAllPanels ();
 		// Enable here input again for rest of regions
 	}
@@ -69,7 +69,6 @@ public class UIManager : MonoBehaviour {
 		singleton.mainEnemyActionsPanel.SetActive(false);
 		singleton.fightPanel.SetActive(false);
 		singleton.infoPanel.SetActive(false);
-		singleton.midBackground.SetActive(false);
 	}
 
 	public static bool IsMainActionsShown(){
@@ -84,4 +83,11 @@ public class UIManager : MonoBehaviour {
 				singleton.recruitPanel.activeInHierarchy;
 	}
 
+	public static Material GetDefaultMaterial(){
+		return singleton.defaultSpriteMaterial;
+	}
+
+	public static Material GetDisabledMaterial(){
+		return singleton.disabledSpriteMaterial;
+	}
 }

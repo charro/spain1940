@@ -1,13 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\InfoPanel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\GrayScale.shader">
     <Files>
-      <File FileName="Assets\scripts\RecruitmentManager.cs" Line="154" Column="1" />
-      <File FileName="Assets\scripts\UIManager.cs" Line="55" Column="2" />
-      <File FileName="Assets\scripts\GameManager.cs" Line="26" Column="43" />
-      <File FileName="Assets\scripts\Region.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\ObjectClickChecker.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\InfoPanel.cs" Line="49" Column="65" />
+      <File FileName="Assets\scripts\RegionType.cs" Line="5" Column="45" />
+      <File FileName="Assets\scripts\GameManager.cs" Line="27" Column="37" />
+      <File FileName="Assets\scripts\Region.cs" Line="45" Column="30" />
+      <File FileName="Assets\scripts\UIManager.cs" Line="25" Column="50" />
+      <File FileName="Assets\scripts\ObjectClickChecker.cs" Line="72" Column="24" />
+      <File FileName="Assets\scripts\GrayScale.shader" Line="37" Column="14" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

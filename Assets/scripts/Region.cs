@@ -7,6 +7,10 @@ public class Region : MonoBehaviour {
 	public bool isNazi;
 	public Sprite spanishRegionSprite;
 	public Sprite naziRegionSprite;
+	public bool enabledRegion;
+	public RegionType regionType;
+
+	private SpriteRenderer spriteRenderer;
 
 	private ArmyType[] armySlotsTypes;
 	public ArmyType[] ArmySlotsTypes(){
@@ -23,6 +27,9 @@ public class Region : MonoBehaviour {
 		int maxSlots = GetMaxSlots ();
 		armySlotsTypes = new ArmyType[maxSlots];
 		armySlotsUnits = new int[maxSlots];
+		spriteRenderer = GetComponent<SpriteRenderer>();
+
+		FindObjectOfType<GameManager> ().AddRegionToList(this);
 	}
 	
 	// Update is called once per frame
@@ -41,6 +48,7 @@ public class Region : MonoBehaviour {
 
 
 		GameManager gameManager = FindObjectOfType<GameManager>();
+
 		if(selected){
 			gameManager.RegionSelected(this);
 		}
@@ -55,7 +63,6 @@ public class Region : MonoBehaviour {
 
 	public void SetNaziConquered(bool naziConquered){
 		isNazi = naziConquered;
-		SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
 		
 		if(isNazi){
 			spriteRenderer.sprite = naziRegionSprite;
@@ -99,5 +106,15 @@ public class Region : MonoBehaviour {
 		}
 
 		return false;
+	}
+
+	public void Enable(){
+		enabledRegion = true;
+		spriteRenderer.material = UIManager.GetDefaultMaterial();
+	}
+
+	public void Disable(){
+		enabledRegion = false;
+		spriteRenderer.material = UIManager.GetDisabledMaterial();
 	}
 }

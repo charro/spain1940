@@ -1,14 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour {
 
 	// The region that we are currently working in
 	private Region selectedRegion;
 
+	// All the regions in the game
+	private Dictionary<RegionType, Region> allRegions = new Dictionary<RegionType, Region>();
+
 	// Use this for initialization
 	void Start () {
-	
+
 	}
 	
 	// Update is called once per frame
@@ -16,13 +20,19 @@ public class GameManager : MonoBehaviour {
 	
 	}
 
+	public void AddRegionToList(Region newRegion){
+		allRegions.Add (newRegion.regionType, newRegion);
+	}
+
 	public void RegionSelected(Region newRegionSelected){
 		selectedRegion = newRegionSelected;
+		UIManager.showMidBackground (true);
 		UIManager.ShowUIPanelsOnRegionSelected(newRegionSelected.isNazi);
 	}
 
 	public void RegionUnselected(){
 		selectedRegion = null;
+		UIManager.showMidBackground (false);
 		UIManager.HidePanelsOnRegionUnselected();
 	}
 
@@ -34,9 +44,10 @@ public class GameManager : MonoBehaviour {
 
 		// Do we have some region selected and we're in Main Menu?
 		if(selectedRegion != null && UIManager.IsMainActionsShown()){
+			// We can touch it only if this is the selected one
 			return region == selectedRegion;
 		}
-		// Not in main menu, but, do we have any UI Panel over the map ?
+		// Not in main menu, but, do we have any UI Panel shown over the map ?
 		else if(UIManager.IsAnyGUIPanelShown()){
 			return false;
 		}
@@ -44,5 +55,64 @@ public class GameManager : MonoBehaviour {
 		else{
 			return true;
 		}
+	}
+
+	public static RegionType[] GetRegionsBordering(RegionType region){
+		RegionType[] response = new RegionType[] {};;
+
+		switch(region){
+		 case RegionType.Galicia:
+			response = new [] {RegionType.Asturias, RegionType.Leon};
+			break;
+		case RegionType.Asturias:
+			response = new [] {RegionType.Galicia, RegionType.Leon, RegionType.CastillaVieja};
+			break;
+		case RegionType.CastillaVieja:
+			response = new [] {RegionType.Asturias, RegionType.Leon, RegionType.Extremadura, 
+				RegionType.CastillaNueva, RegionType.Madrid, RegionType.Vascongadas, 
+				RegionType.Aragon};
+			break;
+		case RegionType.Vascongadas:
+			response = new [] {RegionType.CastillaVieja, RegionType.Aragon};
+			break;
+		case RegionType.Aragon:
+			response = new [] {RegionType.Vascongadas, RegionType.CastillaVieja,
+				RegionType.CastillaNueva, RegionType.Valencia, RegionType.Catalunya};
+			break;
+		case RegionType.Catalunya:
+			response = new [] {RegionType.Aragon, RegionType.Valencia, RegionType.Baleares};
+			break;
+		case RegionType.Extremadura:
+			response = new [] {RegionType.Leon, RegionType.CastillaVieja, 
+				RegionType.CastillaNueva, RegionType.Andalucia};
+			break;
+		case RegionType.CastillaNueva:
+			response = new [] {RegionType.CastillaVieja, RegionType.Extremadura,
+				RegionType.Andalucia, RegionType.Murcia, RegionType.Valencia,
+				RegionType.Aragon, RegionType.Madrid};
+			break;
+		case RegionType.Madrid:
+			response = new [] {RegionType.CastillaVieja, RegionType.CastillaNueva};
+			break;
+		case RegionType.Valencia:
+			response = new [] {RegionType.Asturias, RegionType.Leon, RegionType.Baleares};
+			break;
+		case RegionType.Murcia:
+			response = new [] {RegionType.CastillaNueva, RegionType.Valencia,
+				RegionType.Andalucia};
+			break;
+		case RegionType.Andalucia:
+			response = new [] {RegionType.Extremadura, RegionType.CastillaNueva,
+				RegionType.Murcia, RegionType.Canarias, RegionType.Marruecos};
+			break;
+		case RegionType.Marruecos:
+			response = new [] {RegionType.Andalucia, RegionType.Canarias};
+			break;
+		case RegionType.Canarias:
+			response = new [] {RegionType.Andalucia, RegionType.Marruecos};
+			break;
+		}
+
+		return response;
 	}
 }
