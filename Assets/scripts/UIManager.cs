@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class UIManager : MonoBehaviour {
@@ -9,6 +10,8 @@ public class UIManager : MonoBehaviour {
 	public GameObject infoPanel;
 	public GameObject recruitPanel;
 	public GameObject midBackground;
+	public GameObject moveTroopsPanel;
+	public GameObject messagesPanel;
 
 	public Material defaultSpriteMaterial;
 	public Material disabledSpriteMaterial;
@@ -48,13 +51,21 @@ public class UIManager : MonoBehaviour {
 		info.UpdatePanelValues ();
 	}
 
-	public static void ShowUIPanelsOnRegionSelected(bool isNazi){
+	public static void ShowMessagesPanel(){
+		singleton.messagesPanel.SetActive (true);
+	}
+
+	public static void ShowMoveTroopsPanel(){
+		singleton.moveTroopsPanel.SetActive (true);
+	}
+
+	public static void ShowPanelsWhenRegionSelected(bool isNazi){
 		hideAllPanels ();
 		showMainActions (isNazi);
 		// Disable here input for rest of regions
 	}
 
-	public static void HidePanelsOnRegionUnselected(){
+	public static void HidePanelsWhenRegionUnselected(){
 		hideAllPanels ();
 		// Enable here input again for rest of regions
 	}
@@ -69,6 +80,9 @@ public class UIManager : MonoBehaviour {
 		singleton.mainEnemyActionsPanel.SetActive(false);
 		singleton.fightPanel.SetActive(false);
 		singleton.infoPanel.SetActive(false);
+		singleton.recruitPanel.SetActive(false);
+		singleton.moveTroopsPanel.SetActive(false);
+		singleton.messagesPanel.SetActive (false);
 	}
 
 	public static bool IsMainActionsShown(){
@@ -80,7 +94,8 @@ public class UIManager : MonoBehaviour {
 		return IsMainActionsShown () ||
 				singleton.fightPanel.activeInHierarchy ||
 				singleton.infoPanel.activeInHierarchy ||
-				singleton.recruitPanel.activeInHierarchy;
+				singleton.recruitPanel.activeInHierarchy || 
+				singleton.moveTroopsPanel.activeInHierarchy;
 	}
 
 	public static Material GetDefaultMaterial(){

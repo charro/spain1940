@@ -61,6 +61,10 @@ public class Region : MonoBehaviour {
 		return selected;
 	}
 
+	public bool IsEnabled(){
+		return enabledRegion;
+	}
+
 	public void SetNaziConquered(bool naziConquered){
 		isNazi = naziConquered;
 		

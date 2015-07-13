@@ -22,18 +22,42 @@ public class GameManager : MonoBehaviour {
 
 	public void AddRegionToList(Region newRegion){
 		allRegions.Add (newRegion.regionType, newRegion);
+		Debug.Log ("GameManager: Added new Region to RegionList: " + newRegion);
+	}
+
+	public void ShowMapAllRegionsDisabled(){
+		// Hide all UI panels and show the map
+		UIManager.hideAllPanels ();
+		// Disable all regions
+		DisableAllRegions ();
+		// If any selected region, send it back to its position
+		if(selectedRegion){
+			selectedRegion.toggleSelected();
+		}
+	}
+
+	public void DisableAllRegions(){
+		foreach(Region region in allRegions.Values){
+			region.Disable();
+		}
+	}
+
+	public void EnableAllRegions(){
+		foreach(Region region in allRegions.Values){
+			region.Enable();
+		}
 	}
 
 	public void RegionSelected(Region newRegionSelected){
 		selectedRegion = newRegionSelected;
 		UIManager.showMidBackground (true);
-		UIManager.ShowUIPanelsOnRegionSelected(newRegionSelected.isNazi);
+		UIManager.ShowPanelsWhenRegionSelected(newRegionSelected.isNazi);
 	}
 
 	public void RegionUnselected(){
 		selectedRegion = null;
 		UIManager.showMidBackground (false);
-		UIManager.HidePanelsOnRegionUnselected();
+		UIManager.HidePanelsWhenRegionUnselected();
 	}
 
 	public Region GetSelectedRegion(){
@@ -41,6 +65,11 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public bool CanRegionBeTouched(Region region){
+
+		// Only enabled regions can be touched
+		if(!region.IsEnabled()){
+			return false;
+		}
 
 		// Do we have some region selected and we're in Main Menu?
 		if(selectedRegion != null && UIManager.IsMainActionsShown()){
@@ -57,10 +86,22 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	public static RegionType[] GetRegionsBordering(RegionType region){
-		RegionType[] response = new RegionType[] {};;
+	public Region[] GetRegionsBorderingRegion(Region region){
+		ArrayList regionList = new ArrayList();
 
-		switch(region){
+		foreach(RegionType regionType in GameManager.GetRegionTypesBordering(region.regionType)){
+			if(allRegions.ContainsKey(regionType)){
+				regionList.Add(allRegions[regionType]);
+			}
+		}
+
+		return (Region[]) regionList.ToArray(typeof(Region));
+	}
+
+	public static RegionType[] GetRegionTypesBordering(RegionType regionType){
+		RegionType[] response = new RegionType[] {};
+
+		switch(regionType){
 		 case RegionType.Galicia:
 			response = new [] {RegionType.Asturias, RegionType.Leon};
 			break;
@@ -81,6 +122,10 @@ public class GameManager : MonoBehaviour {
 			break;
 		case RegionType.Catalunya:
 			response = new [] {RegionType.Aragon, RegionType.Valencia, RegionType.Baleares};
+			break;
+		case RegionType.Leon:
+			response = new [] {RegionType.Galicia, RegionType.Asturias, RegionType.CastillaVieja, 
+				RegionType.Extremadura };
 			break;
 		case RegionType.Extremadura:
 			response = new [] {RegionType.Leon, RegionType.CastillaVieja, 
