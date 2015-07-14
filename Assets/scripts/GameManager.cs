@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void ShowMapAllRegionsDisabled(){
-		// Hide all UI panels and show the map
+		// Hide all UI panels, showing the map that's behind
 		UIManager.hideAllPanels ();
 		// Disable all regions
 		DisableAllRegions ();
@@ -34,6 +34,19 @@ public class GameManager : MonoBehaviour {
 		if(selectedRegion){
 			selectedRegion.toggleSelected();
 		}
+	}
+
+	public void ShowMapAndBasicUI(){
+		// Hide all UI panels, showing the map that's behind
+		UIManager.hideAllPanels ();
+		// Enable all regions
+		EnableAllRegions ();
+		// If any selected region, send it back to its position
+		if(selectedRegion){
+			selectedRegion.toggleSelected();
+		}
+		// Show basic GUI
+		UIManager.ShowBasicPanel ();
 	}
 
 	public void DisableAllRegions(){
@@ -50,14 +63,14 @@ public class GameManager : MonoBehaviour {
 
 	public void RegionSelected(Region newRegionSelected){
 		selectedRegion = newRegionSelected;
-		UIManager.showMidBackground (true);
+		UIManager.showMidBackground (true, newRegionSelected.isNazi);
 		UIManager.ShowPanelsWhenRegionSelected(newRegionSelected.isNazi);
 	}
 
 	public void RegionUnselected(){
-		selectedRegion = null;
-		UIManager.showMidBackground (false);
+		UIManager.showMidBackground (false, selectedRegion.isNazi);
 		UIManager.HidePanelsWhenRegionUnselected();
+		selectedRegion = null;
 	}
 
 	public Region GetSelectedRegion(){
@@ -76,8 +89,8 @@ public class GameManager : MonoBehaviour {
 			// We can touch it only if this is the selected one
 			return region == selectedRegion;
 		}
-		// Not in main menu, but, do we have any UI Panel shown over the map ?
-		else if(UIManager.IsAnyGUIPanelShown()){
+		// Not in main menu, but, do we have any UI Panel shown over the map (except the basic Panel)?
+		else if(UIManager.IsAnyGUIPanelShownButBasicPanel()){
 			return false;
 		}
 		// No GUI shown over the map. We can touch the region

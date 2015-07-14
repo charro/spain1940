@@ -1,9 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\GameStateMachine.cs">
     <Files>
-      <File FileName="Assets\scripts\GameStateMachine.cs" Line="85" Column="5" />
-      <File FileName="Assets\scripts\UIManager.cs" Line="98" Column="48" />
+      <File FileName="Assets\scripts\GameManager.cs" Line="39" Column="31" />
+      <File FileName="Assets\scripts\GameStateMachine.cs" Line="80" Column="5" />
+      <File FileName="Assets\scripts\UIManager.cs" Line="44" Column="38" />
+      <File FileName="Assets\scripts\Region.cs" Line="47" Column="1" />
+      <File FileName="Assets\scripts\GameState.cs" Line="4" Column="14" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

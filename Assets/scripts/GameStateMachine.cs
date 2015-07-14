@@ -41,12 +41,19 @@ public class GameStateMachine : MonoBehaviour {
 
 	private void InitState(GameState state){
 		switch(state){
+			case GameState.IdleMapState:
+				EnterIdleMapState();
+				break;
 			case GameState.ActionsGUIState:
 				break;
 			case GameState.MoveTroopsState:
 				EnterMoveTroopsState();
 				break;
 		}
+	}
+
+	void EnterIdleMapState(){
+		gameManager.ShowMapAndBasicUI ();
 	}
 
 	void EnterActionsGUIState(){
@@ -69,6 +76,9 @@ public class GameStateMachine : MonoBehaviour {
 
 		// Show the corresponding messages
 		messages.showWhereToMoveText ();
+
+		// Set where to move the troops from
+		FindObjectOfType<MoveTroopsManager> ().SetFromRegion (fromRegion);
 	}
 
 	public void OnRegionTouched(Region region){
@@ -82,6 +92,9 @@ public class GameStateMachine : MonoBehaviour {
 				break;
 			case GameState.MoveTroopsState:
 				Debug.Log("Region touched while we are on MoveTroopsState. Region selected to move troops to: " + region.name);
+				// Set where to move the troops to
+				FindObjectOfType<MoveTroopsManager>().SetToRegion (region);
+				UIManager.hideAllPanels();
 				UIManager.ShowMoveTroopsPanel();
 				break;
 		}

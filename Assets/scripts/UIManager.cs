@@ -4,12 +4,14 @@ using System.Collections;
 
 public class UIManager : MonoBehaviour {
 
+	public GameObject basicPanel;
 	public GameObject mainActionsPanel;
 	public GameObject mainEnemyActionsPanel;
 	public GameObject fightPanel;
 	public GameObject infoPanel;
 	public GameObject recruitPanel;
 	public GameObject midBackground;
+	public GameObject midBackgroundEnemy;
 	public GameObject moveTroopsPanel;
 	public GameObject messagesPanel;
 
@@ -39,8 +41,13 @@ public class UIManager : MonoBehaviour {
 
 	}
 
-	public static void showMidBackground(bool show){
-		singleton.midBackground.SetActive (show);
+	public static void showMidBackground(bool show, bool isNazi){
+		if(isNazi){
+			singleton.midBackgroundEnemy.SetActive (show);
+		}
+		else{
+			singleton.midBackground.SetActive (show);
+		}
 	}
 
 	public void ShowInfoPanel(){
@@ -57,6 +64,10 @@ public class UIManager : MonoBehaviour {
 
 	public static void ShowMoveTroopsPanel(){
 		singleton.moveTroopsPanel.SetActive (true);
+	}
+
+	public static void ShowBasicPanel(){
+		singleton.basicPanel.SetActive (true);
 	}
 
 	public static void ShowPanelsWhenRegionSelected(bool isNazi){
@@ -82,6 +93,7 @@ public class UIManager : MonoBehaviour {
 		singleton.infoPanel.SetActive(false);
 		singleton.recruitPanel.SetActive(false);
 		singleton.moveTroopsPanel.SetActive(false);
+		singleton.basicPanel.SetActive (false);
 		singleton.messagesPanel.SetActive (false);
 	}
 
@@ -90,12 +102,17 @@ public class UIManager : MonoBehaviour {
 			singleton.mainEnemyActionsPanel.activeInHierarchy;
 	}
 
-	public static bool IsAnyGUIPanelShown(){
+	public static bool IsAnyGUIPanelShownButBasicPanel(){
 		return IsMainActionsShown () ||
 				singleton.fightPanel.activeInHierarchy ||
 				singleton.infoPanel.activeInHierarchy ||
-				singleton.recruitPanel.activeInHierarchy || 
+				singleton.recruitPanel.activeInHierarchy ||
 				singleton.moveTroopsPanel.activeInHierarchy;
+	}
+
+	public static bool IsAnyGUIPanelShown(){
+		return IsAnyGUIPanelShownButBasicPanel () ||
+				singleton.basicPanel.activeInHierarchy;;
 	}
 
 	public static Material GetDefaultMaterial(){
