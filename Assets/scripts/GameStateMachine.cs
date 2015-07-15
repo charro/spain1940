@@ -96,6 +96,7 @@ public class GameStateMachine : MonoBehaviour {
 				FindObjectOfType<MoveTroopsManager>().SetToRegion (region);
 				UIManager.hideAllPanels();
 				UIManager.ShowMoveTroopsPanel();
+				FindObjectOfType<MoveTroopsManager>().RefreshPanels();
 				break;
 		}
 	}

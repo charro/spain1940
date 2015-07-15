@@ -1,16 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\InfoPanel.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\GameStateMachine.cs">
     <Files>
-      <File FileName="Assets\scripts\MoveTroopsManager.cs" Line="31" Column="12" />
-      <File FileName="Assets\scripts\GameManager.cs" Line="39" Column="31" />
-      <File FileName="Assets\scripts\GameStateMachine.cs" Line="98" Column="5" />
-      <File FileName="Assets\scripts\UIManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\Region.cs" Line="18" Column="20" />
-      <File FileName="Assets\scripts\GameState.cs" Line="4" Column="14" />
-      <File FileName="Assets\scripts\RecruitmentManager.cs" Line="30" Column="41" />
-      <File FileName="Assets\scripts\RegionArmySlot.cs" Line="8" Column="3" />
-      <File FileName="Assets\scripts\InfoPanel.cs" Line="39" Column="89" />
+      <File FileName="Assets\scripts\MoveTroopsManager.cs" Line="38" Column="29" />
+      <File FileName="Assets\scripts\GameStateMachine.cs" Line="104" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
