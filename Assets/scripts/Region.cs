@@ -11,24 +11,18 @@ public class Region : MonoBehaviour {
 	public RegionType regionType;
 
 	private SpriteRenderer spriteRenderer;
-
-	private ArmyType[] armySlotsTypes;
-	public ArmyType[] ArmySlotsTypes(){
-		return armySlotsTypes;
-	}
-
-	private int[] armySlotsUnits;
-	public int[] ArmySlotsUnits(){
-		return armySlotsUnits;
+	
+	private RegionArmySlot[] armySlots;
+	public RegionArmySlot[] GetArmySlots(){
+		return armySlots;
 	}
 
 	// Use this for initialization
 	void Start () {
 		int maxSlots = GetMaxSlots ();
-		armySlotsTypes = new ArmyType[maxSlots];
-		armySlotsUnits = new int[maxSlots];
+		armySlots = new RegionArmySlot[maxSlots];
+		ClearArmySlots ();
 		spriteRenderer = GetComponent<SpriteRenderer>();
-
 		FindObjectOfType<GameManager> ().AddRegionToList(this);
 	}
 	
@@ -80,31 +74,32 @@ public class Region : MonoBehaviour {
 
 		// Check if the type is being used already. 
 		// Otherwise just add units 
-		for(int i=0; i<armySlotsTypes.Length; i++){
-			if(armySlotsTypes[i] == ArmyType.Empty){
-				armySlotsTypes[i] = (ArmyType)type;
-				armySlotsUnits[i] = units;
+		for(int i=0; i<armySlots.Length; i++){
+
+			if(armySlots[i].armyType == ArmyType.Empty){
+				armySlots[i].armyType = (ArmyType)type;
+				armySlots[i].armyAmount = units;
 				break;
 			}
-			else if(armySlotsTypes[i] == type){
-				armySlotsUnits[i] += units;
+			else if(armySlots[i].armyType == type){
+				armySlots[i].armyAmount += units;
 			}
 		}
 	}
 
 	public void ClearArmySlots(){
-		for(int i=0; i<armySlotsTypes.Length; i++){
-			armySlotsTypes[i] = ArmyType.Empty;
-		}
-
-		for(int i=0; i<armySlotsUnits.Length; i++){
-			armySlotsUnits[i] = 0;
+		for(int i=0; i<armySlots.Length; i++){
+			if(armySlots[i] == null){
+				armySlots[i] = new RegionArmySlot();
+			}
+			armySlots[i].armyType = ArmyType.Empty;
+			armySlots[i].armyAmount = 0;
 		}
 	}
 
 	public bool IsThereAnEmptySlot(){
-		foreach(ArmyType type in armySlotsTypes){
-			if(type == ArmyType.Empty){
+		foreach(RegionArmySlot armySlot in armySlots){
+			if(armySlot.armyType == ArmyType.Empty){
 				return true;	
 			}
 		}

@@ -28,7 +28,10 @@ public class RecruitmentManager : MonoBehaviour {
 	}
 
 	public void AddToUnit(int unitTypeInt){
-		ArmyType unitType = (ArmyType) unitTypeInt;
+		AddToUnit ((ArmyType) unitTypeInt);
+	}
+
+	public void AddToUnit(ArmyType unitType){
 
 		GameObject selectedUnitGroupGameObject = null;
 

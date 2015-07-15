@@ -26,16 +26,15 @@ public class InfoPanel : MonoBehaviour {
 
 			// Spanish army owned region. Show actual values
 			if(!selectedRegion.isNazi){
-				ArmyType[] armySlotTypes = selectedRegion.ArmySlotsTypes();
-				int[] armySlotUnits = selectedRegion.ArmySlotsUnits();
+				RegionArmySlot[] armySlots = selectedRegion.GetArmySlots();
 
-				for(int i=0; i<armySlotTypes.Length && i<unitSlots.Length && i<armySlotUnits.Length; i++){
-					if(armySlotTypes[i] == ArmyType.Empty){
+				for(int i=0; i<armySlots.Length && i<unitSlots.Length; i++){
+					if(armySlots[i].armyType == ArmyType.Empty){
 						unitSlots[i].SetActive(false);
 					}
 					else{
 						unitSlots[i].SetActive(true);
-						unitSlots[i].GetComponentInChildren<Text>().text = " X " + armySlotUnits[i];
+						unitSlots[i].GetComponentInChildren<Text>().text = " X " + armySlots[i].armyAmount;
 						// TODO: SET SPRITE HERE
 						// unitSlots[i].GetComponentInChildren<Image>().sprite = EL SPRITE;
 					}
