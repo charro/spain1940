@@ -35,8 +35,8 @@ public class InfoPanel : MonoBehaviour {
 					else{
 						unitSlots[i].SetActive(true);
 						unitSlots[i].GetComponentInChildren<Text>().text = " X " + armySlots[i].armyAmount;
-						// TODO: SET SPRITE HERE
-						// unitSlots[i].GetComponentInChildren<Image>().sprite = EL SPRITE;
+						unitSlots[i].GetComponentInChildren<Image>().sprite = 
+							FindObjectOfType<ArmySprites>().armySpritesDictionary[armySlots[i].armyType];
 					}
 				}
 			}

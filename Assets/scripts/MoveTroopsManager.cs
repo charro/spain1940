@@ -46,6 +46,8 @@ public class MoveTroopsManager : MonoBehaviour {
 			else{
 				unitSlotsFrom[i].SetActive(true);
 				unitSlotsFrom[i].GetComponentInChildren<Text>().text = "X " + fromArmySlots[i].armyAmount;
+				unitSlotsFrom[i].GetComponentInChildren<Image>().sprite = 
+					FindObjectOfType<ArmySprites>().armySpritesDictionary[fromArmySlots[i].armyType];
 			}
 		}
 
@@ -59,6 +61,36 @@ public class MoveTroopsManager : MonoBehaviour {
 			else{
 				unitSlotsTo[i].SetActive(true);
 				unitSlotsTo[i].GetComponentInChildren<Text>().text = "X " + toArmySlots[i].armyAmount;
+				unitSlotsTo[i].GetComponentInChildren<Image>().sprite = 
+					FindObjectOfType<ArmySprites>().armySpritesDictionary[toArmySlots[i].armyType];
+			}
+		}
+	}
+
+	/**
+	 * Move a unit from left region to right (if possible)
+	 **/
+	public void MoveUnitFromSlot(int slot){
+		RegionArmySlot fromSlot = fromRegion.GetArmySlots()[slot];
+
+		// Set the units corresponding to region TO
+		RegionArmySlot[] toArmySlots = toRegion.GetArmySlots ();
+
+		// Check if there is already a slot with that type of unit and add it there
+		foreach(RegionArmySlot toSlot in toArmySlots){
+			if(toSlot.armyType == fromSlot.armyType){
+				toSlot.armyAmount++;
+				fromSlot.armyAmount--;
+				RefreshPanels();
+				return;
+			}
+
+			// Army type not yet found. If this is an empty slot, create it now
+			if(toSlot.armyType == ArmyType.Empty){
+				toSlot.armyType = fromSlot.armyType;
+				toSlot.armyAmount++;
+				RefreshPanels();
+				return;
 			}
 		}
 	}
