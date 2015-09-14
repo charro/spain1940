@@ -6,13 +6,14 @@ using System.Collections.Generic;
 public class RecruitmentManager : MonoBehaviour {
 
 	public Dictionary<ArmyType, int> unitPrices;
+	public Dictionary<ArmyType, Sprite> unitSprites;
 
 	public Text recruitmentPointsText;
 	public RectTransform recruitmentPanel;
 
 	public GameObject unitGroupPrefab;
 
-	private ArrayList recruitedUnitGroups = new ArrayList();
+	private ArrayList recruitedUnitGroupList = new ArrayList();
 
 	private Vector3 firstUnitPosition;
 
@@ -36,7 +37,7 @@ public class RecruitmentManager : MonoBehaviour {
 		GameObject selectedUnitGroupGameObject = null;
 
 		// Find the unit by type
-		foreach(GameObject unitGroupGameObject in recruitedUnitGroups){
+		foreach(GameObject unitGroupGameObject in recruitedUnitGroupList){
 			RecruitedUnitGroup recruitedUnitGroup = 
 				unitGroupGameObject.GetComponent<RecruitedUnitGroup>() as RecruitedUnitGroup;
 
@@ -48,19 +49,21 @@ public class RecruitmentManager : MonoBehaviour {
 
 		// Not found, create a new group of this unit type
 		if(selectedUnitGroupGameObject == null){
-			GameObject instance = Instantiate (unitGroupPrefab) as GameObject;
-			instance.transform.SetParent (recruitmentPanel.transform, false);
+			GameObject newUnitInstance = Instantiate (unitGroupPrefab) as GameObject;
+			newUnitInstance.transform.SetParent (recruitmentPanel.transform, false);
 
-			// Save the first unit position for further use (will be the position 0,0 of parent Panel)
-			if(recruitedUnitGroups.Count == 0){
-				firstUnitPosition = instance.transform.position;
+			// Save the first unit position for further use (it will be the position 0,0 of parent Panel)
+			if(recruitedUnitGroupList.Count == 0){
+				firstUnitPosition = newUnitInstance.transform.position;
 			}
 			
-			RecruitedUnitGroup recruitedUnitGroup = instance.GetComponent<RecruitedUnitGroup>();
+			RecruitedUnitGroup recruitedUnitGroup = newUnitInstance.GetComponent<RecruitedUnitGroup>();
 			recruitedUnitGroup.UnitType = unitType;
-			recruitedUnitGroups.Add(instance);
+			recruitedUnitGroup.unitImage.sprite = FindObjectOfType<ArmySprites>().armySpritesDictionary[unitType];
 
-			selectedUnitGroupGameObject = instance;
+			recruitedUnitGroupList.Add(newUnitInstance);
+
+			selectedUnitGroupGameObject = newUnitInstance;
 
 			PlaceRecruitedUnitsInContainer();
 		}
@@ -81,11 +84,11 @@ public class RecruitmentManager : MonoBehaviour {
 	}
 
 	public void ResetUnits(){
-		foreach (GameObject unitGroupGameObject in recruitedUnitGroups) {
+		foreach (GameObject unitGroupGameObject in recruitedUnitGroupList) {
 			Destroy(unitGroupGameObject);
 		}
 
-		recruitedUnitGroups = new ArrayList ();
+		recruitedUnitGroupList = new ArrayList ();
 	}
 
 	// Place the units to their proper place inside the container
@@ -94,8 +97,8 @@ public class RecruitmentManager : MonoBehaviour {
 		float containerPanelWidth = recruitmentPanel.rect.width;
 		float separation = containerPanelWidth / 4;
 
-		for(int i=0; i<recruitedUnitGroups.Count; i++){
-			GameObject unitGroup = recruitedUnitGroups[i] as GameObject;
+		for(int i=0; i<recruitedUnitGroupList.Count; i++){
+			GameObject unitGroup = recruitedUnitGroupList[i] as GameObject;
 			// RectTransform rectTransform = unitGroup.GetComponent<RectTransform>();
 
 			unitGroup.transform.position = 
@@ -113,7 +116,7 @@ public class RecruitmentManager : MonoBehaviour {
 	private void RemoveEmptyRecruitedGroups(){
 		ArrayList listToRemove = new ArrayList ();
 
-		foreach(GameObject unitGroup in recruitedUnitGroups){
+		foreach(GameObject unitGroup in recruitedUnitGroupList){
 			RecruitedUnitGroup recruitedUnitGroup = unitGroup.GetComponent<RecruitedUnitGroup>();
 			if(!recruitedUnitGroup || recruitedUnitGroup.UnitAmount < 1){
 				listToRemove.Add(unitGroup);
@@ -121,7 +124,7 @@ public class RecruitmentManager : MonoBehaviour {
 		}
 
 		foreach(GameObject unitToRemove in listToRemove){
-			recruitedUnitGroups.Remove(unitToRemove);
+			recruitedUnitGroupList.Remove(unitToRemove);
 			Destroy(unitToRemove);
 		}
 		PlaceRecruitedUnitsInContainer ();
@@ -133,7 +136,7 @@ public class RecruitmentManager : MonoBehaviour {
 		GameManager gameManager = FindObjectOfType<GameManager> ();
 		Region selectedRegion = gameManager.GetSelectedRegion ();
 
-		foreach(GameObject unitGroupGameObject in recruitedUnitGroups){
+		foreach(GameObject unitGroupGameObject in recruitedUnitGroupList){
 			RecruitedUnitGroup unitGroup = 
 				unitGroupGameObject.GetComponent<RecruitedUnitGroup>() as RecruitedUnitGroup;
 
@@ -150,9 +153,8 @@ public class RecruitmentManager : MonoBehaviour {
 	private void SetUnitPrices(){
 		unitPrices = new Dictionary<ArmyType, int>();
 
-		unitPrices.Add (ArmyType.Soldier, 15);
-		unitPrices.Add (ArmyType.TankToro, 25);
-		unitPrices.Add (ArmyType.TankBisonte, 45);
+		unitPrices.Add (ArmyType.Milicia, 15);
+		unitPrices.Add (ArmyType.TankLince, 25);
+		unitPrices.Add (ArmyType.TankToro, 45);
 	}
-
 }

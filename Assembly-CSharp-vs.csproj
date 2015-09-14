@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\ArmySprites.cs" />
      <Compile Include="Assets\scripts\ArmyManager.cs" />
      <Compile Include="Assets\scripts\ArmyType.cs" />
      <Compile Include="Assets\scripts\EconomyManager.cs" />

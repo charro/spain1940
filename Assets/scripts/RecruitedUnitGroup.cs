@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 /**
- * Represents a Unit that is being recruited in the Recruiting screen
+ * Represents a Unit that is being recruited in the Recruiting screen.
  **/
 public class RecruitedUnitGroup : MonoBehaviour {
 

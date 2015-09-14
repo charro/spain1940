@@ -1,0 +1,113 @@
+fileFormatVersion: 2
+guid: 9bd30d7e6f419754989faf92a254b589
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: tanksTest_0
+    21300002: tanksTest_1
+    21300004: tanksTest_2
+    21300006: tanksTest_3
+    21300008: tanksTest_4
+    21300010: tanksTest_5
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: tanksTest_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 601
+        width: 425
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanksTest_1
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 610
+        width: 511
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanksTest_2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 322
+        width: 382
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanksTest_3
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 350
+        width: 341
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanksTest_4
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 143
+        width: 478
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tanksTest_5
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 130
+        width: 198
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: tanksAtlas
+  userData: 
