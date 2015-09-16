@@ -1,12 +1,9 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
 public class RecruitmentManager : MonoBehaviour {
-
-	public Dictionary<ArmyType, int> unitPrices;
-	public Dictionary<ArmyType, Sprite> unitSprites;
 
 	public Text recruitmentPointsText;
 	public RectTransform recruitmentPanel;
@@ -20,7 +17,6 @@ public class RecruitmentManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		ResetUnits ();
-		SetUnitPrices ();
 	}
 	
 	// Update is called once per frame
@@ -59,7 +55,7 @@ public class RecruitmentManager : MonoBehaviour {
 			
 			RecruitedUnitGroup recruitedUnitGroup = newUnitInstance.GetComponent<RecruitedUnitGroup>();
 			recruitedUnitGroup.UnitType = unitType;
-			recruitedUnitGroup.unitImage.sprite = FindObjectOfType<ArmySprites>().armySpritesDictionary[unitType];
+			recruitedUnitGroup.unitImage.sprite = FindObjectOfType<ArmyValues>().armySpritesDictionary[unitType];
 
 			recruitedUnitGroupList.Add(newUnitInstance);
 
@@ -72,11 +68,11 @@ public class RecruitmentManager : MonoBehaviour {
 			selectedUnitGroupGameObject.GetComponent<RecruitedUnitGroup>() as RecruitedUnitGroup;
 		selectedUnitGroup.AddUnit ();
 
-		EconomyManager.decreaseRecruitmentPoints (unitPrices[unitType]);
+		EconomyManager.decreaseRecruitmentPoints (FindObjectOfType<ArmyValues>().armyPricesDictionary[unitType]);
 	}
 
 	public void OnRemoveUnit(RecruitedUnitGroup unit){
-		EconomyManager.addRecruitmentPoints(unitPrices[unit.UnitType]);
+		EconomyManager.addRecruitmentPoints(FindObjectOfType<ArmyValues>().armyPricesDictionary[unit.UnitType]);
 
 		if(unit.UnitAmount <= 0){
 			RemoveEmptyRecruitedGroups ();
@@ -149,12 +145,5 @@ public class RecruitmentManager : MonoBehaviour {
 	public void CancelRecruitment(){
 
 	}
-
-	private void SetUnitPrices(){
-		unitPrices = new Dictionary<ArmyType, int>();
-
-		unitPrices.Add (ArmyType.Milicia, 15);
-		unitPrices.Add (ArmyType.TankLince, 25);
-		unitPrices.Add (ArmyType.TankToro, 45);
-	}
+	
 }

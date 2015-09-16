@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -47,7 +47,7 @@ public class MoveTroopsManager : MonoBehaviour {
 				unitSlotsFrom[i].SetActive(true);
 				unitSlotsFrom[i].GetComponentInChildren<Text>().text = "X " + fromArmySlots[i].armyAmount;
 				unitSlotsFrom[i].GetComponentInChildren<Image>().sprite = 
-					FindObjectOfType<ArmySprites>().armySpritesDictionary[fromArmySlots[i].armyType];
+					FindObjectOfType<ArmyValues>().armySpritesDictionary[fromArmySlots[i].armyType];
 			}
 		}
 
@@ -62,7 +62,7 @@ public class MoveTroopsManager : MonoBehaviour {
 				unitSlotsTo[i].SetActive(true);
 				unitSlotsTo[i].GetComponentInChildren<Text>().text = "X " + toArmySlots[i].armyAmount;
 				unitSlotsTo[i].GetComponentInChildren<Image>().sprite = 
-					FindObjectOfType<ArmySprites>().armySpritesDictionary[toArmySlots[i].armyType];
+					FindObjectOfType<ArmyValues>().armySpritesDictionary[toArmySlots[i].armyType];
 			}
 		}
 	}

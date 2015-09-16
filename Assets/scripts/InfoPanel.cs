@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -36,7 +36,7 @@ public class InfoPanel : MonoBehaviour {
 						unitSlots[i].SetActive(true);
 						unitSlots[i].GetComponentInChildren<Text>().text = " X " + armySlots[i].armyAmount;
 						unitSlots[i].GetComponentInChildren<Image>().sprite = 
-							FindObjectOfType<ArmySprites>().armySpritesDictionary[armySlots[i].armyType];
+							FindObjectOfType<ArmyValues>().armySpritesDictionary[armySlots[i].armyType];
 					}
 				}
 			}
