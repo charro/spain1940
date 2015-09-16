@@ -79,8 +79,10 @@ public class MoveTroopsManager : MonoBehaviour {
 		// Check if there is already a slot with that type of unit and add it there
 		foreach(RegionArmySlot toSlot in toArmySlots){
 			if(toSlot.armyType == fromSlot.armyType){
-				toSlot.armyAmount++;
-				fromSlot.armyAmount--;
+				Debug.Log("MoveTroopsManager: Move unit of type " + toSlot.armyType + " from region " + 
+				          fromRegion.name + " to region " + toRegion.name);
+				toSlot.addUnit();
+				fromSlot.removeUnit();
 				RefreshPanels();
 				return;
 			}
@@ -88,7 +90,8 @@ public class MoveTroopsManager : MonoBehaviour {
 			// Army type not yet found. If this is an empty slot, create it now
 			if(toSlot.armyType == ArmyType.Empty){
 				toSlot.armyType = fromSlot.armyType;
-				toSlot.armyAmount++;
+				toSlot.addUnit();
+				fromSlot.removeUnit();
 				RefreshPanels();
 				return;
 			}

@@ -30,6 +30,24 @@ public class UIManager : MonoBehaviour {
 	
 	}
 
+	public static void onRegionSelected(Region newRegionSelected){
+		UIManager.showMidBackground (true, newRegionSelected.isNazi);
+		UIManager.ShowPanelsWhenRegionSelected(newRegionSelected.isNazi);
+		if (newRegionSelected.isNazi) {
+			GameObject.Find ("/GUI/MainEnemyActionsPanel/RegionNameText").GetComponent<Text> ().text = 
+				newRegionSelected.name;
+		} else {
+			GameObject.Find ("/GUI/MainActionsPanel/RegionNameText").GetComponent<Text> ().text = 
+				newRegionSelected.name;
+		}
+
+	}
+
+	public static void onRegionUnselected(Region previouslySelectedRegion){
+		UIManager.showMidBackground (false, previouslySelectedRegion.isNazi);
+		UIManager.HidePanelsWhenRegionUnselected();
+	}
+
 	public static void showMainActions(bool isNazi){
 
 		if(isNazi){

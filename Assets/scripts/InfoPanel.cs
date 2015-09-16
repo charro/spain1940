@@ -4,6 +4,7 @@ using System.Collections;
 
 public class InfoPanel : MonoBehaviour {
 
+	public Text regionNameText;
 	public Sprite unknownArmySprite;
 	public GameObject[] unitSlots;
 

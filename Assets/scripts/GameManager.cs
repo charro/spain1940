@@ -63,13 +63,11 @@ public class GameManager : MonoBehaviour {
 
 	public void RegionSelected(Region newRegionSelected){
 		selectedRegion = newRegionSelected;
-		UIManager.showMidBackground (true, newRegionSelected.isNazi);
-		UIManager.ShowPanelsWhenRegionSelected(newRegionSelected.isNazi);
+		UIManager.onRegionSelected(newRegionSelected);
 	}
 
 	public void RegionUnselected(){
-		UIManager.showMidBackground (false, selectedRegion.isNazi);
-		UIManager.HidePanelsWhenRegionUnselected();
+		UIManager.onRegionUnselected(selectedRegion);
 		selectedRegion = null;
 	}
 
