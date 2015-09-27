@@ -84,7 +84,7 @@ public class GameStateMachine : MonoBehaviour {
 	public void OnRegionTouched(Region region){
 		switch(currentState){
 			case GameState.IdleMapState:
-				Debug.Log("Region touched while we are on IdleMapState State");
+			Debug.Log("Region touched while we are on IdleMapState State. Toggle selected to: " + !region.isSelected());
 				region.toggleSelected();
 				break;
 			case GameState.ActionsGUIState:
