@@ -107,6 +107,16 @@ public class Region : MonoBehaviour {
 		return false;
 	}
 
+	public bool HasAnyTroops(){
+		foreach(RegionArmySlot armySlot in armySlots){
+			if(armySlot.armyType != ArmyType.Empty){
+				return true;
+			}
+		}
+
+		return false;
+	}
+
 	public void Enable(){
 		enabledRegion = true;
 		spriteRenderer.material = UIManager.GetDefaultMaterial();

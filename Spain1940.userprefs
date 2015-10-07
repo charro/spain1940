@@ -1,14 +1,18 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\Region.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\MainActionsPanel.cs">
     <Files>
-      <File FileName="Assets\scripts\Region.cs" Line="40" Column="48" />
-      <File FileName="Assets\scripts\ObjectClickChecker.cs" Line="9" Column="17" />
-      <File FileName="Assets\scripts\GameStateMachine.cs" Line="87" Column="91" />
+      <File FileName="Assets\scripts\MainActionsPanel.cs" Line="15" Column="1" />
+      <File FileName="Assets\scripts\GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\Region.cs" Line="111" Column="1" />
+      <File FileName="Assets\scripts\GameStateMachine.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\MoveTroopsManager.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="D:\development\games\Spain1940\Assets\scripts\MainActionsPanel.cs" line="13" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
