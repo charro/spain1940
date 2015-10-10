@@ -117,6 +117,25 @@ public class Region : MonoBehaviour {
 		return false;
 	}
 
+	/**
+	 * Clean any empty slot, moving to it the next non-empty slot
+	 **/
+	public void SortTroopSlots(){
+		for(int i=0; i<armySlots.Length; i++){
+			// Look for the first empty army slot
+			if(armySlots[i].armyType == ArmyType.Empty){
+				for(int j=i+1; j<armySlots.Length; j++){
+					if(armySlots[j].armyType != ArmyType.Empty){
+						armySlots[i].armyType = armySlots[j].armyType;
+						armySlots[i].armyAmount = armySlots[j].armyAmount;
+						armySlots[j].CleanSlot();
+						break;
+					}
+				}
+			}
+		}
+	}
+
 	public void Enable(){
 		enabledRegion = true;
 		spriteRenderer.material = UIManager.GetDefaultMaterial();

@@ -43,9 +43,11 @@ public class UIManager : MonoBehaviour {
 
 	}
 
+	// De-select the current region and go back to Spain map
 	public static void onRegionUnselected(Region previouslySelectedRegion){
 		UIManager.showMidBackground (false, previouslySelectedRegion.isNazi);
 		UIManager.HidePanelsWhenRegionUnselected();
+		UIManager.ShowBasicPanel ();
 	}
 
 	public static void showMainActions(bool isNazi){

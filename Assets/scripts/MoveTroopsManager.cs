@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System;
 
 public class MoveTroopsManager : MonoBehaviour {
 
@@ -13,9 +14,14 @@ public class MoveTroopsManager : MonoBehaviour {
 	private Region fromRegion;
 	private Region toRegion;
 
+	private RegionArmySlot[] startingUnitsOfRegionFrom;
+	private RegionArmySlot[] startingUnitsOfRegionTo;
+
 	// Use this for initialization
 	void Start () {
-	
+		int maxSlots = (FindObjectOfType<ArmyManager> ()).MAX_ARMY_SLOTS_PER_REGION;
+		startingUnitsOfRegionFrom = new RegionArmySlot[maxSlots];
+		startingUnitsOfRegionTo = new RegionArmySlot[maxSlots];
 	}
 	
 	// Update is called once per frame
@@ -26,13 +32,22 @@ public class MoveTroopsManager : MonoBehaviour {
 	public void SetFromRegion(Region region){
 		fromRegion = region;
 		fromRegionText.text = fromRegion.name;
+		CopyRegionArray (fromRegion.GetArmySlots (), startingUnitsOfRegionFrom);
 	}
 
 	public void SetToRegion(Region region){
 		toRegion = region;
 		toRegionText.text = toRegion.name;
+		CopyRegionArray (toRegion.GetArmySlots (), startingUnitsOfRegionTo);
+	}
 
-		// Set the units corresponding to this region
+	private void CopyRegionArray(RegionArmySlot[] sourceArray, RegionArmySlot[] toArray){
+		for(int i=0; i<sourceArray.Length; i++){
+			RegionArmySlot copiedArmySlot = new RegionArmySlot();
+			copiedArmySlot.armyType = sourceArray[i].armyType; 
+			copiedArmySlot.armyAmount = sourceArray[i].armyAmount;
+			toArray[i] = copiedArmySlot;
+		}
 	}
 
 	public void RefreshPanels(){
@@ -96,5 +111,15 @@ public class MoveTroopsManager : MonoBehaviour {
 				return;
 			}
 		}
+	}
+
+	public void CancelUnitsMove(){
+		CopyRegionArray (startingUnitsOfRegionFrom, fromRegion.GetArmySlots ());
+		CopyRegionArray (startingUnitsOfRegionTo, toRegion.GetArmySlots ());
+	}
+
+	public void EndUnitsMove(){
+		fromRegion.SortTroopSlots ();
+		toRegion.SortTroopSlots ();
 	}
 }

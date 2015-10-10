@@ -48,6 +48,7 @@
      <Compile Include="Assets\scripts\ArmyManager.cs" />
      <Compile Include="Assets\scripts\ArmyType.cs" />
      <Compile Include="Assets\scripts\ArmyValues.cs" />
+     <Compile Include="Assets\scripts\BasicPanel.cs" />
      <Compile Include="Assets\scripts\EconomyManager.cs" />
      <Compile Include="Assets\scripts\GameManager.cs" />
      <Compile Include="Assets\scripts\GameState.cs" />

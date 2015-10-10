@@ -14,14 +14,17 @@ public class RecruitmentManager : MonoBehaviour {
 
 	private Vector3 firstUnitPosition;
 
+	private EconomyManager economyManager;
+
 	// Use this for initialization
 	void Start () {
 		ResetUnits ();
+		economyManager = FindObjectOfType<EconomyManager>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		recruitmentPointsText.text = "" + EconomyManager.getRecruitmentPoints();
+		recruitmentPointsText.text = "" + economyManager.getRecruitmentPoints();
 	}
 
 	public void AddToUnit(int unitTypeInt){
@@ -68,11 +71,11 @@ public class RecruitmentManager : MonoBehaviour {
 			selectedUnitGroupGameObject.GetComponent<RecruitedUnitGroup>() as RecruitedUnitGroup;
 		selectedUnitGroup.AddUnit ();
 
-		EconomyManager.decreaseRecruitmentPoints (FindObjectOfType<ArmyValues>().armyPricesDictionary[unitType]);
+		economyManager.decreaseRecruitmentPoints (FindObjectOfType<ArmyValues>().armyPricesDictionary[unitType]);
 	}
 
 	public void OnRemoveUnit(RecruitedUnitGroup unit){
-		EconomyManager.addRecruitmentPoints(FindObjectOfType<ArmyValues>().armyPricesDictionary[unit.UnitType]);
+		economyManager.addRecruitmentPoints(FindObjectOfType<ArmyValues>().armyPricesDictionary[unit.UnitType]);
 
 		if(unit.UnitAmount <= 0){
 			RemoveEmptyRecruitedGroups ();

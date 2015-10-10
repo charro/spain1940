@@ -37,6 +37,12 @@ public class RegionArmySlot
 			armyType = ArmyType.Empty;
 		}
 	}
+
+	public void CleanSlot(){
+		armyType = ArmyType.Empty;
+		armyAmount = 0;
+	}
+
 	public virtual string ToString(){
 		return "["+ armyType +"]:[units="+armyAmount+"]";
 	}
