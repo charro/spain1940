@@ -4,14 +4,22 @@ using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour {
 
+	// How many turns do we have passed yet
+	private int currentTurnNumber;
+
 	// The region that we are currently working in
 	private Region selectedRegion;
 
 	// All the regions in the game
 	private Dictionary<RegionType, Region> allRegions = new Dictionary<RegionType, Region>();
 
+	private EconomyManager economyManager;
+	private UIManager uiManager;
+
 	// Use this for initialization
 	void Start () {
+		economyManager = FindObjectOfType<EconomyManager>();
+		uiManager  = FindObjectOfType<UIManager>();
 	}
 	
 	// Update is called once per frame
@@ -45,7 +53,7 @@ public class GameManager : MonoBehaviour {
 			selectedRegion.toggleSelected();
 		}
 		// Show basic GUI
-		UIManager.ShowBasicPanel ();
+		UIManager.ShowHUDPanel ();
 	}
 
 	public void DisableAllRegions(){
@@ -87,7 +95,7 @@ public class GameManager : MonoBehaviour {
 			return region == selectedRegion;
 		}
 		// Not in main menu, but, do we have any UI Panel shown over the map (except the basic Panel)?
-		else if(UIManager.IsAnyGUIPanelShownButBasicPanel()){
+		else if(UIManager.IsAnyGUIPanelShownButHUDPanel()){
 			return false;
 		}
 		// No GUI shown over the map. We can touch the region
@@ -170,4 +178,19 @@ public class GameManager : MonoBehaviour {
 
 		return response;
 	}
+
+	public int GetCurrentTurnNumber(){
+		return currentTurnNumber;
+	}
+
+	// Ends this player turn, with all its consequences ;)
+	public void EndCurrentTurn(){
+		currentTurnNumber ++;
+		economyManager.resetAvailableActions ();
+		UIManager.hideAllPanels();
+		UIManager.RefreshHUDPanel();
+		UIManager.ShowLoadingTmp ();
+	}
+
+
 }

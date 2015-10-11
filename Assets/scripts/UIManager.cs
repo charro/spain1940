@@ -4,7 +4,8 @@ using System.Collections;
 
 public class UIManager : MonoBehaviour {
 
-	public GameObject basicPanel;
+	public GameObject HUDPanel;
+	//public GameObject basicPanel;
 	public GameObject mainActionsPanel;
 	public GameObject mainEnemyActionsPanel;
 	public GameObject fightPanel;
@@ -14,6 +15,7 @@ public class UIManager : MonoBehaviour {
 	public GameObject midBackgroundEnemy;
 	public GameObject moveTroopsPanel;
 	public GameObject messagesPanel;
+	public GameObject loadingScreen;
 
 	public Material defaultSpriteMaterial;
 	public Material disabledSpriteMaterial;
@@ -47,7 +49,7 @@ public class UIManager : MonoBehaviour {
 	public static void onRegionUnselected(Region previouslySelectedRegion){
 		UIManager.showMidBackground (false, previouslySelectedRegion.isNazi);
 		UIManager.HidePanelsWhenRegionUnselected();
-		UIManager.ShowBasicPanel ();
+		UIManager.ShowHUDPanel ();
 	}
 
 	public static void showMainActions(bool isNazi){
@@ -86,8 +88,8 @@ public class UIManager : MonoBehaviour {
 		singleton.moveTroopsPanel.SetActive (true);
 	}
 
-	public static void ShowBasicPanel(){
-		singleton.basicPanel.SetActive (true);
+	public static void ShowHUDPanel(){
+		singleton.HUDPanel.SetActive (true);
 	}
 
 	public static void ShowPanelsWhenRegionSelected(bool isNazi){
@@ -113,8 +115,9 @@ public class UIManager : MonoBehaviour {
 		singleton.infoPanel.SetActive(false);
 		singleton.recruitPanel.SetActive(false);
 		singleton.moveTroopsPanel.SetActive(false);
-		singleton.basicPanel.SetActive (false);
+		singleton.HUDPanel.SetActive (false);
 		singleton.messagesPanel.SetActive (false);
+		singleton.loadingScreen.SetActive (false);
 	}
 
 	public static bool IsMainActionsShown(){
@@ -122,7 +125,7 @@ public class UIManager : MonoBehaviour {
 			singleton.mainEnemyActionsPanel.activeInHierarchy;
 	}
 
-	public static bool IsAnyGUIPanelShownButBasicPanel(){
+	public static bool IsAnyGUIPanelShownButHUDPanel(){
 		return IsMainActionsShown () ||
 				singleton.fightPanel.activeInHierarchy ||
 				singleton.infoPanel.activeInHierarchy ||
@@ -131,8 +134,8 @@ public class UIManager : MonoBehaviour {
 	}
 
 	public static bool IsAnyGUIPanelShown(){
-		return IsAnyGUIPanelShownButBasicPanel () ||
-				singleton.basicPanel.activeInHierarchy;;
+		return IsAnyGUIPanelShownButHUDPanel () ||
+				singleton.HUDPanel.activeInHierarchy;;
 	}
 
 	public static Material GetDefaultMaterial(){
@@ -141,5 +144,28 @@ public class UIManager : MonoBehaviour {
 
 	public static Material GetDisabledMaterial(){
 		return singleton.disabledSpriteMaterial;
+	}
+
+	public static void RefreshHUDPanel(){
+		singleton.HUDPanel.GetComponent<HUD>().Refresh();
+	}
+
+	public static void ShowLoadingScreen(){
+		singleton.loadingScreen.SetActive (true);
+	}
+
+	public static void HideLoadingScreen(){
+		singleton.loadingScreen.SetActive (false);
+	}
+
+	public static void ShowLoadingTmp(){
+		singleton.StartCoroutine (ShowLoadingScreenForMilisecs(2f));
+	}
+
+	static IEnumerator ShowLoadingScreenForMilisecs(float secs){
+		ShowLoadingScreen ();
+		yield return new WaitForSeconds (secs);
+		HideLoadingScreen ();
+		ShowHUDPanel ();
 	}
 }

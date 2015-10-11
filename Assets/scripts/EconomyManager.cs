@@ -11,7 +11,7 @@ public class EconomyManager : MonoBehaviour {
 	// Recruitment Points available
 	private int recruitmentPoints;
 	// Remaining actions that can be done this turn
-	private int availableTurnActions;
+	private int availableActionPointsForThisTurn;
 	// Maximum actions per turn (upgradable by new technologies)
 	private int maximumActionsPerTurn;
 
@@ -48,21 +48,25 @@ public class EconomyManager : MonoBehaviour {
 		recruitmentPoints -= amount;
 	}
 
-	public int getAvailableActions(){
-		return availableTurnActions;
+	public bool haveEnoughActionsPoints(int points){
+		return availableActionPointsForThisTurn >= points;
+	}
+
+	public int getAvailableActionPoints(){
+		return availableActionPointsForThisTurn;
 	}
 
 	public void decreaseActionPoints(int amount){
-		if(availableTurnActions < amount){
-			Debug.Log("WARNING: Trying to decrease " + amount + " Action points when only " + availableTurnActions + " available");
-			availableTurnActions = 0;
+		if(availableActionPointsForThisTurn < amount){
+			Debug.Log("WARNING: Trying to decrease " + amount + " Action points when only " + availableActionPointsForThisTurn + " available");
+			availableActionPointsForThisTurn = 0;
 		}
 		else{
-			availableTurnActions -= amount;
+			availableActionPointsForThisTurn -= amount;
 		}
 	}
 
 	public void resetAvailableActions(){
-		availableTurnActions = maximumActionsPerTurn;
+		availableActionPointsForThisTurn = maximumActionsPerTurn;
 	}
 }
