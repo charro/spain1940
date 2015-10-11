@@ -191,6 +191,5 @@ public class GameManager : MonoBehaviour {
 		UIManager.RefreshHUDPanel();
 		UIManager.ShowLoadingTmp ();
 	}
-
-
+	
 }

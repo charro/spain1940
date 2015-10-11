@@ -121,5 +121,6 @@ public class MoveTroopsManager : MonoBehaviour {
 	public void EndUnitsMove(){
 		fromRegion.SortTroopSlots ();
 		toRegion.SortTroopSlots ();
+		FindObjectOfType<EconomyManager> ().decreaseActionPoints (1);
 	}
 }

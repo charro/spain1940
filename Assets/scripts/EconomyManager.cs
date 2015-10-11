@@ -64,6 +64,10 @@ public class EconomyManager : MonoBehaviour {
 		else{
 			availableActionPointsForThisTurn -= amount;
 		}
+
+		if(availableActionPointsForThisTurn == 0){
+			FindObjectOfType<HUD>().ShowIncomingMessageForSecs("You have finished all your actions for this turn", 5f);
+		}
 	}
 
 	public void resetAvailableActions(){

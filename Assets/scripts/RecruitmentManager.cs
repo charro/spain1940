@@ -141,6 +141,9 @@ public class RecruitmentManager : MonoBehaviour {
 
 			selectedRegion.AddUnitsToArmy(unitGroup.UnitType, unitGroup.UnitAmount);
 		}
+
+		economyManager.decreaseActionPoints (1);
+		gameManager.RegionUnselected ();
 	}
 
 	/**
