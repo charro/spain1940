@@ -179,6 +179,12 @@ public class GameManager : MonoBehaviour {
 		return response;
 	}
 
+	public void EndActionAndShowMap(){
+		ShowMapAndHUD();
+		economyManager.decreaseActionPoints (1);
+		UIManager.RefreshHUDPanel ();
+	}
+
 	public int GetCurrentTurnNumber(){
 		return currentTurnNumber;
 	}

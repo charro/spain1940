@@ -24,11 +24,15 @@ public class EconomyManager : MonoBehaviour {
 		return singleton; 
 	} */
 
+	void Awake(){
+		recruitmentPoints = INITIAL_RECRUITMENT_POINTS;
+		maximumActionsPerTurn = INITIAL_MAXIMUM_ACTIONS;
+		resetAvailableActions ();
+	}
+
 	// Use this for initialization
 	void Start () {
 		//singleton = this;
-		recruitmentPoints = INITIAL_RECRUITMENT_POINTS;
-		maximumActionsPerTurn = INITIAL_MAXIMUM_ACTIONS;
 	}
 	
 	// Update is called once per frame
@@ -66,7 +70,7 @@ public class EconomyManager : MonoBehaviour {
 		}
 
 		if(availableActionPointsForThisTurn == 0){
-			FindObjectOfType<HUD>().ShowIncomingMessageForSecs("You have finished all your actions for this turn", 5f);
+			FindObjectOfType<HUD>().ShowDropDownMessageForSecs("You have finished all your actions for this turn", 5f);
 		}
 	}
 

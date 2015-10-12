@@ -19,6 +19,10 @@ public class HUD : MonoBehaviour {
 	
 	}
 
+	void OnEnable(){
+		Refresh ();
+	}
+
 	void OnDisable(){
 		messagesPanel.SetActive (false);
 	}
@@ -28,11 +32,11 @@ public class HUD : MonoBehaviour {
 		EconomyManager economyManager = FindObjectOfType<EconomyManager> ();
 
 		dateText.text = "TURN " + gameManager.GetCurrentTurnNumber ();
-		actionPointsText.text = "AVAILABLE ACTIONS: " + economyManager.getAvailableActionPoints ();
+		actionPointsText.text = "AVAILABLE ACTIONS KK: " + economyManager.getAvailableActionPoints ();
 		recruitmentPointsText.text = "RECRUITMENT POINTS: " + economyManager.getRecruitmentPoints ();
 	}
 
-	public void ShowIncomingMessageForSecs(string message, float secs){
+	public void ShowDropDownMessageForSecs(string message, float secs){
 		StartCoroutine (ShowPopUpMessageForSecs(message, secs));
 	}
 

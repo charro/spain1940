@@ -1,14 +1,15 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\GameManager.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\MoveTroopsManager.cs">
     <Files>
-      <File FileName="Assets\scripts\MoveTroopsManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\RecruitmentManager.cs" Line="135" Column="14" />
-      <File FileName="Assets\scripts\EconomyManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\HUD.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\GameManager.cs" Line="46" Column="27" />
-      <File FileName="Assets\scripts\UIManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\GameStateMachine.cs" Line="67" Column="40" />
+      <File FileName="Assets\scripts\GameStateMachine.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\MoveTroopsManager.cs" Line="124" Column="31" />
+      <File FileName="Assets\scripts\RecruitmentManager.cs" Line="145" Column="3" />
+      <File FileName="Assets\scripts\EconomyManager.cs" Line="31" Column="3" />
+      <File FileName="Assets\scripts\HUD.cs" Line="37" Column="3" />
+      <File FileName="Assets\scripts\GameManager.cs" Line="182" Column="33" />
+      <File FileName="Assets\scripts\UIManager.cs" Line="149" Column="36" />
+      <File FileName="Assets\scripts\MainActionsPanel.cs" Line="18" Column="73" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

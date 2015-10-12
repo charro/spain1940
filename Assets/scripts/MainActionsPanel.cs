@@ -11,9 +11,14 @@ public class MainActionsPanel : MonoBehaviour {
 
 	void OnEnable(){
 		GameManager gameManager = FindObjectOfType<GameManager> ();
+		EconomyManager economyManager = FindObjectOfType<EconomyManager> ();
+
 		Region selectedRegion = gameManager.GetSelectedRegion ();
-		if(selectedRegion != null){
-			moveTroopsButton.interactable = selectedRegion.HasAnyTroops();
-		}
+		bool hasAnyTroops = (selectedRegion != null && selectedRegion.HasAnyTroops());
+		bool hasAnyActionPoints = (economyManager.getAvailableActionPoints() > 0);
+
+		buildButton.interactable = hasAnyActionPoints;
+		moveTroopsButton.interactable = hasAnyActionPoints && hasAnyTroops;
+		recruitButton.interactable = hasAnyActionPoints;
 	}
 }
