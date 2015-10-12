@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	public void ShowMapAndBasicUI(){
+	public void ShowMapAndHUD(){
 		// Hide all UI panels, showing the map that's behind
 		UIManager.hideAllPanels ();
 		// Enable all regions

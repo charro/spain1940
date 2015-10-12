@@ -53,7 +53,7 @@ public class GameStateMachine : MonoBehaviour {
 	}
 
 	void EnterIdleMapState(){
-		gameManager.ShowMapAndBasicUI ();
+		gameManager.ShowMapAndHUD ();
 	}
 
 	void EnterActionsGUIState(){

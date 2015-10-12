@@ -142,14 +142,14 @@ public class RecruitmentManager : MonoBehaviour {
 			selectedRegion.AddUnitsToArmy(unitGroup.UnitType, unitGroup.UnitAmount);
 		}
 
+		gameManager.ShowMapAndHUD();
 		economyManager.decreaseActionPoints (1);
-		gameManager.RegionUnselected ();
 	}
 
 	/**
 	 * Rollback all changes and come back */
 	public void CancelRecruitment(){
-
+		FindObjectOfType<GameManager> ().ShowMapAndHUD();
 	}
 	
 }
