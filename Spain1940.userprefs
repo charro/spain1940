@@ -1,9 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\GameManager.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\PopUp.cs">
     <Files>
       <File FileName="Assets\scripts\UIManager.cs" Line="165" Column="3" />
-      <File FileName="Assets\scripts\PopUp.cs" Line="35" Column="5" />
+      <File FileName="Assets\scripts\PopUp.cs" Line="50" Column="3" />
       <File FileName="Assets\scripts\YesNoCallback.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\PopUpType.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\ArmyType.cs" Line="1" Column="1" />

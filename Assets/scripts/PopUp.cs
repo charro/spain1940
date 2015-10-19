@@ -26,16 +26,22 @@ public class PopUp : MonoBehaviour {
 				titleText.text = "Confirm Pass Turn";
 				bodyText.text = "You still have some action points. Do you really want to pass turn ?";	
 				break;
+			case PopUpType.ConfirmRecruitment:
+				titleText.text = "Confirm Recruitment";
+				bodyText.text = "This will consum 1 Action Point. Do you confirm the recruitment ?";	
+				break;
 		}
 	}
 
 	public void YesClicked(){
-		GameManager gameManager = FindObjectOfType<GameManager> ();
 		FindObjectOfType<UIManager> ().HidePopUp ();
 
 		switch(type){
 			case PopUpType.ConfirmPassTurn:
-				gameManager.EndCurrentTurn();
+				FindObjectOfType<GameManager> ().EndCurrentTurn();
+				break;
+			case PopUpType.ConfirmRecruitment:
+				FindObjectOfType<RecruitmentManager>().PerformRecruitment();
 				break;
 		}
 	}
@@ -45,6 +51,7 @@ public class PopUp : MonoBehaviour {
 
 		switch(type){
 			case PopUpType.ConfirmPassTurn:
+			case PopUpType.ConfirmRecruitment:
 				break;
 		}
 	}

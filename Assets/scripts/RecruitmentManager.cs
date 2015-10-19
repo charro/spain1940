@@ -129,6 +129,10 @@ public class RecruitmentManager : MonoBehaviour {
 		PlaceRecruitedUnitsInContainer ();
 	}
 
+	public void CheckBeforePerformingRecruitment(){
+		FindObjectOfType<UIManager>().ShowPopUp(PopUpType.ConfirmRecruitment);
+	}
+
 	/**
 	 * Perform the recruitment, making the changes permanent **/
 	public void PerformRecruitment(){
