@@ -189,6 +189,15 @@ public class GameManager : MonoBehaviour {
 		return currentTurnNumber;
 	}
 
+	public void CheckBeforeEndingTurn(){
+		if(economyManager.getAvailableActionPoints() > 0){
+			uiManager.ShowPopUp(PopUpType.ConfirmPassTurn);
+		}
+		else{
+			EndCurrentTurn();
+		}
+	}
+
 	// Ends this player turn, with all its consequences ;)
 	public void EndCurrentTurn(){
 		currentTurnNumber ++;

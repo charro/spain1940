@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour {
 	public GameObject moveTroopsPanel;
 	public GameObject messagesPanel;
 	public GameObject loadingScreen;
+	public GameObject popUpPanel;
 
 	public Material defaultSpriteMaterial;
 	public Material disabledSpriteMaterial;
@@ -156,6 +157,15 @@ public class UIManager : MonoBehaviour {
 
 	public static void HideLoadingScreen(){
 		singleton.loadingScreen.SetActive (false);
+	}
+
+	public void ShowPopUp(PopUpType type){
+		popUpPanel.GetComponent<PopUp> ().NewPopUp (type);
+		popUpPanel.SetActive (true);
+	}
+
+	public void HidePopUp(){
+		popUpPanel.SetActive (false);
 	}
 
 	public static void ShowLoadingTmp(){
