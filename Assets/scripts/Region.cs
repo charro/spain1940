@@ -9,6 +9,7 @@ public class Region : MonoBehaviour {
 	public Sprite naziRegionSprite;
 	public bool enabledRegion;
 	public RegionType regionType;
+	public int actionGenerationLevel = 0;
 
 	private SpriteRenderer spriteRenderer;
 	
@@ -134,6 +135,14 @@ public class Region : MonoBehaviour {
 				}
 			}
 		}
+	}
+
+	public int GetActionGenerationLevel(){
+		return actionGenerationLevel;
+	}
+
+	public void IncreaseActionGenerationLevel(){
+		actionGenerationLevel++;
 	}
 
 	public void Enable(){

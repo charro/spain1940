@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour {
 	public GameObject fightPanel;
 	public GameObject infoPanel;
 	public GameObject recruitPanel;
+	public GameObject buildPanel;
 	public GameObject midBackground;
 	public GameObject midBackgroundEnemy;
 	public GameObject moveTroopsPanel;
@@ -115,6 +116,7 @@ public class UIManager : MonoBehaviour {
 		singleton.fightPanel.SetActive(false);
 		singleton.infoPanel.SetActive(false);
 		singleton.recruitPanel.SetActive(false);
+		singleton.buildPanel.SetActive(false);
 		singleton.moveTroopsPanel.SetActive(false);
 		singleton.HUDPanel.SetActive (false);
 		singleton.messagesPanel.SetActive (false);
@@ -130,6 +132,10 @@ public class UIManager : MonoBehaviour {
 		return IsMainActionsShown () ||
 				singleton.fightPanel.activeInHierarchy ||
 				singleton.infoPanel.activeInHierarchy ||
+				singleton.recruitPanel.activeInHierarchy ||
+				singleton.buildPanel.activeInHierarchy ||
+				singleton.moveTroopsPanel.activeInHierarchy ||
+				singleton.recruitPanel.activeInHierarchy ||
 				singleton.recruitPanel.activeInHierarchy ||
 				singleton.moveTroopsPanel.activeInHierarchy;
 	}
