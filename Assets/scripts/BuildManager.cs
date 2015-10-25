@@ -18,6 +18,7 @@ public class BuildManager : MonoBehaviour {
 	public void IncreaseActionLevel(){
 		Region selectedRegion = FindObjectOfType<GameManager> ().GetSelectedRegion ();
 		selectedRegion.IncreaseActionGenerationLevel ();
+		FindObjectOfType<EconomyManager> ().recalculateMaximumActionsPerTurn ();
 		buildPanel.RefreshElements();
 	}
 }

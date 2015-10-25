@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class EconomyManager : MonoBehaviour {
 	
@@ -12,7 +13,7 @@ public class EconomyManager : MonoBehaviour {
 	private int recruitmentPoints;
 	// Remaining actions that can be done this turn
 	private int availableActionPointsForThisTurn;
-	// Maximum actions per turn (upgradable by new technologies)
+	// Maximum actions per turn (upgradable making action buildings)
 	private int maximumActionsPerTurn;
 
 /*	private static EconomyManager GetSingleton()
@@ -70,11 +71,49 @@ public class EconomyManager : MonoBehaviour {
 		}
 
 		if(availableActionPointsForThisTurn == 0){
-			FindObjectOfType<HUD>().ShowDropDownMessageForSecs("You have finished all your actions for this turn", 5f);
+			FindObjectOfType<PopUpMessages>().ShowDropDownMessageForSecs("You have finished all your actions for this turn", 5f);
 		}
 	}
 
 	public void resetAvailableActions(){
 		availableActionPointsForThisTurn = maximumActionsPerTurn;
+	}
+
+	// After any change in region buildings, recalculate the maximum points
+	public void recalculateMaximumActionsPerTurn(){
+		Dictionary<RegionType, Region> allRegions = FindObjectOfType<GameManager> ().GetAllRegions ();
+		BuildValues buildValues = FindObjectOfType<BuildValues> ();
+
+		int accumulatedActionGenerationPointsOfAllRegions = 0;
+
+		 foreach(RegionType regionType in allRegions.Keys){
+			Region region = allRegions[regionType];
+			if(!region.isNazi){
+				int actionGenerationLevel = region.GetActionGenerationLevel();
+				for(int i=0; i<buildValues.actionBuildingsList.Length; i++){
+					// If this building is built in this region, add its action generation points to the 
+					if(actionGenerationLevel > (int)buildValues.actionBuildingsList[i]){
+						accumulatedActionGenerationPointsOfAllRegions += buildValues.actionGenerationPointsPerBuilding[i];
+					}
+				}
+			}
+		}
+
+		// Once all points from all regions are accumulated, check which Treshold are we reaching with it
+		int actionPointsToAdd = 0;
+
+		for(; actionPointsToAdd < buildValues.actionGenerationPointsThresholds.Length; actionPointsToAdd++){
+			if(accumulatedActionGenerationPointsOfAllRegions < buildValues.actionGenerationPointsThresholds[actionPointsToAdd]){
+				break;
+			}
+		}
+
+		// We add the minimum to the recalculated and show a message if we increased Action Points
+		int oldMaximum = maximumActionsPerTurn;
+		maximumActionsPerTurn = actionPointsToAdd + INITIAL_MAXIMUM_ACTIONS;
+
+		if(maximumActionsPerTurn > oldMaximum){
+			FindObjectOfType<PopUpMessages>().ShowDropDownMessageForSecs("COOL !! Now you have " + maximumActionsPerTurn + " Actions per turn !!" , 5f);
+		}
 	}
 }

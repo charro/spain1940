@@ -82,6 +82,10 @@ public class GameManager : MonoBehaviour {
 		return selectedRegion;
 	}
 
+	public Dictionary<RegionType, Region> GetAllRegions(){
+		return allRegions;
+	}
+
 	public bool CanRegionBeTouched(Region region){
 
 		// Only enabled regions can be touched
@@ -189,6 +193,7 @@ public class GameManager : MonoBehaviour {
 		return currentTurnNumber;
 	}
 
+	// Checks needed when user clicks end turn (so just before actually ending turn)
 	public void CheckBeforeEndingTurn(){
 		if(economyManager.getAvailableActionPoints() > 0){
 			uiManager.ShowPopUp(PopUpType.ConfirmPassTurn);
