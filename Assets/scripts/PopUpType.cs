@@ -4,6 +4,7 @@ using System;
 public enum PopUpType
 {
 	ConfirmPassTurn,
-	ConfirmRecruitment
+	ConfirmRecruitment,
+	ConfirmBuild
 }
 

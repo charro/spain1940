@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
+[ExecuteInEditMode]
 public class ArmyValues : MonoBehaviour {
 
 	public ArmyType[] armyUnitList;
@@ -38,5 +39,27 @@ public class ArmyValues : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	// This is called from Unity Editor
+	void OnValidate(){
+		// Be sure that the arrays has the same length
+		if(armyUnitList.Length != armySpriteList.Length){
+			Sprite[] newSpriteList = new Sprite[armyUnitList.Length];
+			for(int i=0; i<newSpriteList.Length && i<armySpriteList.Length; i++){
+				newSpriteList[i] = armySpriteList[i];
+			}
+
+			armySpriteList = newSpriteList;
+		}
+
+		if(armyUnitList.Length != armyUnitPrices.Length){
+			int[] newUnitPricesList = new int[armyUnitList.Length];
+			for(int i=0; i<newUnitPricesList.Length && i<armyUnitPrices.Length; i++){
+				newUnitPricesList[i] = armyUnitPrices[i];
+			}
+			
+			armyUnitPrices = newUnitPricesList;
+		}
 	}
 }

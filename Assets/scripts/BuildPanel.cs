@@ -24,6 +24,7 @@ public class BuildPanel : MonoBehaviour {
 
 	public void RefreshElements(){
 		Region selectedRegion = FindObjectOfType<GameManager> ().GetSelectedRegion ();
+		EconomyManager economyManager = FindObjectOfType<EconomyManager> ();
 		int actionLevel = selectedRegion.GetActionGenerationLevel ();
 
 		for(int level=0; level<actionLevelButtons.Length && level<actionLevelChecks.Length; level++){
@@ -31,7 +32,12 @@ public class BuildPanel : MonoBehaviour {
 			Image actionLevelCheck = actionLevelChecks[level];
 
 			actionLevelCheck.enabled = (actionLevel > level);
-			actionLevelButton.interactable = (actionLevel == level);
+			actionLevelButton.interactable = 
+				(actionLevel == level && economyManager.haveEnoughActionsPoints(1));
 		}
+	}
+
+	public void BuildClicked(){
+		FindObjectOfType<UIManager>().ShowPopUp(PopUpType.ConfirmBuild);
 	}
 }

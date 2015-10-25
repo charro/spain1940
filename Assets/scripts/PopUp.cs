@@ -30,6 +30,10 @@ public class PopUp : MonoBehaviour {
 				titleText.text = "Confirm Recruitment";
 				bodyText.text = "This will consum 1 Action Point. Do you confirm the recruitment ?";	
 				break;
+		case PopUpType.ConfirmBuild:
+			titleText.text = "Confirm Build";
+			bodyText.text = "This will consum 1 Action Point. Do you confirm the build ?";	
+			break;
 		}
 	}
 
@@ -43,6 +47,9 @@ public class PopUp : MonoBehaviour {
 			case PopUpType.ConfirmRecruitment:
 				FindObjectOfType<RecruitmentManager>().PerformRecruitment();
 				break;
+			case PopUpType.ConfirmBuild:
+				FindObjectOfType<BuildManager>().IncreaseActionLevel();
+				break;
 		}
 	}
 
@@ -52,6 +59,7 @@ public class PopUp : MonoBehaviour {
 		switch(type){
 			case PopUpType.ConfirmPassTurn:
 			case PopUpType.ConfirmRecruitment:
+			case PopUpType.ConfirmBuild:
 				break;
 		}
 	}
