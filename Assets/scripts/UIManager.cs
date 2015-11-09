@@ -18,6 +18,7 @@ public class UIManager : MonoBehaviour {
 	public GameObject messagesPanel;
 	public GameObject loadingScreen;
 	public GameObject popUpPanel;
+	public GameObject researchSpyPanel;
 
 	public Material defaultSpriteMaterial;
 	public Material disabledSpriteMaterial;
@@ -94,6 +95,11 @@ public class UIManager : MonoBehaviour {
 		singleton.HUDPanel.SetActive (true);
 	}
 
+	public static void ShowResearchSpyPanel(){
+		singleton.researchSpyPanel.SetActive (true);
+		singleton.HUDPanel.SetActive (false);
+	}
+
 	public static void ShowPanelsWhenRegionSelected(bool isNazi){
 		hideAllPanels ();
 		showMainActions (isNazi);
@@ -136,8 +142,7 @@ public class UIManager : MonoBehaviour {
 				singleton.buildPanel.activeInHierarchy ||
 				singleton.moveTroopsPanel.activeInHierarchy ||
 				singleton.recruitPanel.activeInHierarchy ||
-				singleton.recruitPanel.activeInHierarchy ||
-				singleton.moveTroopsPanel.activeInHierarchy;
+				singleton.researchSpyPanel.activeInHierarchy;
 	}
 
 	public static bool IsAnyGUIPanelShown(){

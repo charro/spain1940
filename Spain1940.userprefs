@@ -1,8 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\3mataos\UoPoko\Assets\scripts\Board.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\UIManager.cs">
     <Files>
-      <File FileName="..\3mataos\UoPoko\Assets\scripts\Board.cs" Line="1916" Column="1" />
+      <File FileName="Assets\scripts\BasicPanel.cs" Line="8" Column="1" />
+      <File FileName="Assets\scripts\UIManager.cs" Line="100" Column="40" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
