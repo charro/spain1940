@@ -71,6 +71,13 @@
      <Compile Include="Assets\scripts\Region.cs" />
      <Compile Include="Assets\scripts\RegionArmySlot.cs" />
      <Compile Include="Assets\scripts\RegionType.cs" />
+     <Compile Include="Assets\scripts\ResearchManager.cs" />
+     <Compile Include="Assets\scripts\ResearchSpyPanel.cs" />
+     <Compile Include="Assets\scripts\SpiesPanel.cs" />
+     <Compile Include="Assets\scripts\Spy.cs" />
+     <Compile Include="Assets\scripts\SpyManager.cs" />
+     <Compile Include="Assets\scripts\SpyPanel.cs" />
+     <Compile Include="Assets\scripts\SpyingValues.cs" />
      <Compile Include="Assets\scripts\UIManager.cs" />
      <Compile Include="Assets\scripts\YesNoCallback.cs" />
      <Compile Include="Assets\scripts\cameraMovementScript.cs" />
