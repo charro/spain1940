@@ -14,4 +14,12 @@ public class SpiesPanel : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	public void RefreshSpiesInfo(){
+		Spy[] activeSpies = FindObjectOfType<SpyManager> ().GetActiveSpies ();
+
+		for(int i=0; i<spiesList.Length && i<activeSpies.Length; i++){
+			spiesList[i].SetSpy(activeSpies[i]);
+		}
+	}
 }

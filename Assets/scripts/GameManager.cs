@@ -43,6 +43,26 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
+	public void ShowMapFriendlyRegionsOnly(){
+		// Hide GUI Panels, and show region Map with all regions disabled
+		ShowMapAllRegionsDisabled ();
+		EnableOnlyRegionsOfFaction (false);
+	}
+
+	public void ShowMapEnemyRegionsOnly(){
+		// Hide GUI Panels, and show region Map with all regions disabled
+		ShowMapAllRegionsDisabled ();
+		EnableOnlyRegionsOfFaction (true);
+	}
+
+	private void EnableOnlyRegionsOfFaction(bool isEnemy){
+		foreach(Region region in allRegions.Values){
+			if(region.isNazi == isEnemy){
+				region.Enable();
+			}
+		}
+	}
+
 	public void ShowMapAndHUD(){
 		// Hide all UI panels, showing the map that's behind
 		UIManager.hideAllPanels ();
@@ -210,6 +230,8 @@ public class GameManager : MonoBehaviour {
 		UIManager.hideAllPanels();
 		UIManager.RefreshHUDPanel();
 		UIManager.ShowLoadingTmp ();
+
+		EventManager.TriggerPassTurnEvent ();
 	}
 	
 }

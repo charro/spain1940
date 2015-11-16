@@ -17,6 +17,7 @@ public class Region : MonoBehaviour {
 	public RegionArmySlot[] GetArmySlots(){
 		return armySlots;
 	}
+	private SpiedRegionInfo spiedRegionInfo;
 
 	// Use this for initialization
 	void Start () {
@@ -32,7 +33,7 @@ public class Region : MonoBehaviour {
 	
 	}
 
-	private int GetMaxSlots(){
+	public int GetMaxSlots(){
 		return (FindObjectOfType<ArmyManager> ()).MAX_ARMY_SLOTS_PER_REGION;
 	}
 
@@ -143,6 +144,10 @@ public class Region : MonoBehaviour {
 
 	public void IncreaseActionGenerationLevel(){
 		actionGenerationLevel++;
+	}
+
+	public void RecalculateSpiedInfo(float chanceOfFindingArmyType, float chanceOfFindingArmyAmount){
+		spiedRegionInfo = new SpiedRegionInfo (this, chanceOfFindingArmyType, chanceOfFindingArmyAmount);
 	}
 
 	public void Enable(){

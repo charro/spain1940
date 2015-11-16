@@ -24,4 +24,9 @@ public class Messages : MonoBehaviour {
 		UIManager.ShowMessagesPanel();
 		whereToMoveText.SetActive(true);
 	}
+
+	public void showWhereToSpyText(){
+		UIManager.ShowMessagesPanel();
+		whereToMoveText.SetActive(true);
+	}
 }

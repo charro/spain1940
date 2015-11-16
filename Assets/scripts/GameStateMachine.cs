@@ -49,6 +49,9 @@ public class GameStateMachine : MonoBehaviour {
 			case GameState.MoveTroopsState:
 				EnterMoveTroopsState();
 				break;
+			case GameState.NewSpyState:
+				EnterNewSpyState();
+				break;
 		}
 	}
 
@@ -63,7 +66,6 @@ public class GameStateMachine : MonoBehaviour {
 	void EnterMoveTroopsState(){
 		Region fromRegion = gameManager.GetSelectedRegion();
 
-		// Hide GUI Panels, and show region Map with all regions disabled
 		gameManager.ShowMapAllRegionsDisabled ();
 
 		// Enable only neighbourg regions that are no Nazi
@@ -79,6 +81,12 @@ public class GameStateMachine : MonoBehaviour {
 
 		// Set where to move the troops from
 		FindObjectOfType<MoveTroopsManager> ().SetFromRegion (fromRegion);
+	}
+
+	void EnterNewSpyState(){
+		gameManager.ShowMapEnemyRegionsOnly ();
+		// Show the corresponding messages
+		messages.showWhereToSpyText ();
 	}
 
 	public void OnRegionTouched(Region region){
@@ -98,6 +106,11 @@ public class GameStateMachine : MonoBehaviour {
 				UIManager.ShowMoveTroopsPanel();
 				FindObjectOfType<MoveTroopsManager>().RefreshPanels();
 				break;
+		case GameState.NewSpyState:
+			Debug.Log("Region touched while we are on NewSpyState. Region selected to send spy to: " + region.name);
+			// Confirm where to send the spy
+			FindObjectOfType<SpyManager>().ConfirmAddNewSpyToRegion(region);
+			break;
 		}
 	}
 }

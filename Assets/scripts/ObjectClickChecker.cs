@@ -69,6 +69,7 @@ public class ObjectClickChecker : MonoBehaviour {
 
 	// Actions to do if we touched a Region
 	void regionTouched(Region region){
+		// The action to choose depends on the State of the Region Map
 		FindObjectOfType<GameStateMachine> ().OnRegionTouched (region);
 	}
 }

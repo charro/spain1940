@@ -5,6 +5,7 @@ public enum PopUpType
 {
 	ConfirmPassTurn,
 	ConfirmRecruitment,
-	ConfirmBuild
+	ConfirmBuild,
+	ConfirmNewSpy
 }
 

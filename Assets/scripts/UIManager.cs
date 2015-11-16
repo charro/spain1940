@@ -127,6 +127,7 @@ public class UIManager : MonoBehaviour {
 		singleton.HUDPanel.SetActive (false);
 		singleton.messagesPanel.SetActive (false);
 		singleton.loadingScreen.SetActive (false);
+		singleton.researchSpyPanel.SetActive (false);
 	}
 
 	public static bool IsMainActionsShown(){

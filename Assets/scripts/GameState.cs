@@ -5,5 +5,5 @@ public enum GameState
 	ActionsGUIState,
 	MoveTroopsState,
 	AttackState,
-	SpyState
+	NewSpyState
 }

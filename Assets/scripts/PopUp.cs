@@ -34,6 +34,10 @@ public class PopUp : MonoBehaviour {
 			titleText.text = "Confirm Build";
 			bodyText.text = "This will consum 1 Action Point. Do you confirm the build ?";	
 			break;
+		case PopUpType.ConfirmNewSpy:
+			titleText.text = "Confirm Spy Region";
+			bodyText.text = "This will consum 1 Action Point. Do you confirm to send the spy ?";	
+			break;
 		}
 	}
 
@@ -50,6 +54,9 @@ public class PopUp : MonoBehaviour {
 			case PopUpType.ConfirmBuild:
 				FindObjectOfType<BuildManager>().IncreaseActionLevel();
 				break;
+		case PopUpType.ConfirmNewSpy:
+				FindObjectOfType<SpyManager>().AddNewSpy();
+				break;
 		}
 	}
 
@@ -60,6 +67,9 @@ public class PopUp : MonoBehaviour {
 			case PopUpType.ConfirmPassTurn:
 			case PopUpType.ConfirmRecruitment:
 			case PopUpType.ConfirmBuild:
+				break;
+			case PopUpType.ConfirmNewSpy:
+				FindObjectOfType<SpyManager>().EndNewSpyCreation();
 				break;
 		}
 	}
