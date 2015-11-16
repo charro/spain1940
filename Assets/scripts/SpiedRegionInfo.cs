@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class SpiedRegionInfo: MonoBehaviour
+public class SpiedRegionInfo: ScriptableObject
 {
 	public ArmyType[] spiedArmyTypes;
 	public int[] spiedArmyAmounts;
 
-	public SpiedRegionInfo(Region spiedRegion,  float chanceOfFindingArmyType, float chanceOfFindingArmyAmount){
+	public void Initialize(Region spiedRegion,  float chanceOfFindingArmyType, float chanceOfFindingArmyAmount){
 		int maxArmySlots = spiedRegion.GetMaxSlots ();
 		spiedArmyTypes = new ArmyType[maxArmySlots];
 		spiedArmyAmounts = new int[maxArmySlots];

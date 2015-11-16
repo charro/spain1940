@@ -147,7 +147,8 @@ public class Region : MonoBehaviour {
 	}
 
 	public void RecalculateSpiedInfo(float chanceOfFindingArmyType, float chanceOfFindingArmyAmount){
-		spiedRegionInfo = new SpiedRegionInfo (this, chanceOfFindingArmyType, chanceOfFindingArmyAmount);
+		spiedRegionInfo = ScriptableObject.CreateInstance<SpiedRegionInfo> ();
+		spiedRegionInfo.Initialize(this, chanceOfFindingArmyType, chanceOfFindingArmyAmount);
 	}
 
 	public void Enable(){

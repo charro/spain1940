@@ -57,7 +57,7 @@ public class SpyManager : MonoBehaviour {
 	public void RemoveSpy(Spy spyToRemove){
 		for(int i=0; i<activeSpies.Length; i++){
 			if(activeSpies[i] == spyToRemove){
-				activeSpies = null;
+				activeSpies[i] = null;
 			}
 		}
 	}
