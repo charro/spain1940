@@ -41,12 +41,26 @@ public class InfoPanel : MonoBehaviour {
 					}
 				}
 			}
-			// For Nazi owned, only show spied values
+			// For Nazi owned, only show spied values or Unknown if no spied values available
 			else{
 				for(int i=0; i<unitSlots.Length; i++){
 					unitSlots[i].SetActive(true);
 					unitSlots[i].GetComponentInChildren<Image>().sprite = unknownArmySprite;
-					unitSlots[i].GetComponentInChildren<Text>().text = "unknown";
+					unitSlots[i].GetComponentInChildren<Text>().text = "X ??";
+
+					// Show last spied info in case it exists
+					SpiedRegionInfo spiedInfo = selectedRegion.GetLastSpiedRegionInfo();
+					if(spiedInfo != null){
+						if(spiedInfo.spiedArmyTypes.Length >= i && spiedInfo.spiedArmyTypes[i] != ArmyType.Unknown &&
+						   spiedInfo.spiedArmyTypes[i] != ArmyType.Empty){
+							unitSlots[i].GetComponentInChildren<Image>().sprite = 
+								FindObjectOfType<ArmyValues>().armySpritesDictionary[spiedInfo.spiedArmyTypes[i]];
+						}
+						if(spiedInfo.spiedArmyAmounts.Length >= i && spiedInfo.spiedArmyAmounts[i] > 0){
+							unitSlots[i].GetComponentInChildren<Text>().text = " X " + spiedInfo.spiedArmyAmounts[i];
+						}
+					}
+
 				}
 			}
 		}

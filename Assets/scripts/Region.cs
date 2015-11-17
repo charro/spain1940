@@ -151,6 +151,10 @@ public class Region : MonoBehaviour {
 		spiedRegionInfo.Initialize(this, chanceOfFindingArmyType, chanceOfFindingArmyAmount);
 	}
 
+	public SpiedRegionInfo GetLastSpiedRegionInfo(){
+		return spiedRegionInfo;
+	}
+
 	public void Enable(){
 		enabledRegion = true;
 		spriteRenderer.material = UIManager.GetDefaultMaterial();

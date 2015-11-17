@@ -60,10 +60,38 @@ public class SpyManager : MonoBehaviour {
 				activeSpies[i] = null;
 			}
 		}
+
+		// Re-sort the array, pushing up the non-empty members
+		Spy[] resortedArray = new Spy[activeSpies.Length];
+		int firstEmptyIndex = 0;
+		for(int i=0; i<activeSpies.Length; i++){
+			if(activeSpies[i] != null){
+				resortedArray[firstEmptyIndex] = activeSpies[i];
+				firstEmptyIndex++;
+			}
+		}
+
+		// If the index was modified, use the resorted Array
+		if(firstEmptyIndex > 0){
+			activeSpies = resortedArray;
+		}
 	}
 
 	public Spy[] GetActiveSpies(){
 		return activeSpies;
 	}
-	
+
+	public int GetNumberOfSpiesSent(){
+		if(activeSpies == null){
+			return 0;
+		}
+
+		int number = 0;
+		foreach(Spy spy in activeSpies){
+			if(spy != null){
+				number++;
+			}
+		}
+		return number;
+	}
 }

@@ -4,8 +4,11 @@ public class SpiedRegionInfo: ScriptableObject
 {
 	public ArmyType[] spiedArmyTypes;
 	public int[] spiedArmyAmounts;
+	public int spiedTurnNumber;
 
 	public void Initialize(Region spiedRegion,  float chanceOfFindingArmyType, float chanceOfFindingArmyAmount){
+		spiedTurnNumber = FindObjectOfType<GameManager> ().GetCurrentTurnNumber ();
+
 		int maxArmySlots = spiedRegion.GetMaxSlots ();
 		spiedArmyTypes = new ArmyType[maxArmySlots];
 		spiedArmyAmounts = new int[maxArmySlots];

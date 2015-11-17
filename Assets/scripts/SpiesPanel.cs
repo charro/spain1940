@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SpiesPanel : MonoBehaviour {
 
-	public SpyPanel[] spiesList;
+	public GameObject[] spyPanelsList;
 
 	// Use this for initialization
 	void Start () {
@@ -18,8 +18,25 @@ public class SpiesPanel : MonoBehaviour {
 	public void RefreshSpiesInfo(){
 		Spy[] activeSpies = FindObjectOfType<SpyManager> ().GetActiveSpies ();
 
-		for(int i=0; i<spiesList.Length && i<activeSpies.Length; i++){
-			spiesList[i].SetSpy(activeSpies[i]);
+		bool alreadyShownAtLeastNewSpyButton = false;
+
+		for(int i=0; i<spyPanelsList.Length && i<activeSpies.Length; i++){
+			spyPanelsList[i].GetComponent<SpyPanel>().SetSpy(activeSpies[i]);
+
+			// Be sure to only show the first panel with a null Spy
+			if(activeSpies[i] == null){
+				if(alreadyShownAtLeastNewSpyButton){
+					spyPanelsList[i].SetActive(false);
+				}
+				else{
+					spyPanelsList[i].SetActive(true);
+					alreadyShownAtLeastNewSpyButton = true;
+				}
+			}
+			else{
+				spyPanelsList[i].SetActive(true);
+			}
 		}
+
 	}
 }
