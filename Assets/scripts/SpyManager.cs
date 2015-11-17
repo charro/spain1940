@@ -94,4 +94,14 @@ public class SpyManager : MonoBehaviour {
 		}
 		return number;
 	}
+
+	public bool IsAnySpyInRegion(Region region){
+		foreach(Spy spy in activeSpies){
+			if(spy != null && spy.spiedRegion == region){
+				return true;
+			}
+		}
+
+		return false;
+	}
 }

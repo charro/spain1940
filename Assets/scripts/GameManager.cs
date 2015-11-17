@@ -44,21 +44,37 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void ShowMapFriendlyRegionsOnly(){
-		// Hide GUI Panels, and show region Map with all regions disabled
-		ShowMapAllRegionsDisabled ();
-		EnableOnlyRegionsOfFaction (false);
+		EnableOnlyRegionsWithParameters (false, false);
 	}
 
 	public void ShowMapEnemyRegionsOnly(){
-		// Hide GUI Panels, and show region Map with all regions disabled
-		ShowMapAllRegionsDisabled ();
-		EnableOnlyRegionsOfFaction (true);
+		EnableOnlyRegionsWithParameters (true, false);
 	}
 
-	private void EnableOnlyRegionsOfFaction(bool isEnemy){
+	public void ShowMapEnemyNonSpiedRegionsOnly(){
+		EnableOnlyRegionsWithParameters (true, true);
+	}
+
+	public void EnableOnlyRegionsWithParameters(bool onlyEnemy, bool onlyNonSpied){
+		// Hide GUI Panels, and show region Map with all regions disabled
+		ShowMapAllRegionsDisabled ();
+
 		foreach(Region region in allRegions.Values){
-			if(region.isNazi == isEnemy){
+			bool enable = true;
+
+			if(onlyEnemy && !region.isNazi){
+				enable = false;
+			}
+			if(onlyNonSpied && region.IsBeingSpied()){
+				enable = false;
+			}
+
+			// Apply the enabling decision
+			if(enable){
 				region.Enable();
+			}
+			else{
+				region.Disable();
 			}
 		}
 	}

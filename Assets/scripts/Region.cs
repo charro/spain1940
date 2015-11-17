@@ -155,6 +155,10 @@ public class Region : MonoBehaviour {
 		return spiedRegionInfo;
 	}
 
+	public bool IsBeingSpied(){
+		return FindObjectOfType<SpyManager> ().IsAnySpyInRegion (this);
+	}
+
 	public void Enable(){
 		enabledRegion = true;
 		spriteRenderer.material = UIManager.GetDefaultMaterial();

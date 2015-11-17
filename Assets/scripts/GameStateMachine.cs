@@ -84,7 +84,7 @@ public class GameStateMachine : MonoBehaviour {
 	}
 
 	void EnterNewSpyState(){
-		gameManager.ShowMapEnemyRegionsOnly ();
+		gameManager.ShowMapEnemyNonSpiedRegionsOnly ();
 		// Show the corresponding messages
 		messages.showWhereToSpyText ();
 	}
