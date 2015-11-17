@@ -28,11 +28,11 @@ public class GameStateMachine : MonoBehaviour {
 		return currentState;
 	}
 
-	public void ChangeToState(int state){
-		ChangeToState ((GameState) state);
+	public void SwitchToState(int state){
+		SwitchToState ((GameState) state);
 	}
 
-	public void ChangeToState(GameState newState){
+	public void SwitchToState(GameState newState){
 		previousState = currentState;
 		currentState = newState;
 

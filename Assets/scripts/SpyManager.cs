@@ -22,7 +22,7 @@ public class SpyManager : MonoBehaviour {
 	
 	public void SelectNewSpyLevel(int newLevel){
 		lastSelectedSpyLevel = newLevel;
-		FindObjectOfType<GameStateMachine> ().ChangeToState (GameState.NewSpyState);
+		FindObjectOfType<GameStateMachine> ().SwitchToState (GameState.NewSpyState);
 	}
 
 	public void ConfirmAddNewSpyToRegion(Region region){
@@ -51,7 +51,7 @@ public class SpyManager : MonoBehaviour {
 	}
 
 	public void EndNewSpyCreation(){
-		FindObjectOfType<GameStateMachine> ().ChangeToState (GameState.IdleMapState);
+		FindObjectOfType<GameStateMachine> ().SwitchToState (GameState.IdleMapState);
 	}
 
 	public void RemoveSpy(Spy spyToRemove){

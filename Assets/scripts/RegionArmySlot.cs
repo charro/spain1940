@@ -43,7 +43,7 @@ public class RegionArmySlot
 		armyAmount = 0;
 	}
 
-	public virtual string ToString(){
+	public override string ToString(){
 		return "["+ armyType +"]:[units="+armyAmount+"]";
 	}
 }
