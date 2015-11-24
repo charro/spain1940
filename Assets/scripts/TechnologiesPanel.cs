@@ -17,6 +17,7 @@ public class TechnologiesPanel : MonoBehaviour {
 
 	void OnEnable(){
 		technologyDetailPanel.SetActive (false);
+		EnableAvailableTechnologies ();
 	}
 
 	public void Hide(){
@@ -25,5 +26,14 @@ public class TechnologiesPanel : MonoBehaviour {
 
 	public void ShowTechnologyDetails(Technology technology){
 		technologyDetailPanel.GetComponent<TechnologyDetailPanel> ().OpenDetailResearchPanel (technology);
+	}
+
+	public void EnableAvailableTechnologies(){
+		foreach(TechnologyButton button in GetComponentsInChildren<TechnologyButton>()){
+			Technology technology = button.associatedTechnology;
+			bool enableButton = technology.alreadyResearched || technology.AreParentsResearched();
+
+			button.interactable = enableButton;
+		}
 	}
 }

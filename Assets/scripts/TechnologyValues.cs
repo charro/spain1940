@@ -21,4 +21,8 @@ public class TechnologyValues : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	public Technology GetTechnology(TechnologyType type){
+		return technologiesDictionary[type];
+	}
 }

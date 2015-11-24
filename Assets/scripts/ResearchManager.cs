@@ -59,5 +59,11 @@ public class ResearchManager : MonoBehaviour {
 
 	private void ResearchFinished(){
 		FindObjectOfType<PopUpMessages> ().ShowDropDownMessageForSecs ("TECHNOLOGY " + currentResearchedTechnology + " finished", 5);
+		currentResearchedTechnology.alreadyResearched = true;
+		currentResearchedTechnology = null;
+	}
+
+	public bool IsAlreadyResearched(TechnologyType technologyType){
+		return FindObjectOfType<TechnologyValues> ().GetTechnology (technologyType).alreadyResearched;
 	}
 }

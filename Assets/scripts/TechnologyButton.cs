@@ -10,8 +10,9 @@ public class TechnologyButton : Button {
 	public override void OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData)
 	{
 		base.OnPointerClick (eventData);
-		associatedTechnology.OpenTechnologyDetail ();
-		Debug.Log ("CHORRA !!");
+		if(interactable){
+			associatedTechnology.OpenTechnologyDetail ();
+		}
 	}
 
 }

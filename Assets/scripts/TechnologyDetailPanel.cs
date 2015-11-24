@@ -9,6 +9,7 @@ public class TechnologyDetailPanel : MonoBehaviour {
 	public Text turnsNeeded;
 	public Text description;
 	public Text actionsNeeded;
+	public Button doResearchButton;
 
 	// Use this for initialization
 	void Start () {
@@ -30,6 +31,11 @@ public class TechnologyDetailPanel : MonoBehaviour {
 		actionsNeeded.text = technology.actionsNeeded + "";
 
 		FindObjectOfType<ResearchManager> ().SetSelectedTechnology (technology);
+
+		doResearchButton.interactable = IsResearchEnabled (technology);
 	}
 
+	private bool IsResearchEnabled(Technology technology){
+		return !technology.alreadyResearched;
+	}
 }
