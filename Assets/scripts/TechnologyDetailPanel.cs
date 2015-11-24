@@ -1,7 +1,14 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class TechnologyDetailPanel : MonoBehaviour {
+
+	public Image image;
+	public Text name;
+	public Text turnsNeeded;
+	public Text description;
+	public Text actionsNeeded;
 
 	// Use this for initialization
 	void Start () {
@@ -13,7 +20,16 @@ public class TechnologyDetailPanel : MonoBehaviour {
 	
 	}
 
-	public void OpenConfirmResearchPanel(int technologyId){
+	public void OpenDetailResearchPanel(Technology technology){
 		gameObject.SetActive (true);
+		// Set here all info concerning this technology
+		image.sprite = technology.technologySprite;
+		name.text = technology.name;
+		turnsNeeded.text = "It will take " + technology.turnsNeeded + " turns";
+		description.text = technology.description;
+		actionsNeeded.text = technology.actionsNeeded + "";
+
+		FindObjectOfType<ResearchManager> ().SetSelectedTechnology (technology);
 	}
+
 }

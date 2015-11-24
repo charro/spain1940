@@ -38,6 +38,10 @@ public class PopUp : MonoBehaviour {
 			titleText.text = "Confirm Spy Region";
 			bodyText.text = "This will consum 1 Action Point. Do you confirm to send the spy ?";	
 			break;
+		case PopUpType.ConfirmResearch:
+			titleText.text = "Confirm New Research";
+			bodyText.text = "This will consum 1 Action Point. Do you confirm to start this research ?";	
+			break;
 		}
 	}
 
@@ -57,6 +61,9 @@ public class PopUp : MonoBehaviour {
 		case PopUpType.ConfirmNewSpy:
 				FindObjectOfType<SpyManager>().AddNewSpy();
 				break;
+		case PopUpType.ConfirmResearch:
+				FindObjectOfType<ResearchManager>().StartResearchingTechnology();
+				break;
 		}
 	}
 
@@ -67,6 +74,7 @@ public class PopUp : MonoBehaviour {
 			case PopUpType.ConfirmPassTurn:
 			case PopUpType.ConfirmRecruitment:
 			case PopUpType.ConfirmBuild:
+			case PopUpType.ConfirmResearch:
 				break;
 			case PopUpType.ConfirmNewSpy:
 				FindObjectOfType<SpyManager>().EndNewSpyCreation();

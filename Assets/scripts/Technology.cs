@@ -1,10 +1,20 @@
-using System;
+using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
-[System.Flags]
-public enum Technology
+public class Technology: MonoBehaviour
 {
-	None=-1,
-	MilitaryEngineering=0,
-	Spy,
-	BulletProofArmor
+	public TechnologyType technologyType;
+	public  TechnologyType[] parentTechnologies;
+	public string name;
+	public bool alreadyResearched;
+	public Sprite technologySprite;
+	public int turnsNeeded;
+	[TextArea(3,10)]
+	public string description;
+	public int actionsNeeded;
+
+	public void OpenTechnologyDetail(){
+		FindObjectOfType<TechnologiesPanel> ().ShowTechnologyDetails (this);
+	}
 }

@@ -18,4 +18,12 @@ public class TechnologiesPanel : MonoBehaviour {
 	void OnEnable(){
 		technologyDetailPanel.SetActive (false);
 	}
+
+	public void Hide(){
+		gameObject.SetActive (false);
+	}
+
+	public void ShowTechnologyDetails(Technology technology){
+		technologyDetailPanel.GetComponent<TechnologyDetailPanel> ().OpenDetailResearchPanel (technology);
+	}
 }

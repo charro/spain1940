@@ -24,4 +24,8 @@ public class ResearchSpyPanel : MonoBehaviour {
 		// Refresh All Spying Info
 		spiesPanel.GetComponent<SpiesPanel> ().RefreshSpiesInfo ();
 	}
+
+	public void Hide(){
+		gameObject.SetActive (false);
+	}
 }

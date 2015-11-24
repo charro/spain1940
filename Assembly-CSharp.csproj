@@ -82,7 +82,9 @@
      <Compile Include="Assets\scripts\SpyingValues.cs" />
      <Compile Include="Assets\scripts\TechnologiesPanel.cs" />
      <Compile Include="Assets\scripts\Technology.cs" />
+     <Compile Include="Assets\scripts\TechnologyButton.cs" />
      <Compile Include="Assets\scripts\TechnologyDetailPanel.cs" />
+     <Compile Include="Assets\scripts\TechnologyType.cs" />
      <Compile Include="Assets\scripts\TechnologyValues.cs" />
      <Compile Include="Assets\scripts\UIManager.cs" />
      <Compile Include="Assets\scripts\YesNoCallback.cs" />
