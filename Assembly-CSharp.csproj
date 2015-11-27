@@ -67,6 +67,8 @@
      <Compile Include="Assets\scripts\PopUp.cs" />
      <Compile Include="Assets\scripts\PopUpMessages.cs" />
      <Compile Include="Assets\scripts\PopUpType.cs" />
+     <Compile Include="Assets\scripts\RecruitListItem.cs" />
+     <Compile Include="Assets\scripts\RecruitPanel.cs" />
      <Compile Include="Assets\scripts\RecruitedUnitGroup.cs" />
      <Compile Include="Assets\scripts\RecruitmentManager.cs" />
      <Compile Include="Assets\scripts\Region.cs" />

@@ -16,15 +16,21 @@ public class RecruitmentManager : MonoBehaviour {
 
 	private EconomyManager economyManager;
 
+	private int spentRecruitmentPoints;
+
 	// Use this for initialization
 	void Start () {
-		ResetUnits ();
 		economyManager = FindObjectOfType<EconomyManager>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		recruitmentPointsText.text = "" + economyManager.getRecruitmentPoints();
+
+	}
+
+	public void RestartUI(){
+		ResetUnits ();
+		UpdateRecruitmentPointsText ();
 	}
 
 	public void AddToUnit(int unitTypeInt){
@@ -32,6 +38,13 @@ public class RecruitmentManager : MonoBehaviour {
 	}
 
 	public void AddToUnit(ArmyType unitType){
+
+		// First check if there are enough resources to perform Recruit
+		if(!economyManager.haveEnoughRecruitmentPoints(FindObjectOfType<ArmyValues>().armyPricesDictionary[unitType])){
+			Animator textAnimation = recruitmentPointsText.GetComponent<Animator>();
+			textAnimation.SetTrigger("trigger");
+			return;
+		}
 
 		GameObject selectedUnitGroupGameObject = null;
 
@@ -71,7 +84,11 @@ public class RecruitmentManager : MonoBehaviour {
 			selectedUnitGroupGameObject.GetComponent<RecruitedUnitGroup>() as RecruitedUnitGroup;
 		selectedUnitGroup.AddUnit ();
 
-		economyManager.decreaseRecruitmentPoints (FindObjectOfType<ArmyValues>().armyPricesDictionary[unitType]);
+		int recruitmentPointsNeeded = FindObjectOfType<ArmyValues> ().armyPricesDictionary [unitType];
+		economyManager.decreaseRecruitmentPoints (recruitmentPointsNeeded);
+		spentRecruitmentPoints += recruitmentPointsNeeded;
+		// Update UI Recruitment Points Text
+		UpdateRecruitmentPointsText ();
 	}
 
 	public void OnRemoveUnit(RecruitedUnitGroup unit){
@@ -88,6 +105,7 @@ public class RecruitmentManager : MonoBehaviour {
 		}
 
 		recruitedUnitGroupList = new ArrayList ();
+		spentRecruitmentPoints = 0;
 	}
 
 	// Place the units to their proper place inside the container
@@ -153,6 +171,11 @@ public class RecruitmentManager : MonoBehaviour {
 	 * Rollback all changes and come back */
 	public void CancelRecruitment(){
 		FindObjectOfType<GameManager> ().ShowMapAndHUD();
+		// Restore the spent recruitment points
+		economyManager.addRecruitmentPoints (spentRecruitmentPoints);
 	}
-	
+
+	private void UpdateRecruitmentPointsText(){
+		recruitmentPointsText.text = "" + economyManager.getRecruitmentPoints();
+	}
 }

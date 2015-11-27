@@ -53,8 +53,12 @@ public class EconomyManager : MonoBehaviour {
 		recruitmentPoints -= amount;
 	}
 
-	public bool haveEnoughActionsPoints(int points){
-		return availableActionPointsForThisTurn >= points;
+	public bool haveEnoughActionsPoints(int pointsNeeded){
+		return availableActionPointsForThisTurn >= pointsNeeded;
+	}
+
+	public bool haveEnoughRecruitmentPoints(int pointsNeeded){
+		return recruitmentPoints >= pointsNeeded;
 	}
 
 	public int getAvailableActionPoints(){
