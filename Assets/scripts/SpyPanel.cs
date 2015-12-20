@@ -10,7 +10,9 @@ public class SpyPanel : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		// Suscribe to different events
+		EventManager.OnNoMoreActions += DisableNewSpyButton;
+		EventManager.OnPassTurn += PassedTurn;
 	}
 	
 	// Update is called once per frame
@@ -28,4 +30,15 @@ public class SpyPanel : MonoBehaviour {
 			regionImage.GetComponent<Image>().sprite = spy.spiedRegion.naziRegionSprite;
 		}
 	}
+
+	// Enable/Disable the new Spy button (usually because there are no actions available)
+	public void DisableNewSpyButton(){
+		newSpyButton.GetComponent<Button> ().interactable = false;
+	}
+
+	// Called automatically by Event Manager
+	public void PassedTurn(){
+		newSpyButton.GetComponent<Button> ().interactable = true;
+	}
+
 }

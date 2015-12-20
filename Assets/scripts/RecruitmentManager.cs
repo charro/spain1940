@@ -92,7 +92,10 @@ public class RecruitmentManager : MonoBehaviour {
 	}
 
 	public void OnRemoveUnit(RecruitedUnitGroup unit){
-		economyManager.addRecruitmentPoints(FindObjectOfType<ArmyValues>().armyPricesDictionary[unit.UnitType]);
+		int unitPrice = FindObjectOfType<ArmyValues> ().armyPricesDictionary [unit.UnitType];
+		economyManager.addRecruitmentPoints(unitPrice);
+		spentRecruitmentPoints -= unitPrice;
+		UpdateRecruitmentPointsText ();
 
 		if(unit.UnitAmount <= 0){
 			RemoveEmptyRecruitedGroups ();

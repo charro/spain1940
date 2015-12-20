@@ -76,6 +76,7 @@ public class EconomyManager : MonoBehaviour {
 
 		if(availableActionPointsForThisTurn == 0){
 			FindObjectOfType<PopUpMessages>().ShowDropDownMessageForSecs("You have finished all your actions for this turn", 5f);
+			EventManager.TriggerNoMoreActionsEvent();
 		}
 	}
 

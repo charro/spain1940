@@ -28,4 +28,5 @@ public class ResearchSpyPanel : MonoBehaviour {
 	public void Hide(){
 		gameObject.SetActive (false);
 	}
+	
 }

@@ -12,6 +12,9 @@ public class EventManager : MonoBehaviour {
 	public delegate void PassTurnAction();
 	public static event PassTurnAction OnPassTurn;
 
+	public delegate void NoMoreActionPointsAction();
+	public static event NoMoreActionPointsAction OnNoMoreActions;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -36,4 +39,9 @@ public class EventManager : MonoBehaviour {
 		}
 	}
 
+	public static void TriggerNoMoreActionsEvent(){
+		if(OnNoMoreActions != null){
+			OnNoMoreActions();
+		}
+	}
 }
