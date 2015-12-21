@@ -23,6 +23,8 @@ public class ResearchSpyPanel : MonoBehaviour {
 		newSpyPanel.SetActive (false);
 		// Refresh All Spying Info
 		spiesPanel.GetComponent<SpiesPanel> ().RefreshSpiesInfo ();
+		// Refresh Research Info
+		researchPanel.GetComponent<ResearchPanel> ().RefreshWithCurrentResearch ();
 	}
 
 	public void Hide(){

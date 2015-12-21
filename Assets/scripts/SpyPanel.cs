@@ -13,6 +13,9 @@ public class SpyPanel : MonoBehaviour {
 		// Suscribe to different events
 		EventManager.OnNoMoreActions += DisableNewSpyButton;
 		EventManager.OnPassTurn += PassedTurn;
+		if(!FindObjectOfType<EconomyManager>().isAnyActionPointAvailable()){
+			DisableNewSpyButton();
+		}
 	}
 	
 	// Update is called once per frame

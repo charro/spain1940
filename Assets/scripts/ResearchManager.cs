@@ -30,8 +30,14 @@ public class ResearchManager : MonoBehaviour {
 	}
 
 	public void StartResearchingTechnology(){
+		// Set as current researched technology
 		currentResearchedTechnology =  lastSelectedTechnology;
 		turnsToEndResearching = currentResearchedTechnology.turnsNeeded;
+
+		// Decrease corresponding action points
+		FindObjectOfType<EconomyManager> ().decreaseActionPoints (currentResearchedTechnology.actionsNeeded);
+
+		// Update all GUI components
 		FindObjectOfType<TechnologiesPanel> ().Hide ();
 		FindObjectOfType<ResearchSpyPanel> ().Hide ();
 		FindObjectOfType<HUD> ().Refresh ();

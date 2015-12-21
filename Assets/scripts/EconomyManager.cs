@@ -61,6 +61,10 @@ public class EconomyManager : MonoBehaviour {
 		return recruitmentPoints >= pointsNeeded;
 	}
 
+	public bool isAnyActionPointAvailable(){
+		return availableActionPointsForThisTurn > 0;
+	}
+
 	public int getAvailableActionPoints(){
 		return availableActionPointsForThisTurn;
 	}

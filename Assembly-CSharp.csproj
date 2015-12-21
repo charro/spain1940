@@ -45,7 +45,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\ResearchPanel.cs" />
      <Compile Include="Assets\scripts\ArmyManager.cs" />
      <Compile Include="Assets\scripts\ArmyType.cs" />
      <Compile Include="Assets\scripts\ArmyValues.cs" />
@@ -76,6 +75,7 @@
      <Compile Include="Assets\scripts\RegionArmySlot.cs" />
      <Compile Include="Assets\scripts\RegionType.cs" />
      <Compile Include="Assets\scripts\ResearchManager.cs" />
+     <Compile Include="Assets\scripts\ResearchPanel.cs" />
      <Compile Include="Assets\scripts\ResearchSpyPanel.cs" />
      <Compile Include="Assets\scripts\SpiedRegionInfo.cs" />
      <Compile Include="Assets\scripts\SpiesPanel.cs" />
