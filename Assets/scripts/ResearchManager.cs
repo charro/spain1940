@@ -72,4 +72,8 @@ public class ResearchManager : MonoBehaviour {
 	public bool IsAlreadyResearched(TechnologyType technologyType){
 		return FindObjectOfType<TechnologyValues> ().GetTechnology (technologyType).alreadyResearched;
 	}
+
+	public int GetRemainingTurnsToEndResearch(){
+		return turnsToEndResearching;
+	}
 }

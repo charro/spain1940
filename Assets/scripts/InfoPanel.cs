@@ -8,6 +8,11 @@ public class InfoPanel : MonoBehaviour {
 	public Sprite unknownArmySprite;
 	public GameObject[] unitSlots;
 
+	public Text regionMilitaryProduction;
+	public Text totalMilitaryProduction;
+	public Text regionActionProduction;
+	public Text totalActionProduction;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -20,7 +25,9 @@ public class InfoPanel : MonoBehaviour {
 
 	public void UpdatePanelValues(){
 		GameManager gameManager = FindObjectOfType<GameManager> ();
+		EconomyManager economyManager = FindObjectOfType<EconomyManager> ();
 		Region selectedRegion = gameManager.GetSelectedRegion ();
+
 		if (selectedRegion == null) {
 			Debug.LogError ("InfoPanel: Update called, but no region selected !!");
 		} else {
@@ -40,6 +47,10 @@ public class InfoPanel : MonoBehaviour {
 							FindObjectOfType<ArmyValues>().armySpritesDictionary[armySlots[i].armyType];
 					}
 				}
+
+				// Production Info
+				regionActionProduction.text = "" + selectedRegion.GetActionGenerationPoints();
+				totalActionProduction.text = "" + economyManager.GetTotalActionGenerationPoints();
 			}
 			// For Nazi owned, only show spied values or Unknown if no spied values available
 			else{

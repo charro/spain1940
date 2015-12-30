@@ -31,7 +31,8 @@ public class ResearchPanel : MonoBehaviour {
 	}
 
 	public void RefreshWithCurrentResearch(){
-		Technology currentResearchedTechnology = FindObjectOfType<ResearchManager> ().GetCurrentResearchedTechnology ();
+		ResearchManager researchManager = FindObjectOfType<ResearchManager> ();
+		Technology currentResearchedTechnology = researchManager.GetCurrentResearchedTechnology ();
 
 		bool thereIsACurrentTechnology = currentResearchedTechnology != null && 
 			currentResearchedTechnology.technologyType != TechnologyType.None;
@@ -40,7 +41,8 @@ public class ResearchPanel : MonoBehaviour {
 		newResearchButton.gameObject.SetActive(!thereIsACurrentTechnology);
 
 		if(thereIsACurrentTechnology){
-			ResearchInProgressText.text = "Researched Technology: " + currentResearchedTechnology.name;
+			ResearchInProgressText.text = currentResearchedTechnology.name + "\n " + 
+				researchManager.GetRemainingTurnsToEndResearch() + " Turns to End ";
 			ResearchInProgressImage.sprite = currentResearchedTechnology.technologySprite;
 		}
 

@@ -16,6 +16,9 @@ public class EconomyManager : MonoBehaviour {
 	// Maximum actions per turn (upgradable making action buildings)
 	private int maximumActionsPerTurn;
 
+	// Total action generation points of all our Regions
+	private int totalActionGenerationPoints;
+
 /*	private static EconomyManager GetSingleton()
 	{
 		if(singleton == null){
@@ -69,6 +72,10 @@ public class EconomyManager : MonoBehaviour {
 		return availableActionPointsForThisTurn;
 	}
 
+	public int GetTotalActionGenerationPoints(){
+		return totalActionGenerationPoints;
+	}
+
 	public void decreaseActionPoints(int amount){
 		if(availableActionPointsForThisTurn < amount){
 			Debug.Log("WARNING: Trying to decrease " + amount + " Action points when only " + availableActionPointsForThisTurn + " available");
@@ -90,23 +97,19 @@ public class EconomyManager : MonoBehaviour {
 
 	// After any change in region buildings, recalculate the maximum points
 	public void recalculateMaximumActionsPerTurn(){
-		Dictionary<RegionType, Region> allRegions = FindObjectOfType<GameManager> ().GetAllRegions ();
 		BuildValues buildValues = FindObjectOfType<BuildValues> ();
+		Dictionary<RegionType, Region> allRegions = FindObjectOfType<GameManager> ().GetAllRegions ();
 
 		int accumulatedActionGenerationPointsOfAllRegions = 0;
 
 		 foreach(RegionType regionType in allRegions.Keys){
 			Region region = allRegions[regionType];
 			if(!region.isNazi){
-				int actionGenerationLevel = region.GetActionGenerationLevel();
-				for(int i=0; i<buildValues.actionBuildingsList.Length; i++){
-					// If this building is built in this region, add its action generation points to the 
-					if(actionGenerationLevel > (int)buildValues.actionBuildingsList[i]){
-						accumulatedActionGenerationPointsOfAllRegions += buildValues.actionGenerationPointsPerBuilding[i];
-					}
-				}
+				accumulatedActionGenerationPointsOfAllRegions += region.GetActionGenerationPoints();
 			}
 		}
+
+		totalActionGenerationPoints = accumulatedActionGenerationPointsOfAllRegions;
 
 		// Once all points from all regions are accumulated, check which Treshold are we reaching with it
 		int actionPointsToAdd = 0;
@@ -117,7 +120,7 @@ public class EconomyManager : MonoBehaviour {
 			}
 		}
 
-		// We add the minimum to the recalculated and show a message if we increased Action Points
+		// We add the minimum to the recalculated amount and show a message if we increased max Action Points
 		int oldMaximum = maximumActionsPerTurn;
 		maximumActionsPerTurn = actionPointsToAdd + INITIAL_MAXIMUM_ACTIONS;
 

@@ -138,6 +138,20 @@ public class Region : MonoBehaviour {
 		}
 	}
 
+	public int GetActionGenerationPoints(){
+		BuildValues buildValues = FindObjectOfType<BuildValues> ();
+		int actionGenerationPoints = 0;
+
+		for(int i=0; i<buildValues.actionBuildingsList.Length; i++){
+			// If this building is built in this region, add its action generation points to the 
+			if(actionGenerationLevel > (int)buildValues.actionBuildingsList[i]){
+				actionGenerationPoints += buildValues.actionGenerationPointsPerBuilding[i];
+			}
+		}
+
+		return actionGenerationPoints;
+	}
+
 	public int GetActionGenerationLevel(){
 		return actionGenerationLevel;
 	}
