@@ -128,4 +128,18 @@ public class EconomyManager : MonoBehaviour {
 			FindObjectOfType<PopUpMessages>().ShowDropDownMessageForSecs("COOL !! Now you have " + maximumActionsPerTurn + " Actions per turn !!" , 5f);
 		}
 	}
+
+	public int GetActionPointsThresholdForNextLevel(){
+		BuildValues buildValues = FindObjectOfType<BuildValues> ();
+		int currentTotalActionPoints = GetTotalActionGenerationPoints ();
+
+		foreach(int threshold in buildValues.actionGenerationPointsThresholds){
+			if(currentTotalActionPoints < threshold){
+				return threshold;
+			}
+		}
+
+		// Not found, just return 0 => This should never happen
+		return 0;
+	}
 }

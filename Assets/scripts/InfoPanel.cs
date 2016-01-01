@@ -76,4 +76,5 @@ public class InfoPanel : MonoBehaviour {
 			}
 		}
 	}
+
 }
