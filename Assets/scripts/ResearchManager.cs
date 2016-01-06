@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class ResearchManager : MonoBehaviour {
@@ -36,12 +36,9 @@ public class ResearchManager : MonoBehaviour {
 
 		// Decrease corresponding action points
 		FindObjectOfType<EconomyManager> ().decreaseActionPoints (currentResearchedTechnology.actionsNeeded);
+		FindObjectOfType<DropDownMessages> ().ShowDropDownMessageForSecs ("RESEARCH OF TECHNOLOGY " + currentResearchedTechnology + " STARTED", 5);
 
-		// Update all GUI components
-		FindObjectOfType<TechnologiesPanel> ().Hide ();
-		FindObjectOfType<ResearchSpyPanel> ().Hide ();
-		FindObjectOfType<HUD> ().Refresh ();
-		FindObjectOfType<PopUpMessages> ().ShowDropDownMessageForSecs ("RESEARCH OF TECHNOLOGY " + currentResearchedTechnology + " STARTED", 5);
+		FindObjectOfType<GameStateMachine> ().SwitchToState (GameState.IdleMapState);
 	}
 
 	public bool IsAnyTechnologyBeingResearched(){
@@ -64,7 +61,7 @@ public class ResearchManager : MonoBehaviour {
 	}
 
 	private void ResearchFinished(){
-		FindObjectOfType<PopUpMessages> ().ShowDropDownMessageForSecs ("TECHNOLOGY " + currentResearchedTechnology + " finished", 5);
+		FindObjectOfType<DropDownMessages> ().ShowDropDownMessageForSecs ("TECHNOLOGY " + currentResearchedTechnology + " finished", 5);
 		currentResearchedTechnology.alreadyResearched = true;
 		currentResearchedTechnology = null;
 	}

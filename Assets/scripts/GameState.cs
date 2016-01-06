@@ -1,9 +1,9 @@
 [System.Flags]
 public enum GameState
 {
-	IdleMapState,
-	ActionsGUIState,
-	MoveTroopsState,
-	AttackState,
-	NewSpyState
+	IdleMapState=0,
+	ActionsGUIState=1,
+	MoveTroopsState=2,
+	AttackState=3,
+	NewSpyState=4
 }

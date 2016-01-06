@@ -39,7 +39,7 @@ public class SpyManager : MonoBehaviour {
 				newSpy.InitializeSpy(lastSelectedSpiedRegion, lastSelectedSpyLevel);
 				activeSpies[i] = newSpy;
 				FindObjectOfType<EconomyManager>().decreaseActionPoints(1);
-				FindObjectOfType<PopUpMessages>().
+				FindObjectOfType<DropDownMessages>().
 						ShowDropDownMessageForSecs("Spy of level " + lastSelectedSpyLevel + 
 					                           " on his way to region " + lastSelectedSpiedRegion.name, 5);
 				EndNewSpyCreation ();

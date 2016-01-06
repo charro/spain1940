@@ -42,6 +42,11 @@ public class PopUp : MonoBehaviour {
 			titleText.text = "Confirm New Research";
 			bodyText.text = "This will consum 1 Action Point. Do you confirm to start this research ?";	
 			break;
+		case PopUpType.ConfirmAttack:
+			CombatManager combatManager = FindObjectOfType<CombatManager>();
+			titleText.text = "Confirm Attack " + combatManager.GetAttackedRegion() + " from " + combatManager.GetAttackingRegion();
+			bodyText.text = "This will consum 1 Action Point. Do you confirm to start the attack ?";	
+			break;
 		}
 	}
 
@@ -64,6 +69,9 @@ public class PopUp : MonoBehaviour {
 		case PopUpType.ConfirmResearch:
 				FindObjectOfType<ResearchManager>().StartResearchingTechnology();
 				break;
+		case PopUpType.ConfirmAttack:
+			FindObjectOfType<CombatManager>().StartCombat();
+			break;
 		}
 	}
 

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -86,7 +86,7 @@ public class EconomyManager : MonoBehaviour {
 		}
 
 		if(availableActionPointsForThisTurn == 0){
-			FindObjectOfType<PopUpMessages>().ShowDropDownMessageForSecs("You have finished all your actions for this turn", 5f);
+			FindObjectOfType<DropDownMessages>().ShowDropDownMessageForSecs("You have finished all your actions for this turn", 5f);
 			EventManager.TriggerNoMoreActionsEvent();
 		}
 	}
@@ -125,7 +125,7 @@ public class EconomyManager : MonoBehaviour {
 		maximumActionsPerTurn = actionPointsToAdd + INITIAL_MAXIMUM_ACTIONS;
 
 		if(maximumActionsPerTurn > oldMaximum){
-			FindObjectOfType<PopUpMessages>().ShowDropDownMessageForSecs("COOL !! Now you have " + maximumActionsPerTurn + " Actions per turn !!" , 5f);
+			FindObjectOfType<DropDownMessages>().ShowDropDownMessageForSecs("COOL !! Now you have " + maximumActionsPerTurn + " Actions per turn !!" , 5f);
 		}
 	}
 

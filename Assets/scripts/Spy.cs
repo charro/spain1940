@@ -52,7 +52,7 @@ public class Spy: ScriptableObject
 
 		spiedRegion.RecalculateSpiedInfo (chanceOfFindingArmyType, chanceOfFindingArmyAmount);
 
-		FindObjectOfType<PopUpMessages> ().ShowDropDownMessageForSecs ("Spying in Region " + spiedRegion.name + " finished", 5);
+		FindObjectOfType<DropDownMessages> ().ShowDropDownMessageForSecs ("Spying in Region " + spiedRegion.name + " finished", 5);
 
 		EventManager.OnPassTurn -= PassTurn;
 

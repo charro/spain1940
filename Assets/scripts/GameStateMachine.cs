@@ -9,14 +9,10 @@ public class GameStateMachine : MonoBehaviour {
 
 	private GameState previousState;
 	private GameState currentState;
-	private GameManager gameManager;
-	private Messages messages;
 
 	// Use this for initialization
 	void Start () {
 		currentState = GameState.IdleMapState;
-		gameManager = FindObjectOfType<GameManager> ();
-		messages = FindObjectOfType<Messages> ();
 	}
 	
 	// Update is called once per frame
@@ -52,11 +48,14 @@ public class GameStateMachine : MonoBehaviour {
 			case GameState.NewSpyState:
 				EnterNewSpyState();
 				break;
+		case GameState.AttackState:
+				EnterAttackState();
+				break;
 		}
 	}
 
 	void EnterIdleMapState(){
-		gameManager.ShowMapAndHUD ();
+		FindObjectOfType<GameManager>().ShowMapAndHUD ();
 	}
 
 	void EnterActionsGUIState(){
@@ -64,6 +63,7 @@ public class GameStateMachine : MonoBehaviour {
 	}
 
 	void EnterMoveTroopsState(){
+		GameManager gameManager = FindObjectOfType<GameManager> ();
 		Region fromRegion = gameManager.GetSelectedRegion();
 
 		gameManager.ShowMapAllRegionsDisabled ();
@@ -77,16 +77,24 @@ public class GameStateMachine : MonoBehaviour {
 		}
 
 		// Show the corresponding messages
-		messages.showWhereToMoveText ();
+		FindObjectOfType<ScreenMessages>().showWhereToMoveText ();
 
 		// Set where to move the troops from
 		FindObjectOfType<MoveTroopsManager> ().SetFromRegion (fromRegion);
 	}
 
 	void EnterNewSpyState(){
-		gameManager.ShowMapEnemyNonSpiedRegionsOnly ();
+		FindObjectOfType<GameManager>().ShowMapEnemyNonSpiedRegionsOnly ();
 		// Show the corresponding messages
-		messages.showWhereToSpyText ();
+		FindObjectOfType<ScreenMessages>().showWhereToSpyText ();
+	}
+
+	void EnterAttackState(){
+		GameManager gameManager = FindObjectOfType<GameManager> ();
+		FindObjectOfType<CombatManager> ().SetAttackedRegion(gameManager.GetSelectedRegion());
+		gameManager.ShowMapPossibleAttackersOfCurrentSelectedRegionOnly();
+		// Show the corresponding messages
+		FindObjectOfType<ScreenMessages>().showWhereToAttackText();
 	}
 
 	public void OnRegionTouched(Region region){
@@ -110,6 +118,11 @@ public class GameStateMachine : MonoBehaviour {
 			Debug.Log("Region touched while we are on NewSpyState. Region selected to send spy to: " + region.name);
 			// Confirm where to send the spy
 			FindObjectOfType<SpyManager>().ConfirmAddNewSpyToRegion(region);
+			break;
+		case GameState.AttackState:
+			Debug.Log("Region touched while we are on AttackState. Region selected to send attack from: " + region.name);
+			// Confirm where to send attack from
+			FindObjectOfType<CombatManager>().ConfirmStartAttackFrom(region);
 			break;
 		}
 	}

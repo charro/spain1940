@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour {
-
-	// How many turns do we have passed yet
+	
+	// How many turns do we have yet passed
 	private int currentTurnNumber;
 
 	// The region that we are currently working in
@@ -53,6 +53,19 @@ public class GameManager : MonoBehaviour {
 
 	public void ShowMapEnemyNonSpiedRegionsOnly(){
 		EnableOnlyRegionsWithParameters (true, true);
+	}
+
+	public void ShowMapPossibleAttackersOfCurrentSelectedRegionOnly(){
+		Region currentSelectedRegion = selectedRegion;
+		// Hide GUI Panels, and show region Map with all regions disabled
+		ShowMapAllRegionsDisabled ();
+
+		// Enable neighbour owned regions with troops
+		foreach (Region region in GetRegionsBorderingRegion(currentSelectedRegion)) {
+			if(!region.isNazi && region.HasAnyTroops()){
+				region.Enable();
+			}
+		}
 	}
 
 	public void EnableOnlyRegionsWithParameters(bool onlyEnemy, bool onlyNonSpied){
@@ -141,6 +154,15 @@ public class GameManager : MonoBehaviour {
 		// No GUI shown over the map. We can touch the region
 		else{
 			return true;
+		}
+	}
+
+	public Region[] GetRegionsBorderingSelectedRegion(){
+		if(selectedRegion != null){
+			return GetRegionsBorderingRegion (selectedRegion);
+		}
+		else{
+			return new Region[0];
 		}
 	}
 

@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class PopUpMessages : MonoBehaviour {
+public class DropDownMessages : MonoBehaviour {
 
 	public GameObject messagesPanel;
 
@@ -23,7 +23,9 @@ public class PopUpMessages : MonoBehaviour {
 	public void ShowDropDownMessageForSecs(string message, float secs){
 		StartCoroutine (ShowPopUpMessageForSecs(message, secs));
 	}
-	
+
+
+	/*********************  PRIVATE METHODS *****************************************/
 	private IEnumerator ShowPopUpMessageForSecs(string message, float secs){
 		ShowPopUpMessage (message);
 		yield return new WaitForSeconds (secs);

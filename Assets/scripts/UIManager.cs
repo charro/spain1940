@@ -19,6 +19,7 @@ public class UIManager : MonoBehaviour {
 	public GameObject loadingScreen;
 	public GameObject popUpPanel;
 	public GameObject researchSpyPanel;
+	public GameObject technologiesPanel;
 
 	public Material defaultSpriteMaterial;
 	public Material disabledSpriteMaterial;
@@ -93,6 +94,7 @@ public class UIManager : MonoBehaviour {
 
 	public static void ShowHUDPanel(){
 		singleton.HUDPanel.SetActive (true);
+		singleton.HUDPanel.GetComponent<HUD> ().Refresh ();
 	}
 
 	public static void ShowResearchSpyPanel(){
@@ -128,6 +130,7 @@ public class UIManager : MonoBehaviour {
 		singleton.messagesPanel.SetActive (false);
 		singleton.loadingScreen.SetActive (false);
 		singleton.researchSpyPanel.SetActive (false);
+		singleton.technologiesPanel.SetActive (false);
 	}
 
 	public static bool IsMainActionsShown(){
