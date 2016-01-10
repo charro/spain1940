@@ -23,7 +23,7 @@ public class ObjectClickChecker : MonoBehaviour {
 				 platform == RuntimePlatform.LinuxEditor || 
 			     platform == RuntimePlatform.LinuxPlayer){
 			if(Input.GetMouseButtonDown(0)) {
-				Debug.Log("Clicked found in position " + Input.mousePosition);
+				// Debug.Log("Clicked found in position " + Input.mousePosition);
 				checkTouch(Input.mousePosition);
 			}
 		}

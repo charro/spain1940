@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour {
 	public GameObject midBackground;
 	public GameObject midBackgroundEnemy;
 	public GameObject moveTroopsPanel;
-	public GameObject messagesPanel;
+	public GameObject onMapMessagesPanel;
 	public GameObject loadingScreen;
 	public GameObject popUpPanel;
 	public GameObject researchSpyPanel;
@@ -85,11 +85,11 @@ public class UIManager : MonoBehaviour {
 	}
 
 	public static OnMapMessages GetOnMapMessagesPanel(){
-		return singleton.messagesPanel.GetComponent<OnMapMessages> ();
+		return singleton.onMapMessagesPanel.GetComponent<OnMapMessages> ();
 	}
 
-	public static void ShowMessagesPanel(){
-		singleton.messagesPanel.SetActive (true);
+	public static void ShowOnMapMessagesPanel(){
+		singleton.onMapMessagesPanel.SetActive (true);
 	}
 
 	public static void ShowMoveTroopsPanel(){
@@ -131,7 +131,7 @@ public class UIManager : MonoBehaviour {
 		singleton.buildPanel.SetActive(false);
 		singleton.moveTroopsPanel.SetActive(false);
 		singleton.HUDPanel.SetActive (false);
-		singleton.messagesPanel.SetActive (false);
+		singleton.onMapMessagesPanel.SetActive (false);
 		singleton.loadingScreen.SetActive (false);
 		singleton.researchSpyPanel.SetActive (false);
 		singleton.technologiesPanel.SetActive (false);

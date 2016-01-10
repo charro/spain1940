@@ -29,11 +29,11 @@ public class OnMapMessages : MonoBehaviour {
 	}
 
 	public void showWhereToAttackText(){
-		showBottomRightText ("Choose from where to send attack");
+		showBottomRightText ("Choose FROM where to send attack");
 	}
 
 	public void showBottomRightText(string textToShow){
-		UIManager.ShowMessagesPanel();
+		UIManager.ShowOnMapMessagesPanel();
 		bottomRightText.GetComponent<Text> ().text = textToShow;
 		bottomRightText.SetActive(true);
 	}

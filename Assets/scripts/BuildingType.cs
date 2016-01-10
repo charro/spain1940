@@ -4,6 +4,9 @@ using System;
 public enum BuildingType
 {
 	Workshop,
-	Cooperative,
-	Factory
+	Factory,
+	ResearchFacilities,
+	MilitaryBarracks,
+	MilitaryBase,
+	MilitaryHQ
 }
