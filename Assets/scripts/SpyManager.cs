@@ -51,7 +51,7 @@ public class SpyManager : MonoBehaviour {
 	}
 
 	public void EndNewSpyCreation(){
-		FindObjectOfType<GameStateMachine> ().SwitchToState (GameState.IdleMapState);
+		FindObjectOfType<GameManager>().EndActionAndShowMap();
 	}
 
 	public void RemoveSpy(Spy spyToRemove){

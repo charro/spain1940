@@ -84,6 +84,10 @@ public class UIManager : MonoBehaviour {
 		info.UpdatePanelValues ();
 	}
 
+	public static OnMapMessages GetOnMapMessagesPanel(){
+		return singleton.messagesPanel.GetComponent<OnMapMessages> ();
+	}
+
 	public static void ShowMessagesPanel(){
 		singleton.messagesPanel.SetActive (true);
 	}

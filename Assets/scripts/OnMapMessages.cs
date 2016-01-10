@@ -2,13 +2,13 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class ScreenMessages : MonoBehaviour {
+public class OnMapMessages : MonoBehaviour {
 
 	public GameObject bottomRightText;
 
-	// Use this for initialization
+	// Use this for initialization (only first time object is enabled)
 	void Start () {
-	
+		
 	}
 	
 	// Update is called once per frame

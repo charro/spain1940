@@ -75,18 +75,18 @@ public class GameStateMachine : MonoBehaviour {
 				region.Enable();
 			}
 		}
-
-		// Show the corresponding messages
-		FindObjectOfType<ScreenMessages>().showWhereToMoveText ();
-
+			
 		// Set where to move the troops from
 		FindObjectOfType<MoveTroopsManager> ().SetFromRegion (fromRegion);
+
+		// Show the corresponding messages
+		UIManager.GetOnMapMessagesPanel().showWhereToMoveText ();
 	}
 
 	void EnterNewSpyState(){
 		FindObjectOfType<GameManager>().ShowMapEnemyNonSpiedRegionsOnly ();
 		// Show the corresponding messages
-		FindObjectOfType<ScreenMessages>().showWhereToSpyText ();
+		UIManager.GetOnMapMessagesPanel().showWhereToSpyText ();
 	}
 
 	void EnterAttackState(){
@@ -94,7 +94,7 @@ public class GameStateMachine : MonoBehaviour {
 		FindObjectOfType<CombatManager> ().SetAttackedRegion(gameManager.GetSelectedRegion());
 		gameManager.ShowMapPossibleAttackersOfCurrentSelectedRegionOnly();
 		// Show the corresponding messages
-		FindObjectOfType<ScreenMessages>().showWhereToAttackText();
+		UIManager.GetOnMapMessagesPanel().showWhereToAttackText();
 	}
 
 	public void OnRegionTouched(Region region){

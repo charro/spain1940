@@ -103,6 +103,7 @@ public class GameManager : MonoBehaviour {
 		}
 		// Show basic GUI
 		UIManager.ShowHUDPanel ();
+		UIManager.RefreshHUDPanel ();
 	}
 
 	public void DisableAllRegions(){
@@ -242,9 +243,13 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void EndActionAndShowMap(){
-		ShowMapAndHUD();
-		economyManager.decreaseActionPoints (1);
-		UIManager.RefreshHUDPanel ();
+		// By default a simple action costs 1 action point
+		EndActionAndShowMap (1);
+	}
+
+	public void EndActionAndShowMap(int actionPoints){
+		economyManager.decreaseActionPoints (actionPoints);
+		FindObjectOfType<GameStateMachine> ().SwitchToState (GameState.IdleMapState);
 	}
 
 	public int GetCurrentTurnNumber(){
