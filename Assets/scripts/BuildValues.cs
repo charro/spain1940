@@ -5,25 +5,35 @@ using System.Collections.Generic;
 [ExecuteInEditMode]
 public class BuildValues : MonoBehaviour {
 
-	// Action Related
+	// Action Related Definitions (Editor modifiable)
 	public BuildingType[] actionBuildingsList;
 	public int[] actionGenerationPointsPerBuilding;
 	public int[] actionGenerationPointsThresholds;
 
-	// Military Related
-	// TODO
+	// Military Related Definitions (Editor modifiable)
+	public BuildingType[] militaryBuildingsList;
+	public int[] militaryPointsPerBuilding;
 
 	public Dictionary<BuildingType, int> actionBuildingsGenerationPointsDictionary;
+	public Dictionary<BuildingType, int> militaryBuildingsMilitaryPointsDictionary;
 
 	// Use this for initialization
 	void Start () {
 		actionBuildingsGenerationPointsDictionary = new Dictionary<BuildingType, int>();
-		// Fill the army sprites list
+		// Fill the points corresponding to each building
 		for (int i=0; i<actionBuildingsList.Length && i<actionGenerationPointsPerBuilding.Length; i++) {
 			actionBuildingsGenerationPointsDictionary.Add(actionBuildingsList[i], actionGenerationPointsPerBuilding[i]);
 		}
 
 		Debug.Log ("BuildValues.Start(): Added " +  actionBuildingsGenerationPointsDictionary.Keys.Count + " values to the actionBuildingsGenerationPointsDictionary");
+
+		militaryBuildingsMilitaryPointsDictionary = new Dictionary<BuildingType, int>();
+		// Fill the points corresponding to each building
+		for (int i=0; i<militaryBuildingsList.Length && i<militaryPointsPerBuilding.Length; i++) {
+			militaryBuildingsMilitaryPointsDictionary.Add(militaryBuildingsList[i], militaryPointsPerBuilding[i]);
+		}
+
+		Debug.Log ("BuildValues.Start(): Added " +  militaryBuildingsMilitaryPointsDictionary.Keys.Count + " values to the militaryBuildingsMilitaryPointsDictionary");
 	}
 	
 	// Update is called once per frame

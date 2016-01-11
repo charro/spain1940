@@ -158,6 +158,18 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
+	public List<Region> GetAllRepublicanRegions(){
+		List<Region> republicanRegions = new List<Region> ();
+
+		foreach(Region region in allRegions.Values){
+			if(!region.isNazi){
+				republicanRegions.Add (region);
+			}
+		}
+
+		return republicanRegions;
+	}
+
 	public Region[] GetRegionsBorderingSelectedRegion(){
 		if(selectedRegion != null){
 			return GetRegionsBorderingRegion (selectedRegion);
@@ -270,6 +282,7 @@ public class GameManager : MonoBehaviour {
 	public void EndCurrentTurn(){
 		currentTurnNumber ++;
 		economyManager.resetAvailableActions ();
+		economyManager.IncreaseMilitaryPointsForNextTurn ();
 		UIManager.hideAllPanels();
 		UIManager.RefreshHUDPanel();
 		UIManager.ShowLoadingTmp ();

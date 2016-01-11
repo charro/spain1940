@@ -10,6 +10,7 @@ public class Region : MonoBehaviour {
 	public bool enabledRegion;
 	public RegionType regionType;
 	public int actionGenerationLevel = 0;
+	public int militaryLevel = 0;
 
 	private SpriteRenderer spriteRenderer;
 	
@@ -143,8 +144,8 @@ public class Region : MonoBehaviour {
 		int actionGenerationPoints = 0;
 
 		for(int i=0; i<buildValues.actionBuildingsList.Length; i++){
-			// If this building is built in this region, add its action generation points to the 
-			if(actionGenerationLevel > (int)buildValues.actionBuildingsList[i]){
+			// If this building is built in this region, add its action generation points to the total
+			if(actionGenerationLevel > i){
 				actionGenerationPoints += buildValues.actionGenerationPointsPerBuilding[i];
 			}
 		}
@@ -158,6 +159,28 @@ public class Region : MonoBehaviour {
 
 	public void IncreaseActionGenerationLevel(){
 		actionGenerationLevel++;
+	}
+
+	public int GetMilitaryPointsGeneration(){
+		BuildValues buildValues = FindObjectOfType<BuildValues> ();
+		int militaryGenerationPoints = 0;
+
+		for(int i=0; i<buildValues.militaryBuildingsList.Length; i++){
+			// If this building is built in this region, add its action generation points to the total
+			if(militaryLevel > i){
+				militaryGenerationPoints += buildValues.militaryPointsPerBuilding[i];
+			}
+		}
+
+		return militaryGenerationPoints;
+	}
+
+	public int GetMilitaryLevel(){
+		return militaryLevel;
+	}
+
+	public void IncreaseMilitaryLevel(){
+		militaryLevel++;
 	}
 
 	public void RecalculateSpiedInfo(float chanceOfFindingArmyType, float chanceOfFindingArmyAmount){

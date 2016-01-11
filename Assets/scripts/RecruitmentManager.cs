@@ -85,7 +85,7 @@ public class RecruitmentManager : MonoBehaviour {
 		selectedUnitGroup.AddUnit ();
 
 		int recruitmentPointsNeeded = FindObjectOfType<ArmyValues> ().armyPricesDictionary [unitType];
-		economyManager.decreaseRecruitmentPoints (recruitmentPointsNeeded);
+		economyManager.decreaseMilitaryPoints (recruitmentPointsNeeded);
 		spentRecruitmentPoints += recruitmentPointsNeeded;
 		// Update UI Recruitment Points Text
 		UpdateRecruitmentPointsText ();
@@ -93,7 +93,7 @@ public class RecruitmentManager : MonoBehaviour {
 
 	public void OnRemoveUnit(RecruitedUnitGroup unit){
 		int unitPrice = FindObjectOfType<ArmyValues> ().armyPricesDictionary [unit.UnitType];
-		economyManager.addRecruitmentPoints(unitPrice);
+		economyManager.addMilitaryPoints(unitPrice);
 		spentRecruitmentPoints -= unitPrice;
 		UpdateRecruitmentPointsText ();
 
@@ -175,10 +175,10 @@ public class RecruitmentManager : MonoBehaviour {
 	public void CancelRecruitment(){
 		FindObjectOfType<GameManager> ().ShowMapAndHUD();
 		// Restore the spent recruitment points
-		economyManager.addRecruitmentPoints (spentRecruitmentPoints);
+		economyManager.addMilitaryPoints (spentRecruitmentPoints);
 	}
 
 	private void UpdateRecruitmentPointsText(){
-		recruitmentPointsText.text = "" + economyManager.getRecruitmentPoints();
+		recruitmentPointsText.text = "" + economyManager.getMilitaryPoints();
 	}
 }

@@ -28,25 +28,25 @@ public class PopUp : MonoBehaviour {
 				break;
 			case PopUpType.ConfirmRecruitment:
 				titleText.text = "Confirm Recruitment";
-				bodyText.text = "This will consum 1 Action Point. Do you confirm the recruitment ?";	
+				bodyText.text = "To make this recruitment will consum 1 Action Point. Do you confirm the recruitment ?";	
 				break;
-		case PopUpType.ConfirmBuild:
-			titleText.text = "Confirm Build";
-			bodyText.text = "This will consum 1 Action Point. Do you confirm the build ?";	
-			break;
-		case PopUpType.ConfirmNewSpy:
-			titleText.text = "Confirm Spy Region";
-			bodyText.text = "This will consum 1 Action Point. Do you confirm to send the spy ?";	
-			break;
-		case PopUpType.ConfirmResearch:
-			titleText.text = "Confirm New Research";
-			bodyText.text = "This will consum 1 Action Point. Do you confirm to start this research ?";	
-			break;
-		case PopUpType.ConfirmAttack:
-			CombatManager combatManager = FindObjectOfType<CombatManager>();
-			titleText.text = "Confirm Attack " + combatManager.GetAttackedRegion() + " from " + combatManager.GetAttackingRegion();
-			bodyText.text = "This will consum 1 Action Point. Do you confirm to start the attack ?";	
-			break;
+			case PopUpType.ConfirmBuild:
+				titleText.text = "Confirm Build";
+				bodyText.text = "To make this building will consum 1 Action Point. Do you confirm the build ?";	
+				break;
+			case PopUpType.ConfirmNewSpy:
+				titleText.text = "Confirm Spy Region";
+				bodyText.text = "Send a spy to this region will consum 1 Action Point. Do you confirm to send the spy ?";	
+				break;
+			case PopUpType.ConfirmResearch:
+				titleText.text = "Confirm New Research";
+				bodyText.text = "Start this research will consum 1 Action Point. Do you confirm to start this research ?";	
+				break;
+			case PopUpType.ConfirmAttack:
+				CombatManager combatManager = FindObjectOfType<CombatManager>();
+				titleText.text = "Confirm Attack " + combatManager.GetAttackedRegion() + " from " + combatManager.GetAttackingRegion();
+				bodyText.text = "Start this attack will consum 1 Action Point. Do you confirm to start the attack ?";	
+				break;
 		}
 	}
 
@@ -61,7 +61,7 @@ public class PopUp : MonoBehaviour {
 				FindObjectOfType<RecruitmentManager>().PerformRecruitment();
 				break;
 			case PopUpType.ConfirmBuild:
-				FindObjectOfType<BuildManager>().IncreaseActionLevel();
+				FindObjectOfType<BuildManager>().ConfirmBuilding();
 				break;
 		case PopUpType.ConfirmNewSpy:
 				FindObjectOfType<SpyManager>().AddNewSpy();
