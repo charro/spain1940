@@ -18,6 +18,11 @@ public class BuildPanel : MonoBehaviour {
 	public Button[] militaryButtons;
 	public Image[] militaryChecks;
 
+
+	void Awake(){
+		RefreshElements ();
+	}
+
 	void OnEnable(){
 		RefreshElements();
 	}

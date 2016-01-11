@@ -5,7 +5,7 @@ public class Region : MonoBehaviour {
 
 	public bool selected;
 	public bool isNazi;
-	public Sprite spanishRegionSprite;
+	public Sprite republicanRegionSprite;
 	public Sprite naziRegionSprite;
 	public bool enabledRegion;
 	public RegionType regionType;
@@ -69,7 +69,7 @@ public class Region : MonoBehaviour {
 			spriteRenderer.sprite = naziRegionSprite;
 		}
 		else{
-			spriteRenderer.sprite = spanishRegionSprite;
+			spriteRenderer.sprite = republicanRegionSprite;
 		}
 	}
 
@@ -204,5 +204,14 @@ public class Region : MonoBehaviour {
 	public void Disable(){
 		enabledRegion = false;
 		spriteRenderer.material = UIManager.GetDisabledMaterial();
+	}
+
+	public Sprite GetCurrentSprite(){
+		if (isNazi) {
+			return naziRegionSprite;
+		} 
+		else {
+			return republicanRegionSprite;
+		}
 	}
 }

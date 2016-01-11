@@ -5,6 +5,7 @@ using System.Collections;
 public class InfoPanel : MonoBehaviour {
 
 	public Text regionNameText;
+	public Image regionImage;
 	public Sprite unknownArmySprite;
 	public GameObject[] unitSlots;
 
@@ -32,6 +33,10 @@ public class InfoPanel : MonoBehaviour {
 			Debug.LogError ("InfoPanel: Update called, but no region selected !!");
 		} else {
 
+			// Update Region name and icon
+			regionNameText.text = selectedRegion.name;
+			regionImage.sprite = selectedRegion.GetCurrentSprite();
+
 			// Spanish army owned region. Show actual values
 			if(!selectedRegion.isNazi){
 				RegionArmySlot[] armySlots = selectedRegion.GetArmySlots();
@@ -51,6 +56,10 @@ public class InfoPanel : MonoBehaviour {
 				// Production Info
 				regionActionProduction.text = "" + selectedRegion.GetActionGenerationPoints();
 				totalActionProduction.text = "" + economyManager.GetTotalActionGenerationPoints();
+
+				// Military Info
+				regionMilitaryProduction.text = "" + selectedRegion.GetMilitaryPointsGeneration ();
+				totalMilitaryProduction.text = "" + economyManager.GetTotalMilitaryGenerationPoints();
 			}
 			// For Nazi owned, only show spied values or Unknown if no spied values available
 			else{

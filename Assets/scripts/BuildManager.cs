@@ -51,7 +51,7 @@ public class BuildManager : MonoBehaviour {
 
 		EconomyManager economyManager = FindObjectOfType<EconomyManager> ();
 		economyManager.decreaseActionPoints (1);
-		economyManager.recalculateMaximumActionsPerTurn ();
+		economyManager.RecalculateTotalMilitaryGenerationPoints ();
 		buildPanel.RefreshElements();
 
 		typeOfBuildingClicked = BUILDING_TYPE_CLICKED_NONE;
