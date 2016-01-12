@@ -37,7 +37,7 @@ public class ResearchManager : MonoBehaviour {
 		// Decrease corresponding action points
 		// FindObjectOfType<EconomyManager> ().decreaseActionPoints (currentResearchedTechnology.actionsNeeded);
 		// FindObjectOfType<GameStateMachine> ().SwitchToState (GameState.IdleMapState);
-		FindObjectOfType<GameManager>().EndActionAndShowMap(currentResearchedTechnology.actionsNeeded);
+		FindObjectOfType<GameManager>().EndActionAndSwitchToIdleMap(currentResearchedTechnology.actionsNeeded);
 		FindObjectOfType<DropDownMessages> ().ShowDropDownMessageForSecs ("RESEARCH OF TECHNOLOGY " + currentResearchedTechnology + " STARTED", 5);
 	}
 

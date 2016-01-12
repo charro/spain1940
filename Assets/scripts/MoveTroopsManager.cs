@@ -116,11 +116,12 @@ public class MoveTroopsManager : MonoBehaviour {
 	public void CancelUnitsMove(){
 		CopyRegionArray (startingUnitsOfRegionFrom, fromRegion.GetArmySlots ());
 		CopyRegionArray (startingUnitsOfRegionTo, toRegion.GetArmySlots ());
+		FindObjectOfType<GameStateMachine> ().SwitchToState (GameState.IdleMapState);
 	}
 
 	public void EndUnitsMove(){
 		fromRegion.SortTroopSlots ();
 		toRegion.SortTroopSlots ();
-		FindObjectOfType<GameManager>().EndActionAndShowMap ();
+		FindObjectOfType<GameManager>().EndActionAndSwitchToIdleMap ();
 	}
 }

@@ -66,7 +66,9 @@ public class GameStateMachine : MonoBehaviour {
 		GameManager gameManager = FindObjectOfType<GameManager> ();
 		Region fromRegion = gameManager.GetSelectedRegion();
 
+		UIManager.hideAllPanels ();
 		gameManager.ShowMapAllRegionsDisabled ();
+
 
 		// Enable only neighbourg regions that are no Nazi
 		Region[] neighbourRegions = gameManager.GetRegionsBorderingRegion (fromRegion);

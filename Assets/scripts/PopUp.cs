@@ -84,8 +84,8 @@ public class PopUp : MonoBehaviour {
 			case PopUpType.ConfirmBuild:
 			case PopUpType.ConfirmResearch:
 				break;
-			case PopUpType.ConfirmNewSpy:
-				FindObjectOfType<SpyManager>().EndNewSpyCreation();
+		case PopUpType.ConfirmNewSpy:
+				FindObjectOfType<GameStateMachine> ().SwitchToState (GameState.IdleMapState);
 				break;
 		}
 	}

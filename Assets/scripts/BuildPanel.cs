@@ -72,9 +72,9 @@ public class BuildPanel : MonoBehaviour {
 			militaryPointsText.text  = "+" + buildValues.militaryPointsPerBuilding[level];
 		}
 
-		thisRegionMilitaryPoints.text = "Current Military Points Generated in this Region: " + selectedRegion.GetMilitaryPointsGeneration ();
-		currentTotalActionPoints.text = "Current Action Generation Points: " + economyManager.GetTotalActionGenerationPoints ();
-		nextLevelActionPoints.text = "Points for Next Action Generation Level: " + economyManager.GetActionPointsThresholdForNextLevel ();
+		thisRegionMilitaryPoints.text = "" + selectedRegion.GetMilitaryPointsGeneration ();
+		currentTotalActionPoints.text = "" + economyManager.GetTotalActionGenerationPoints ();
+		nextLevelActionPoints.text = "" + economyManager.GetActionPointsThresholdForNextLevel ();
 	}
 
 }

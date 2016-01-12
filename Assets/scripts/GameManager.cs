@@ -254,12 +254,12 @@ public class GameManager : MonoBehaviour {
 		return response;
 	}
 
-	public void EndActionAndShowMap(){
+	public void EndActionAndSwitchToIdleMap(){
 		// By default a simple action costs 1 action point
-		EndActionAndShowMap (1);
+		EndActionAndSwitchToIdleMap (1);
 	}
 
-	public void EndActionAndShowMap(int actionPoints){
+	public void EndActionAndSwitchToIdleMap(int actionPoints){
 		economyManager.decreaseActionPoints (actionPoints);
 		FindObjectOfType<GameStateMachine> ().SwitchToState (GameState.IdleMapState);
 	}
