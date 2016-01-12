@@ -21,21 +21,29 @@ public class SpiesPanel : MonoBehaviour {
 		bool alreadyShownAtLeastNewSpyButton = false;
 
 		for(int i=0; i<spyPanelsList.Length && i<activeSpies.Length; i++){
-			spyPanelsList[i].GetComponent<SpyPanel>().SetSpy(activeSpies[i]);
+			SpyPanel spyPanel = spyPanelsList [i].GetComponent<SpyPanel> ();
+			spyPanel.SetSpy(activeSpies[i]);
 
-			// Be sure to only show the first panel with a null Spy
-			if(activeSpies[i] == null){
-				if(alreadyShownAtLeastNewSpyButton){
-					spyPanelsList[i].SetActive(false);
+			// If it's not researched yet, disable all spyBUttons
+			if (!FindObjectOfType<ResearchManager> ().IsAlreadyResearched (TechnologyType.Spying)) {
+				spyPanel.DisableNewSpyButton ();
+			} 
+			else {
+				// Be sure to only show the first panel with a null Spy
+				if(activeSpies[i] == null){
+					if(alreadyShownAtLeastNewSpyButton){
+						spyPanelsList[i].SetActive(false);
+					}
+					else{
+						spyPanelsList[i].SetActive(true);
+						alreadyShownAtLeastNewSpyButton = true;
+					}
 				}
 				else{
 					spyPanelsList[i].SetActive(true);
-					alreadyShownAtLeastNewSpyButton = true;
 				}
 			}
-			else{
-				spyPanelsList[i].SetActive(true);
-			}
+
 		}
 
 	}
