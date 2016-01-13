@@ -4,8 +4,14 @@ using System.Collections;
 
 // When clicked, it calls the OpenTechnologyDetail() method of the corresponding technology
 public class TechnologyButton : Button {
-	
+
 	public Technology associatedTechnology;
+	public Image technologyImage;
+
+	public void Awake(){
+		technologyImage.sprite = associatedTechnology.technologySprite;
+		base.Awake ();
+	}
 
 	public override void OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData)
 	{
@@ -15,4 +21,15 @@ public class TechnologyButton : Button {
 		}
 	}
 
+	protected override void OnValidate ()
+	{
+		technologyImage.sprite = associatedTechnology.technologySprite;
+		base.OnValidate ();
+	}
+
+	protected override void OnEnable()
+	{
+		technologyImage.sprite = associatedTechnology.technologySprite;
+		base.OnEnable ();
+	}
 }

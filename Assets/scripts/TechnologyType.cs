@@ -4,7 +4,10 @@ using System;
 public enum TechnologyType
 {
 	None=-1,
-	MilitaryEngineering=0,
-	Spying,
-	BulletProofMaterial
+	Militia=0,
+	Barracks,
+	Workshop,
+	Spying1,
+	ArmourPlate,
+	TankLince
 }
