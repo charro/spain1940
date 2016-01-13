@@ -14,6 +14,6 @@ public class RecruitPanel : MonoBehaviour {
 	}
 
 	void OnEnable(){
-		FindObjectOfType<RecruitmentManager> ().RestartUI ();
+		FindObjectOfType<RecruitmentManager> ().RefreshUI ();
 	}
 }

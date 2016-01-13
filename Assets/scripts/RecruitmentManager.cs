@@ -7,8 +7,9 @@ public class RecruitmentManager : MonoBehaviour {
 
 	public Text recruitmentPointsText;
 	public RectTransform recruitmentPanel;
-
 	public GameObject unitGroupPrefab;
+	public RecruitListItem[] armyListItems;
+	public Sprite unresearchedArmySprite;
 
 	private ArrayList recruitedUnitGroupList = new ArrayList();
 
@@ -22,15 +23,16 @@ public class RecruitmentManager : MonoBehaviour {
 	void Start () {
 		economyManager = FindObjectOfType<EconomyManager>();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 
 	}
 
-	public void RestartUI(){
+	public void RefreshUI(){
 		ResetUnits ();
 		UpdateRecruitmentPointsText ();
+		EnableResearchedUnits ();
 	}
 
 	public void AddToUnit(int unitTypeInt){
@@ -180,5 +182,17 @@ public class RecruitmentManager : MonoBehaviour {
 
 	private void UpdateRecruitmentPointsText(){
 		recruitmentPointsText.text = "" + economyManager.getMilitaryPoints();
+	}
+
+	private void EnableResearchedUnits(){
+		foreach(RecruitListItem armyListItem in armyListItems){
+			bool isResearched = FindObjectOfType<ResearchManager> ().IsAlreadyResearched (armyListItem.requiredTechnology);
+			if(isResearched){
+				armyListItem.EnableRecruitment();
+			}
+			else{
+				armyListItem.DisableRecruitment();
+			}
+		}
 	}
 }
