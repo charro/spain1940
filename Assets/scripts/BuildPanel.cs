@@ -51,9 +51,10 @@ public class BuildPanel : MonoBehaviour {
 			Image actionLevelCheck = actionLevelChecks[level];
 			Text actionLevelPointsText = actionLevelPointsTexts[level];
 
+			bool isResearched = buildValues.IsBuildingResearched (false, level);
 			actionLevelCheck.enabled = (actionLevel > level);
 			actionLevelButton.interactable = 
-				(actionLevel == level && economyManager.haveEnoughActionsPoints(1));
+				(isResearched && actionLevel == level && economyManager.haveEnoughActionsPoints(1));
 			actionLevelPointsText.text  = "+" + buildValues.actionGenerationPointsPerBuilding[level];
 		}
 
@@ -66,9 +67,10 @@ public class BuildPanel : MonoBehaviour {
 			Image militaryCheck = militaryChecks[level];
 			Text militaryPointsText = militaryPointsTexts[level];
 
+			bool isResearched = buildValues.IsBuildingResearched (true, level);
 			militaryCheck.enabled = (militaryLevel > level);
 			militaryLevelButton.interactable = 
-				(militaryLevel == level && economyManager.haveEnoughActionsPoints(1));
+				(isResearched && militaryLevel == level && economyManager.haveEnoughActionsPoints(1));
 			militaryPointsText.text  = "+" + buildValues.militaryPointsPerBuilding[level];
 		}
 

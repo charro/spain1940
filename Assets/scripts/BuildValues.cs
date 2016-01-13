@@ -7,11 +7,13 @@ public class BuildValues : MonoBehaviour {
 
 	// Action Related Definitions (Editor modifiable)
 	public BuildingType[] actionBuildingsList;
+	public TechnologyType[] actionBuildingsRequiredTechnologies;
 	public int[] actionGenerationPointsPerBuilding;
 	public int[] actionGenerationPointsThresholds;
 
 	// Military Related Definitions (Editor modifiable)
 	public BuildingType[] militaryBuildingsList;
+	public TechnologyType[] militaryBuildingsRequiredTechnologies;
 	public int[] militaryPointsPerBuilding;
 
 	public Dictionary<BuildingType, int> actionBuildingsGenerationPointsDictionary;
@@ -39,6 +41,18 @@ public class BuildValues : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	public bool IsBuildingResearched(bool isMilitary, int buildingLevel){
+		TechnologyType technologyRequired;
+
+		if (isMilitary) {
+			technologyRequired = militaryBuildingsRequiredTechnologies [buildingLevel];
+		} else {
+			technologyRequired = actionBuildingsRequiredTechnologies[buildingLevel];
+		}
+
+		return FindObjectOfType<ResearchManager> ().IsAlreadyResearched (technologyRequired);
 	}
 
 	// This is called from Unity Editor
