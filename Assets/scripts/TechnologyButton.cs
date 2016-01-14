@@ -20,14 +20,8 @@ public class TechnologyButton : Button {
 			associatedTechnology.OpenTechnologyDetail ();
 		}
 	}
-
-	protected override void OnValidate ()
-	{
-		technologyImage.sprite = associatedTechnology.technologySprite;
-		base.OnValidate ();
-	}
-
-	protected override void OnEnable()
+		
+	void OnEnable()
 	{
 		technologyImage.sprite = associatedTechnology.technologySprite;
 		base.OnEnable ();
