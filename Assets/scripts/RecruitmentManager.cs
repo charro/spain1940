@@ -42,7 +42,7 @@ public class RecruitmentManager : MonoBehaviour {
 	public void AddToUnit(ArmyType unitType){
 
 		// First check if there are enough resources to perform Recruit
-		if(!economyManager.haveEnoughRecruitmentPoints(FindObjectOfType<ArmyValues>().armyPricesDictionary[unitType])){
+		if(!economyManager.haveEnoughRecruitmentPoints(FindObjectOfType<ArmyValues>().GetArmy(unitType).price)){
 			Animator textAnimation = recruitmentPointsText.GetComponent<Animator>();
 			textAnimation.SetTrigger("trigger");
 			return;
@@ -73,7 +73,7 @@ public class RecruitmentManager : MonoBehaviour {
 			
 			RecruitedUnitGroup recruitedUnitGroup = newUnitInstance.GetComponent<RecruitedUnitGroup>();
 			recruitedUnitGroup.UnitType = unitType;
-			recruitedUnitGroup.unitImage.sprite = FindObjectOfType<ArmyValues>().armySpritesDictionary[unitType];
+			recruitedUnitGroup.unitImage.sprite = FindObjectOfType<ArmyValues>().GetArmy(unitType).sprite;
 
 			recruitedUnitGroupList.Add(newUnitInstance);
 
@@ -86,7 +86,7 @@ public class RecruitmentManager : MonoBehaviour {
 			selectedUnitGroupGameObject.GetComponent<RecruitedUnitGroup>() as RecruitedUnitGroup;
 		selectedUnitGroup.AddUnit ();
 
-		int recruitmentPointsNeeded = FindObjectOfType<ArmyValues> ().armyPricesDictionary [unitType];
+		int recruitmentPointsNeeded = FindObjectOfType<ArmyValues>().GetArmy(unitType).price;
 		economyManager.decreaseMilitaryPoints (recruitmentPointsNeeded);
 		spentRecruitmentPoints += recruitmentPointsNeeded;
 		// Update UI Recruitment Points Text
@@ -94,7 +94,7 @@ public class RecruitmentManager : MonoBehaviour {
 	}
 
 	public void OnRemoveUnit(RecruitedUnitGroup unit){
-		int unitPrice = FindObjectOfType<ArmyValues> ().armyPricesDictionary [unit.UnitType];
+		int unitPrice = FindObjectOfType<ArmyValues>().GetArmy(unit.UnitType).price;
 		economyManager.addMilitaryPoints(unitPrice);
 		spentRecruitmentPoints -= unitPrice;
 		UpdateRecruitmentPointsText ();

@@ -49,7 +49,7 @@ public class InfoPanel : MonoBehaviour {
 						unitSlots[i].SetActive(true);
 						unitSlots[i].GetComponentInChildren<Text>().text = " X " + armySlots[i].armyAmount;
 						unitSlots[i].GetComponentInChildren<Image>().sprite = 
-							FindObjectOfType<ArmyValues>().armySpritesDictionary[armySlots[i].armyType];
+							FindObjectOfType<ArmyValues>().GetArmy(armySlots[i].armyType).sprite;
 					}
 				}
 
@@ -74,7 +74,7 @@ public class InfoPanel : MonoBehaviour {
 						if(spiedInfo.spiedArmyTypes.Length >= i && spiedInfo.spiedArmyTypes[i] != ArmyType.Unknown &&
 						   spiedInfo.spiedArmyTypes[i] != ArmyType.Empty){
 							unitSlots[i].GetComponentInChildren<Image>().sprite = 
-								FindObjectOfType<ArmyValues>().armySpritesDictionary[spiedInfo.spiedArmyTypes[i]];
+								FindObjectOfType<ArmyValues>().GetArmy(spiedInfo.spiedArmyTypes[i]).sprite;
 						}
 						if(spiedInfo.spiedArmyAmounts.Length >= i && spiedInfo.spiedArmyAmounts[i] > 0){
 							unitSlots[i].GetComponentInChildren<Text>().text = " X " + spiedInfo.spiedArmyAmounts[i];

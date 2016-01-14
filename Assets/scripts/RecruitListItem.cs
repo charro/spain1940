@@ -24,7 +24,7 @@ public class RecruitListItem : MonoBehaviour {
 	}
 
 	void OnEnable(){
-		int armyPrice = FindObjectOfType<ArmyValues>().armyPricesDictionary[armyType]; 
+		int armyPrice = FindObjectOfType<ArmyValues>().GetArmy(armyType).price; 
 		priceText.text = "" + armyPrice;
 	}
 
