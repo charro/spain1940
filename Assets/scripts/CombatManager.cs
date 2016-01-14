@@ -21,6 +21,10 @@ public class CombatManager : MonoBehaviour {
 		defenderRegion = region;
 	}
 
+	public void SetAttackerRegion(Region region){
+		attackerRegion = region;
+	}
+
 	public Region GetDefenderRegion(){
 		return defenderRegion;
 	}
