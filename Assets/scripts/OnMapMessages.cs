@@ -29,7 +29,7 @@ public class OnMapMessages : MonoBehaviour {
 	}
 
 	public void showWhereToAttackText(){
-		showBottomRightText ("Choose FROM where to send attack");
+		showBottomRightText ("Choose where to send attack from");
 	}
 
 	public void showBottomRightText(string textToShow){

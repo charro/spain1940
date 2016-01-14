@@ -24,7 +24,7 @@ public class BuildValues : MonoBehaviour {
 		actionBuildingsGenerationPointsDictionary = new Dictionary<BuildingType, int>();
 		// Fill the points corresponding to each building
 		for (int i=0; i<actionBuildingsList.Length && i<actionGenerationPointsPerBuilding.Length; i++) {
-			actionBuildingsGenerationPointsDictionary.Add(actionBuildingsList[i], actionGenerationPointsPerBuilding[i]);
+			actionBuildingsGenerationPointsDictionary[actionBuildingsList[i]] = actionGenerationPointsPerBuilding[i];
 		}
 
 		Debug.Log ("BuildValues.Start(): Added " +  actionBuildingsGenerationPointsDictionary.Keys.Count + " values to the actionBuildingsGenerationPointsDictionary");
@@ -32,7 +32,7 @@ public class BuildValues : MonoBehaviour {
 		militaryBuildingsMilitaryPointsDictionary = new Dictionary<BuildingType, int>();
 		// Fill the points corresponding to each building
 		for (int i=0; i<militaryBuildingsList.Length && i<militaryPointsPerBuilding.Length; i++) {
-			militaryBuildingsMilitaryPointsDictionary.Add(militaryBuildingsList[i], militaryPointsPerBuilding[i]);
+			militaryBuildingsMilitaryPointsDictionary[militaryBuildingsList[i]] = militaryPointsPerBuilding[i];
 		}
 
 		Debug.Log ("BuildValues.Start(): Added " +  militaryBuildingsMilitaryPointsDictionary.Keys.Count + " values to the militaryBuildingsMilitaryPointsDictionary");

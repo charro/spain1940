@@ -8,7 +8,7 @@ public class RecruitmentManager : MonoBehaviour {
 	public Text recruitmentPointsText;
 	public RectTransform recruitmentPanel;
 	public GameObject unitGroupPrefab;
-	public RecruitListItem[] armyListItems;
+	public RecruitListItem[] recruitableListItems;
 	public Sprite unresearchedArmySprite;
 
 	private ArrayList recruitedUnitGroupList = new ArrayList();
@@ -185,13 +185,14 @@ public class RecruitmentManager : MonoBehaviour {
 	}
 
 	private void EnableResearchedUnits(){
-		foreach(RecruitListItem armyListItem in armyListItems){
-			bool isResearched = FindObjectOfType<ResearchManager> ().IsAlreadyResearched (armyListItem.requiredTechnology);
+		foreach(RecruitListItem recruitListItem in recruitableListItems){
+			bool isResearched = 
+				FindObjectOfType<ResearchManager> ().IsAlreadyResearched (recruitListItem.army.requiredTechnology);
 			if(isResearched){
-				armyListItem.EnableRecruitment();
+				recruitListItem.EnableRecruitment();
 			}
 			else{
-				armyListItem.DisableRecruitment();
+				recruitListItem.DisableRecruitment();
 			}
 		}
 	}

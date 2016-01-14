@@ -4,8 +4,8 @@ using System.Collections;
 
 public class RecruitListItem : MonoBehaviour {
 
-	public ArmyType armyType;
-	public TechnologyType requiredTechnology;
+	public Army army;
+
 	public Text itemNameText;
 	public Button itemButton;
 	public Text priceText;
@@ -24,7 +24,7 @@ public class RecruitListItem : MonoBehaviour {
 	}
 
 	void OnEnable(){
-		int armyPrice = FindObjectOfType<ArmyValues>().GetArmy(armyType).price; 
+		int armyPrice = army.price; 
 		priceText.text = "" + armyPrice;
 	}
 

@@ -28,7 +28,7 @@ public class ArmyValues : MonoBehaviour {
 		armiesDictionary = new Dictionary<ArmyType, Army> ();
 
 		foreach(Army army in GetComponentsInChildren<Army>()){
-			armiesDictionary.Add(army.armyType, army);
+			armiesDictionary[army.armyType] = army;
 			Debug.Log("ARMY ADDED TO ARMIES DICTIONARY: " + army);
 		}
 		/*

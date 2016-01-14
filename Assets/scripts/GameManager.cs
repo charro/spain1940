@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void AddRegionToList(Region newRegion){
-		allRegions.Add (newRegion.regionType, newRegion);
+		allRegions[newRegion.regionType] = newRegion;
 		Debug.Log ("GameManager: Added new Region to RegionList: " + newRegion);
 	}
 
@@ -130,6 +130,10 @@ public class GameManager : MonoBehaviour {
 
 	public Region GetSelectedRegion(){
 		return selectedRegion;
+	}
+
+	public Region GetRegion(RegionType type){
+		return allRegions[type];
 	}
 
 	public Dictionary<RegionType, Region> GetAllRegions(){

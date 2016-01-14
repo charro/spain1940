@@ -14,7 +14,7 @@ public class Region : MonoBehaviour {
 
 	private SpriteRenderer spriteRenderer;
 	
-	private RegionArmySlot[] armySlots;
+	public RegionArmySlot[] armySlots;
 	public RegionArmySlot[] GetArmySlots(){
 		return armySlots;
 	}

@@ -44,7 +44,7 @@ public class PopUp : MonoBehaviour {
 				break;
 			case PopUpType.ConfirmAttack:
 				CombatManager combatManager = FindObjectOfType<CombatManager>();
-				titleText.text = "Confirm Attack " + combatManager.GetAttackedRegion() + " from " + combatManager.GetAttackingRegion();
+				titleText.text = "Confirm Attack " + combatManager.GetDefenderRegion() + " from " + combatManager.GetAttackerRegion();
 				bodyText.text = "Start this attack will consum 1 Action Point. Do you confirm to start the attack ?";	
 				break;
 		}

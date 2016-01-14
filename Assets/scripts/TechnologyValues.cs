@@ -12,7 +12,7 @@ public class TechnologyValues : MonoBehaviour {
 		technologiesDictionary = new Dictionary<TechnologyType, Technology> ();
 
 		foreach(Technology technology in GetComponentsInChildren<Technology>()){
-			technologiesDictionary.Add(technology.technologyType, technology);
+			technologiesDictionary[technology.technologyType] = technology;
 			Debug.Log("TECHNOLOGY ADDED TO TECHNOLOGY DICTIONARY: " + technology);
 		}
 	}

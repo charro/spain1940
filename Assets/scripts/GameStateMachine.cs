@@ -93,7 +93,7 @@ public class GameStateMachine : MonoBehaviour {
 
 	void EnterAttackState(){
 		GameManager gameManager = FindObjectOfType<GameManager> ();
-		FindObjectOfType<CombatManager> ().SetAttackedRegion(gameManager.GetSelectedRegion());
+		FindObjectOfType<CombatManager> ().SetDefenderRegion(gameManager.GetSelectedRegion());
 		gameManager.ShowMapPossibleAttackersOfCurrentSelectedRegionOnly();
 		// Show the corresponding messages
 		UIManager.GetOnMapMessagesPanel().showWhereToAttackText();
