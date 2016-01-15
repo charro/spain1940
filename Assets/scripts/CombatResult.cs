@@ -4,8 +4,9 @@ using System.Collections.Generic;
 
 public class CombatResult : MonoBehaviour {
 
-	public List<CombatResultUnit> attackerLostUnits;
-	public List<CombatResultUnit> defenderLostUnits;
+	public bool attackerWon;
+	public Dictionary<ArmyType, int> attackerRegionLosses;
+	public Dictionary<ArmyType, int> defenderRegionLosses;
 
 	// Use this for initialization
 	void Start () {
@@ -15,5 +16,26 @@ public class CombatResult : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	/*
+	void SetAttackerWon(bool won){
+		attackerWon = won;
+	}
+
+	void SetAttackerLosses(Dictionary<ArmyType, int> losses){
+		attackerRegionLosses = losses;
+	}
+
+	void SetDefenderLosses(Dictionary<ArmyType, int> losses){
+		defenderRegionLosses = losses;
+	}*/
+
+	public void RefreshLastCombatData(bool won, Dictionary<ArmyType, int> attackerLosses, 
+		Dictionary<ArmyType, int> defenderLosses){
+
+		attackerWon = attackerWon;
+		attackerRegionLosses = attackerLosses;
+		defenderRegionLosses = defenderLosses;
 	}
 }

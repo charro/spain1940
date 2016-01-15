@@ -107,7 +107,7 @@ public class CombatManager : MonoBehaviour {
 				Debug.Log ("Attacker: " + thisTurnAttackerRegion + " attacking unit:" + attackerUnit);
 
 				if(thisTurnDefenderArmy.Count == 0){
-					Debug.Log ("No more defending units. is defeated");
+					Debug.Log ("No more defending units. " +  thisTurnDefenderRegion + " is defeated");
 					break;
 				}
 

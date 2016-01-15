@@ -9,12 +9,14 @@ public class CombatTest {
     public void CombatManagerTest()
     {
 		Dictionary<ArmyType, int> attackerArmyDefinition = new Dictionary<ArmyType, int> ();
-		attackerArmyDefinition.Add (ArmyType.TankToro, 2);
+		attackerArmyDefinition.Add (ArmyType.TankToro, 7);
 		attackerArmyDefinition.Add (ArmyType.TankBisonte, 2);
+		attackerArmyDefinition.Add (ArmyType.TankLince, 57);
 
 		Dictionary<ArmyType, int> defenderArmyDefinition = new Dictionary<ArmyType, int> ();
-		defenderArmyDefinition.Add (ArmyType.Milicia, 2);
+		defenderArmyDefinition.Add (ArmyType.Milicia, 6);
 		defenderArmyDefinition.Add (ArmyType.TankLince, 5);
+		defenderArmyDefinition.Add (ArmyType.TankToro, 5);
 
         //Create all components
 		GameObject combatManager = new GameObject("mockCombatManager");
