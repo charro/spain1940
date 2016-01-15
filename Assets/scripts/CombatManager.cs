@@ -77,56 +77,87 @@ public class CombatManager : MonoBehaviour {
 
 		// Loop until one of the opponents lose all of his units
 		while(attackerRegion.HasAnyTroops() && defenderRegion.HasAnyTroops()){
+			Debug.Log ("Combat in progress. TURN NUMBER: " + combatTurnsPassed + " | Attacker Turn? " + attackerRegionTurn +
+				"\n********************************************************************************************************");
+
 			List<RegionArmySlot> thisTurnAttackerArmy;
 			List<RegionArmySlot> thisTurnDefenderArmy;
 			Dictionary<ArmyType, int> thisTurnLosses;
+			Region thisTurnAttackerRegion;
+			Region thisTurnDefenderRegion;
 
 			// Decide which army is attacking and which one is defending depending on the turn
 			if (attackerRegionTurn) {
 				thisTurnAttackerArmy = nonEmptyAttackerRegionSlots;
 				thisTurnDefenderArmy = nonEmptyDefenderRegionSlots;
 				thisTurnLosses = defenderRegionLosses;
+				thisTurnAttackerRegion = attackerRegion;
+				thisTurnDefenderRegion = defenderRegion;
 			} else {
 				thisTurnAttackerArmy = nonEmptyDefenderRegionSlots;
 				thisTurnDefenderArmy = nonEmptyAttackerRegionSlots;
 				thisTurnLosses = attackerRegionLosses;
+				thisTurnAttackerRegion = defenderRegion;
+				thisTurnDefenderRegion = attackerRegion;
 			}
 
-			// Start attacking randomly
+			// Start attacking randomly with all the attacker Units
 			foreach(RegionArmySlot attackerUnit in thisTurnAttackerArmy){
-				Debug.Log ("Combat in progress. Turn number: " + combatTurnsPassed + " | Attacker Turn? " + attackerRegionTurn);
+				
+				Debug.Log ("Attacker: " + thisTurnAttackerRegion + " attacking unit:" + attackerUnit);
+
+				if(thisTurnDefenderArmy.Count == 0){
+					Debug.Log ("No more defending units. is defeated");
+					break;
+				}
 
 				// Choose a Random unit to be attacked
 				int targetUnit = Random.Range(0, thisTurnDefenderArmy.Count);
-				Debug.Log ("Attacker: " + (attackerRegionTurn ? attackerRegion : defenderRegion) + 
-					" attacking unit:" + attackerUnit);
 				RegionArmySlot defendingUnit = thisTurnDefenderArmy[targetUnit];
-				Debug.Log ("Defender: " + (attackerRegionTurn ? defenderRegion : attackerRegion) + 
-					" defending unit:" + defendingUnit);
+				Debug.Log ("Defender: " + thisTurnDefenderRegion + " defending unit:" + defendingUnit);
 
 				// Kill Unit
+				ArmyType defendingUnitType = defendingUnit.armyType;
 				defendingUnit.removeUnit ();
 				if(defendingUnit.armyAmount == 0){
-					Debug.Log ("Unit Type: " + defendingUnit.armyType + " is DESTROYED !! ");
+					Debug.Log ("Unit Type: " + defendingUnitType + " of region " + 
+						thisTurnDefenderRegion + " is DESTROYED !! ");
 					thisTurnDefenderArmy.Remove (defendingUnit);
 				}
 
+				// Add unit killed to this region losses
 				int lossesAlready = 0;
-				if(thisTurnLosses.ContainsKey(defendingUnit.armyType)){
-					lossesAlready = thisTurnLosses[defendingUnit.armyType];
+				if(thisTurnLosses.ContainsKey(defendingUnitType)){
+					lossesAlready = thisTurnLosses[defendingUnitType];
 				}
-				thisTurnLosses[defendingUnit.armyType] = lossesAlready+1;
+				thisTurnLosses[defendingUnitType] = lossesAlready+1;
 
-				// Pass turn
-				attackerRegionTurn = !attackerRegionTurn;
-				combatTurnsPassed++;
+				Debug.Log ("----------------------------------------------------------------------");
 			}
+
+			// Pass turn
+			attackerRegionTurn = !attackerRegionTurn;
+			combatTurnsPassed++;
 		}
-			
+
+		Debug.Log ("COMBAT FINISHED - SUMMARY OF THE COMBAT"+
+			"\n****************************************************************************"+
+			"\n****************************************************************************");
+
 		if (attackerRegion.HasAnyTroops ()) {
 			Debug.Log (attackerRegion + " WON !!");
 		} else {
 			Debug.Log (defenderRegion + " WON !!");
+		}
+
+		Debug.Log ("Losses of Attacking Region " + attackerRegion);
+		foreach(KeyValuePair<ArmyType, int> army in attackerRegionLosses){
+			Debug.Log (army.Key + " = " + army.Value);
+		}
+
+		Debug.Log ("Losses of Defending Region " + defenderRegion);
+		foreach(KeyValuePair<ArmyType, int> army in defenderRegionLosses){
+			Debug.Log (army.Key + " = " + army.Value);
 		}
 	}
 		

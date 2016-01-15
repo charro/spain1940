@@ -9,20 +9,20 @@ public class CombatTest {
     public void CombatManagerTest()
     {
 		Dictionary<ArmyType, int> attackerArmyDefinition = new Dictionary<ArmyType, int> ();
-		attackerArmyDefinition.Add (ArmyType.Milicia, 31);
-		attackerArmyDefinition.Add (ArmyType.TankBisonte, 66);
+		attackerArmyDefinition.Add (ArmyType.TankToro, 2);
+		attackerArmyDefinition.Add (ArmyType.TankBisonte, 2);
 
 		Dictionary<ArmyType, int> defenderArmyDefinition = new Dictionary<ArmyType, int> ();
-		defenderArmyDefinition.Add (ArmyType.Milicia, 32);
-		defenderArmyDefinition.Add (ArmyType.TankBisonte, 66);
+		defenderArmyDefinition.Add (ArmyType.Milicia, 2);
+		defenderArmyDefinition.Add (ArmyType.TankLince, 5);
 
         //Create all components
 		GameObject combatManager = new GameObject("mockCombatManager");
 		combatManager.AddComponent<CombatManager>();
 
-		GameObject attackerRegionGameObject = new GameObject("attackerRegion");
+		GameObject attackerRegionGameObject = new GameObject("CabronilandiaRegion");
 		attackerRegionGameObject.AddComponent<Region>();
-		GameObject defenderRegionGameObject = new GameObject("defenderRegion");
+		GameObject defenderRegionGameObject = new GameObject("JoputalandiaRegion");
 		defenderRegionGameObject.AddComponent<Region>();
 
 		Region attackerRegion = attackerRegionGameObject.GetComponent<Region> ();
