@@ -27,6 +27,12 @@ public class Region : MonoBehaviour {
 		ClearArmySlots ();
 		spriteRenderer = GetComponent<SpriteRenderer>();
 		FindObjectOfType<GameManager> ().AddRegionToList(this);
+
+		// FIXME: This is only for Testing. Add units to Enemy Regions
+		if(isNazi){
+			AddUnitsToArmy (ArmyType.Milicia, 12);
+			AddUnitsToArmy (ArmyType.TankBisonte, 5);
+		}
 	}
 	
 	// Update is called once per frame

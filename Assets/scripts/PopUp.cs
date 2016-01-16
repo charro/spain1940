@@ -70,7 +70,7 @@ public class PopUp : MonoBehaviour {
 				FindObjectOfType<ResearchManager>().StartResearchingTechnology();
 				break;
 		case PopUpType.ConfirmAttack:
-			FindObjectOfType<CombatManager>().StartCombat();
+			FindObjectOfType<CombatManager>().StartCombat(true);
 			break;
 		}
 	}

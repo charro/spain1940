@@ -52,8 +52,8 @@ public class CombatTest {
 		combatManagerComponent.SetAttackerRegion (attackerRegion);
 		combatManagerComponent.SetDefenderRegion (defenderRegion);
 
-		// Start the combat
-		combatManagerComponent.CalculateCombat ();
+		// Start the combat, set waiting to false so 
+		combatManagerComponent.StartCombat(false);
 
 		Assert.Pass ();
     }

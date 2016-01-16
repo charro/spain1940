@@ -4,8 +4,22 @@ using System.Collections.Generic;
 
 public class CombatManager : MonoBehaviour {
 
+	// Screen to show the combat
+	public CombatScreen combatScreen;
+
 	private Region attackerRegion;
 	private Region defenderRegion;
+
+	private int combatTurnsPassed = 0;
+	private bool attackerRegionTurn = true;
+
+	private List<RegionArmySlot> nonEmptyAttackerRegionSlots;
+	private List<RegionArmySlot> nonEmptyDefenderRegionSlots;
+
+	private Dictionary<ArmyType, int> attackerRegionLosses;
+	private Dictionary<ArmyType, int> defenderRegionLosses;
+
+	private bool attackerWins = false;
 
 	// Use this for initialization
 	void Start () {
@@ -33,31 +47,30 @@ public class CombatManager : MonoBehaviour {
 		return attackerRegion;
 	}
 
-	public void StartCombat(){
+	public void StartCombat(bool wait){
 		// IN DEVELOPMENT. BY THE MOMENT, AUTOMATIC WIN
-		CalculateCombat();
-		defenderRegion.SetNaziConquered (false);
-
-		FindObjectOfType<EconomyManager>().decreaseActionPoints(1);
-		// End combat and back to Idle map
-		FindObjectOfType<GameStateMachine> ().SwitchToState (GameState.IdleMapState);
+		if(wait){
+			combatScreen.gameObject.SetActive (true);
+			UIManager.hideAllPanels ();
+		}
+		StartCoroutine(CalculateCombat(wait));
 	}
 
-	public void ConfirmStartAttackFrom(Region region){
+	public void ShowConfirmStartAttackFrom(Region region){
 		// The attacking region is the just clicked region
 		attackerRegion = region;
-
+		combatScreen.SetCombatRegions (attackerRegion, defenderRegion);
 		FindObjectOfType<UIManager>().ShowPopUp(PopUpType.ConfirmAttack);
 	}
 
-	public void CalculateCombat(){
+	IEnumerator CalculateCombat(bool wait){
 		Debug.Log ("STARTING NEW COMBAT !! : " + attackerRegion + " ATTACKS " + defenderRegion);
 			
-		int combatTurnsPassed = 0;
-		bool attackerRegionTurn = true;
+		combatTurnsPassed = 0;
+		attackerRegionTurn = true;
 
-		List<RegionArmySlot> nonEmptyAttackerRegionSlots = new List<RegionArmySlot> ();
-		List<RegionArmySlot> nonEmptyDefenderRegionSlots = new List<RegionArmySlot> ();
+		nonEmptyAttackerRegionSlots = new List<RegionArmySlot> ();
+		nonEmptyDefenderRegionSlots = new List<RegionArmySlot> ();
 
 		// Add only non-empty slots to the battle
 		foreach(RegionArmySlot armySlot in attackerRegion.armySlots){
@@ -72,8 +85,8 @@ public class CombatManager : MonoBehaviour {
 			}
 		}
 
-		Dictionary<ArmyType, int> attackerRegionLosses = new Dictionary<ArmyType, int> ();
-		Dictionary<ArmyType, int> defenderRegionLosses = new Dictionary<ArmyType, int> ();
+		attackerRegionLosses = new Dictionary<ArmyType, int> ();
+		defenderRegionLosses = new Dictionary<ArmyType, int> ();
 
 		// Loop until one of the opponents lose all of his units
 		while(attackerRegion.HasAnyTroops() && defenderRegion.HasAnyTroops()){
@@ -116,13 +129,23 @@ public class CombatManager : MonoBehaviour {
 				RegionArmySlot defendingUnit = thisTurnDefenderArmy[targetUnit];
 				Debug.Log ("Defender: " + thisTurnDefenderRegion + " defending unit:" + defendingUnit);
 
-				// Kill Unit
+				// Perform the attack on the defending unit
 				ArmyType defendingUnitType = defendingUnit.armyType;
+				if(wait){
+					yield return new WaitForSeconds(1);
+				}
+
+				// Kill Unit
 				defendingUnit.removeUnit ();
+
+				// UNIT DESTROYED
 				if(defendingUnit.armyAmount == 0){
 					Debug.Log ("Unit Type: " + defendingUnitType + " of region " + 
 						thisTurnDefenderRegion + " is DESTROYED !! ");
 					thisTurnDefenderArmy.Remove (defendingUnit);
+					if(wait){
+						yield return new WaitForSeconds(1);
+					}
 				}
 
 				// Add unit killed to this region losses
@@ -146,8 +169,10 @@ public class CombatManager : MonoBehaviour {
 
 		if (attackerRegion.HasAnyTroops ()) {
 			Debug.Log (attackerRegion + " WON !!");
+			attackerWins = true;
 		} else {
 			Debug.Log (defenderRegion + " WON !!");
+			attackerWins = false;
 		}
 
 		Debug.Log ("Losses of Attacking Region " + attackerRegion);
@@ -159,6 +184,19 @@ public class CombatManager : MonoBehaviour {
 		foreach(KeyValuePair<ArmyType, int> army in defenderRegionLosses){
 			Debug.Log (army.Key + " = " + army.Value);
 		}
+
+		FinishCombat ();
 	}
-		
+
+	public void FinishCombat(){
+		if(attackerWins){
+			defenderRegion.SetNaziConquered (attackerRegion.isNazi);
+		}
+
+		combatScreen.gameObject.SetActive (false);
+
+		FindObjectOfType<EconomyManager>().decreaseActionPoints(1);
+		// End combat and back to Idle map
+		FindObjectOfType<GameStateMachine> ().SwitchToState (GameState.IdleMapState);
+	}
 }

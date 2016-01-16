@@ -124,7 +124,7 @@ public class GameStateMachine : MonoBehaviour {
 		case GameState.AttackState:
 			Debug.Log("Region touched while we are on AttackState. Region selected to send attack from: " + region.name);
 			// Confirm where to send attack from
-			FindObjectOfType<CombatManager>().ConfirmStartAttackFrom(region);
+			FindObjectOfType<CombatManager>().ShowConfirmStartAttackFrom(region);
 			break;
 		}
 	}
