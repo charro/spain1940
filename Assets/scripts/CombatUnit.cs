@@ -8,10 +8,11 @@ public class CombatUnit : MonoBehaviour {
 
 	private RegionArmySlot associatedArmySlot;
 
-	// private int lastTimeCheckedUnits;
+	private int lastTimeCheckedUnits;
 
 	public void SetAssociatedArmySlot(RegionArmySlot armySlot){
 		associatedArmySlot = armySlot;
+		lastTimeCheckedUnits = associatedArmySlot.armyAmount;
 	}
 
 	void Awake () {
@@ -28,7 +29,11 @@ public class CombatUnit : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		units.text = 
-			associatedArmySlot.armyAmount + "";
+		if(lastTimeCheckedUnits != associatedArmySlot.armyAmount){
+			units.text = 
+				associatedArmySlot.armyAmount + "";
+			FindObjectOfType<CombatScreen> ().ShowExplosion (transform.position.x, transform.position.y);
+			lastTimeCheckedUnits = associatedArmySlot.armyAmount;
+		}
 	}
 }

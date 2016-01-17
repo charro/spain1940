@@ -33,14 +33,14 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void ShowMapAllRegionsDisabled(){
-		// Hide all UI panels, showing the map that's behind
-		UIManager.hideAllPanels ();
 		// Disable all regions
 		DisableAllRegions ();
 		// If any selected region, send it back to its position
 		if(selectedRegion){
 			selectedRegion.toggleSelected();
 		}
+		// Hide all UI panels, showing the map that's behind
+		UIManager.hideAllPanels ();
 	}
 
 	public void ShowMapFriendlyRegionsOnly(){

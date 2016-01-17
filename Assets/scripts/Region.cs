@@ -33,6 +33,10 @@ public class Region : MonoBehaviour {
 			AddUnitsToArmy (ArmyType.Milicia, 12);
 			AddUnitsToArmy (ArmyType.TankBisonte, 5);
 		}
+		if(regionType == RegionType.Asturias){
+			AddUnitsToArmy (ArmyType.TankLince, 20);
+			AddUnitsToArmy (ArmyType.TankToro, 7);
+		}
 	}
 	
 	// Update is called once per frame

@@ -5,6 +5,7 @@ public class CombatScreen : MonoBehaviour {
 
 	public CombatUnit[] republicanCombatUnits;
 	public CombatUnit[] naziCombatUnits;
+	public ParticleSystem unitExplosion;
 
 	// Use this for initialization
 	void Start () {
@@ -14,6 +15,11 @@ public class CombatScreen : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	public void ShowExplosion(float x, float y){
+		unitExplosion.transform.position = new Vector3 (x, y, unitExplosion.transform.position.z);
+		unitExplosion.Play ();
 	}
 
 	public void SetCombatRegions(Region republican, Region nazi){
