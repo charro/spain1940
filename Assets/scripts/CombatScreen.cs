@@ -5,6 +5,7 @@ public class CombatScreen : MonoBehaviour {
 
 	public CombatUnit[] republicanCombatUnits;
 	public CombatUnit[] naziCombatUnits;
+	public GameObject missMessage;
 	public ParticleSystem unitExplosion;
 
 	// Use this for initialization
@@ -39,5 +40,18 @@ public class CombatScreen : MonoBehaviour {
 			naziCombatUnits [i].SetAssociatedArmySlot (nazi.armySlots[i]);
 			naziCombatUnits [i].gameObject.SetActive (true);
 		}
+	}
+
+	public void ShowMissed(float x, float y, float seconds){
+		//missMessage.transform.position = new Vector3 (x, y, missMessage.transform.position.z);
+		StartCoroutine(ShowObjectForSecs (missMessage, seconds));
+	}
+
+	/*********************  PRIVATE METHODS *****************************************/
+
+	private IEnumerator ShowObjectForSecs(GameObject gameObject, float secs){
+		gameObject.SetActive (true);
+		yield return new WaitForSeconds (secs);
+		gameObject.SetActive (false);
 	}
 }

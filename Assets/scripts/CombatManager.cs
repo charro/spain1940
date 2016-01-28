@@ -6,6 +6,8 @@ public class CombatManager : MonoBehaviour {
 
 	// Screen to show the combat
 	public CombatScreen combatScreen;
+	// Screen post-combat
+	public CombatResultPanel combatResultPanel;
 
 	private Region attackerRegion;
 	private Region defenderRegion;
@@ -63,7 +65,7 @@ public class CombatManager : MonoBehaviour {
 		FindObjectOfType<UIManager>().ShowPopUp(PopUpType.ConfirmAttack);
 	}
 
-	IEnumerator CalculateCombat(bool wait){
+	IEnumerator CalculateCombat(bool waitForIt){
 		Debug.Log ("STARTING NEW COMBAT !! : " + attackerRegion + " ATTACKS " + defenderRegion);
 			
 		combatTurnsPassed = 0;
@@ -114,7 +116,7 @@ public class CombatManager : MonoBehaviour {
 				thisTurnDefenderRegion = attackerRegion;
 			}
 
-			// Start attacking randomly with all the attacker Units
+			// Start attacking one by one with all the attacker Units
 			foreach(RegionArmySlot attackerUnit in thisTurnAttackerArmy){
 				
 				Debug.Log ("Attacker: " + thisTurnAttackerRegion + " attacking unit:" + attackerUnit);
@@ -124,37 +126,52 @@ public class CombatManager : MonoBehaviour {
 					break;
 				}
 
-				// Choose a Random unit to be attacked
-				int targetUnit = Random.Range(0, thisTurnDefenderArmy.Count);
-				RegionArmySlot defendingUnit = thisTurnDefenderArmy[targetUnit];
-				Debug.Log ("Defender: " + thisTurnDefenderRegion + " defending unit:" + defendingUnit);
+				// Decide if attacker missed or succeced
+				int chanceOfSuccess = 85;
 
-				// Perform the attack on the defending unit
-				ArmyType defendingUnitType = defendingUnit.armyType;
-				if(wait){
-					yield return new WaitForSeconds(1);
-				}
+				// SUCCESS ON THE ATTACK
+				if (Random.Range (0, 100) < chanceOfSuccess) {
 
-				// Kill Unit
-				defendingUnit.removeUnit ();
+					// Choose a Random unit to be attacked
+					int targetUnit = Random.Range (0, thisTurnDefenderArmy.Count);
+					RegionArmySlot defendingUnit = thisTurnDefenderArmy [targetUnit];
+					Debug.Log ("Defender: " + thisTurnDefenderRegion + " defending unit:" + defendingUnit);
 
-				// UNIT DESTROYED
-				if(defendingUnit.armyAmount == 0){
-					Debug.Log ("Unit Type: " + defendingUnitType + " of region " + 
+					// Perform the attack on the defending unit
+					ArmyType defendingUnitType = defendingUnit.armyType;
+					if (waitForIt) {
+						yield return new WaitForSeconds (1);
+					}
+
+					// Kill Unit
+					defendingUnit.removeUnit ();
+
+					// UNIT DESTROYED
+					if (defendingUnit.armyAmount == 0) {
+						Debug.Log ("Unit Type: " + defendingUnitType + " of region " +
 						thisTurnDefenderRegion + " is DESTROYED !! ");
-					thisTurnDefenderArmy.Remove (defendingUnit);
-					if(wait){
-						yield return new WaitForSeconds(1);
+						thisTurnDefenderArmy.Remove (defendingUnit);
+						if (waitForIt) {
+							yield return new WaitForSeconds (1);
+						}
+					}
+
+					// Add unit killed to this region losses
+					int lossesAlready = 0;
+					if (thisTurnLosses.ContainsKey (defendingUnitType)) {
+						lossesAlready = thisTurnLosses [defendingUnitType];
+					}
+					thisTurnLosses [defendingUnitType] = lossesAlready + 1;
+				}
+				// ATTACK MISSED
+				else {
+					Debug.Log ("ATTACK MISSED !!");
+					if(waitForIt){
+						combatScreen.ShowMissed (0, 0, 3);
+						yield return new WaitForSeconds (3);
 					}
 				}
-
-				// Add unit killed to this region losses
-				int lossesAlready = 0;
-				if(thisTurnLosses.ContainsKey(defendingUnitType)){
-					lossesAlready = thisTurnLosses[defendingUnitType];
-				}
-				thisTurnLosses[defendingUnitType] = lossesAlready+1;
-
+					
 				Debug.Log ("----------------------------------------------------------------------");
 			}
 
@@ -186,6 +203,16 @@ public class CombatManager : MonoBehaviour {
 		}
 
 		FinishCombat ();
+
+		// Show the combat result screen
+		if(waitForIt){
+			if (attackerRegion.isNazi) {
+				combatResultPanel.ShowPanel (defenderRegionLosses, attackerRegionLosses);
+			} 
+			else {
+				combatResultPanel.ShowPanel (attackerRegionLosses, defenderRegionLosses);
+			}
+		}
 	}
 
 	public void FinishCombat(){

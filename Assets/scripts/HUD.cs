@@ -9,6 +9,7 @@ public class HUD : MonoBehaviour {
 	public Text recruitmentPointsText;
 	public Text spyButtonText;
 	public Text researchText;
+	public Image researchIcon;
 
 	// Use this for initialization
 	void Start () {
@@ -36,10 +37,13 @@ public class HUD : MonoBehaviour {
 
 		ResearchManager researchManager = FindObjectOfType<ResearchManager> ();
 		if(researchManager.IsAnyTechnologyBeingResearched()){
-			researchText.text = "CURRENT RESEARCH: \n" + researchManager.GetCurrentResearchedTechnology();
+			researchText.text = "RESEARCHING:";
+			researchIcon.gameObject.SetActive(true);
+			researchIcon.sprite = researchManager.GetCurrentResearchedTechnology ().technologySprite;
 		}
 		else{
 			researchText.text = "NO RESEARCH ONGOING";
+			researchIcon.gameObject.SetActive(false);
 		}
 	}
 	
