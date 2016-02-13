@@ -140,7 +140,7 @@ public class CombatManager : MonoBehaviour {
 					// Perform the attack on the defending unit
 					ArmyType defendingUnitType = defendingUnit.armyType;
 					if (waitForIt) {
-						yield return new WaitForSeconds (1);
+						yield return new WaitForSeconds (0.5f);
 					}
 
 					// Kill Unit
@@ -152,7 +152,7 @@ public class CombatManager : MonoBehaviour {
 						thisTurnDefenderRegion + " is DESTROYED !! ");
 						thisTurnDefenderArmy.Remove (defendingUnit);
 						if (waitForIt) {
-							yield return new WaitForSeconds (1);
+							yield return new WaitForSeconds (0.5f);
 						}
 					}
 
@@ -167,11 +167,11 @@ public class CombatManager : MonoBehaviour {
 				else {
 					Debug.Log ("ATTACK MISSED !!");
 					if(waitForIt){
-						combatScreen.ShowMissed (0, 0, 3);
-						yield return new WaitForSeconds (3);
+						combatScreen.ShowMissedUnitMessage (attackerRegion.isNazi, attackerUnit.armyType, 1.5f);
+						yield return new WaitForSeconds (1.5f);
 					}
 				}
-					
+
 				Debug.Log ("----------------------------------------------------------------------");
 			}
 

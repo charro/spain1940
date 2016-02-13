@@ -4,6 +4,9 @@ using System.Collections;
 
 public class ArmyUnitDetailsPanel : MonoBehaviour {
 
+	public Text unitName;
+	public Image unitImage;
+
 	public Text priceText;
 	public Text attackText;
 	public Text defenseText;
@@ -23,6 +26,9 @@ public class ArmyUnitDetailsPanel : MonoBehaviour {
 		GameManager gameManager = FindObjectOfType<GameManager> ();
 		ArmyType armyType = gameManager.GetSelectedRegion().GetArmySlots()[armySlot].armyType;
 		Army army = FindObjectOfType<ArmyValues> ().GetArmy (armyType);
+
+		unitName.text = "" + army.armyDescription;
+		unitImage.sprite = army.sprite;
 
 		priceText.text = "" + army.price;
 		attackText.text = "" + army.attack;

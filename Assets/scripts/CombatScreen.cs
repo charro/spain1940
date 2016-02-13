@@ -24,11 +24,15 @@ public class CombatScreen : MonoBehaviour {
 	}
 
 	public void SetCombatRegions(Region republican, Region nazi){
+		RegionArmySlot emptySlot = new RegionArmySlot ();
+
 		foreach(CombatUnit combatUnit in republicanCombatUnits){
 			combatUnit.gameObject.SetActive (false);
+			combatUnit.SetAssociatedArmySlot (emptySlot);
 		}
 		foreach(CombatUnit combatUnit in naziCombatUnits){
 			combatUnit.gameObject.SetActive (false);
+			combatUnit.SetAssociatedArmySlot (emptySlot);
 		}
 
 		for (int i = 0; i < republican.armySlots.Length && i < republicanCombatUnits.Length; i++) {
@@ -42,8 +46,18 @@ public class CombatScreen : MonoBehaviour {
 		}
 	}
 
-	public void ShowMissed(float x, float y, float seconds){
-		//missMessage.transform.position = new Vector3 (x, y, missMessage.transform.position.z);
+	public void ShowMissedUnitMessage(bool isNazi, ArmyType armyType, float seconds){
+		CombatUnit[] combatUnitsAttacked = (isNazi ? naziCombatUnits : republicanCombatUnits);
+		GameObject missedUnit = combatUnitsAttacked[0].gameObject;
+		foreach(CombatUnit combatUnit in combatUnitsAttacked){
+			if(!combatUnit.isEmpty() && combatUnit.GetArmyType() == armyType){
+				missedUnit = combatUnit.gameObject;
+				break;
+			}
+		}
+		missMessage.transform.position = new Vector3 (missedUnit.transform.position.x + 2,
+													  missedUnit.transform.position.y, 
+													  missMessage.transform.position.z);
 		StartCoroutine(ShowObjectForSecs (missMessage, seconds));
 	}
 

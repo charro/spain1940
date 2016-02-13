@@ -15,6 +15,14 @@ public class CombatUnit : MonoBehaviour {
 		lastTimeCheckedUnits = associatedArmySlot.armyAmount;
 	}
 
+	public ArmyType GetArmyType(){
+		return associatedArmySlot.armyType;
+	}
+
+	public bool isEmpty(){
+		return associatedArmySlot.armyType == ArmyType.Empty;
+	}
+
 	void Awake () {
 		// lastTimeCheckedUnits = associatedArmySlot.
 		if (associatedArmySlot.armyType == ArmyType.Empty) {

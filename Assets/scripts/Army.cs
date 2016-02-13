@@ -6,6 +6,7 @@ public class Army : MonoBehaviour {
 	public ArmyType armyType;
 	public TechnologyType requiredTechnology;
 	public Sprite sprite;
+	public string armyDescription;
 	public int price;
 	public int attack;
 	public int defense;
