@@ -126,13 +126,15 @@ public class CombatManager : MonoBehaviour {
 					break;
 				}
 
-				// Decide if attacker missed or succeced
+				// Decide here if attacker missed or succeced
 				int chanceOfSuccess = 85;
 
 				// SUCCESS ON THE ATTACK
 				if (Random.Range (0, 100) < chanceOfSuccess) {
 
-					// Choose a Random unit to be attacked
+					// Choose here a unit to be attacked
+
+					// Random choosing
 					int targetUnit = Random.Range (0, thisTurnDefenderArmy.Count);
 					RegionArmySlot defendingUnit = thisTurnDefenderArmy [targetUnit];
 					Debug.Log ("Defender: " + thisTurnDefenderRegion + " defending unit:" + defendingUnit);
@@ -140,11 +142,14 @@ public class CombatManager : MonoBehaviour {
 					// Perform the attack on the defending unit
 					ArmyType defendingUnitType = defendingUnit.armyType;
 					if (waitForIt) {
+						// Here, animation for attacker unit
 						yield return new WaitForSeconds (0.5f);
 					}
 
+					int unitsKilled = CalculateUnitsKilled (attackerUnit, defendingUnit);
+
 					// Kill Unit
-					defendingUnit.removeUnit ();
+					defendingUnit.removeUnits(unitsKilled);
 
 					// UNIT DESTROYED
 					if (defendingUnit.armyAmount == 0) {
@@ -161,7 +166,7 @@ public class CombatManager : MonoBehaviour {
 					if (thisTurnLosses.ContainsKey (defendingUnitType)) {
 						lossesAlready = thisTurnLosses [defendingUnitType];
 					}
-					thisTurnLosses [defendingUnitType] = lossesAlready + 1;
+					thisTurnLosses [defendingUnitType] = lossesAlready + unitsKilled;
 				}
 				// ATTACK MISSED
 				else {
@@ -202,10 +207,10 @@ public class CombatManager : MonoBehaviour {
 			Debug.Log (army.Key + " = " + army.Value);
 		}
 
-		FinishCombat ();
-
-		// Show the combat result screen
+		// Finish and Show the combat result screen
 		if(waitForIt){
+			FinishCombat ();
+
 			if (attackerRegion.isNazi) {
 				combatResultPanel.ShowPanel (defenderRegionLosses, attackerRegionLosses);
 			} 
@@ -213,6 +218,36 @@ public class CombatManager : MonoBehaviour {
 				combatResultPanel.ShowPanel (attackerRegionLosses, defenderRegionLosses);
 			}
 		}
+	}
+
+	public int CalculateUnitsKilled(RegionArmySlot attacker, RegionArmySlot defender){
+		ArmyValues armyValues = FindObjectOfType<ArmyValues> ();
+		Army attackerArmy = armyValues.GetArmy (attacker.armyType);
+		Army defenderArmy = armyValues.GetArmy (defender.armyType);
+
+		int attackerUnits = attacker.armyAmount;
+		int defenderUnits = defender.armyAmount;
+
+		// Total damage made by attacker troops
+		int totalAttackerDamage = attackerUnits * attackerArmy.attack;
+
+		// Calculate damage reduction factor of defender, based on the defense of defender (Limited to 90% of damage)
+		float damageReduction = (Mathf.Pow(1.05f, (float)defenderArmy.defense)) - 1;
+		damageReduction = (damageReduction > 0.9f ? 0.9f : damageReduction);
+
+		// Recalculate the total damage with the damage reduction
+		totalAttackerDamage =  (int)(totalAttackerDamage * (1 - damageReduction));
+
+		int defenderLifePerUnit = defenderArmy.defense * 10;
+
+		Debug.Log ("Attacker unit total damage after reduction of the " + damageReduction + 
+			" : " + totalAttackerDamage);
+
+		int totalLostUnits = (totalAttackerDamage / defenderLifePerUnit);
+
+		Debug.Log ("Life per defender unit: " + defenderLifePerUnit + " | Defender units destroyed: " + totalLostUnits);
+
+		return totalLostUnits;
 	}
 
 	public void FinishCombat(){

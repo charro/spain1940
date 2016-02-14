@@ -22,6 +22,10 @@ public class ArmyValues : MonoBehaviour {
 //	public Dictionary<ArmyType, int> armyPricesDictionary;
 //	public Dictionary<AirForceType, Sprite> airForceSprites;
 
+	public void SetArmyDictionary(Dictionary<ArmyType, Army> newArmiesDictionary){
+		armiesDictionary = newArmiesDictionary;
+	}
+
 	// Use this for initialization
 	void Start () {
 		// Gets all Technology children and adds them to the HashMap

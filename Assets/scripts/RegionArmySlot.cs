@@ -27,8 +27,9 @@ public class RegionArmySlot
 
 	public void removeUnits(int unitsNumber){
 		if (armyAmount < unitsNumber) {
-			Debug.Log ("ERROR: TRYING TO REMOVE " + unitsNumber + " FROM REGION ARMY SLOT OF TYPE " + armyType +
-								" WHERE THERE ARE ONLY " + armyAmount + " UNITS");
+			Debug.Log ("WARNING: TRYING TO REMOVE " + unitsNumber + " FROM REGION ARMY SLOT OF TYPE " + armyType +
+								" WHERE THERE ARE ONLY " + armyAmount + " UNITS, SO REMOVING ALL UNITS");
+			armyAmount = 0;
 		} else {
 			armyAmount -= unitsNumber;
 		}
