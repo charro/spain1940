@@ -32,7 +32,7 @@ public class CombatTest {
 		Army tankToroArmyComponent = tankToroArmy.GetComponent<Army> ();
 		tankToroArmyComponent.armyType = ArmyType.TankToro;
 		tankToroArmyComponent.attack = 3;
-		tankToroArmyComponent.defense = 5;
+		tankToroArmyComponent.defense = 7;
 		tankToroArmyComponent.speed = 2;
 
 		GameObject tankLinceArmy = new GameObject("tankLinceArmy");
@@ -40,7 +40,7 @@ public class CombatTest {
 		Army tankLinceArmyComponent = tankLinceArmy.GetComponent<Army> ();
 		tankLinceArmyComponent.armyType = ArmyType.TankLince;
 		tankLinceArmyComponent.attack = 2;
-		tankLinceArmyComponent.defense = 2;
+		tankLinceArmyComponent.defense = 5;
 		tankLinceArmyComponent.speed = 6;
 
 		GameObject miliciaArmy = new GameObject("miliciaArmy");
@@ -81,6 +81,8 @@ public class CombatTest {
 		{
 			defenderRegion.AddUnitsToArmy (army.Key, army.Value);
 		}
+
+		Debug.Log ("CombatTest: Starting the combat !!");
 
 		// Create and init a new Combat Manager
 		CombatManager combatManagerComponent = combatManager.GetComponent<CombatManager> ();

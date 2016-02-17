@@ -50,7 +50,6 @@ public class CombatManager : MonoBehaviour {
 	}
 
 	public void StartCombat(bool wait){
-		// IN DEVELOPMENT. BY THE MOMENT, AUTOMATIC WIN
 		if(wait){
 			combatScreen.gameObject.SetActive (true);
 			UIManager.hideAllPanels ();
@@ -65,6 +64,7 @@ public class CombatManager : MonoBehaviour {
 		FindObjectOfType<UIManager>().ShowPopUp(PopUpType.ConfirmAttack);
 	}
 
+	// waitForIt=false lets you call this method from Unit Tests
 	IEnumerator CalculateCombat(bool waitForIt){
 		Debug.Log ("STARTING NEW COMBAT !! : " + attackerRegion + " ATTACKS " + defenderRegion);
 			
@@ -89,6 +89,8 @@ public class CombatManager : MonoBehaviour {
 
 		attackerRegionLosses = new Dictionary<ArmyType, int> ();
 		defenderRegionLosses = new Dictionary<ArmyType, int> ();
+
+
 
 		// Loop until one of the opponents lose all of his units
 		while(attackerRegion.HasAnyTroops() && defenderRegion.HasAnyTroops()){
@@ -183,6 +185,11 @@ public class CombatManager : MonoBehaviour {
 			// Pass turn
 			attackerRegionTurn = !attackerRegionTurn;
 			combatTurnsPassed++;
+
+			// Put a yield here just before the end of the loop, to avoid hunging Unity
+			if(waitForIt){
+				yield return new WaitForEndOfFrame ();
+			}
 		}
 
 		Debug.Log ("COMBAT FINISHED - SUMMARY OF THE COMBAT"+
@@ -220,13 +227,16 @@ public class CombatManager : MonoBehaviour {
 		}
 	}
 
-	public int CalculateUnitsKilled(RegionArmySlot attacker, RegionArmySlot defender){
-		ArmyValues armyValues = FindObjectOfType<ArmyValues> ();
-		Army attackerArmy = armyValues.GetArmy (attacker.armyType);
-		Army defenderArmy = armyValues.GetArmy (defender.armyType);
+	// Used to avoid the combat to enter in an infinite
+	Dictionary<ArmyType, int> accumulatedDamage = new Dictionary<ArmyType, int> ();
 
-		int attackerUnits = attacker.armyAmount;
-		int defenderUnits = defender.armyAmount;
+	public int CalculateUnitsKilled(RegionArmySlot attackerUnit, RegionArmySlot defenderUnit){
+		ArmyValues armyValues = FindObjectOfType<ArmyValues> ();
+		Army attackerArmy = armyValues.GetArmy (attackerUnit.armyType);
+		Army defenderArmy = armyValues.GetArmy (defenderUnit.armyType);
+
+		int attackerUnits = attackerUnit.armyAmount;
+		int defenderUnits = defenderUnit.armyAmount;
 
 		// Total damage made by attacker troops
 		int totalAttackerDamage = attackerUnits * attackerArmy.attack;
@@ -244,6 +254,23 @@ public class CombatManager : MonoBehaviour {
 			" : " + totalAttackerDamage);
 
 		int totalLostUnits = (totalAttackerDamage / defenderLifePerUnit);
+
+		// In case of not enough damage to destroy a unit, accumulate the damage (to avoid never kill it)
+		if(totalLostUnits==0){
+			int currentDamage = 0;
+			if(accumulatedDamage.ContainsKey(defenderArmy.armyType)){
+				currentDamage = accumulatedDamage[defenderArmy.armyType];
+			}
+
+			int newAccumulatedDamage = currentDamage + totalAttackerDamage;
+			accumulatedDamage [defenderArmy.armyType] = newAccumulatedDamage;
+
+			if(newAccumulatedDamage >= defenderLifePerUnit){
+				Debug.Log ("Accumulated damage " + newAccumulatedDamage + " for this unit is higher than the unit life. One unit killed");		
+				totalLostUnits = 1;
+				accumulatedDamage [defenderArmy.armyType] = 0;
+			}
+		}
 
 		Debug.Log ("Life per defender unit: " + defenderLifePerUnit + " | Defender units destroyed: " + totalLostUnits);
 
