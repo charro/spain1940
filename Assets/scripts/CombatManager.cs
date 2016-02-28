@@ -144,6 +144,7 @@ public class CombatManager : MonoBehaviour {
 					// Perform the attack on the defending unit
 					ArmyType defendingUnitType = defendingUnit.armyType;
 					if (waitForIt) {
+						combatScreen.ShowShooting(attackerRegion.isNazi, attackerUnit.armyType);
 						// Here, animation for attacker unit
 						yield return new WaitForSeconds (0.5f);
 					}

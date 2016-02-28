@@ -19,12 +19,17 @@ public class CombatScreen : MonoBehaviour {
 	
 	}
 
+	public void ShowShooting(bool isNazi, ArmyType armyType){
+		Transform transform = GetUnitByType (isNazi, armyType).transform;
+		Vector3 shotPosition = 
+			new Vector3 (transform.position.x + 2, transform.position.y, unitExplosion.transform.position.z);
+		unitExplosion.transform.position = shotPosition;
+		unitExplosion.Play ();
+	}
+
 	public void ShowExplosion(float x, float y){
 		Vector3 explosionPosition = new Vector3 (x, y, unitExplosion.transform.position.z);
-		//unitExplosion.transform.position = new Vector3 (x, y, unitExplosion.transform.position.z);
-		//unitExplosion.Play ();
-
-		var go = Instantiate(explosion, explosionPosition, transform.rotation);
+		Instantiate(explosion, explosionPosition, transform.rotation);
 	}
 
 	public void SetCombatRegions(Region republican, Region nazi){
@@ -51,14 +56,7 @@ public class CombatScreen : MonoBehaviour {
 	}
 
 	public void ShowMissedUnitMessage(bool isNazi, ArmyType armyType, float seconds){
-		CombatUnit[] combatUnitsAttacked = (isNazi ? naziCombatUnits : republicanCombatUnits);
-		GameObject missedUnit = combatUnitsAttacked[0].gameObject;
-		foreach(CombatUnit combatUnit in combatUnitsAttacked){
-			if(!combatUnit.isEmpty() && combatUnit.GetArmyType() == armyType){
-				missedUnit = combatUnit.gameObject;
-				break;
-			}
-		}
+		GameObject missedUnit = GetUnitByType (isNazi, armyType);
 		missMessage.transform.position = new Vector3 (missedUnit.transform.position.x + 2,
 													  missedUnit.transform.position.y, 
 													  missMessage.transform.position.z);
@@ -71,5 +69,18 @@ public class CombatScreen : MonoBehaviour {
 		gameObject.SetActive (true);
 		yield return new WaitForSeconds (secs);
 		gameObject.SetActive (false);
+	}
+
+	private GameObject GetUnitByType(bool isNazi, ArmyType armyType){
+		CombatUnit[] combatUnitsAttacked = (isNazi ? naziCombatUnits : republicanCombatUnits);
+		GameObject missedUnit = combatUnitsAttacked[0].gameObject;
+		foreach(CombatUnit combatUnit in combatUnitsAttacked){
+			if(!combatUnit.isEmpty() && combatUnit.GetArmyType() == armyType){
+				missedUnit = combatUnit.gameObject;
+				break;
+			}
+		}
+
+		return missedUnit;
 	}
 }
