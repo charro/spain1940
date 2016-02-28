@@ -25,7 +25,7 @@ public class CombatUnit : MonoBehaviour {
 
 	void Awake () {
 		// lastTimeCheckedUnits = associatedArmySlot.
-		if (associatedArmySlot.armyType == ArmyType.Empty) {
+		if (associatedArmySlot == null || associatedArmySlot.armyType == ArmyType.Empty) {
 			gameObject.SetActive (false);
 		} else {
 			image.sprite = 

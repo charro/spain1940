@@ -7,6 +7,7 @@ public class CombatScreen : MonoBehaviour {
 	public CombatUnit[] naziCombatUnits;
 	public GameObject missMessage;
 	public ParticleSystem unitExplosion;
+	public Transform explosion;
 
 	// Use this for initialization
 	void Start () {
@@ -19,8 +20,11 @@ public class CombatScreen : MonoBehaviour {
 	}
 
 	public void ShowExplosion(float x, float y){
-		unitExplosion.transform.position = new Vector3 (x, y, unitExplosion.transform.position.z);
-		unitExplosion.Play ();
+		Vector3 explosionPosition = new Vector3 (x, y, unitExplosion.transform.position.z);
+		//unitExplosion.transform.position = new Vector3 (x, y, unitExplosion.transform.position.z);
+		//unitExplosion.Play ();
+
+		var go = Instantiate(explosion, explosionPosition, transform.rotation);
 	}
 
 	public void SetCombatRegions(Region republican, Region nazi){
