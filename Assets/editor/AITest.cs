@@ -13,6 +13,7 @@ public class AITest {
 		aiManager.AddComponent<AIManager>();
 		aiManager.GetComponent<AIManager>().baseRecruitPointsPerRegion = 20;
 		aiManager.GetComponent<AIManager>().recruitPointsMultiplierPerTurn = 0.1f;
+		aiManager.GetComponent<AIManager> ().turnsNeededForNextResearch = 2;
 
 		GameObject gameManager = new GameObject("mockGameManager");
 		gameManager.AddComponent<GameManager>();
@@ -31,6 +32,15 @@ public class AITest {
 		regionNoNazi.AddComponent<Region>();
 		regionNoNazi.GetComponent<Region> ().regionType = RegionType.Leon;
 
+		// Initialize the army of each region
+		int maxSlots = regionNazi1.GetComponent<Region> ().GetMaxSlots();
+		regionNazi1.GetComponent<Region> ().armySlots = new RegionArmySlot[maxSlots];
+		regionNazi1.GetComponent<Region> ().ClearArmySlots ();
+		regionNazi2.GetComponent<Region> ().armySlots = new RegionArmySlot[maxSlots];
+		regionNazi2.GetComponent<Region> ().ClearArmySlots ();
+		regionNoNazi.GetComponent<Region> ().armySlots = new RegionArmySlot[maxSlots];
+		regionNoNazi.GetComponent<Region> ().ClearArmySlots ();
+
 		gameManager.GetComponent<GameManager>().AddRegionToList(regionNazi1.GetComponent<Region> ());
 		gameManager.GetComponent<GameManager>().AddRegionToList(regionNazi2.GetComponent<Region> ());
 		gameManager.GetComponent<GameManager>().AddRegionToList(regionNoNazi.GetComponent<Region> ());
@@ -46,15 +56,17 @@ public class AITest {
 		naziArmyComponent.attack = 3;
 		naziArmyComponent.defense = 7;
 		naziArmyComponent.speed = 2;
+		naziArmyComponent.price = 25;
 
 		GameObject naziArmy2 = new GameObject("naziArmy2");
 		naziArmy2.AddComponent<Army>();
 		Army naziArmyComponent2 = naziArmy2.GetComponent<Army> ();
 		naziArmyComponent2.armyType = ArmyType.NaziMeBf109;
-		naziArmyComponent.armyDescription = "Nazi Me Bf109";
+		naziArmyComponent2.armyDescription = "Nazi Me Bf109";
 		naziArmyComponent2.attack = 6;
 		naziArmyComponent2.defense = 4;
 		naziArmyComponent2.speed = 5;
+		naziArmyComponent2.price = 85;
 
 		// Add them to the armies dictionary and then to the ArmyValues object
 		Dictionary<ArmyType, Army> armiesDictionary = new Dictionary<ArmyType, Army>();
@@ -74,7 +86,7 @@ public class AITest {
 
 		Debug.Log ("AITest: Starting the Test !!");
 
-		for(int turn=0; turn<5; turn++){
+		for(int turn=0; turn<7; turn++){
 			aiManager.GetComponent<AIManager> ().DoAITurnActions ();
 			Debug.Log ("AITest: Finishing turn " + turn);
 			gameManager.GetComponent<GameManager> ().IncreaseCurrentTurn ();

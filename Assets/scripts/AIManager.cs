@@ -14,7 +14,7 @@ public class AIManager : MonoBehaviour {
 
 	private int accumulatedRecruitmentPoints = 0;
 
-	private List<ArmyType> researchedArmyTypes = new List<ArmyType> ();
+	private List<Army> researchedArmies = new List<Army> ();
 	private int turnOfLastResearchedArmy = 0;
 
 	// Use this for initialization
@@ -47,24 +47,46 @@ public class AIManager : MonoBehaviour {
 
 		Debug.Log ("IA: Recruit points generated for this turn = " + recruitPointsForThisTurn);
 
-		// Decide if a new unit type has been researched
+		accumulatedRecruitmentPoints += recruitPointsForThisTurn;
 
+		Debug.Log ("IA: Accumulated recruitment points = " + accumulatedRecruitmentPoints);
 
 		// Decide if perform recruitment or save points for later
 		if(DecideIfPerformRecruitment()){
 			PerformRecruitment ();
 		}
-		else{
-			accumulatedRecruitmentPoints += recruitPointsForThisTurn;
-		}
 	}
 
 	private bool DecideIfPerformRecruitment(){
-		accumulatedRecruitmentPoints = 0;
 		return true;
 	}
 
 	private void PerformRecruitment (){
+		// Start with the best of the researched units, reversing the list
+		researchedArmies.Reverse();
+
+		// Divide the available recruitment points between all Nazi regions 
+		int recruitmentPointsPerRegion = accumulatedRecruitmentPoints / naziRegions.Count;
+
+		foreach(Region naziRegion in naziRegions){
+			int recruitmentPointsForThisRegion = recruitmentPointsPerRegion;
+			Debug.Log ("AIManager: Starting recruiting on Region " + naziRegion);
+
+			// Get always the best unit affordable with the available points
+			foreach(Army army in researchedArmies){
+				while(recruitmentPointsForThisRegion > army.price && army.price > 0){
+					naziRegion.AddUnitsToArmy (army.armyType, 1);
+					recruitmentPointsForThisRegion -= army.price;
+					accumulatedRecruitmentPoints -= army.price;
+					Debug.Log ("AIManager: New unit of type " + army.armyType+ " recruited in region " + 
+						naziRegion.name + " Remaining points for this Region = " + recruitmentPointsForThisRegion + 
+						" Remaining points in total for this turn = " + accumulatedRecruitmentPoints);
+				}
+			}
+		}
+
+		// Let the list in its previous order
+		researchedArmies.Reverse();
 	}
 
 	//********************************************  RESEARCH *********************************************/
@@ -77,7 +99,7 @@ public class AIManager : MonoBehaviour {
 				if(turnNumber - turnOfLastResearchedArmy > turnsNeededForNextResearch){
 					turnOfLastResearchedArmy = turnNumber;
 					Debug.Log ("Nazi AI: Nazis just discovered army " + army.armyDescription);
-					researchedArmyTypes.Add (army.armyType);
+					researchedArmies.Add (army);
 				}
 				return;
 			}
@@ -85,8 +107,8 @@ public class AIManager : MonoBehaviour {
 	}
 
 	private bool IsArmyTypeAlreadyResearched(ArmyType type){
-		foreach(ArmyType researchedArmy in researchedArmyTypes){
-			if(type == researchedArmy){
+		foreach(Army researchedArmy in researchedArmies){
+			if(type == researchedArmy.armyType){
 				return true;
 			}
 		}
