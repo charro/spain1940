@@ -163,15 +163,23 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public List<Region> GetAllRepublicanRegions(){
-		List<Region> republicanRegions = new List<Region> ();
+		return GetAllRegionsOfTypeNaziOrNot(false);
+	}
+
+	public List<Region> GetAllNaziRegions(){
+		return GetAllRegionsOfTypeNaziOrNot(true);
+	}
+
+	private List<Region> GetAllRegionsOfTypeNaziOrNot(bool nazi){
+		List<Region> selectedRegions = new List<Region> ();
 
 		foreach(Region region in allRegions.Values){
-			if(!region.isNazi){
-				republicanRegions.Add (region);
+			if(region.isNazi == nazi){
+				selectedRegions.Add (region);
 			}
 		}
 
-		return republicanRegions;
+		return selectedRegions;
 	}
 
 	public Region[] GetRegionsBorderingSelectedRegion(){
@@ -293,5 +301,9 @@ public class GameManager : MonoBehaviour {
 
 		EventManager.TriggerPassTurnEvent ();
 	}
-	
+
+	// Convenience method. Usually here just Unit tests
+	public void IncreaseCurrentTurn(){
+		currentTurnNumber ++;
+	}
 }

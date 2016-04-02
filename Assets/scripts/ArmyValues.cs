@@ -18,12 +18,18 @@ public class ArmyValues : MonoBehaviour {
 
 	private Dictionary<ArmyType, Army> armiesDictionary;
 
+	private List<Army> naziArmies = new List<Army> ();
+
 //	public Dictionary<ArmyType, Sprite> armySpritesDictionary;
 //	public Dictionary<ArmyType, int> armyPricesDictionary;
 //	public Dictionary<AirForceType, Sprite> airForceSprites;
 
 	public void SetArmyDictionary(Dictionary<ArmyType, Army> newArmiesDictionary){
 		armiesDictionary = newArmiesDictionary;
+	}
+
+	public void SetNaziArmiesList(List<Army> newNaziArmies){
+		naziArmies = newNaziArmies;
 	}
 
 	// Use this for initialization
@@ -33,6 +39,9 @@ public class ArmyValues : MonoBehaviour {
 
 		foreach(Army army in GetComponentsInChildren<Army>()){
 			armiesDictionary[army.armyType] = army;
+			if((int)army.armyType >= 100){
+				naziArmies.Add (army);
+			}
 			Debug.Log("ARMY ADDED TO ARMIES DICTIONARY: " + army);
 		}
 		/*
@@ -63,6 +72,10 @@ public class ArmyValues : MonoBehaviour {
 
 	public Army GetArmy(ArmyType armyType){
 		return armiesDictionary[armyType];
+	}
+
+	public List<Army> GetNaziArmies(){
+		return naziArmies;
 	}
 
 	// This is called from Unity Editor

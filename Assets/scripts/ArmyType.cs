@@ -8,5 +8,10 @@ public enum ArmyType
 	Milicia,
 	TankLince,
 	TankToro,
-	TankBisonte
+	TankBisonte,
+
+	// Nazi units, ids starting in 100
+	NaziJager=100,
+	NaziFestung=101,
+	NaziMeBf109=102
 }
