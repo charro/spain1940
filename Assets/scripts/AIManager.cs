@@ -33,13 +33,14 @@ public class AIManager : MonoBehaviour {
 
 		DoResearchLogic ();
 
-		DoRecruitmentLogic ();
+		//DoRecruitmentLogic ();
 
 		DoAttackLogic ();
 	}
 
 	//******************************************  RECRUITMENT *********************************************/
 	private void DoRecruitmentLogic(){
+		Debug.Log ("*******IAIAIAIAIAIA************ RECRUITMENT LOGIC ********IAIAIAIAIAIA************");
 		// First, check how many regions we have as Nazi
 		int numberOfNaziRegions = naziRegions.Count;
 		int recruitPointsForThisTurn =  Mathf.FloorToInt(numberOfNaziRegions * baseRecruitPointsPerRegion * 
@@ -91,10 +92,11 @@ public class AIManager : MonoBehaviour {
 
 	//********************************************  RESEARCH *********************************************/
 	private void DoResearchLogic(){
-
+		Debug.Log ("*******IAIAIAIAIAIA************ RESEARCH LOGIC ********IAIAIAIAIAIA************");
 		// Loop trough all army types till finding the first non-developed one
 		foreach(Army army in FindObjectOfType<ArmyValues>().GetNaziArmies()){
 			if(!IsArmyTypeAlreadyResearched(army.armyType)){
+				// Once found, decide if we'll research it this turn or not
 				// Increase the chance of having a new unit type depending on the turns passed since last research
 				if(turnNumber - turnOfLastResearchedArmy > turnsNeededForNextResearch){
 					turnOfLastResearchedArmy = turnNumber;
@@ -118,10 +120,24 @@ public class AIManager : MonoBehaviour {
 
 	//******************************************** ATTACK *************************************************/
 	private void DoAttackLogic(){
+		Debug.Log ("*******IAIAIAIAIAIA************ ATTACK LOGIC ********IAIAIAIAIAIA************");
+		/*
+		if(turnNumber == 3){
+			// Start Attack over the selected Region
+			Debug.Log ("Attacking the Republic !!");
+			CombatManager combatManager = FindObjectOfType<CombatManager> ();
+			GameManager gameManager = FindObjectOfType<GameManager> ();
+			combatManager.SetAttackerRegion (gameManager.GetRegion(RegionType.Galicia));
+			combatManager.SetDefenderRegion (gameManager.GetRegion(RegionType.Asturias));
 
+			// Start the combat
+			combatManager.StartCombat(true);
+		}
+		*/
 	}
 
 	private void RefreshNeededDataForThisTurn(){
+		Debug.Log ("*******IAIAIAIAIAIA************ REFRESH DATA FOR AI ********IAIAIAIAIAIA************");
 		GameManager gameManager = FindObjectOfType<GameManager> ();
 		naziRegions = gameManager.GetAllNaziRegions ();
 		turnNumber = gameManager.GetCurrentTurnNumber ();
