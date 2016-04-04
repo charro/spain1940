@@ -5,7 +5,6 @@ using System;
 
 public class AIManager : MonoBehaviour {
 
-	public CombatScreen combatScreen;
 	public int baseRecruitPointsPerRegion;
 	public float recruitPointsMultiplierPerTurn;
 	public int turnsNeededForNextResearch;
@@ -126,7 +125,8 @@ public class AIManager : MonoBehaviour {
 	private bool DoAttackLogic(){
 		Debug.Log ("*******IAIAIAIAIAIA************ ATTACK LOGIC ********IAIAIAIAIAIA************");
 
-		if(turnNumber == 3){
+
+		if(turnNumber == 4){
 			// Start Attack over the selected Region
 			Debug.Log ("Attacking the Republic !!");
 			CombatManager combatManager = FindObjectOfType<CombatManager> ();
@@ -135,7 +135,7 @@ public class AIManager : MonoBehaviour {
 			Region defenderRegion = gameManager.GetRegion(RegionType.Asturias);
 			combatManager.SetAttackerRegion (attackerRegion);
 			combatManager.SetDefenderRegion (defenderRegion);
-			combatScreen.SetCombatRegions (attackerRegion, defenderRegion);
+			combatManager.SetCombatScreenRegions (attackerRegion, defenderRegion);
 
 			// Start the combat
 			combatManager.StartCombat(true);

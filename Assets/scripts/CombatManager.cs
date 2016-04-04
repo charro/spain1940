@@ -60,8 +60,12 @@ public class CombatManager : MonoBehaviour {
 	public void ShowConfirmStartAttackFrom(Region region){
 		// The attacking region is the just clicked region
 		attackerRegion = region;
-		combatScreen.SetCombatRegions (attackerRegion, defenderRegion);
+		SetCombatScreenRegions (attackerRegion, defenderRegion);
 		FindObjectOfType<UIManager>().ShowPopUp(PopUpType.ConfirmAttack);
+	}
+
+	public void SetCombatScreenRegions(Region attackerRegion, Region defenderRegion){
+		combatScreen.SetCombatRegions (attackerRegion, defenderRegion);
 	}
 
 	// waitForIt=false lets you call this method from Unit Tests
