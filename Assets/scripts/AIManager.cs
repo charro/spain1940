@@ -5,6 +5,7 @@ using System;
 
 public class AIManager : MonoBehaviour {
 
+	public CombatScreen combatScreen;
 	public int baseRecruitPointsPerRegion;
 	public float recruitPointsMultiplierPerTurn;
 	public int turnsNeededForNextResearch;
@@ -27,15 +28,18 @@ public class AIManager : MonoBehaviour {
 	
 	}
 
-	public void DoAITurnActions(){
+	/**
+	 * Will return true in case the AI decisions lead to a combat
+	 **/
+	public bool DoAITurnActions(){
 		// Gather all info needed to take this turn decisions
 		RefreshNeededDataForThisTurn ();
 
 		DoResearchLogic ();
 
-		//DoRecruitmentLogic ();
+		DoRecruitmentLogic ();
 
-		DoAttackLogic ();
+		return DoAttackLogic ();
 	}
 
 	//******************************************  RECRUITMENT *********************************************/
@@ -119,21 +123,27 @@ public class AIManager : MonoBehaviour {
 	}
 
 	//******************************************** ATTACK *************************************************/
-	private void DoAttackLogic(){
+	private bool DoAttackLogic(){
 		Debug.Log ("*******IAIAIAIAIAIA************ ATTACK LOGIC ********IAIAIAIAIAIA************");
-		/*
+
 		if(turnNumber == 3){
 			// Start Attack over the selected Region
 			Debug.Log ("Attacking the Republic !!");
 			CombatManager combatManager = FindObjectOfType<CombatManager> ();
 			GameManager gameManager = FindObjectOfType<GameManager> ();
-			combatManager.SetAttackerRegion (gameManager.GetRegion(RegionType.Galicia));
-			combatManager.SetDefenderRegion (gameManager.GetRegion(RegionType.Asturias));
+			Region attackerRegion = gameManager.GetRegion (RegionType.Galicia);
+			Region defenderRegion = gameManager.GetRegion(RegionType.Asturias);
+			combatManager.SetAttackerRegion (attackerRegion);
+			combatManager.SetDefenderRegion (defenderRegion);
+			combatScreen.SetCombatRegions (attackerRegion, defenderRegion);
 
 			// Start the combat
 			combatManager.StartCombat(true);
+
+			return true;
 		}
-		*/
+
+		return false;
 	}
 
 	private void RefreshNeededDataForThisTurn(){

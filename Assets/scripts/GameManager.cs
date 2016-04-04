@@ -297,9 +297,12 @@ public class GameManager : MonoBehaviour {
 		economyManager.IncreaseMilitaryPointsForNextTurn ();
 		UIManager.hideAllPanels();
 		UIManager.RefreshHUDPanel();
-		UIManager.ShowLoadingTmp ();
 
-		FindObjectOfType<AIManager> ().DoAITurnActions ();
+		// AI will return true if it decided to attack
+		bool thereWillBeBlood = FindObjectOfType<AIManager> ().DoAITurnActions ();
+		if(!thereWillBeBlood){
+			UIManager.ShowLoadingTmp ();
+		}
 		EventManager.TriggerPassTurnEvent ();
 	}
 
