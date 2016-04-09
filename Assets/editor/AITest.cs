@@ -14,6 +14,8 @@ public class AITest {
 		aiManager.GetComponent<AIManager>().baseRecruitPointsPerRegion = 20;
 		aiManager.GetComponent<AIManager>().recruitPointsMultiplierPerTurn = 0.1f;
 		aiManager.GetComponent<AIManager> ().turnsNeededForNextResearch = 2;
+		aiManager.GetComponent<AIManager> ().turnsNeededForNextSpy = 2;
+		aiManager.GetComponent<AIManager> ().testMode = true;
 
 		GameObject gameManager = new GameObject("mockGameManager");
 		gameManager.AddComponent<GameManager>();
@@ -81,6 +83,15 @@ public class AITest {
 		armyValues.AddComponent<ArmyValues>();
 		armyValues.GetComponent<ArmyValues> ().SetArmyDictionary (armiesDictionary);
 		armyValues.GetComponent<ArmyValues> ().SetNaziArmiesList (naziArmies);
+
+		/********************************************* ADD TEST UNITS ***********************************/
+
+		regionNazi1.GetComponent<Region> ().AddUnitsToArmy (ArmyType.NaziJager, 45);
+
+		regionNazi2.GetComponent<Region> ().AddUnitsToArmy (ArmyType.NaziJager, 20);
+		regionNazi2.GetComponent<Region> ().AddUnitsToArmy (ArmyType.NaziMeBf109, 10);
+
+		regionNoNazi.GetComponent<Region> ().AddUnitsToArmy (ArmyType.NaziJager, 7);
 
 		/*********************************************  TEST CODE ***************************************/
 

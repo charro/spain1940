@@ -5,6 +5,8 @@ using System;
 
 public class AIManager : MonoBehaviour {
 
+	public bool testMode;
+
 	public int baseRecruitPointsPerRegion;
 	public float recruitPointsMultiplierPerTurn;
 	public int turnsNeededForNextResearch;			// Maximum turns to make a new research
@@ -146,7 +148,7 @@ public class AIManager : MonoBehaviour {
 						combatManager.SetCombatScreenRegions (attackerRegion, defenderRegion);
 
 						// Start the combat
-						combatManager.StartCombat(true);
+						combatManager.StartCombat(!testMode);
 
 						return true;
 					}
@@ -179,15 +181,16 @@ public class AIManager : MonoBehaviour {
 			}
 		}
 
-		float chanceOfSuccess = Mathf.Ceil((turnNumber - turnOfLastSuccessfulSpy) / turnsNeededForNextSpy);
+		float chanceOfSuccess = (turnNumber - turnOfLastSuccessfulSpy) / (float)turnsNeededForNextSpy;
 		float randomFloat = UnityEngine.Random.Range (0f, 1f);
 		Debug.Log ("AIManager = SPYING : chanceOfSuccess: " + chanceOfSuccess + ", randomFloat:" + randomFloat);
 		// Decide here if the Spying is successful, chances will increase during turns
-		if(randomFloat < chanceOfSuccess){
+		int numberOfSpiableRegions = spiableRegions.Count;
+		if(numberOfSpiableRegions>0 && randomFloat < chanceOfSuccess){
 			// Success !!
-			int numberOfSpiableRegions = spiableRegions.Count;
 			spiedRegion = spiableRegions[UnityEngine.Random.Range(0, numberOfSpiableRegions-1)];
 			Debug.Log ("AIManager = SPY SUCCESS !! => Spied Region : " + spiedRegion);
+			turnOfLastSuccessfulSpy = turnNumber;
 		}
 
 		return spiedRegion;
