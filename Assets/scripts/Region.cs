@@ -226,4 +226,17 @@ public class Region : MonoBehaviour {
 			return republicanRegionSprite;
 		}
 	}
+
+	public int GetCombatPower(){
+		ArmyValues armyValues = FindObjectOfType<ArmyValues> ();
+			
+		int combatPower = 0;
+		foreach(RegionArmySlot armySlot in armySlots){
+			if(armySlot.armyType != null && armySlot.armyType != ArmyType.Empty){
+				combatPower += (armySlot.armyAmount * armyValues.GetArmy(armySlot.armyType).attack);
+			}
+		}
+
+		return combatPower;
+	}
 }

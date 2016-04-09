@@ -7,7 +7,8 @@ public class AIManager : MonoBehaviour {
 
 	public int baseRecruitPointsPerRegion;
 	public float recruitPointsMultiplierPerTurn;
-	public int turnsNeededForNextResearch;
+	public int turnsNeededForNextResearch;			// Maximum turns to make a new research
+	public int turnsNeededForNextSpy;				// Maximum turns to have a successful spying
 
 	private List<Region> naziRegions = new List<Region>();
 	private int turnNumber;
@@ -16,6 +17,7 @@ public class AIManager : MonoBehaviour {
 
 	private List<Army> researchedArmies = new List<Army> ();
 	private int turnOfLastResearchedArmy = 0;
+	private int turnOfLastSuccessfulSpy = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -38,7 +40,7 @@ public class AIManager : MonoBehaviour {
 
 		DoRecruitmentLogic ();
 
-		return DoAttackLogic ();
+		return DoAttackLogic (DoSpyLogic());
 	}
 
 	//******************************************  RECRUITMENT *********************************************/
@@ -122,28 +124,73 @@ public class AIManager : MonoBehaviour {
 	}
 
 	//******************************************** ATTACK *************************************************/
-	private bool DoAttackLogic(){
+	private bool DoAttackLogic(Region regionToAttack){
 		Debug.Log ("*******IAIAIAIAIAIA************ ATTACK LOGIC ********IAIAIAIAIAIA************");
+		CombatManager combatManager = FindObjectOfType<CombatManager> ();
+		GameManager gameManager = FindObjectOfType<GameManager> ();
 
+		// We have a spied candidate to attack
+		if(regionToAttack != null){
+			// Decide here if it's interesting for us to attack the regionToAttack and if we have to move troops
+			Region[] borderRegions = gameManager.GetRegionsBorderingRegion(regionToAttack);
+			foreach(Region borderRegion in borderRegions){
+				if(borderRegion.isNazi){
+					// Check if our region has more attack power than the enemy
+					if(HasMoreCombatPower(borderRegion, regionToAttack)){
+						// Start Attack over the selected Region
+						Debug.Log ("Attacking the Republic !!");
+						Region attackerRegion = borderRegion;
+						Region defenderRegion = regionToAttack;
+						combatManager.SetAttackerRegion (attackerRegion);
+						combatManager.SetDefenderRegion (defenderRegion);
+						combatManager.SetCombatScreenRegions (attackerRegion, defenderRegion);
 
-		if(turnNumber == 4){
-			// Start Attack over the selected Region
-			Debug.Log ("Attacking the Republic !!");
-			CombatManager combatManager = FindObjectOfType<CombatManager> ();
-			GameManager gameManager = FindObjectOfType<GameManager> ();
-			Region attackerRegion = gameManager.GetRegion (RegionType.Galicia);
-			Region defenderRegion = gameManager.GetRegion(RegionType.Asturias);
-			combatManager.SetAttackerRegion (attackerRegion);
-			combatManager.SetDefenderRegion (defenderRegion);
-			combatManager.SetCombatScreenRegions (attackerRegion, defenderRegion);
+						// Start the combat
+						combatManager.StartCombat(true);
 
-			// Start the combat
-			combatManager.StartCombat(true);
+						return true;
+					}
+				}
+			}
+		}
+		else{
+			// No spied region. Decide here if performing a Blind attack
+		}
+			
+		return false;
+	}
 
-			return true;
+	//******************************************** SPY *************************************************/
+	private Region DoSpyLogic(){
+		Debug.Log ("*******IAIAIAIAIAIA************ SPY LOGIC ********IAIAIAIAIAIA************");
+		GameManager gameManager = FindObjectOfType<GameManager> ();
+
+		// Try to spy an enemy Region
+		Region spiedRegion = null;
+		List<Region> spiableRegions = new List<Region> ();
+
+		// Add all enemy regions surrounding a Nazi region. Note that some Regions will be duplicated
+		// Thus, duplicated regions will have more chances to be spied
+		foreach(Region naziRegion in naziRegions){
+			foreach(Region borderRegion in gameManager.GetRegionsBorderingRegion(naziRegion)){
+				if(!borderRegion.isNazi){
+					spiableRegions.Add (borderRegion);
+				}
+			}
 		}
 
-		return false;
+		float chanceOfSuccess = Mathf.Ceil((turnNumber - turnOfLastSuccessfulSpy) / turnsNeededForNextSpy);
+		float randomFloat = UnityEngine.Random.Range (0f, 1f);
+		Debug.Log ("AIManager = SPYING : chanceOfSuccess: " + chanceOfSuccess + ", randomFloat:" + randomFloat);
+		// Decide here if the Spying is successful, chances will increase during turns
+		if(randomFloat < chanceOfSuccess){
+			// Success !!
+			int numberOfSpiableRegions = spiableRegions.Count;
+			spiedRegion = spiableRegions[UnityEngine.Random.Range(0, numberOfSpiableRegions-1)];
+			Debug.Log ("AIManager = SPY SUCCESS !! => Spied Region : " + spiedRegion);
+		}
+
+		return spiedRegion;
 	}
 
 	private void RefreshNeededDataForThisTurn(){
@@ -152,5 +199,9 @@ public class AIManager : MonoBehaviour {
 		naziRegions = gameManager.GetAllNaziRegions ();
 		turnNumber = gameManager.GetCurrentTurnNumber ();
 	}
-	
+
+	private bool HasMoreCombatPower(Region myRegion, Region otherRegion){
+		return myRegion.GetCombatPower () > otherRegion.GetCombatPower ();
+	}
+
 }
