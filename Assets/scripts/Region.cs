@@ -85,21 +85,40 @@ public class Region : MonoBehaviour {
 		}
 	}
 
-	public void AddUnitsToArmy(ArmyType type, int units){
-
-		// Check if the type is being used already. 
-		// Otherwise just add units 
-		for(int i=0; i<armySlots.Length; i++){
-
-			if(armySlots[i].armyType == ArmyType.Empty){
-				armySlots[i].armyType = (ArmyType)type;
-				armySlots[i].armyAmount = units;
-				break;
-			}
-			else if(armySlots[i].armyType == type){
-				armySlots[i].armyAmount += units;
+	public RegionArmySlot GetArmySlotOfType(ArmyType type){
+		foreach(RegionArmySlot armySlot in armySlots){
+			if(type == armySlot.armyType){
+				return armySlot;
 			}
 		}
+
+		return null;
+	}
+
+	public void AddUnitsToArmy(ArmyType type, int units){
+
+		// Check if this region has the type already.
+		RegionArmySlot chosenSlot = GetArmySlotOfType(type);
+		if (chosenSlot != null) {
+			chosenSlot.addUnits (units);
+		} 
+		else {
+			// We haven't recruited this type yet. Just add units to the next non-used slot
+			foreach(RegionArmySlot nextSlot in armySlots){
+				if(nextSlot.armyType == ArmyType.Empty){
+					chosenSlot = nextSlot;
+					chosenSlot.armyType = (ArmyType)type;
+					chosenSlot.armyAmount = units;
+					break;
+				}
+			}
+		}
+
+		if(chosenSlot == null){
+			Debug.Log ("Region: AddUnitsToArmy => WARNING : Trying to add " + units + " of type " + type +
+				" but no slots available !!");
+		}
+
 	}
 
 	public void ClearArmySlots(){
@@ -232,7 +251,7 @@ public class Region : MonoBehaviour {
 			
 		int combatPower = 0;
 		foreach(RegionArmySlot armySlot in armySlots){
-			if(armySlot.armyType != null && armySlot.armyType != ArmyType.Empty){
+			if(armySlot.armyType != ArmyType.Empty){
 				combatPower += (armySlot.armyAmount * armyValues.GetArmy(armySlot.armyType).attack);
 			}
 		}
