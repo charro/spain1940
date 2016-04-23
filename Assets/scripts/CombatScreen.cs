@@ -8,6 +8,7 @@ public class CombatScreen : MonoBehaviour {
 	public GameObject missMessage;
 	public ParticleSystem unitExplosion;
 	public Transform explosion;
+	public GameObject unitShooting;
 
 	// Use this for initialization
 	void Start () {
@@ -23,8 +24,9 @@ public class CombatScreen : MonoBehaviour {
 		Transform transform = GetUnitByType (isNazi, armyType).transform;
 		Vector3 shotPosition = 
 			new Vector3 (transform.position.x + 2, transform.position.y, unitExplosion.transform.position.z);
-		unitExplosion.transform.position = shotPosition;
-		unitExplosion.Play ();
+		// unitExplosion.transform.position = shotPosition;
+		// unitExplosion.Play ();
+		Instantiate(unitShooting, shotPosition, transform.rotation);
 	}
 
 	public void ShowExplosion(float x, float y){
