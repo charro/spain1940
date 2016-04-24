@@ -123,9 +123,9 @@ public class CombatManager : MonoBehaviour {
 			}
 
 			// Start attacking one by one with all the attacker Units
-			foreach(RegionArmySlot attackerUnit in thisTurnAttackerArmy){
+			foreach(RegionArmySlot nextAttackerUnit in thisTurnAttackerArmy){
 				
-				Debug.Log ("Attacker: " + thisTurnAttackerRegion + " attacking unit:" + attackerUnit);
+				Debug.Log ("Attacker: " + thisTurnAttackerRegion + " attacking unit:" + nextAttackerUnit);
 
 				if(thisTurnDefenderArmy.Count == 0){
 					Debug.Log ("No more defending units. " +  thisTurnDefenderRegion + " is defeated");
@@ -148,12 +148,12 @@ public class CombatManager : MonoBehaviour {
 					// Perform the attack on the defending unit
 					ArmyType defendingUnitType = defendingUnit.armyType;
 					if (waitForIt) {
-						combatScreen.ShowShooting(attackerRegion.isNazi, attackerUnit.armyType);
+						combatScreen.ShowShooting(thisTurnAttackerRegion.isNazi, nextAttackerUnit.armyType);
 						// Here, animation for attacker unit
 						yield return new WaitForSeconds (0.5f);
 					}
 
-					int unitsKilled = CalculateUnitsKilled (attackerUnit, defendingUnit);
+					int unitsKilled = CalculateUnitsKilled (nextAttackerUnit, defendingUnit);
 
 					// Kill Unit
 					defendingUnit.removeUnits(unitsKilled);
@@ -178,10 +178,10 @@ public class CombatManager : MonoBehaviour {
 				// ATTACK MISSED
 				else {
 					Debug.Log ("ATTACK MISSED !!");
-					if(waitForIt){
+					/* if(waitForIt){
 						combatScreen.ShowMissedUnitMessage (attackerRegion.isNazi, attackerUnit.armyType, 1.5f);
 						yield return new WaitForSeconds (1.5f);
-					}
+					}*/
 				}
 
 				Debug.Log ("----------------------------------------------------------------------");

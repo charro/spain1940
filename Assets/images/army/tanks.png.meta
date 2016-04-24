@@ -254,7 +254,7 @@ TextureImporter:
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -264,11 +264,14 @@ TextureImporter:
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
-    heightScale: .25
+    heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
   generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
   maxTextureSize: 1024
@@ -279,15 +282,18 @@ TextureImporter:
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
+  rGBM: 0
   compressionQuality: 50
+  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: .5, y: .5}
+  spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
@@ -302,6 +308,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 66, y: 31.5}
+        - {x: -78, y: 31.5}
+        - {x: -78, y: -18.5}
+        - {x: -74, y: -31.5}
+        - {x: 48, y: -31.5}
+        - {x: 78, y: -4.5}
+        - {x: 78, y: 8.5}
+        - {x: 72, y: 27.5}
+      tessellationDetail: -1
     - name: tanks_1
       rect:
         serializedVersion: 2
@@ -312,6 +328,24 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 52.5, y: 8.5}
+        - {x: 43.5, y: 12.5}
+        - {x: 44.5, y: 11.5}
+        - {x: 45.5, y: 14.5}
+        - {x: 49.5, y: 19.5}
+        - {x: 11.5, y: 31.5}
+        - {x: -16.5, y: 36.5}
+        - {x: -57.5, y: 36.5}
+        - {x: -76.5, y: 19.5}
+        - {x: -76.5, y: -23.5}
+        - {x: -75.5, y: -31.5}
+        - {x: -68.5, y: -36.5}
+        - {x: 53.5, y: -36.5}
+        - {x: 76.5, y: -27.5}
+        - {x: 76.5, y: 1.5}
+        - {x: 68.5, y: 6.5}
+      tessellationDetail: -1
     - name: tanks_2
       rect:
         serializedVersion: 2
@@ -322,6 +356,22 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 37.5, y: 28.5}
+        - {x: 30.5, y: 28.5}
+        - {x: 35.5, y: 29.5}
+        - {x: 38.5, y: 32.5}
+        - {x: 37.5, y: 34.5}
+        - {x: -41.5, y: 34.5}
+        - {x: -83.5, y: 16.5}
+        - {x: -83.5, y: -17.5}
+        - {x: -81.5, y: -22.5}
+        - {x: -70.5, y: -34.5}
+        - {x: 71.5, y: -34.5}
+        - {x: 83.5, y: -13.5}
+        - {x: 83.5, y: 16.5}
+        - {x: 77.5, y: 22.5}
+      tessellationDetail: -1
     - name: tanks_3
       rect:
         serializedVersion: 2
@@ -332,6 +382,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.5, y: 31}
+        - {x: -107.5, y: 25}
+        - {x: -107.5, y: -12}
+        - {x: -97.5, y: -31}
+        - {x: 103.5, y: -31}
+        - {x: 107.5, y: -28}
+        - {x: 107.5, y: 26}
+        - {x: 106.5, y: 31}
+      tessellationDetail: -1
     - name: tanks_4
       rect:
         serializedVersion: 2
@@ -342,6 +402,20 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 19.5}
+        - {x: -30, y: 20.5}
+        - {x: -24, y: 21.5}
+        - {x: -20, y: 23.5}
+        - {x: -21, y: 32.5}
+        - {x: -56, y: 32.5}
+        - {x: -56, y: -10.5}
+        - {x: -34, y: -32.5}
+        - {x: 55, y: -32.5}
+        - {x: 56, y: -30.5}
+        - {x: 56, y: 18.5}
+        - {x: -7, y: 28.5}
+      tessellationDetail: -1
     - name: tanks_5
       rect:
         serializedVersion: 2
@@ -352,6 +426,17 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 30.5, y: 32}
+        - {x: -20.5, y: 32}
+        - {x: -60.5, y: 24}
+        - {x: -60.5, y: -31}
+        - {x: -54.5, y: -32}
+        - {x: 54.5, y: -32}
+        - {x: 60.5, y: -29}
+        - {x: 60.5, y: 13}
+        - {x: 58.5, y: 18}
+      tessellationDetail: -1
     - name: tanks_6
       rect:
         serializedVersion: 2
@@ -362,6 +447,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 62.5, y: 22.5}
+        - {x: 22.5, y: 32.5}
+        - {x: -51.5, y: 32.5}
+        - {x: -62.5, y: 28.5}
+        - {x: -80.5, y: 17.5}
+        - {x: -80.5, y: -16.5}
+        - {x: -61.5, y: -32.5}
+        - {x: 50.5, y: -32.5}
+        - {x: 80.5, y: -6.5}
+        - {x: 80.5, y: 5.5}
+        - {x: 78.5, y: 7.5}
+      tessellationDetail: -1
     - name: tanks_7
       rect:
         serializedVersion: 2
@@ -372,6 +470,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -61.5, y: 29.5}
+        - {x: -65.5, y: 5.5}
+        - {x: -65.5, y: -18.5}
+        - {x: -52.5, y: -29.5}
+        - {x: 59.5, y: -29.5}
+        - {x: 65.5, y: -24.5}
+        - {x: 65.5, y: 7.5}
+        - {x: 39.5, y: 29.5}
+      tessellationDetail: -1
     - name: tanks_8
       rect:
         serializedVersion: 2
@@ -382,6 +490,21 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.5, y: 18.5}
+        - {x: 5.5, y: 3.5}
+        - {x: -17.5, y: 9.5}
+        - {x: 1.5, y: 13.5}
+        - {x: 5.5, y: 27.5}
+        - {x: 0.5, y: 32.5}
+        - {x: -49.5, y: 32.5}
+        - {x: -63.5, y: 31.5}
+        - {x: -78.5, y: 10.5}
+        - {x: -78.5, y: -32.5}
+        - {x: 78.5, y: -32.5}
+        - {x: 78.5, y: 21.5}
+        - {x: 37.5, y: 29.5}
+      tessellationDetail: -1
     - name: tanks_9
       rect:
         serializedVersion: 2
@@ -392,6 +515,17 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 32}
+        - {x: -70, y: 32}
+        - {x: -75, y: 30}
+        - {x: -89, y: 20}
+        - {x: -89, y: -32}
+        - {x: 58, y: -32}
+        - {x: 89, y: -22}
+        - {x: 89, y: 24}
+        - {x: 47, y: 30}
+      tessellationDetail: -1
     - name: tanks_10
       rect:
         serializedVersion: 2
@@ -402,6 +536,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15, y: 33}
+        - {x: -45, y: 33}
+        - {x: -60, y: 19}
+        - {x: -60, y: -33}
+        - {x: 60, y: -33}
+        - {x: 60, y: 7}
+        - {x: 53, y: 25}
+      tessellationDetail: -1
     - name: tanks_11
       rect:
         serializedVersion: 2
@@ -412,6 +555,13 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -52, y: 29.5}
+        - {x: -52, y: -29.5}
+        - {x: 52, y: -29.5}
+        - {x: 52, y: 5.5}
+        - {x: 43, y: 29.5}
+      tessellationDetail: -1
     - name: tanks_12
       rect:
         serializedVersion: 2
@@ -422,6 +572,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -77, y: 33}
+        - {x: -77, y: -22}
+        - {x: -67, y: -33}
+        - {x: 69, y: -33}
+        - {x: 77, y: -32}
+        - {x: 77, y: 3}
+        - {x: 56, y: 33}
+      tessellationDetail: -1
     - name: tanks_13
       rect:
         serializedVersion: 2
@@ -432,6 +591,14 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -73.5, y: 32.5}
+        - {x: -73.5, y: -32.5}
+        - {x: 68.5, y: -32.5}
+        - {x: 73.5, y: -23.5}
+        - {x: 73.5, y: 9.5}
+        - {x: 60.5, y: 32.5}
+      tessellationDetail: -1
     - name: tanks_14
       rect:
         serializedVersion: 2
@@ -442,6 +609,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -63.5, y: 31.5}
+        - {x: -66.5, y: 22.5}
+        - {x: -66.5, y: -17.5}
+        - {x: -61.5, y: -22.5}
+        - {x: -49.5, y: -31.5}
+        - {x: 59.5, y: -31.5}
+        - {x: 66.5, y: -17.5}
+        - {x: 66.5, y: 31.5}
+      tessellationDetail: -1
     - name: tanks_15
       rect:
         serializedVersion: 2
@@ -452,6 +629,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -54.5, y: 33}
+        - {x: -71.5, y: 28}
+        - {x: -74.5, y: 19}
+        - {x: -74.5, y: -32}
+        - {x: -69.5, y: -33}
+        - {x: 69.5, y: -33}
+        - {x: 74.5, y: -30}
+        - {x: 74.5, y: 33}
+      tessellationDetail: -1
     - name: tanks_16
       rect:
         serializedVersion: 2
@@ -462,6 +649,14 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -98.5, y: 33}
+        - {x: -98.5, y: -29}
+        - {x: -86.5, y: -33}
+        - {x: 50.5, y: -33}
+        - {x: 98.5, y: -11}
+        - {x: 98.5, y: 33}
+      tessellationDetail: -1
     - name: tanks_17
       rect:
         serializedVersion: 2
@@ -472,6 +667,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32.5, y: 35}
+        - {x: -56.5, y: 20}
+        - {x: -57.5, y: 11}
+        - {x: -57.5, y: -28}
+        - {x: -43.5, y: -35}
+        - {x: 57.5, y: -35}
+        - {x: 57.5, y: 18}
+        - {x: 37.5, y: 35}
+      tessellationDetail: -1
     - name: tanks_18
       rect:
         serializedVersion: 2
@@ -482,6 +687,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -49.5, y: 33.5}
+        - {x: -81.5, y: 9.5}
+        - {x: -86.5, y: 4.5}
+        - {x: -86.5, y: -27.5}
+        - {x: -81.5, y: -33.5}
+        - {x: 86.5, y: -33.5}
+        - {x: 86.5, y: 9.5}
+        - {x: 35.5, y: 33.5}
+      tessellationDetail: -1
     - name: tanks_19
       rect:
         serializedVersion: 2
@@ -492,6 +707,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -64, y: 32}
+        - {x: -86, y: 17}
+        - {x: -86, y: -30}
+        - {x: -76, y: -32}
+        - {x: 75, y: -32}
+        - {x: 86, y: -21}
+        - {x: 86, y: 13}
+        - {x: 14, y: 32}
+      tessellationDetail: -1
     - name: tanks_20
       rect:
         serializedVersion: 2
@@ -502,6 +727,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -81, y: 29.5}
+        - {x: -102, y: 24.5}
+        - {x: -102, y: -23.5}
+        - {x: -84, y: -29.5}
+        - {x: 74, y: -29.5}
+        - {x: 102, y: -6.5}
+        - {x: 102, y: 22.5}
+        - {x: 86, y: 29.5}
+      tessellationDetail: -1
     - name: tanks_21
       rect:
         serializedVersion: 2
@@ -512,6 +747,17 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -73.5, y: 31.5}
+        - {x: -86.5, y: 26.5}
+        - {x: -86.5, y: -25.5}
+        - {x: -85.5, y: -26.5}
+        - {x: -77.5, y: -31.5}
+        - {x: 68.5, y: -31.5}
+        - {x: 86.5, y: -19.5}
+        - {x: 86.5, y: 29.5}
+        - {x: 73.5, y: 31.5}
+      tessellationDetail: -1
     - name: tanks_22
       rect:
         serializedVersion: 2
@@ -522,6 +768,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -73, y: 34.5}
+        - {x: -98, y: 10.5}
+        - {x: -98, y: -26.5}
+        - {x: -95, y: -34.5}
+        - {x: 60, y: -34.5}
+        - {x: 98, y: -25.5}
+        - {x: 98, y: 19.5}
+        - {x: 28, y: 34.5}
+      tessellationDetail: -1
     - name: tanks_23
       rect:
         serializedVersion: 2
@@ -532,6 +788,14 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -73.5, y: 29.5}
+        - {x: -73.5, y: -28.5}
+        - {x: -70.5, y: -29.5}
+        - {x: 64.5, y: -29.5}
+        - {x: 73.5, y: -17.5}
+        - {x: 73.5, y: 29.5}
+      tessellationDetail: -1
     - name: tanks_24
       rect:
         serializedVersion: 2
@@ -542,6 +806,22 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 48, y: -0.5}
+        - {x: 88, y: 0.5}
+        - {x: 91, y: 1.5}
+        - {x: 91, y: 20.5}
+        - {x: 25, y: 32.5}
+        - {x: -76, y: 32.5}
+        - {x: -91, y: 13.5}
+        - {x: -91, y: -25.5}
+        - {x: -90, y: -26.5}
+        - {x: -75, y: -32.5}
+        - {x: 40, y: -32.5}
+        - {x: 62, y: -14.5}
+        - {x: 55, y: -4.5}
+        - {x: 50, y: -0.5}
+      tessellationDetail: -1
     - name: tanks_25
       rect:
         serializedVersion: 2
@@ -552,6 +832,22 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12.5, y: 18}
+        - {x: 6.5, y: 18}
+        - {x: 7.5, y: 18}
+        - {x: 10.5, y: 19}
+        - {x: 9.5, y: 26}
+        - {x: -15.5, y: 30}
+        - {x: -56.5, y: 30}
+        - {x: -82.5, y: 9}
+        - {x: -82.5, y: -15}
+        - {x: -65.5, y: -30}
+        - {x: 31.5, y: -30}
+        - {x: 82.5, y: -3}
+        - {x: 82.5, y: 11}
+        - {x: 49.5, y: 14}
+      tessellationDetail: -1
     - name: tanks_26
       rect:
         serializedVersion: 2
@@ -562,6 +858,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -48, y: 30.5}
+        - {x: -62, y: 19.5}
+        - {x: -62, y: -25.5}
+        - {x: -57, y: -30.5}
+        - {x: 62, y: -30.5}
+        - {x: 62, y: 20.5}
+        - {x: 4, y: 30.5}
+      tessellationDetail: -1
     - name: tanks_27
       rect:
         serializedVersion: 2
@@ -572,6 +877,17 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -50.5, y: 35}
+        - {x: -65.5, y: 19}
+        - {x: -66.5, y: 16}
+        - {x: -66.5, y: -22}
+        - {x: -55.5, y: -35}
+        - {x: 61.5, y: -35}
+        - {x: 66.5, y: -30}
+        - {x: 66.5, y: 18}
+        - {x: 29.5, y: 35}
+      tessellationDetail: -1
     - name: tanks_28
       rect:
         serializedVersion: 2
@@ -582,6 +898,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -54, y: 33.5}
+        - {x: -73, y: 21.5}
+        - {x: -73, y: -33.5}
+        - {x: 42, y: -33.5}
+        - {x: 73, y: -23.5}
+        - {x: 73, y: 2.5}
+        - {x: 27, y: 33.5}
+      tessellationDetail: -1
     - name: tanks_29
       rect:
         serializedVersion: 2
@@ -592,6 +917,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 86, y: 12}
+        - {x: 50, y: 30}
+        - {x: -54, y: 30}
+        - {x: -86, y: 11}
+        - {x: -86, y: -23}
+        - {x: -75, y: -30}
+        - {x: 30, y: -30}
+        - {x: 38, y: -21}
+        - {x: 39, y: -17}
+        - {x: 86, y: -1}
+      tessellationDetail: -1
     - name: tanks_30
       rect:
         serializedVersion: 2
@@ -602,6 +939,22 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.5, y: 33.5}
+        - {x: -40.5, y: 33.5}
+        - {x: -51.5, y: 15.5}
+        - {x: -51.5, y: 13.5}
+        - {x: -46.5, y: 6.5}
+        - {x: -55.5, y: 4.5}
+        - {x: -77.5, y: 1.5}
+        - {x: -79.5, y: -0.5}
+        - {x: -79.5, y: -15.5}
+        - {x: -74.5, y: -30.5}
+        - {x: -61.5, y: -33.5}
+        - {x: 59.5, y: -33.5}
+        - {x: 79.5, y: -10.5}
+        - {x: 79.5, y: 20.5}
+      tessellationDetail: -1
     - name: tanks_31
       rect:
         serializedVersion: 2
@@ -612,6 +965,13 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -50.5, y: 31.5}
+        - {x: -50.5, y: -31.5}
+        - {x: 50.5, y: -31.5}
+        - {x: 50.5, y: 28.5}
+        - {x: 36.5, y: 31.5}
+      tessellationDetail: -1
     - name: tanks_32
       rect:
         serializedVersion: 2
@@ -622,6 +982,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -91.5, y: 28.5}
+        - {x: -93.5, y: 27.5}
+        - {x: -93.5, y: -28.5}
+        - {x: 72.5, y: -28.5}
+        - {x: 93.5, y: 2.5}
+        - {x: 93.5, y: 15.5}
+        - {x: 67.5, y: 28.5}
+      tessellationDetail: -1
     - name: tanks_33
       rect:
         serializedVersion: 2
@@ -632,6 +1001,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 20, y: 25.5}
+        - {x: -50, y: 25.5}
+        - {x: -50, y: -24.5}
+        - {x: -42, y: -25.5}
+        - {x: 46, y: -25.5}
+        - {x: 50, y: -21.5}
+        - {x: 50, y: -1.5}
+        - {x: 43, y: 3.5}
+      tessellationDetail: -1
     - name: tanks_34
       rect:
         serializedVersion: 2
@@ -642,6 +1021,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 76, y: 25}
+        - {x: 37, y: 35}
+        - {x: -47, y: 35}
+        - {x: -82, y: 25}
+        - {x: -82, y: -18}
+        - {x: -76, y: -25}
+        - {x: -66, y: -35}
+        - {x: 65, y: -35}
+        - {x: 78, y: -30}
+        - {x: 82, y: -20}
+        - {x: 82, y: 12}
+      tessellationDetail: -1
     - name: tanks_35
       rect:
         serializedVersion: 2
@@ -652,6 +1044,23 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 49, y: 10}
+        - {x: 36, y: 15}
+        - {x: 63, y: 17}
+        - {x: 72, y: 24}
+        - {x: 37, y: 35}
+        - {x: -49, y: 35}
+        - {x: -76, y: 27}
+        - {x: -76, y: -20}
+        - {x: -72, y: -24}
+        - {x: -64, y: -30}
+        - {x: -54, y: -35}
+        - {x: 56, y: -35}
+        - {x: 76, y: -27}
+        - {x: 76, y: -1}
+        - {x: 75, y: -1}
+      tessellationDetail: -1
     - name: tanks_36
       rect:
         serializedVersion: 2
@@ -662,6 +1071,13 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -75, y: 36}
+        - {x: -75, y: -36}
+        - {x: 75, y: -36}
+        - {x: 75, y: 7}
+        - {x: 58, y: 36}
+      tessellationDetail: -1
     - name: tanks_37
       rect:
         serializedVersion: 2
@@ -672,6 +1088,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_38
       rect:
         serializedVersion: 2
@@ -682,6 +1100,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_39
       rect:
         serializedVersion: 2
@@ -692,6 +1112,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_40
       rect:
         serializedVersion: 2
@@ -702,6 +1124,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_41
       rect:
         serializedVersion: 2
@@ -712,6 +1136,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_42
       rect:
         serializedVersion: 2
@@ -722,6 +1148,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_43
       rect:
         serializedVersion: 2
@@ -732,6 +1160,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_44
       rect:
         serializedVersion: 2
@@ -742,6 +1172,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_45
       rect:
         serializedVersion: 2
@@ -752,6 +1184,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_46
       rect:
         serializedVersion: 2
@@ -762,6 +1196,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_47
       rect:
         serializedVersion: 2
@@ -772,6 +1208,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_48
       rect:
         serializedVersion: 2
@@ -782,6 +1220,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_49
       rect:
         serializedVersion: 2
@@ -792,6 +1232,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_50
       rect:
         serializedVersion: 2
@@ -802,6 +1244,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_51
       rect:
         serializedVersion: 2
@@ -812,6 +1256,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_52
       rect:
         serializedVersion: 2
@@ -822,6 +1268,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_53
       rect:
         serializedVersion: 2
@@ -832,6 +1280,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_54
       rect:
         serializedVersion: 2
@@ -842,6 +1292,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_55
       rect:
         serializedVersion: 2
@@ -852,6 +1304,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_56
       rect:
         serializedVersion: 2
@@ -862,6 +1316,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_57
       rect:
         serializedVersion: 2
@@ -872,6 +1328,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_58
       rect:
         serializedVersion: 2
@@ -882,6 +1340,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_59
       rect:
         serializedVersion: 2
@@ -892,6 +1352,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_60
       rect:
         serializedVersion: 2
@@ -902,6 +1364,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_61
       rect:
         serializedVersion: 2
@@ -912,6 +1376,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_62
       rect:
         serializedVersion: 2
@@ -922,6 +1388,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_63
       rect:
         serializedVersion: 2
@@ -932,6 +1400,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_64
       rect:
         serializedVersion: 2
@@ -942,6 +1412,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_65
       rect:
         serializedVersion: 2
@@ -952,6 +1424,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_66
       rect:
         serializedVersion: 2
@@ -962,6 +1436,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_67
       rect:
         serializedVersion: 2
@@ -972,6 +1448,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_68
       rect:
         serializedVersion: 2
@@ -982,6 +1460,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_69
       rect:
         serializedVersion: 2
@@ -992,6 +1472,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_70
       rect:
         serializedVersion: 2
@@ -1002,6 +1484,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_71
       rect:
         serializedVersion: 2
@@ -1012,6 +1496,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_72
       rect:
         serializedVersion: 2
@@ -1022,6 +1508,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_73
       rect:
         serializedVersion: 2
@@ -1032,6 +1520,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_74
       rect:
         serializedVersion: 2
@@ -1042,6 +1532,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_75
       rect:
         serializedVersion: 2
@@ -1052,6 +1544,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_76
       rect:
         serializedVersion: 2
@@ -1062,6 +1556,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_77
       rect:
         serializedVersion: 2
@@ -1072,6 +1568,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_78
       rect:
         serializedVersion: 2
@@ -1082,6 +1580,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_79
       rect:
         serializedVersion: 2
@@ -1092,6 +1592,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_80
       rect:
         serializedVersion: 2
@@ -1102,6 +1604,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_81
       rect:
         serializedVersion: 2
@@ -1112,6 +1616,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_82
       rect:
         serializedVersion: 2
@@ -1122,6 +1628,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_83
       rect:
         serializedVersion: 2
@@ -1132,6 +1640,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_84
       rect:
         serializedVersion: 2
@@ -1142,6 +1652,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_85
       rect:
         serializedVersion: 2
@@ -1152,6 +1664,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_86
       rect:
         serializedVersion: 2
@@ -1162,6 +1676,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_87
       rect:
         serializedVersion: 2
@@ -1172,6 +1688,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_88
       rect:
         serializedVersion: 2
@@ -1182,6 +1700,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_89
       rect:
         serializedVersion: 2
@@ -1192,6 +1712,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_90
       rect:
         serializedVersion: 2
@@ -1202,6 +1724,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_91
       rect:
         serializedVersion: 2
@@ -1212,6 +1736,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_92
       rect:
         serializedVersion: 2
@@ -1222,6 +1748,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_93
       rect:
         serializedVersion: 2
@@ -1232,6 +1760,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_94
       rect:
         serializedVersion: 2
@@ -1242,6 +1772,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_95
       rect:
         serializedVersion: 2
@@ -1252,6 +1784,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_96
       rect:
         serializedVersion: 2
@@ -1262,6 +1796,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_97
       rect:
         serializedVersion: 2
@@ -1272,6 +1808,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_98
       rect:
         serializedVersion: 2
@@ -1282,6 +1820,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_99
       rect:
         serializedVersion: 2
@@ -1292,6 +1832,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_100
       rect:
         serializedVersion: 2
@@ -1302,6 +1844,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_101
       rect:
         serializedVersion: 2
@@ -1312,6 +1856,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_102
       rect:
         serializedVersion: 2
@@ -1322,6 +1868,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_103
       rect:
         serializedVersion: 2
@@ -1332,6 +1880,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_104
       rect:
         serializedVersion: 2
@@ -1342,6 +1892,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_105
       rect:
         serializedVersion: 2
@@ -1352,6 +1904,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_106
       rect:
         serializedVersion: 2
@@ -1362,6 +1916,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_107
       rect:
         serializedVersion: 2
@@ -1372,6 +1928,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_108
       rect:
         serializedVersion: 2
@@ -1382,6 +1940,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_109
       rect:
         serializedVersion: 2
@@ -1392,6 +1952,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_110
       rect:
         serializedVersion: 2
@@ -1402,6 +1964,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_111
       rect:
         serializedVersion: 2
@@ -1412,6 +1976,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_112
       rect:
         serializedVersion: 2
@@ -1422,6 +1988,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_113
       rect:
         serializedVersion: 2
@@ -1432,6 +2000,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_114
       rect:
         serializedVersion: 2
@@ -1442,6 +2012,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_115
       rect:
         serializedVersion: 2
@@ -1452,6 +2024,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_116
       rect:
         serializedVersion: 2
@@ -1462,6 +2036,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_117
       rect:
         serializedVersion: 2
@@ -1472,6 +2048,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_118
       rect:
         serializedVersion: 2
@@ -1482,6 +2060,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_119
       rect:
         serializedVersion: 2
@@ -1492,6 +2072,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_120
       rect:
         serializedVersion: 2
@@ -1502,6 +2084,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_121
       rect:
         serializedVersion: 2
@@ -1512,6 +2096,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_122
       rect:
         serializedVersion: 2
@@ -1522,6 +2108,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_123
       rect:
         serializedVersion: 2
@@ -1532,6 +2120,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_124
       rect:
         serializedVersion: 2
@@ -1542,6 +2132,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_125
       rect:
         serializedVersion: 2
@@ -1552,6 +2144,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_126
       rect:
         serializedVersion: 2
@@ -1562,6 +2156,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_127
       rect:
         serializedVersion: 2
@@ -1572,6 +2168,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_128
       rect:
         serializedVersion: 2
@@ -1582,6 +2180,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_129
       rect:
         serializedVersion: 2
@@ -1592,6 +2192,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_130
       rect:
         serializedVersion: 2
@@ -1602,6 +2204,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_131
       rect:
         serializedVersion: 2
@@ -1612,6 +2216,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_132
       rect:
         serializedVersion: 2
@@ -1622,6 +2228,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_133
       rect:
         serializedVersion: 2
@@ -1632,6 +2240,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_134
       rect:
         serializedVersion: 2
@@ -1642,6 +2252,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_135
       rect:
         serializedVersion: 2
@@ -1652,6 +2264,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_136
       rect:
         serializedVersion: 2
@@ -1662,6 +2276,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_137
       rect:
         serializedVersion: 2
@@ -1672,6 +2288,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_138
       rect:
         serializedVersion: 2
@@ -1682,6 +2300,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_139
       rect:
         serializedVersion: 2
@@ -1692,6 +2312,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_140
       rect:
         serializedVersion: 2
@@ -1702,6 +2324,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_141
       rect:
         serializedVersion: 2
@@ -1712,6 +2336,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_142
       rect:
         serializedVersion: 2
@@ -1722,6 +2348,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_143
       rect:
         serializedVersion: 2
@@ -1732,6 +2360,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_144
       rect:
         serializedVersion: 2
@@ -1742,6 +2372,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_145
       rect:
         serializedVersion: 2
@@ -1752,6 +2384,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_146
       rect:
         serializedVersion: 2
@@ -1762,6 +2396,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_147
       rect:
         serializedVersion: 2
@@ -1772,6 +2408,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_148
       rect:
         serializedVersion: 2
@@ -1782,6 +2420,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_149
       rect:
         serializedVersion: 2
@@ -1792,6 +2432,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_150
       rect:
         serializedVersion: 2
@@ -1802,6 +2444,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_151
       rect:
         serializedVersion: 2
@@ -1812,6 +2456,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_152
       rect:
         serializedVersion: 2
@@ -1822,6 +2468,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_153
       rect:
         serializedVersion: 2
@@ -1832,6 +2480,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_154
       rect:
         serializedVersion: 2
@@ -1842,6 +2492,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_155
       rect:
         serializedVersion: 2
@@ -1852,6 +2504,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_156
       rect:
         serializedVersion: 2
@@ -1862,6 +2516,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_157
       rect:
         serializedVersion: 2
@@ -1872,6 +2528,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_158
       rect:
         serializedVersion: 2
@@ -1882,6 +2540,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_159
       rect:
         serializedVersion: 2
@@ -1892,6 +2552,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_160
       rect:
         serializedVersion: 2
@@ -1902,6 +2564,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_161
       rect:
         serializedVersion: 2
@@ -1912,6 +2576,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_162
       rect:
         serializedVersion: 2
@@ -1922,6 +2588,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_163
       rect:
         serializedVersion: 2
@@ -1932,6 +2600,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_164
       rect:
         serializedVersion: 2
@@ -1942,6 +2612,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_165
       rect:
         serializedVersion: 2
@@ -1952,6 +2624,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_166
       rect:
         serializedVersion: 2
@@ -1962,6 +2636,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_167
       rect:
         serializedVersion: 2
@@ -1972,6 +2648,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_168
       rect:
         serializedVersion: 2
@@ -1982,6 +2660,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_169
       rect:
         serializedVersion: 2
@@ -1992,6 +2672,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_170
       rect:
         serializedVersion: 2
@@ -2002,6 +2684,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_171
       rect:
         serializedVersion: 2
@@ -2012,6 +2696,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_172
       rect:
         serializedVersion: 2
@@ -2022,6 +2708,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_173
       rect:
         serializedVersion: 2
@@ -2032,6 +2720,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_174
       rect:
         serializedVersion: 2
@@ -2042,6 +2732,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_175
       rect:
         serializedVersion: 2
@@ -2052,6 +2744,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_176
       rect:
         serializedVersion: 2
@@ -2062,6 +2756,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_177
       rect:
         serializedVersion: 2
@@ -2072,6 +2768,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_178
       rect:
         serializedVersion: 2
@@ -2082,6 +2780,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_179
       rect:
         serializedVersion: 2
@@ -2092,6 +2792,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_180
       rect:
         serializedVersion: 2
@@ -2102,6 +2804,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_181
       rect:
         serializedVersion: 2
@@ -2112,6 +2816,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_182
       rect:
         serializedVersion: 2
@@ -2122,6 +2828,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_183
       rect:
         serializedVersion: 2
@@ -2132,6 +2840,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_184
       rect:
         serializedVersion: 2
@@ -2142,6 +2852,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_185
       rect:
         serializedVersion: 2
@@ -2152,6 +2864,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_186
       rect:
         serializedVersion: 2
@@ -2162,6 +2876,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_187
       rect:
         serializedVersion: 2
@@ -2172,6 +2888,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_188
       rect:
         serializedVersion: 2
@@ -2182,6 +2900,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_189
       rect:
         serializedVersion: 2
@@ -2192,6 +2912,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_190
       rect:
         serializedVersion: 2
@@ -2202,6 +2924,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_191
       rect:
         serializedVersion: 2
@@ -2212,6 +2936,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_192
       rect:
         serializedVersion: 2
@@ -2222,6 +2948,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_193
       rect:
         serializedVersion: 2
@@ -2232,6 +2960,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_194
       rect:
         serializedVersion: 2
@@ -2242,6 +2972,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_195
       rect:
         serializedVersion: 2
@@ -2252,6 +2984,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_196
       rect:
         serializedVersion: 2
@@ -2262,6 +2996,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_197
       rect:
         serializedVersion: 2
@@ -2272,6 +3008,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_198
       rect:
         serializedVersion: 2
@@ -2282,6 +3020,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_199
       rect:
         serializedVersion: 2
@@ -2292,6 +3032,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_200
       rect:
         serializedVersion: 2
@@ -2302,6 +3044,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_201
       rect:
         serializedVersion: 2
@@ -2312,6 +3056,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_202
       rect:
         serializedVersion: 2
@@ -2322,6 +3068,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_203
       rect:
         serializedVersion: 2
@@ -2332,6 +3080,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_204
       rect:
         serializedVersion: 2
@@ -2342,6 +3092,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_205
       rect:
         serializedVersion: 2
@@ -2352,6 +3104,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_206
       rect:
         serializedVersion: 2
@@ -2362,6 +3116,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_207
       rect:
         serializedVersion: 2
@@ -2372,6 +3128,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_208
       rect:
         serializedVersion: 2
@@ -2382,6 +3140,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_209
       rect:
         serializedVersion: 2
@@ -2392,6 +3152,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_210
       rect:
         serializedVersion: 2
@@ -2402,6 +3164,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_211
       rect:
         serializedVersion: 2
@@ -2412,6 +3176,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_212
       rect:
         serializedVersion: 2
@@ -2422,6 +3188,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_213
       rect:
         serializedVersion: 2
@@ -2432,6 +3200,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_214
       rect:
         serializedVersion: 2
@@ -2442,6 +3212,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_215
       rect:
         serializedVersion: 2
@@ -2452,6 +3224,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_216
       rect:
         serializedVersion: 2
@@ -2462,6 +3236,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_217
       rect:
         serializedVersion: 2
@@ -2472,6 +3248,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_218
       rect:
         serializedVersion: 2
@@ -2482,6 +3260,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_219
       rect:
         serializedVersion: 2
@@ -2492,6 +3272,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_220
       rect:
         serializedVersion: 2
@@ -2502,6 +3284,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_221
       rect:
         serializedVersion: 2
@@ -2512,6 +3296,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_222
       rect:
         serializedVersion: 2
@@ -2522,6 +3308,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_223
       rect:
         serializedVersion: 2
@@ -2532,6 +3320,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_224
       rect:
         serializedVersion: 2
@@ -2542,6 +3332,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_225
       rect:
         serializedVersion: 2
@@ -2552,6 +3344,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_226
       rect:
         serializedVersion: 2
@@ -2562,6 +3356,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_227
       rect:
         serializedVersion: 2
@@ -2572,6 +3368,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_228
       rect:
         serializedVersion: 2
@@ -2582,6 +3380,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_229
       rect:
         serializedVersion: 2
@@ -2592,6 +3392,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_230
       rect:
         serializedVersion: 2
@@ -2602,6 +3404,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_231
       rect:
         serializedVersion: 2
@@ -2612,6 +3416,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_232
       rect:
         serializedVersion: 2
@@ -2622,6 +3428,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_233
       rect:
         serializedVersion: 2
@@ -2632,6 +3440,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_234
       rect:
         serializedVersion: 2
@@ -2642,6 +3452,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_235
       rect:
         serializedVersion: 2
@@ -2652,6 +3464,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_236
       rect:
         serializedVersion: 2
@@ -2662,6 +3476,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_237
       rect:
         serializedVersion: 2
@@ -2672,6 +3488,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_238
       rect:
         serializedVersion: 2
@@ -2682,6 +3500,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_239
       rect:
         serializedVersion: 2
@@ -2692,6 +3512,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_240
       rect:
         serializedVersion: 2
@@ -2702,6 +3524,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_241
       rect:
         serializedVersion: 2
@@ -2712,6 +3536,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_242
       rect:
         serializedVersion: 2
@@ -2722,6 +3548,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_243
       rect:
         serializedVersion: 2
@@ -2732,6 +3560,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_244
       rect:
         serializedVersion: 2
@@ -2742,6 +3572,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_245
       rect:
         serializedVersion: 2
@@ -2752,6 +3584,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_246
       rect:
         serializedVersion: 2
@@ -2762,6 +3596,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_247
       rect:
         serializedVersion: 2
@@ -2772,6 +3608,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
     - name: tanks_248
       rect:
         serializedVersion: 2
@@ -2782,5 +3620,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    outline: []
   spritePackingTag: 
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 
