@@ -7,7 +7,7 @@ public class CombatScreen : MonoBehaviour {
 	public CombatUnit[] naziCombatUnits;
 	public GameObject missMessage;
 	public ParticleSystem unitExplosion;
-	public Transform explosion;
+	//public Transform explosion;
 	public GameObject unitShootingParticles;
 
 	// Use this for initialization
@@ -24,18 +24,20 @@ public class CombatScreen : MonoBehaviour {
 		GameObject shootingUnit = GetUnitByType (isNazi, armyType);
 		Transform transform = shootingUnit.transform;
 
-		int offset = isNazi ? -1 : 1;
-		Vector3 shotPosition = 
-			new Vector3 (transform.position.x + offset, transform.position.y, unitExplosion.transform.position.z);
-		// unitExplosion.transform.position = shotPosition;
-		// unitExplosion.Play ();
-		Instantiate(unitShootingParticles, shotPosition, transform.rotation);
+		// Trigger unit shooting animation
 		shootingUnit.GetComponentInChildren<Animator> ().Play ("shooting");
+
+		// Show shooting particles
+		int offset = isNazi ? -1 : 1;
+		Quaternion rotation = isNazi ? Quaternion.Euler(new Vector3(0, 180, 0)) : transform.rotation;
+		Vector3 shotPosition = 
+			new Vector3 (transform.position.x + offset, transform.position.y, transform.position.z);
+		Instantiate(unitShootingParticles, shotPosition, rotation);
 	}
 
 	public void ShowExplosion(float x, float y){
 		Vector3 explosionPosition = new Vector3 (x, y, unitExplosion.transform.position.z);
-		// Instantiate(explosion, explosionPosition, transform.rotation);
+		Instantiate(unitExplosion, explosionPosition, transform.rotation);
 	}
 
 	public void SetCombatRegions(Region republican, Region nazi){

@@ -38,7 +38,7 @@ public class CombatUnit : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		// Check if this any of this units has been destroyed since last update
-		if(lastTimeCheckedUnits != associatedArmySlot.armyAmount){
+		if(lastTimeCheckedUnits > associatedArmySlot.armyAmount){
 			units.text = 
 				associatedArmySlot.armyAmount + "";
 			FindObjectOfType<CombatScreen> ().ShowExplosion (transform.position.x, transform.position.y);
