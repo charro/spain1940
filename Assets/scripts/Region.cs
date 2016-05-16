@@ -31,8 +31,8 @@ public class Region : MonoBehaviour {
 		// FIXME: This is only for Testing. Add units to Enemy Regions
 	
 		if(isNazi){
-			AddUnitsToArmy (ArmyType.Milicia, 60);
-			AddUnitsToArmy (ArmyType.TankBisonte, 5);
+			AddUnitsToArmy (ArmyType.NaziJager, 60);
+			AddUnitsToArmy (ArmyType.NaziFestung, 5);
 		}
 		if(regionType == RegionType.Asturias){
 			AddUnitsToArmy (ArmyType.TankLince, 20);

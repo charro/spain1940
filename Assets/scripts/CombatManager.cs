@@ -148,12 +148,12 @@ public class CombatManager : MonoBehaviour {
 					// Perform the attack on the defending unit
 					ArmyType defendingUnitType = defendingUnit.armyType;
 					if (waitForIt) {
-						combatScreen.ShowShooting(thisTurnAttackerRegion.isNazi, nextAttackerUnit.armyType);
+						combatScreen.ShowShooting(nextAttackerUnit.armyType);
 						// Here, animation for attacker unit
 						yield return new WaitForSeconds (0.5f);
 					}
 
-					int unitsKilled = CalculateUnitsKilled (nextAttackerUnit, defendingUnit);
+					int unitsKilled = CalculateUnitsKilled (nextAttackerUnit, defendingUnit, waitForIt);
 
 					// Kill Unit
 					defendingUnit.removeUnits(unitsKilled);
@@ -235,7 +235,7 @@ public class CombatManager : MonoBehaviour {
 	// Used to avoid the combat to enter in an infinite
 	Dictionary<ArmyType, int> accumulatedDamage = new Dictionary<ArmyType, int> ();
 
-	public int CalculateUnitsKilled(RegionArmySlot attackerUnit, RegionArmySlot defenderUnit){
+	public int CalculateUnitsKilled(RegionArmySlot attackerUnit, RegionArmySlot defenderUnit, bool waitForIt){
 		ArmyValues armyValues = FindObjectOfType<ArmyValues> ();
 		Army attackerArmy = armyValues.GetArmy (attackerUnit.armyType);
 		Army defenderArmy = armyValues.GetArmy (defenderUnit.armyType);
@@ -258,9 +258,13 @@ public class CombatManager : MonoBehaviour {
 		Debug.Log ("Attacker unit total damage after reduction of the " + damageReduction + 
 			" : " + totalAttackerDamage);
 
+		if(waitForIt){
+			combatScreen.ShowDamagePointsMessage (defenderArmy.armyType, totalAttackerDamage);
+		}
+
 		int totalLostUnits = (totalAttackerDamage / defenderLifePerUnit);
 
-		// In case of not enough damage to destroy a unit, accumulate the damage (to avoid never kill it)
+		// In case of not enough damage to destroy a unit, accumulate the damage (to avoid never killing it)
 		if(totalLostUnits==0){
 			int currentDamage = 0;
 			if(accumulatedDamage.ContainsKey(defenderArmy.armyType)){

@@ -5,7 +5,7 @@ public class CombatScreen : MonoBehaviour {
 
 	public CombatUnit[] republicanCombatUnits;
 	public CombatUnit[] naziCombatUnits;
-	public GameObject missMessage;
+	public GameObject damageMessage;
 	public ParticleSystem unitExplosion;
 	//public Transform explosion;
 	public GameObject unitShootingParticles;
@@ -20,15 +20,16 @@ public class CombatScreen : MonoBehaviour {
 	
 	}
 
-	public void ShowShooting(bool isNazi, ArmyType armyType){
-		GameObject shootingUnit = GetUnitByType (isNazi, armyType);
+	public void ShowShooting(ArmyType armyType){
+		GameObject shootingUnit = GetUnitByType (armyType);
 		Transform transform = shootingUnit.transform;
 
 		// Trigger unit shooting animation
 		shootingUnit.GetComponentInChildren<Animator> ().Play ("shooting");
 
+		bool isNazi = Army.isNazi (armyType);
 		// Show shooting particles
-		int offset = isNazi ? -1 : 1;
+		float offset = isNazi ? -0.5f : 0.5f;
 		Quaternion rotation = isNazi ? Quaternion.Euler(new Vector3(0, 180, 0)) : transform.rotation;
 		Vector3 shotPosition = 
 			new Vector3 (transform.position.x + offset, transform.position.y, transform.position.z);
@@ -38,6 +39,14 @@ public class CombatScreen : MonoBehaviour {
 	public void ShowExplosion(float x, float y){
 		Vector3 explosionPosition = new Vector3 (x, y, unitExplosion.transform.position.z);
 		Instantiate(unitExplosion, explosionPosition, transform.rotation);
+	}
+
+	public void ShowDamagePointsMessage(ArmyType armyType, int damage){
+		GameObject unit = GetUnitByType (armyType);
+		Vector3 unitPosition = unit.transform.position;
+		Vector3 showPosition = new Vector3 (unitPosition.x, unitPosition.y, damageMessage.transform.position.z);
+		GameObject damageText = (GameObject) Instantiate(damageMessage, showPosition, transform.rotation);
+		damageText.GetComponentInChildren<TextMesh> ().text = "-" + damage;
 	}
 
 	public void SetCombatRegions(Region republican, Region nazi){
@@ -63,14 +72,6 @@ public class CombatScreen : MonoBehaviour {
 		}
 	}
 
-	public void ShowMissedUnitMessage(bool isNazi, ArmyType armyType, float seconds){
-		GameObject missedUnit = GetUnitByType (isNazi, armyType);
-		missMessage.transform.position = new Vector3 (missedUnit.transform.position.x + 2,
-													  missedUnit.transform.position.y, 
-													  missMessage.transform.position.z);
-		StartCoroutine(ShowObjectForSecs (missMessage, seconds));
-	}
-
 	/*********************  PRIVATE METHODS *****************************************/
 
 	private IEnumerator ShowObjectForSecs(GameObject gameObject, float secs){
@@ -79,8 +80,8 @@ public class CombatScreen : MonoBehaviour {
 		gameObject.SetActive (false);
 	}
 
-	private GameObject GetUnitByType(bool isNazi, ArmyType armyType){
-		CombatUnit[] combatUnitsAttacked = (isNazi ? naziCombatUnits : republicanCombatUnits);
+	private GameObject GetUnitByType(ArmyType armyType){
+		CombatUnit[] combatUnitsAttacked = (Army.isNazi(armyType) ? naziCombatUnits : republicanCombatUnits);
 		GameObject missedUnit = combatUnitsAttacked[0].gameObject;
 		foreach(CombatUnit combatUnit in combatUnitsAttacked){
 			if(!combatUnit.isEmpty() && combatUnit.GetArmyType() == armyType){

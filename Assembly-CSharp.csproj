@@ -52,6 +52,8 @@
      <Compile Include="Assets\scripts\ArmyUnitDetailsPanel.cs" />
      <Compile Include="Assets\scripts\ArmyValues.cs" />
      <Compile Include="Assets\scripts\AutoDeleteParticleSystem.cs" />
+     <Compile Include="Assets\scripts\AutoDestroy.cs" />
+     <Compile Include="Assets\scripts\AutoDestroyOnAnimation.cs" />
      <Compile Include="Assets\scripts\BasicPanel.cs" />
      <Compile Include="Assets\scripts\BuildManager.cs" />
      <Compile Include="Assets\scripts\BuildPanel.cs" />

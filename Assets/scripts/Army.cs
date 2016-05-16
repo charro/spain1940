@@ -21,4 +21,12 @@ public class Army : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	public bool isNazi(){
+		return Army.isNazi(armyType);
+	}
+
+	public static bool isNazi(ArmyType type){
+		return (int)type >= (int)ArmyType.NaziJager;
+	}
 }
