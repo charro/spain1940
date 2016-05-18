@@ -8,11 +8,7 @@ public class AutoDestroyOnAnimation : StateMachineBehaviour {
 	{
 		Transform transform = animator.transform;
 
-		while(transform != null && transform.parent != null){
-			transform = transform.parent;
-		}
-
 		// Kill parent Object
-		Destroy(transform.gameObject);
+		Destroy(transform.parent.gameObject);
 	}
 }

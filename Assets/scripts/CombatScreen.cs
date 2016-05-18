@@ -44,9 +44,10 @@ public class CombatScreen : MonoBehaviour {
 	public void ShowDamagePointsMessage(ArmyType armyType, int damage){
 		GameObject unit = GetUnitByType (armyType);
 		Vector3 unitPosition = unit.transform.position;
-		Vector3 showPosition = new Vector3 (unitPosition.x, unitPosition.y, damageMessage.transform.position.z);
+		Vector3 showPosition = new Vector3 (unitPosition.x, unitPosition.y, gameObject.transform.position.z);
 		GameObject damageText = (GameObject) Instantiate(damageMessage, showPosition, transform.rotation);
 		damageText.GetComponentInChildren<TextMesh> ().text = "-" + damage;
+		//damageText.transform.parent = gameObject.transform;
 	}
 
 	public void SetCombatRegions(Region republican, Region nazi){
