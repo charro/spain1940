@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour {
 	void Start () {
 		economyManager = FindObjectOfType<EconomyManager>();
 		uiManager  = FindObjectOfType<UIManager>();
+
+		//FindLostReferences.FindMissingReferences();
 	}
 	
 	// Update is called once per frame
