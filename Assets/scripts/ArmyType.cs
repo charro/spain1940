@@ -9,6 +9,8 @@ public enum ArmyType
 	TankLince,
 	TankToro,
 	TankBisonte,
+	FighterAzor,
+	BomberQuebrantahuesos,
 
 	// Nazi units, ids starting in 100
 	NaziJager=100,

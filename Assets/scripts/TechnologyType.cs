@@ -9,5 +9,9 @@ public enum TechnologyType
 	Workshop,
 	Spying1,
 	ArmourPlate,
-	TankLince
+	TankLince,
+	FighterAzor,
+	BomberQuebrantahuesos,
+	TankToro,
+	TankBisonte
 }
