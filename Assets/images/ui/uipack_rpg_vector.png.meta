@@ -1,0 +1,1235 @@
+fileFormatVersion: 2
+guid: c932295891f604c44a9612fed3793c7e
+timeCreated: 1472592271
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: uipack_rpg_vector_0
+    21300002: uipack_rpg_vector_1
+    21300004: uipack_rpg_vector_2
+    21300006: uipack_rpg_vector_3
+    21300008: uipack_rpg_vector_4
+    21300010: uipack_rpg_vector_5
+    21300012: uipack_rpg_vector_6
+    21300014: uipack_rpg_vector_7
+    21300016: uipack_rpg_vector_8
+    21300018: uipack_rpg_vector_9
+    21300020: uipack_rpg_vector_10
+    21300022: uipack_rpg_vector_11
+    21300024: uipack_rpg_vector_12
+    21300026: uipack_rpg_vector_13
+    21300028: uipack_rpg_vector_14
+    21300030: uipack_rpg_vector_15
+    21300032: uipack_rpg_vector_16
+    21300034: uipack_rpg_vector_17
+    21300036: uipack_rpg_vector_18
+    21300038: uipack_rpg_vector_19
+    21300040: uipack_rpg_vector_20
+    21300042: uipack_rpg_vector_21
+    21300044: uipack_rpg_vector_22
+    21300046: uipack_rpg_vector_23
+    21300048: uipack_rpg_vector_24
+    21300050: uipack_rpg_vector_25
+    21300052: uipack_rpg_vector_26
+    21300054: uipack_rpg_vector_27
+    21300056: uipack_rpg_vector_28
+    21300058: uipack_rpg_vector_29
+    21300060: uipack_rpg_vector_30
+    21300062: uipack_rpg_vector_31
+    21300064: uipack_rpg_vector_32
+    21300066: uipack_rpg_vector_33
+    21300068: uipack_rpg_vector_34
+    21300070: uipack_rpg_vector_35
+    21300072: uipack_rpg_vector_36
+    21300074: uipack_rpg_vector_37
+    21300076: uipack_rpg_vector_38
+    21300078: uipack_rpg_vector_39
+    21300080: uipack_rpg_vector_40
+    21300082: uipack_rpg_vector_41
+    21300084: uipack_rpg_vector_42
+    21300086: uipack_rpg_vector_43
+    21300088: uipack_rpg_vector_44
+    21300090: uipack_rpg_vector_45
+    21300092: uipack_rpg_vector_46
+    21300094: uipack_rpg_vector_47
+    21300096: uipack_rpg_vector_48
+    21300098: uipack_rpg_vector_49
+    21300100: uipack_rpg_vector_50
+    21300102: uipack_rpg_vector_51
+    21300104: uipack_rpg_vector_52
+    21300106: uipack_rpg_vector_53
+    21300108: uipack_rpg_vector_54
+    21300110: uipack_rpg_vector_55
+    21300112: uipack_rpg_vector_56
+    21300114: uipack_rpg_vector_57
+    21300116: uipack_rpg_vector_58
+    21300118: uipack_rpg_vector_59
+    21300120: uipack_rpg_vector_60
+    21300122: uipack_rpg_vector_61
+    21300124: uipack_rpg_vector_62
+    21300126: uipack_rpg_vector_63
+    21300128: uipack_rpg_vector_64
+    21300130: uipack_rpg_vector_65
+    21300132: uipack_rpg_vector_66
+    21300134: uipack_rpg_vector_67
+    21300136: uipack_rpg_vector_68
+    21300138: uipack_rpg_vector_69
+    21300140: uipack_rpg_vector_70
+    21300142: uipack_rpg_vector_71
+    21300144: uipack_rpg_vector_72
+    21300146: uipack_rpg_vector_73
+    21300148: uipack_rpg_vector_74
+    21300150: uipack_rpg_vector_75
+    21300152: uipack_rpg_vector_76
+    21300154: uipack_rpg_vector_77
+    21300156: uipack_rpg_vector_78
+    21300158: uipack_rpg_vector_79
+    21300160: uipack_rpg_vector_80
+    21300162: uipack_rpg_vector_81
+    21300164: uipack_rpg_vector_82
+    21300166: uipack_rpg_vector_83
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: uipack_rpg_vector_0
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 700
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_1
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 700
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_2
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 700
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_3
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 708
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_4
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 708
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_5
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 708
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_6
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 708
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_7
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 668
+        width: 190
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_8
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 668
+        width: 190
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_9
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 668
+        width: 45
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_10
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 668
+        width: 15
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_11
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 660
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_12
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 660
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_13
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 660
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_14
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 660
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_15
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 660
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_16
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 660
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_17
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 660
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_18
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 620
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_19
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 620
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_20
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 620
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_21
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 621
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_22
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 621
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_23
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 621
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_24
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 621
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_25
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 608
+        width: 190
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_26
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 608
+        width: 190
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_27
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 608
+        width: 45
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_28
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 608
+        width: 15
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_29
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 580
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_30
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 580
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_31
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 580
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_32
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 548
+        width: 190
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_33
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 548
+        width: 190
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_34
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 548
+        width: 45
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_35
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 548
+        width: 15
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_36
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 448
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_37
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 448
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_38
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 488
+        width: 190
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_39
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 488
+        width: 190
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_40
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 488
+        width: 45
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_41
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 488
+        width: 15
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_42
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 440
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_43
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 440
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_44
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 440
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_45
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 451
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_46
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 451
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_47
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 451
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_48
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 451
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_49
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 338
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_50
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 338
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_51
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 396
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_52
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 396
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_53
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 396
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_54
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 411
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_55
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 411
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_56
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 411
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_57
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 411
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_58
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 340
+        width: 35
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_59
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 340
+        width: 35
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_60
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 340
+        width: 35
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_61
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 232
+        width: 92
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_62
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 232
+        width: 92
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_63
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 282
+        width: 35
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_64
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 282
+        width: 35
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_65
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 282
+        width: 35
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_66
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 282
+        width: 35
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_67
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 245
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_68
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 245
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_69
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 245
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_70
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 245
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_71
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 122
+        width: 92
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_72
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 122
+        width: 92
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_73
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 215
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_74
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 215
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_75
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 215
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_76
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 215
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_77
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 184
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_78
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 184
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_79
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 184
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_80
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 184
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_81
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 98
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_82
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 70
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: uipack_rpg_vector_83
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 51
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
