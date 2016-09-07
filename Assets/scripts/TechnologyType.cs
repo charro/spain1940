@@ -13,5 +13,6 @@ public enum TechnologyType
 	FighterAzor,
 	BomberQuebrantahuesos,
 	TankToro,
-	TankBisonte
+	TankBisonte,
+	Antiaereo
 }

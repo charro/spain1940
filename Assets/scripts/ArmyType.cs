@@ -8,6 +8,7 @@ public enum ArmyType
 	Milicia,
 	TankLince,
 	TankToro,
+	Antiaereo,
 	TankBisonte,
 	FighterAzor,
 	BomberQuebrantahuesos,
