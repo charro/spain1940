@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 public class CombatResultPanel : MonoBehaviour {
 
+	public Text	titleText;
 	public Image[] republicanLossesImages;
 	public Text[] republicanLossesTexts;
 	public Image[] naziLossesImages;
@@ -20,7 +21,7 @@ public class CombatResultPanel : MonoBehaviour {
 	
 	}
 
-	public void ShowPanel(Dictionary<ArmyType, int> republicanLosses, Dictionary<ArmyType, int> naziLosses){
+	public void ShowPanel(Dictionary<ArmyType, int> republicanLosses, Dictionary<ArmyType, int> naziLosses, bool naziWon){
 		int counter = 0;
 
 		// First hide all units
@@ -49,6 +50,14 @@ public class CombatResultPanel : MonoBehaviour {
 			naziLossesImages [counter].sprite = FindObjectOfType<ArmyValues> ().GetArmy (army.Key).sprite;
 			naziLossesTexts [counter].text = "X" + army.Value;
 			counter++;
+		}
+
+		// Change the view depending if we won or lost
+		if(naziWon){
+			titleText.text = "DEFEAT !! ;(";
+		}
+		else{
+			titleText.text = "VICTORY !! :D";
 		}
 
 		gameObject.SetActive (true);

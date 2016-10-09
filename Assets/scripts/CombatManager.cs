@@ -4,10 +4,14 @@ using System.Collections.Generic;
 
 public class CombatManager : MonoBehaviour {
 
+	public float DELAY_ON_SHOW = 0.5f;
+
 	// Screen to show the combat
 	public CombatScreen combatScreen;
 	// Screen post-combat
 	public CombatResultPanel combatResultPanel;
+	// To show if the Region changed
+	public RegionChangedPanel regionChangedPanel;
 
 	private Region attackerRegion;
 	private Region defenderRegion;
@@ -148,9 +152,9 @@ public class CombatManager : MonoBehaviour {
 					// Perform the attack on the defending unit
 					ArmyType defendingUnitType = defendingUnit.armyType;
 					if (waitForIt) {
-						combatScreen.ShowShooting(nextAttackerUnit.armyType);
 						// Here, animation for attacker unit
-						yield return new WaitForSeconds (0.5f);
+						combatScreen.ShowShooting(nextAttackerUnit.armyType);
+						yield return new WaitForSeconds (DELAY_ON_SHOW);
 					}
 
 					int unitsKilled = CalculateUnitsKilled (nextAttackerUnit, defendingUnit, waitForIt);
@@ -164,7 +168,7 @@ public class CombatManager : MonoBehaviour {
 						thisTurnDefenderRegion + " is DESTROYED !! ");
 						thisTurnDefenderArmy.Remove (defendingUnit);
 						if (waitForIt) {
-							yield return new WaitForSeconds (0.5f);
+							yield return new WaitForSeconds (DELAY_ON_SHOW);
 						}
 					}
 
@@ -223,11 +227,13 @@ public class CombatManager : MonoBehaviour {
 		if(waitForIt){
 			FinishCombat ();
 
+			bool naziWon = (attackerRegion.isNazi && attackerWins) || (defenderRegion.isNazi && !attackerWins);
+
 			if (attackerRegion.isNazi) {
-				combatResultPanel.ShowPanel (defenderRegionLosses, attackerRegionLosses);
+				combatResultPanel.ShowPanel (defenderRegionLosses, attackerRegionLosses, naziWon);
 			} 
 			else {
-				combatResultPanel.ShowPanel (attackerRegionLosses, defenderRegionLosses);
+				combatResultPanel.ShowPanel (attackerRegionLosses, defenderRegionLosses, naziWon);
 			}
 		}
 	}
@@ -287,7 +293,9 @@ public class CombatManager : MonoBehaviour {
 	}
 
 	public void FinishCombat(){
+
 		if(attackerWins){
+			regionChangedPanel.Show (defenderRegion);  // => IMPORTANT. CALL THIS FIRST (DONT CHANGE TO NAZI UNTIL IS CALLED)
 			defenderRegion.SetNaziConquered (attackerRegion.isNazi);
 		}
 

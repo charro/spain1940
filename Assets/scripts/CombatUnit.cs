@@ -37,10 +37,12 @@ public class CombatUnit : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		// Update the units number
+		units.text = 
+			associatedArmySlot.armyAmount + "";
+		
 		// Check if all these units have been destroyed since last update
 		if(lastTimeCheckedUnits > associatedArmySlot.armyAmount && associatedArmySlot.armyAmount==0){
-			units.text = 
-				associatedArmySlot.armyAmount + "";
 			FindObjectOfType<CombatScreen> ().ShowExplosion (transform.position.x, transform.position.y);
 			lastTimeCheckedUnits = associatedArmySlot.armyAmount;
 		}
