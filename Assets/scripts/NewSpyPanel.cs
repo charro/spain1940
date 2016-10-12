@@ -32,10 +32,10 @@ public class NewSpyPanel : MonoBehaviour {
 				researched = researchManager.IsAlreadyResearched (TechnologyType.Spying1);
 				break;
 			case 2:
-				researched =  researchManager.IsAlreadyResearched (TechnologyType.ArmourPlate);
+				researched =  researchManager.IsAlreadyResearched (TechnologyType.Spying2);
 				break;
 			case 3:
-				researched =  researchManager.IsAlreadyResearched (TechnologyType.ArmourPlate);
+				researched =  researchManager.IsAlreadyResearched (TechnologyType.Spying3);
 				break;
 		}
 
