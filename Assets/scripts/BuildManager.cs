@@ -33,6 +33,8 @@ public class BuildManager : MonoBehaviour {
 				Debug.LogError ("ERROR: ConfirmBuilding called, but no type of building selected");
 				break;
 		}
+
+		FindObjectOfType<GameManager>().EndActionAndSwitchToIdleMap();
 	}
 
 	public void ActionBuildingClicked(){

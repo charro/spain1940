@@ -32,7 +32,7 @@ public class RecruitListItem : MonoBehaviour {
 		itemNameText.gameObject.SetActive (true);
 		priceText.gameObject.SetActive (true);
 		militaryPointsImage.gameObject.SetActive (true);
-		itemButton.image.sprite = originalSprite;
+		itemButton.image.sprite = army.sprite;
 		itemButton.interactable = true;
 	}
 
@@ -40,7 +40,7 @@ public class RecruitListItem : MonoBehaviour {
 		itemNameText.gameObject.SetActive (false);
 		priceText.gameObject.SetActive (false);
 		militaryPointsImage.gameObject.SetActive (false);
-		originalSprite = itemButton.image.sprite;
+		//originalSprite = itemButton.image.sprite;
 		itemButton.image.sprite = FindObjectOfType<RecruitmentManager> ().unresearchedArmySprite;
 		itemButton.interactable = false;
 	}
