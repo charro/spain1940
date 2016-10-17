@@ -52,9 +52,9 @@ public class BuildManager : MonoBehaviour {
 		selectedRegion.IncreaseMilitaryLevel ();
 
 		EconomyManager economyManager = FindObjectOfType<EconomyManager> ();
-		economyManager.decreaseActionPoints (1);
+//		economyManager.decreaseActionPoints (1);
 		economyManager.RecalculateTotalMilitaryGenerationPoints ();
-		buildPanel.RefreshElements();
+//		buildPanel.RefreshElements();
 
 		typeOfBuildingClicked = BUILDING_TYPE_CLICKED_NONE;
 	}
@@ -64,9 +64,9 @@ public class BuildManager : MonoBehaviour {
 		selectedRegion.IncreaseActionGenerationLevel ();
 
 		EconomyManager economyManager = FindObjectOfType<EconomyManager> ();
-		economyManager.decreaseActionPoints (1);
+//		economyManager.decreaseActionPoints (1);
+		//buildPanel.RefreshElements();
 		economyManager.recalculateMaximumActionsPerTurn ();
-		buildPanel.RefreshElements();
 
 		typeOfBuildingClicked = BUILDING_TYPE_CLICKED_NONE;
 	}

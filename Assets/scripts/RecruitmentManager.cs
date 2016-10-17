@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class RecruitmentManager : MonoBehaviour {
 
 	public Text recruitmentPointsText;
+	public Text currentTabTitleText;
 	public RectTransform recruitmentPanel;
 	public GameObject unitGroupPrefab;
 	public RecruitListItem[] recruitableListItems;
@@ -19,9 +20,15 @@ public class RecruitmentManager : MonoBehaviour {
 
 	private int spentRecruitmentPoints;
 
+	private bool isShowingAirForce;
+
+	private int unitsPerClick;
+
 	// Use this for initialization
 	void Start () {
 		economyManager = FindObjectOfType<EconomyManager>();
+		isShowingAirForce = false;
+		unitsPerClick = 1;
 	}
 
 	// Update is called once per frame
@@ -41,8 +48,10 @@ public class RecruitmentManager : MonoBehaviour {
 
 	public void AddToUnit(ArmyType unitType){
 
+		int recruitmentPointsNeeded = FindObjectOfType<ArmyValues> ().GetArmy (unitType).price * unitsPerClick;
+
 		// First check if there are enough resources to perform Recruit
-		if(!economyManager.haveEnoughRecruitmentPoints(FindObjectOfType<ArmyValues>().GetArmy(unitType).price)){
+		if(!economyManager.haveEnoughRecruitmentPoints(recruitmentPointsNeeded)){
 			Animator textAnimation = recruitmentPointsText.GetComponent<Animator>();
 			textAnimation.SetTrigger("trigger");
 			return;
@@ -82,21 +91,22 @@ public class RecruitmentManager : MonoBehaviour {
 			PlaceRecruitedUnitsInContainer();
 		}
 
+
 		RecruitedUnitGroup selectedUnitGroup = 
 			selectedUnitGroupGameObject.GetComponent<RecruitedUnitGroup>() as RecruitedUnitGroup;
-		selectedUnitGroup.AddUnit ();
+		selectedUnitGroup.AddUnits(unitsPerClick);
 
-		int recruitmentPointsNeeded = FindObjectOfType<ArmyValues>().GetArmy(unitType).price;
+		//int recruitmentPointsNeeded = FindObjectOfType<ArmyValues>().GetArmy(unitType).price;
 		economyManager.decreaseMilitaryPoints (recruitmentPointsNeeded);
 		spentRecruitmentPoints += recruitmentPointsNeeded;
 		// Update UI Recruitment Points Text
 		UpdateRecruitmentPointsText ();
 	}
 
-	public void OnRemoveUnit(RecruitedUnitGroup unit){
+	public void OnRemoveUnits(RecruitedUnitGroup unit, int unitsRemoved){
 		int unitPrice = FindObjectOfType<ArmyValues>().GetArmy(unit.UnitType).price;
-		economyManager.addMilitaryPoints(unitPrice);
-		spentRecruitmentPoints -= unitPrice;
+		economyManager.addMilitaryPoints(unitPrice * unitsRemoved);
+		spentRecruitmentPoints -= unitPrice * unitsRemoved;
 		UpdateRecruitmentPointsText ();
 
 		if(unit.UnitAmount <= 0){
@@ -195,5 +205,24 @@ public class RecruitmentManager : MonoBehaviour {
 				recruitListItem.DisableRecruitment();
 			}
 		}
+	}
+
+	// Toggle between the two types of units (army/air force)
+	public void ShowAirForceTab(bool showIt){
+		isShowingAirForce = showIt;
+
+		if (isShowingAirForce) {
+			currentTabTitleText.text = "Air Force Units";
+		} else {
+			currentTabTitleText.text = "Army Units";
+		}
+	}
+
+	public void SetUnitPerClick(int units){
+		unitsPerClick = units;
+	}
+
+	public int GetUnitsPerClick(){
+		return unitsPerClick;
 	}
 }

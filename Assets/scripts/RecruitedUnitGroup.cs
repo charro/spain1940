@@ -36,13 +36,29 @@ public class RecruitedUnitGroup : MonoBehaviour {
 		unitAmountText.text = "" + unitAmount;
 	}
 
+	public void AddUnits(int units){
+		unitAmount += units;
+	}
+
 	public void AddUnit(){
 		unitAmount++;
 	}
-	
+
+	public void RemoveUnits(int units){
+		unitAmount -= units;
+		(FindObjectOfType<RecruitmentManager>() as RecruitmentManager).OnRemoveUnits (this, units);
+	}
+
 	public void RemoveUnit(){
+		/**
 		unitAmount--;
 		(FindObjectOfType<RecruitmentManager>() as RecruitmentManager).OnRemoveUnit (this);
+		*/
+		int unitsToRemove = (FindObjectOfType<RecruitmentManager> () as RecruitmentManager).GetUnitsPerClick ();
+		if(unitsToRemove > unitAmount){
+			unitsToRemove = unitAmount;
+		}
+		RemoveUnits (unitsToRemove);
 	}
 
 	/* public void Touched(){
