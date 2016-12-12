@@ -31,8 +31,8 @@ public class HUD : MonoBehaviour {
 		SpyManager spyManager = FindObjectOfType<SpyManager> ();
 
 		dateText.text = "TURN " + gameManager.GetCurrentTurnNumber ();
-		actionPointsText.text = "AVAILABLE ACTIONS: " + economyManager.getAvailableActionPoints ();
-		recruitmentPointsText.text = "RECRUITMENT POINTS: " + economyManager.getMilitaryPoints ();
+		actionPointsText.text = "AVAILABLE ACTIONS: \n" + economyManager.getAvailableActionPoints ();
+		recruitmentPointsText.text = "RECRUITMENT POINTS: \n" + economyManager.getMilitaryPoints ();
 		spyButtonText.text = "SPIES SENT: " + spyManager.GetNumberOfSpiesSent ();
 
 		ResearchManager researchManager = FindObjectOfType<ResearchManager> ();
