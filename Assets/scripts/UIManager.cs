@@ -8,7 +8,7 @@ public class UIManager : MonoBehaviour {
 	//public GameObject basicPanel;
 	public GameObject mainActionsPanel;
 	public GameObject mainEnemyActionsPanel;
-	public GameObject fightPanel;
+	//public GameObject fightPanel;
 	public GameObject infoPanel;
 	public GameObject recruitPanel;
 	public GameObject buildPanel;
@@ -125,7 +125,7 @@ public class UIManager : MonoBehaviour {
 	public static void hideAllPanels(){
 		singleton.mainActionsPanel.SetActive(false);
 		singleton.mainEnemyActionsPanel.SetActive(false);
-		singleton.fightPanel.SetActive(false);
+		//singleton.fightPanel.SetActive(false);
 		singleton.infoPanel.SetActive(false);
 		singleton.recruitPanel.SetActive(false);
 		singleton.buildPanel.SetActive(false);
@@ -144,7 +144,7 @@ public class UIManager : MonoBehaviour {
 
 	public static bool IsAnyGUIPanelShownButHUDPanel(){
 		return IsMainActionsShown () ||
-				singleton.fightPanel.activeInHierarchy ||
+				//singleton.fightPanel.activeInHierarchy ||
 				singleton.infoPanel.activeInHierarchy ||
 				singleton.recruitPanel.activeInHierarchy ||
 				singleton.buildPanel.activeInHierarchy ||

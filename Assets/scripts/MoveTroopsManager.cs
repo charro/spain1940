@@ -17,11 +17,18 @@ public class MoveTroopsManager : MonoBehaviour {
 	private RegionArmySlot[] startingUnitsOfRegionFrom;
 	private RegionArmySlot[] startingUnitsOfRegionTo;
 
+	private int unitsPerClick;
+
+	public void SetUnitPerClick(int units){
+		unitsPerClick = units;
+	}
+
 	// Use this for initialization
 	void Start () {
 		int maxSlots = (FindObjectOfType<ArmyManager> ()).MAX_ARMY_SLOTS_PER_REGION;
 		startingUnitsOfRegionFrom = new RegionArmySlot[maxSlots];
 		startingUnitsOfRegionTo = new RegionArmySlot[maxSlots];
+		unitsPerClick = 1;
 	}
 	
 	// Update is called once per frame
@@ -93,22 +100,26 @@ public class MoveTroopsManager : MonoBehaviour {
 
 		// Check if there is already a slot with that type of unit and add it there
 		foreach(RegionArmySlot toSlot in toArmySlots){
-			if(toSlot.armyType == fromSlot.armyType){
-				Debug.Log("MoveTroopsManager: Move unit of type " + toSlot.armyType + " from region " + 
-				          fromRegion.name + " to region " + toRegion.name);
-				toSlot.addUnit();
-				fromSlot.removeUnit();
-				RefreshPanels();
-				return;
-			}
+			if (fromSlot.armyAmount >= unitsPerClick) {
 
-			// Army type not yet found. If this is an empty slot, create it now
-			if(toSlot.armyType == ArmyType.Empty){
-				toSlot.armyType = fromSlot.armyType;
-				toSlot.addUnit();
-				fromSlot.removeUnit();
-				RefreshPanels();
-				return;
+				if (toSlot.armyType == fromSlot.armyType) {
+					Debug.Log ("MoveTroopsManager: Move unit of type " + toSlot.armyType + " from region " +
+					fromRegion.name + " to region " + toRegion.name);
+					toSlot.addUnits (unitsPerClick);
+					fromSlot.removeUnits (unitsPerClick);
+					RefreshPanels ();
+					return;
+				}
+
+				// Army type not yet found. If this is an empty slot, create it now
+				if (toSlot.armyType == ArmyType.Empty) {
+					toSlot.armyType = fromSlot.armyType;
+					toSlot.addUnits (unitsPerClick);
+					fromSlot.removeUnits (unitsPerClick);
+					RefreshPanels ();
+					return;
+				}
+
 			}
 		}
 	}
