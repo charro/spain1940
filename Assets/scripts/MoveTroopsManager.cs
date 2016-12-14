@@ -135,4 +135,8 @@ public class MoveTroopsManager : MonoBehaviour {
 		toRegion.SortTroopSlots ();
 		FindObjectOfType<GameManager>().EndActionAndSwitchToIdleMap ();
 	}
+
+	public void ShowMoveConfirmPopup(){
+		FindObjectOfType<UIManager>().ShowPopUp(PopUpType.MoveTroops);
+	}
 }

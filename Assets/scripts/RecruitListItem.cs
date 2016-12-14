@@ -44,4 +44,8 @@ public class RecruitListItem : MonoBehaviour {
 		itemButton.image.sprite = FindObjectOfType<RecruitmentManager> ().unresearchedArmySprite;
 		itemButton.interactable = false;
 	}
+
+	public void ItemClicked(){
+		FindObjectOfType<RecruitmentManager>().AddToUnit(army.armyType);
+	}
 }

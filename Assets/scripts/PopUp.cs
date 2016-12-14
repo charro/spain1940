@@ -47,6 +47,10 @@ public class PopUp : MonoBehaviour {
 				titleText.text = "Confirm Attack " + combatManager.GetDefenderRegion() + " from " + combatManager.GetAttackerRegion();
 				bodyText.text = "Start this attack will consum 1 Action Point. Do you confirm to start the attack ?";	
 				break;
+			case PopUpType.MoveTroops:
+				titleText.text = "Confirm Order";
+				bodyText.text = "Move these troops will consum 1 Action Point. Do you confirm to do the move ?";	
+				break;
 		}
 	}
 
@@ -70,8 +74,11 @@ public class PopUp : MonoBehaviour {
 				FindObjectOfType<ResearchManager>().StartResearchingTechnology();
 				break;
 		case PopUpType.ConfirmAttack:
-			FindObjectOfType<CombatManager>().StartCombat(true);
-			break;
+				FindObjectOfType<CombatManager>().StartCombat(true);
+				break;
+		case PopUpType.MoveTroops:
+				FindObjectOfType<MoveTroopsManager> ().EndUnitsMove ();
+				break;
 		}
 	}
 
@@ -83,6 +90,7 @@ public class PopUp : MonoBehaviour {
 			case PopUpType.ConfirmRecruitment:
 			case PopUpType.ConfirmBuild:
 			case PopUpType.ConfirmResearch:
+			case PopUpType.MoveTroops:
 				break;
 		case PopUpType.ConfirmNewSpy:
 				FindObjectOfType<GameStateMachine> ().SwitchToState (GameState.IdleMapState);

@@ -8,6 +8,7 @@ public enum PopUpType
 	ConfirmBuild,
 	ConfirmNewSpy,
 	ConfirmResearch,
-	ConfirmAttack
+	ConfirmAttack,
+	MoveTroops
 }
 
