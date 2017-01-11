@@ -35,8 +35,8 @@ public class Region : MonoBehaviour {
 			//AddUnitsToArmy (ArmyType.NaziFestung, 5);
 		}
 		if(regionType == RegionType.Asturias){
-			AddUnitsToArmy (ArmyType.TankLince, 55);
-			AddUnitsToArmy (ArmyType.TankBisonte, 150);
+			AddUnitsToArmy (ArmyType.TankLince, 5);
+			AddUnitsToArmy (ArmyType.TankBisonte, 15);
 		}
 
 	}
