@@ -14,6 +14,10 @@ public class InfoPanel : MonoBehaviour {
 	public Text regionActionProduction;
 	public Text totalActionProduction;
 
+	public GameObject infoPanel;
+	public GameObject mainActionsPanel;
+	public GameObject mainEnemyActionsPanel;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -22,6 +26,16 @@ public class InfoPanel : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	public void Close() {
+		infoPanel.SetActive (false);
+
+		if (FindObjectOfType<GameManager> ().GetSelectedRegion ().isNazi) {
+			mainEnemyActionsPanel.SetActive (true);
+		} else {
+			mainActionsPanel.SetActive (true);
+		}
 	}
 
 	public void UpdatePanelValues(){

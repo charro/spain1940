@@ -258,4 +258,19 @@ public class Region : MonoBehaviour {
 
 		return combatPower;
 	}
+
+	public Region[] GetBorderingRegions (){
+		return FindObjectOfType<GameManager>().GetRegionsBorderingRegion (this);
+	}
+
+	public bool HasEnemyTroopsInBorderRegions(){
+		foreach(Region borderRegion in GetBorderingRegions()){
+			if(borderRegion.isNazi != this.isNazi &&
+				borderRegion.HasAnyTroops()){
+				return true;
+			}
+		}
+
+		return false;
+	}
 }

@@ -75,6 +75,7 @@
      <Compile Include="Assets\scripts\InfoPanel.cs" />
      <Compile Include="Assets\scripts\LevelManager.cs" />
      <Compile Include="Assets\scripts\MainActionsPanel.cs" />
+     <Compile Include="Assets\scripts\MainEnemyActionsPanel.cs" />
      <Compile Include="Assets\scripts\MoveTroopsManager.cs" />
      <Compile Include="Assets\scripts\NewSpyPanel.cs" />
      <Compile Include="Assets\scripts\ObjectClickChecker.cs" />
@@ -112,9 +113,6 @@
      <Compile Include="Assets\scripts\cameraMovementScript.cs" />
      <None Include="Assets\shaders\GrayScale.shader" />
      <None Include="Assets\SimpleFX\Materials\UnlitVertexColour_Alpha.shader" />
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>/opt/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>/opt/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -129,9 +127,6 @@
  </Reference>
  <Reference Include="UnityEngine.HoloLens">
  <HintPath>/opt/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Purchasing">
- <HintPath>/opt/Unity/Editor/Data/UnityExtensions/Unity/UnityPurchasing/UnityEngine.Purchasing.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.VR">
  <HintPath>/opt/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>

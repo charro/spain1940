@@ -23,7 +23,7 @@ public class GameStateMachine : MonoBehaviour {
 	public GameState GetCurrentState(){
 		return currentState;
 	}
-
+		
 	public void SwitchToState(int state){
 		SwitchToState ((GameState) state);
 	}
@@ -127,5 +127,9 @@ public class GameStateMachine : MonoBehaviour {
 			FindObjectOfType<CombatManager>().ShowConfirmStartAttackFrom(region);
 			break;
 		}
+	}
+
+	public void SwitchToStateIdle(){
+		SwitchToState (GameState.IdleMapState);
 	}
 }
