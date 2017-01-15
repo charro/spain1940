@@ -301,6 +301,9 @@ public class CombatManager : MonoBehaviour {
 
 		combatScreen.gameObject.SetActive (false);
 
+		// Check for any change in Economy after losing/winning a Region
+		FindObjectOfType<EconomyManager> ().recalculateMaximumActionsPerTurn ();
+
 		FindObjectOfType<EconomyManager>().decreaseActionPoints(1);
 		// End combat and back to Idle map
 		FindObjectOfType<GameStateMachine> ().SwitchToState (GameState.IdleMapState);
