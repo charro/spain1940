@@ -19,6 +19,8 @@ public class PopUp : MonoBehaviour {
 	}
 
 	public void NewPopUp(PopUpType popUpType){
+		PrePopUpActions ();
+
 		type = popUpType;
 
 		switch(type){
@@ -55,7 +57,7 @@ public class PopUp : MonoBehaviour {
 	}
 
 	public void YesClicked(){
-		FindObjectOfType<UIManager> ().HidePopUp ();
+		PostPopUpActionsYesClicked ();
 
 		switch(type){
 			case PopUpType.ConfirmPassTurn:
@@ -80,10 +82,10 @@ public class PopUp : MonoBehaviour {
 				FindObjectOfType<MoveTroopsManager> ().EndUnitsMove ();
 				break;
 		}
+
 	}
 
 	public void NoClicked(){
-		FindObjectOfType<UIManager>().HidePopUp();;
 
 		switch(type){
 			case PopUpType.ConfirmPassTurn:
@@ -96,5 +98,25 @@ public class PopUp : MonoBehaviour {
 				FindObjectOfType<GameStateMachine> ().SwitchToState (GameState.IdleMapState);
 				break;
 		}
+
+		PostPopUpActionsNoClicked ();
+	}
+
+	private void PrePopUpActions(){
+		//Disable All Other elements on screen
+		FindObjectOfType<GameStateMachine>().ChangeToState(GameState.PopUpShownState);
+	}
+
+
+	private void PostPopUpActionsYesClicked(){
+		FindObjectOfType<UIManager>().HidePopUp();
+		// Enable again all other elements
+		FindObjectOfType<GameStateMachine>().ChangeToState(GameState.IdleMapState);
+	}
+
+	private void PostPopUpActionsNoClicked(){
+		FindObjectOfType<UIManager>().HidePopUp();
+		// Enable again all other elements
+		FindObjectOfType<GameStateMachine>().ChangeBackToPreviousState();
 	}
 }

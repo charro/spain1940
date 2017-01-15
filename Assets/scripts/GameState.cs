@@ -5,5 +5,6 @@ public enum GameState
 	ActionsGUIState=1,
 	MoveTroopsState=2,
 	AttackState=3,
-	NewSpyState=4
+	NewSpyState=4,
+	PopUpShownState=5
 }

@@ -28,11 +28,24 @@ public class GameStateMachine : MonoBehaviour {
 		SwitchToState ((GameState) state);
 	}
 
+	// Switch state changes to that state and call Init of that state
 	public void SwitchToState(GameState newState){
+		ChangeToState (newState);
+		InitState (currentState);
+	}
+
+	public void SwitchBackToPreviousState(){
+		SwitchToState (previousState);
+	}
+
+	// Changes to the desired state in the background WITHOUT calling its initialization  
+	public void ChangeToState(GameState newState){
 		previousState = currentState;
 		currentState = newState;
+	}
 
-		InitState (currentState);
+	public void ChangeBackToPreviousState(){
+		ChangeToState (previousState);
 	}
 
 	private void InitState(GameState state){
@@ -48,18 +61,17 @@ public class GameStateMachine : MonoBehaviour {
 			case GameState.NewSpyState:
 				EnterNewSpyState();
 				break;
-		case GameState.AttackState:
+			case GameState.AttackState:
 				EnterAttackState();
+				break;
+			case GameState.PopUpShownState:
+				// No need to do anything special
 				break;
 		}
 	}
 
 	void EnterIdleMapState(){
 		FindObjectOfType<GameManager>().ShowMapAndHUD ();
-	}
-
-	void EnterActionsGUIState(){
-
 	}
 
 	void EnterMoveTroopsState(){
@@ -99,6 +111,10 @@ public class GameStateMachine : MonoBehaviour {
 		UIManager.GetOnMapMessagesPanel().showWhereToAttackText();
 	}
 
+	void EnterPopUpState(){
+
+	}
+
 	public void OnRegionTouched(Region region){
 		switch(currentState){
 			case GameState.IdleMapState:
@@ -116,16 +132,19 @@ public class GameStateMachine : MonoBehaviour {
 				UIManager.ShowMoveTroopsPanel();
 				FindObjectOfType<MoveTroopsManager>().RefreshPanels();
 				break;
-		case GameState.NewSpyState:
-			Debug.Log("Region touched while we are on NewSpyState. Region selected to send spy to: " + region.name);
-			// Confirm where to send the spy
-			FindObjectOfType<SpyManager>().ConfirmAddNewSpyToRegion(region);
-			break;
-		case GameState.AttackState:
-			Debug.Log("Region touched while we are on AttackState. Region selected to send attack from: " + region.name);
-			// Confirm where to send attack from
-			FindObjectOfType<CombatManager>().ShowConfirmStartAttackFrom(region);
-			break;
+			case GameState.NewSpyState:
+				Debug.Log("Region touched while we are on NewSpyState. Region selected to send spy to: " + region.name);
+				// Confirm where to send the spy
+				FindObjectOfType<SpyManager>().ConfirmAddNewSpyToRegion(region);
+				break;
+			case GameState.AttackState:
+				Debug.Log("Region touched while we are on AttackState. Region selected to send attack from: " + region.name);
+				// Confirm where to send attack from
+				FindObjectOfType<CombatManager>().ShowConfirmStartAttackFrom(region);
+				break;
+			case GameState.PopUpShownState:
+				Debug.Log ("Region touched while we are on PopUpShown State. This touch has no effect");
+				break;
 		}
 	}
 
