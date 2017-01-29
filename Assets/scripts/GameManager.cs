@@ -305,7 +305,7 @@ public class GameManager : MonoBehaviour {
 
 		// AI will return true if it decided to attack
 		bool thereWillBeBlood = FindObjectOfType<AIManager> ().DoAITurnActions ();
-		if(!thereWillBeBlood){
+		if (!thereWillBeBlood) {
 			UIManager.ShowLoadingTmp ();
 		}
 		EventManager.TriggerPassTurnEvent ();

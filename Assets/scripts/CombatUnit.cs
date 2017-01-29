@@ -43,6 +43,7 @@ public class CombatUnit : MonoBehaviour {
 		
 		// Check if all these units have been destroyed since last update
 		if(lastTimeCheckedUnits > associatedArmySlot.armyAmount && associatedArmySlot.armyAmount==0){
+			this.gameObject.SetActive (false);
 			FindObjectOfType<CombatScreen> ().ShowExplosion (transform.position.x, transform.position.y);
 			lastTimeCheckedUnits = associatedArmySlot.armyAmount;
 		}

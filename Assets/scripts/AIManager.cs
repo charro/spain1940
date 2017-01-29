@@ -156,7 +156,7 @@ public class AIManager : MonoBehaviour {
 			}
 		}
 		else{
-			// No spied region. Decide here if performing a Blind attack
+			// No spied region. Decide here if performing a Blind attack or not
 		}
 			
 		return false;

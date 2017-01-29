@@ -54,6 +54,11 @@ public class CombatManager : MonoBehaviour {
 	}
 
 	public void StartCombat(bool wait){
+		// If the player started the attack, decrease the corresponding action point
+		if(!attackerRegion.isNazi){
+			FindObjectOfType<EconomyManager>().decreaseActionPoints(1);
+		}
+
 		if(wait){
 			combatScreen.gameObject.SetActive (true);
 			UIManager.hideAllPanels ();
@@ -69,7 +74,12 @@ public class CombatManager : MonoBehaviour {
 	}
 
 	public void SetCombatScreenRegions(Region attackerRegion, Region defenderRegion){
-		combatScreen.SetCombatRegions (attackerRegion, defenderRegion);
+		if (attackerRegion.isNazi) {
+			combatScreen.SetCombatRegions (defenderRegion, attackerRegion);
+		} else {
+			combatScreen.SetCombatRegions (attackerRegion, defenderRegion);
+		}
+
 	}
 
 	// waitForIt=false lets you call this method from Unit Tests
@@ -304,8 +314,14 @@ public class CombatManager : MonoBehaviour {
 		// Check for any change in Economy after losing/winning a Region
 		FindObjectOfType<EconomyManager> ().recalculateMaximumActionsPerTurn ();
 
-		FindObjectOfType<EconomyManager>().decreaseActionPoints(1);
 		// End combat and back to Idle map
 		FindObjectOfType<GameStateMachine> ().SwitchToState (GameState.IdleMapState);
+	}
+
+	public void ResultsScreenClosed(){
+
+		if (attackerRegion.isNazi) {
+			UIManager.ShowLoadingTmp ();
+		}
 	}
 }

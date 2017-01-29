@@ -171,6 +171,7 @@ public class UIManager : MonoBehaviour {
 	}
 
 	public static void ShowLoadingScreen(){
+		hideAllPanels ();
 		singleton.loadingScreen.SetActive (true);
 	}
 
