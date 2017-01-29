@@ -247,7 +247,7 @@ public class GameManager : MonoBehaviour {
 			response = new [] {RegionType.CastillaVieja, RegionType.CastillaNueva};
 			break;
 		case RegionType.Valencia:
-			response = new [] {RegionType.Asturias, RegionType.Leon, RegionType.Baleares};
+			response = new [] {RegionType.Catalunya, RegionType.Aragon, RegionType.CastillaNueva, RegionType.Murcia, RegionType.Baleares};
 			break;
 		case RegionType.Murcia:
 			response = new [] {RegionType.CastillaNueva, RegionType.Valencia,
@@ -259,6 +259,9 @@ public class GameManager : MonoBehaviour {
 			break;
 		case RegionType.Marruecos:
 			response = new [] {RegionType.Andalucia, RegionType.Canarias};
+			break;
+		case RegionType.Baleares:
+			response = new [] {RegionType.Catalunya, RegionType.Valencia};
 			break;
 		case RegionType.Canarias:
 			response = new [] {RegionType.Andalucia, RegionType.Marruecos};

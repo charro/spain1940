@@ -34,7 +34,7 @@ public class CombatResult : MonoBehaviour {
 	public void RefreshLastCombatData(bool won, Dictionary<ArmyType, int> attackerLosses, 
 		Dictionary<ArmyType, int> defenderLosses){
 
-		attackerWon = attackerWon;
+		attackerWon = won;
 		attackerRegionLosses = attackerLosses;
 		defenderRegionLosses = defenderLosses;
 	}
