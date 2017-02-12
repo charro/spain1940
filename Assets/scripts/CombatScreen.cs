@@ -9,6 +9,7 @@ public class CombatScreen : MonoBehaviour {
 	public ParticleSystem unitExplosion;
 	//public Transform explosion;
 	public GameObject unitShootingParticles;
+	public TextMesh turnsText;
 
 	// Use this for initialization
 	void Start () {
@@ -50,6 +51,16 @@ public class CombatScreen : MonoBehaviour {
 		damageText.transform.parent = gameObject.transform;
 	}
 
+	public void ShowMissedMessage(ArmyType armyType){
+		GameObject unit = GetUnitByType (armyType);
+		Vector3 unitPosition = unit.transform.position;
+		Vector3 showPosition = new Vector3 (unitPosition.x + 0.5f, unitPosition.y, gameObject.transform.position.z);
+		GameObject damageText = (GameObject) Instantiate(damageMessage, showPosition, transform.rotation);
+		damageText.GetComponentInChildren<TextMesh> ().text = "MISS";
+		damageText.GetComponentInChildren<TextMesh> ().color = Color.red;
+		damageText.transform.parent = gameObject.transform;
+	}
+
 	public void SetCombatRegions(Region republican, Region nazi){
 		RegionArmySlot emptySlot = new RegionArmySlot ();
 
@@ -71,11 +82,15 @@ public class CombatScreen : MonoBehaviour {
 		}
 
 		for (int i = 0; i < nazi.armySlots.Length && i < naziCombatUnits.Length; i++) {
-			if(republican.armySlots[i].armyAmount > 0){
+			if(nazi.armySlots[i].armyAmount > 0){
 				naziCombatUnits [i].SetAssociatedArmySlot (nazi.armySlots[i]);
 				naziCombatUnits [i].gameObject.SetActive (true);
 			}
 		}
+	}
+
+	public void SetTurnText(int turn){
+		turnsText.text = "TURN " + turn;
 	}
 
 	/*********************  PRIVATE METHODS *****************************************/

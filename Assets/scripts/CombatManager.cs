@@ -54,11 +54,6 @@ public class CombatManager : MonoBehaviour {
 	}
 
 	public void StartCombat(bool wait){
-		// If the player started the attack, decrease the corresponding action point
-		if(!attackerRegion.isNazi){
-			FindObjectOfType<EconomyManager>().decreaseActionPoints(1);
-		}
-
 		if(wait){
 			combatScreen.gameObject.SetActive (true);
 			UIManager.hideAllPanels ();
@@ -82,7 +77,7 @@ public class CombatManager : MonoBehaviour {
 
 	}
 
-	// waitForIt=false lets you call this method from Unit Tests
+	// waitForIt=false lets you call this method from Unit Tests, as yield won't be called
 	IEnumerator CalculateCombat(bool waitForIt){
 		Debug.Log ("STARTING NEW COMBAT !! : " + attackerRegion + " ATTACKS " + defenderRegion);
 			
@@ -196,6 +191,7 @@ public class CombatManager : MonoBehaviour {
 						combatScreen.ShowMissedUnitMessage (attackerRegion.isNazi, attackerUnit.armyType, 1.5f);
 						yield return new WaitForSeconds (1.5f);
 					}*/
+					combatScreen.ShowMissedMessage (nextAttackerUnit.armyType);
 				}
 
 				Debug.Log ("----------------------------------------------------------------------");
@@ -205,10 +201,12 @@ public class CombatManager : MonoBehaviour {
 			attackerRegionTurn = !attackerRegionTurn;
 			combatTurnsPassed++;
 
-			// Put a yield here just before the end of the loop, to avoid hunging Unity
+			// Put a yield here just before the end of the loop to wait for the end of this frame, to avoid hunging Unity and sync the turn with this frame ending
 			if(waitForIt){
 				yield return new WaitForEndOfFrame ();
 			}
+
+			combatScreen.SetTurnText (combatTurnsPassed);
 		}
 
 		Debug.Log ("COMBAT FINISHED - SUMMARY OF THE COMBAT"+
@@ -310,6 +308,11 @@ public class CombatManager : MonoBehaviour {
 		}
 
 		combatScreen.gameObject.SetActive (false);
+
+		// If the player started the attack, decrease the corresponding action point
+		if(!attackerRegion.isNazi){
+			FindObjectOfType<EconomyManager>().decreaseActionPoints(1);
+		}
 
 		// Check for any change in Economy after losing/winning a Region
 		FindObjectOfType<EconomyManager> ().recalculateMaximumActionsPerTurn ();
