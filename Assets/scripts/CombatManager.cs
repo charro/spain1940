@@ -272,8 +272,9 @@ public class CombatManager : MonoBehaviour {
 		Debug.Log ("Attacker unit total damage after reduction of the " + damageReduction + 
 			" : " + totalAttackerDamage);
 
+		// Show the damage on the army that made it
 		if(waitForIt){
-			combatScreen.ShowDamagePointsMessage (defenderArmy.armyType, totalAttackerDamage);
+			combatScreen.ShowDamagePointsMessage (attackerArmy.armyType, totalAttackerDamage);
 		}
 
 		int totalLostUnits = (totalAttackerDamage / defenderLifePerUnit);

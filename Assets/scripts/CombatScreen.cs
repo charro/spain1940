@@ -47,7 +47,7 @@ public class CombatScreen : MonoBehaviour {
 		Vector3 unitPosition = unit.transform.position;
 		Vector3 showPosition = new Vector3 (unitPosition.x + 0.5f, unitPosition.y, gameObject.transform.position.z);
 		GameObject damageText = (GameObject) Instantiate(damageMessage, showPosition, transform.rotation);
-		damageText.GetComponentInChildren<TextMesh> ().text = "-" + damage;
+		damageText.GetComponentInChildren<TextMesh> ().text = "" + damage;
 		damageText.transform.parent = gameObject.transform;
 	}
 
