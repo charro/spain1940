@@ -78,6 +78,10 @@ public class ArmyValues : MonoBehaviour {
 		return naziArmies;
 	}
 
+	public static bool isNazi(ArmyType armyType){
+		return armyType >= ArmyType.NaziJager;
+	}
+
 	// This is called from Unity Editor
 /*	void OnValidate(){
 		// Be sure that the arrays has the same length

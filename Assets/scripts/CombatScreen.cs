@@ -45,7 +45,7 @@ public class CombatScreen : MonoBehaviour {
 	public void ShowDamagePointsMessage(ArmyType armyType, int damage){
 		GameObject unit = GetUnitByType (armyType);
 		Vector3 unitPosition = unit.transform.position;
-		Vector3 showPosition = new Vector3 (unitPosition.x + 0.5f, unitPosition.y, gameObject.transform.position.z);
+		Vector3 showPosition = GetRandomPositionFromPosition(unitPosition, ArmyValues.isNazi (armyType));
 		GameObject damageText = (GameObject) Instantiate(damageMessage, showPosition, transform.rotation);
 		damageText.GetComponentInChildren<TextMesh> ().text = "" + damage;
 		damageText.transform.parent = gameObject.transform;
@@ -54,11 +54,23 @@ public class CombatScreen : MonoBehaviour {
 	public void ShowMissedMessage(ArmyType armyType){
 		GameObject unit = GetUnitByType (armyType);
 		Vector3 unitPosition = unit.transform.position;
-		Vector3 showPosition = new Vector3 (unitPosition.x + 0.5f, unitPosition.y, gameObject.transform.position.z);
+		Vector3 showPosition = GetRandomPositionFromPosition(unitPosition, ArmyValues.isNazi (armyType));
 		GameObject damageText = (GameObject) Instantiate(damageMessage, showPosition, transform.rotation);
 		damageText.GetComponentInChildren<TextMesh> ().text = "MISS";
 		damageText.GetComponentInChildren<TextMesh> ().color = Color.red;
 		damageText.transform.parent = gameObject.transform;
+	}
+
+	public Vector3 GetRandomPositionFromPosition(Vector3 position, bool isNazi){
+		float randomX = Random.Range (0.2f, 0.5f);
+		float randomY = Random.Range (0f, 0.1f);
+		if(isNazi){
+			randomX = -randomX * 2;
+			randomY = -randomY * 2;
+		}
+		Vector3 showPosition = new Vector3 (position.x + randomX, position.y + randomY, gameObject.transform.position.z);
+
+		return showPosition;
 	}
 
 	public void SetCombatRegions(Region republican, Region nazi){

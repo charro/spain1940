@@ -54,6 +54,7 @@ public class CombatManager : MonoBehaviour {
 	}
 
 	public void StartCombat(bool wait){
+		FindObjectOfType<GameStateMachine> ().SwitchToState (GameState.CombatState);
 		if(wait){
 			combatScreen.gameObject.SetActive (true);
 			UIManager.hideAllPanels ();
@@ -154,6 +155,8 @@ public class CombatManager : MonoBehaviour {
 					RegionArmySlot defendingUnit = thisTurnDefenderArmy [targetUnit];
 					Debug.Log ("Defender: " + thisTurnDefenderRegion + " defending unit:" + defendingUnit);
 
+					int unitsKilled = CalculateUnitsKilled (nextAttackerUnit, defendingUnit, waitForIt);
+
 					// Perform the attack on the defending unit
 					ArmyType defendingUnitType = defendingUnit.armyType;
 					if (waitForIt) {
@@ -161,8 +164,6 @@ public class CombatManager : MonoBehaviour {
 						combatScreen.ShowShooting(nextAttackerUnit.armyType);
 						yield return new WaitForSeconds (DELAY_ON_SHOW);
 					}
-
-					int unitsKilled = CalculateUnitsKilled (nextAttackerUnit, defendingUnit, waitForIt);
 
 					// Kill Unit
 					defendingUnit.removeUnits(unitsKilled);
@@ -246,7 +247,7 @@ public class CombatManager : MonoBehaviour {
 		}
 	}
 
-	// Used to avoid the combat to enter in an infinite
+	// Used to avoid the combat to enter in an infinite loop because no unit is killed by a single shot
 	Dictionary<ArmyType, int> accumulatedDamage = new Dictionary<ArmyType, int> ();
 
 	public int CalculateUnitsKilled(RegionArmySlot attackerUnit, RegionArmySlot defenderUnit, bool waitForIt){
@@ -304,7 +305,7 @@ public class CombatManager : MonoBehaviour {
 	public void FinishCombat(){
 
 		if(attackerWins){
-			regionChangedPanel.Show (defenderRegion);  // => IMPORTANT. CALL THIS FIRST (DONT CHANGE TO NAZI UNTIL IS CALLED)
+			regionChangedPanel.Show (defenderRegion);  // => IMPORTANT. CALL THIS FIRST (DONT CHANGE REGION TO NAZI UNTIL IS CALLED OR WE WON'T SHOW THE PROPER FACTION)
 			defenderRegion.SetNaziConquered (attackerRegion.isNazi);
 		}
 
@@ -317,9 +318,6 @@ public class CombatManager : MonoBehaviour {
 
 		// Check for any change in Economy after losing/winning a Region
 		FindObjectOfType<EconomyManager> ().recalculateMaximumActionsPerTurn ();
-
-		// End combat and back to Idle map
-		FindObjectOfType<GameStateMachine> ().SwitchToState (GameState.IdleMapState);
 	}
 
 	public void ResultsScreenClosed(){
@@ -327,5 +325,8 @@ public class CombatManager : MonoBehaviour {
 		if (attackerRegion.isNazi) {
 			UIManager.ShowLoadingTmp ();
 		}
+
+		// End combat and back to Idle map
+		FindObjectOfType<GameStateMachine> ().SwitchToState (GameState.IdleMapState);
 	}
 }
