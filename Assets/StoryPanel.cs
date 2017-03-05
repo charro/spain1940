@@ -13,4 +13,8 @@ public class StoryPanel : MonoBehaviour {
 	void Update () {
 		
 	}
+
+	void OnAnimationFinished(){
+		FindObjectOfType<LevelManager> ().storyFinished = true;
+	}
 }

@@ -7,32 +7,32 @@ public class LevelManager : MonoBehaviour {
 
 	public GameObject cover;
 	public GameObject canvas;
-	public bool coverClicked;
+	public GameObject storyContainer;
+
 	public bool naziFlagShown;
+	public bool storyFinished;
 
 	// Use this for initialization
 	void Start () {
-		coverClicked = false;
 		naziFlagShown = false;
+		storyFinished = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		if(cover){
+		if(Input.GetMouseButtonUp (0)){
 			// Hide the cover once is clicked
-			if (!coverClicked){
-				if (Input.GetMouseButtonUp (0)) {
-					coverClicked = true;
-					cover.gameObject.SetActive (false);
-					canvas.gameObject.SetActive (true);
-				}
+			if (cover.activeSelf) {
+				cover.SetActive (false);
+				canvas.SetActive (true);
+				storyContainer.SetActive (true);
+			} 
+			else if(storyFinished && storyContainer.activeSelf){
+				storyContainer.SetActive (false);
 			}
-			else{
-				if (naziFlagShown &&
-					Input.GetMouseButtonUp (0)) {
-					changeScene ("ejpanya");
-				}
+			else if(naziFlagShown){
+				changeScene ("ejpanya");
 			}
 		}
 	}
