@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Curtain.cs" />
      <Compile Include="Assets\DialogManager.cs" />
+     <Compile Include="Assets\NaziAttackScreen.cs" />
      <Compile Include="Assets\StoryPanel.cs" />
      <Compile Include="Assets\scripts\AIManager.cs" />
      <Compile Include="Assets\scripts\Army.cs" />

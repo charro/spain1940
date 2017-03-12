@@ -5,6 +5,8 @@ using System;
 
 public class AIManager : MonoBehaviour {
 
+	public NaziAttackScreen naziAttackScreen;
+
 	public bool testMode;
 
 	public int baseRecruitPointsPerRegion;
@@ -147,8 +149,13 @@ public class AIManager : MonoBehaviour {
 						combatManager.SetDefenderRegion (defenderRegion);
 						combatManager.SetCombatScreenRegions (attackerRegion, defenderRegion);
 
-						// Start the combat
-						combatManager.StartCombat(!testMode);
+						// Let the attack screen start the combat
+						if (testMode) {
+							combatManager.StartCombat (false);
+						} else {
+							// Show the Nazi attack screen with the proper Region
+							naziAttackScreen.ShowAttackToRegion(regionToAttack);
+						}
 
 						return true;
 					}
