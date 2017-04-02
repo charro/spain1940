@@ -46,10 +46,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Curtain.cs" />
-     <Compile Include="Assets\DialogManager.cs" />
-     <Compile Include="Assets\NaziAttackScreen.cs" />
-     <Compile Include="Assets\StoryPanel.cs" />
      <Compile Include="Assets\scripts\AIManager.cs" />
      <Compile Include="Assets\scripts\Army.cs" />
      <Compile Include="Assets\scripts\ArmyManager.cs" />
@@ -69,6 +65,8 @@
      <Compile Include="Assets\scripts\CombatResultPanel.cs" />
      <Compile Include="Assets\scripts\CombatScreen.cs" />
      <Compile Include="Assets\scripts\CombatUnit.cs" />
+     <Compile Include="Assets\scripts\Curtain.cs" />
+     <Compile Include="Assets\scripts\DialogManager.cs" />
      <Compile Include="Assets\scripts\DropDownMessages.cs" />
      <Compile Include="Assets\scripts\EconomyManager.cs" />
      <Compile Include="Assets\scripts\EventManager.cs" />
@@ -81,6 +79,7 @@
      <Compile Include="Assets\scripts\MainActionsPanel.cs" />
      <Compile Include="Assets\scripts\MainEnemyActionsPanel.cs" />
      <Compile Include="Assets\scripts\MoveTroopsManager.cs" />
+     <Compile Include="Assets\scripts\NaziAttackScreen.cs" />
      <Compile Include="Assets\scripts\NewSpyPanel.cs" />
      <Compile Include="Assets\scripts\ObjectClickChecker.cs" />
      <Compile Include="Assets\scripts\OnMapMessages.cs" />
@@ -105,12 +104,14 @@
      <Compile Include="Assets\scripts\SpyManager.cs" />
      <Compile Include="Assets\scripts\SpyPanel.cs" />
      <Compile Include="Assets\scripts\SpyingValues.cs" />
+     <Compile Include="Assets\scripts\StoryPanel.cs" />
      <Compile Include="Assets\scripts\TechnologiesPanel.cs" />
      <Compile Include="Assets\scripts\Technology.cs" />
      <Compile Include="Assets\scripts\TechnologyButton.cs" />
      <Compile Include="Assets\scripts\TechnologyDetailPanel.cs" />
      <Compile Include="Assets\scripts\TechnologyType.cs" />
      <Compile Include="Assets\scripts\TechnologyValues.cs" />
+     <Compile Include="Assets\scripts\TutoPanel.cs" />
      <Compile Include="Assets\scripts\UIManager.cs" />
      <Compile Include="Assets\scripts\UnitTest.cs" />
      <Compile Include="Assets\scripts\YesNoCallback.cs" />
