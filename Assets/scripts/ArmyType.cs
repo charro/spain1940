@@ -15,7 +15,7 @@ public enum ArmyType
 	FighterBomberHalcon,
 
 	// Nazi units, ids starting in 100
-	NaziJager=100,
-	NaziFestung=101,
-	NaziMeBf109=102
+	NaziTroop=100,
+	NaziTiger=101,
+	NaziPanzer1=102
 }

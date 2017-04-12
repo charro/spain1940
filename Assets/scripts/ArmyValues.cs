@@ -79,7 +79,7 @@ public class ArmyValues : MonoBehaviour {
 	}
 
 	public static bool isNazi(ArmyType armyType){
-		return armyType >= ArmyType.NaziJager;
+		return armyType >= ArmyType.NaziTroop;
 	}
 
 	// This is called from Unity Editor

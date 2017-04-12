@@ -53,7 +53,7 @@ public class AITest {
 		GameObject naziArmy1 = new GameObject("naziArmy1");
 		naziArmy1.AddComponent<Army>();
 		Army naziArmyComponent = naziArmy1.GetComponent<Army> ();
-		naziArmyComponent.armyType = ArmyType.NaziJager;
+		naziArmyComponent.armyType = ArmyType.NaziTroop;
 		naziArmyComponent.armyDescription = "Nazi Jager Soldier";
 		naziArmyComponent.attack = 3;
 		naziArmyComponent.defense = 7;
@@ -63,7 +63,7 @@ public class AITest {
 		GameObject naziArmy2 = new GameObject("naziArmy2");
 		naziArmy2.AddComponent<Army>();
 		Army naziArmyComponent2 = naziArmy2.GetComponent<Army> ();
-		naziArmyComponent2.armyType = ArmyType.NaziMeBf109;
+		naziArmyComponent2.armyType = ArmyType.NaziTiger;
 		naziArmyComponent2.armyDescription = "Nazi Me Bf109";
 		naziArmyComponent2.attack = 6;
 		naziArmyComponent2.defense = 4;
@@ -86,12 +86,12 @@ public class AITest {
 
 		/********************************************* ADD TEST UNITS ***********************************/
 
-		regionNazi1.GetComponent<Region> ().AddUnitsToArmy (ArmyType.NaziJager, 45);
+		regionNazi1.GetComponent<Region> ().AddUnitsToArmy (ArmyType.NaziTroop, 45);
 
-		regionNazi2.GetComponent<Region> ().AddUnitsToArmy (ArmyType.NaziJager, 20);
-		regionNazi2.GetComponent<Region> ().AddUnitsToArmy (ArmyType.NaziMeBf109, 10);
+		regionNazi2.GetComponent<Region> ().AddUnitsToArmy (ArmyType.NaziTroop, 20);
+		regionNazi2.GetComponent<Region> ().AddUnitsToArmy (ArmyType.NaziTiger, 10);
 
-		regionNoNazi.GetComponent<Region> ().AddUnitsToArmy (ArmyType.NaziJager, 7);
+		regionNoNazi.GetComponent<Region> ().AddUnitsToArmy (ArmyType.NaziTroop, 7);
 
 		/*********************************************  TEST CODE ***************************************/
 

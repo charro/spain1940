@@ -27,6 +27,6 @@ public class Army : MonoBehaviour {
 	}
 
 	public static bool isNazi(ArmyType type){
-		return (int)type >= (int)ArmyType.NaziJager;
+		return (int)type >= (int)ArmyType.NaziTroop;
 	}
 }
