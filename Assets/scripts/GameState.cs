@@ -7,5 +7,6 @@ public enum GameState
 	AttackState=3,
 	NewSpyState=4,
 	PopUpShownState=5,
-	CombatState=6
+	CombatState=6,
+	TutorialState=7
 }

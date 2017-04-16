@@ -10,6 +10,7 @@ public enum ArmyType
 	TankToro,
 	Antiaereo,
 	TankBisonte,
+
 	FighterAzor=50,				// Air force units id > 50
 	BomberQuebrantahuesos,
 	FighterBomberHalcon,
@@ -17,5 +18,7 @@ public enum ArmyType
 	// Nazi units, ids starting in 100
 	NaziTroop=100,
 	NaziTiger=101,
-	NaziPanzer1=102
+	NaziPanzer1=102,
+	NaziBf109=103,
+	NaziMe262=104
 }

@@ -8,11 +8,11 @@ using System.Collections;
 public class GameStateMachine : MonoBehaviour {
 
 	private GameState previousState;
-	private GameState currentState;
+	private GameState currentState = GameState.IdleMapState;
 
 	// Use this for initialization
 	void Start () {
-		currentState = GameState.IdleMapState;
+
 	}
 	
 	// Update is called once per frame
@@ -63,6 +63,9 @@ public class GameStateMachine : MonoBehaviour {
 				break;
 			case GameState.AttackState:
 				EnterAttackState();
+				break;
+			case GameState.TutorialState:
+				// Nothing to do here, just prevent input to the regions during tuto
 				break;
 			case GameState.PopUpShownState:
 				// No need to do anything special
@@ -144,6 +147,9 @@ public class GameStateMachine : MonoBehaviour {
 				break;
 			case GameState.PopUpShownState:
 				Debug.Log ("Region touched while we are on PopUpShown State. This touch has no effect");
+				break;
+			case GameState.TutorialState:
+				Debug.Log ("Region touched but we're in tuto. So no action expected here");
 				break;
 		}
 	}

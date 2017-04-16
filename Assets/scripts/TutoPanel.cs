@@ -21,7 +21,7 @@ public class TutoPanel : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		NextTutoStep();
+		StartTutorial ();
 	}
 	
 	// Update is called once per frame
@@ -75,11 +75,21 @@ public class TutoPanel : MonoBehaviour {
 			tutoText.text = "Good luck mate!! We have to save our country from those fucking square-heads !!! Glory to Spain !!!";
 			break;
 		case 10:
-			this.gameObject.SetActive(false);
+			EndTutorial ();
 			break;
 		}
 
 		currentTutoStep++;
+	}
+
+	void StartTutorial(){
+		NextTutoStep();
+		FindObjectOfType<GameStateMachine> ().SwitchToState (GameState.TutorialState);
+	}
+
+	void EndTutorial(){
+		this.gameObject.SetActive(false);
+		FindObjectOfType<GameStateMachine> ().SwitchBackToPreviousState ();
 	}
 
 	void PointArrowTo(RectTransform uiElement){
