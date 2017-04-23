@@ -11,9 +11,18 @@ public class CombatScreen : MonoBehaviour {
 	public GameObject unitShootingParticles;
 	public TextMesh turnsText;
 
+	public AudioClip machineGunSound;
+	public AudioClip machineGunSound2;
+	public AudioClip tankFireSound;
+	public AudioClip explosion1Sound;
+	public AudioClip explosion2Sound;
+	public AudioClip explosion3Sound;
+
+	private AudioSource audioSource;
+
 	// Use this for initialization
-	void Start () {
-	
+	void Awake () {
+		audioSource = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -35,11 +44,26 @@ public class CombatScreen : MonoBehaviour {
 		Vector3 shotPosition = 
 			new Vector3 (transform.position.x + offset, transform.position.y, transform.position.z);
 		Instantiate(unitShootingParticles, shotPosition, rotation);
+
+		AudioClip shootClip = tankFireSound;
+		if(armyType == ArmyType.Milicia ||
+			armyType == ArmyType.NaziTroop){
+			shootClip = machineGunSound;
+		}
+
+		if(armyType == ArmyType.FighterAzor ||
+			armyType == ArmyType.FighterBomberHalcon ||
+			armyType == ArmyType.NaziBf109){
+			shootClip = machineGunSound2;
+		}
+
+		audioSource.PlayOneShot(shootClip, 0.7F);
 	}
 
 	public void ShowExplosion(float x, float y){
 		Vector3 explosionPosition = new Vector3 (x, y, unitExplosion.transform.position.z);
 		Instantiate(unitExplosion, explosionPosition, transform.rotation);
+		audioSource.PlayOneShot(explosion1Sound, 0.7F);
 	}
 
 	public void ShowDamagePointsMessage(ArmyType armyType, int damage){

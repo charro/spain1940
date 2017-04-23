@@ -11,9 +11,14 @@ public class CombatResultPanel : MonoBehaviour {
 	public Image[] naziLossesImages;
 	public Text[] naziLossesTexts;
 
+	public AudioClip applauseSound;
+	public AudioClip marchingSound;
+
+	private AudioSource audioSource;
+
 	// Use this for initialization
 	void Start () {
-	
+
 	}
 	
 	// Update is called once per frame
@@ -22,6 +27,10 @@ public class CombatResultPanel : MonoBehaviour {
 	}
 
 	public void ShowPanel(Dictionary<ArmyType, int> republicanLosses, Dictionary<ArmyType, int> naziLosses, bool naziWon){
+		if(!audioSource){
+			audioSource = GetComponent<AudioSource>();
+		}
+
 		int counter = 0;
 
 		// First hide all units
@@ -52,14 +61,17 @@ public class CombatResultPanel : MonoBehaviour {
 			counter++;
 		}
 
+		gameObject.SetActive (true);
+
 		// Change the view depending if we won or lost
 		if(naziWon){
 			titleText.text = "DEFEAT !! ;(";
+			audioSource.PlayOneShot(marchingSound, 0.7F);
 		}
 		else{
 			titleText.text = "VICTORY !! :D";
+			audioSource.PlayOneShot(applauseSound, 0.7F);
 		}
-
-		gameObject.SetActive (true);
+			
 	}
 }
