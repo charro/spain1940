@@ -32,12 +32,23 @@ public class SaveGameManager : MonoBehaviour {
 		BinaryFormatter formatter = new BinaryFormatter ();
 		FileStream saveGameFile = File.OpenWrite (Application.persistentDataPath + "/savegame.sav");
 
+		GameManager gameManager = FindObjectOfType<GameManager> ();
+		// Add general game data
+		gameData.turnNumber = gameManager.GetCurrentTurnNumber();
+
+		// Add all Regions data
 		gameData.regions.Clear ();
-		Dictionary<RegionType, Region> allRegions = FindObjectOfType<GameManager> ().GetAllRegions ();
+		Dictionary<RegionType, Region> allRegions = gameManager.GetAllRegions ();
 
 		foreach (Region region in allRegions.Values) {
 			gameData.regions.Add (new SavedRegion (region));
 		}
+
+		// Add economy data
+		FindObjectOfType<EconomyManager>().FillSaveGameData (gameData);
+
+		// Add technologies data
+		FindObjectOfType<ResearchManager>().FillSaveGameData (gameData);
 
 		formatter.Serialize (saveGameFile, gameData);
 		saveGameFile.Close ();
@@ -52,26 +63,25 @@ public class SaveGameManager : MonoBehaviour {
 			gameData = (SaveGameData)formatter.Deserialize (saveGameFile);
 			saveGameFile.Close ();
 
+			// If we're in gameplay stage, let's update all gameplay data
 			if(SceneManager.GetActiveScene ().name == "ejpanya") {
-				//Restore region data
-				Dictionary<RegionType, Region> allRegions = FindObjectOfType<GameManager> ().GetAllRegions ();
+				GameManager gameManager = FindObjectOfType<GameManager> ();
+				// Restore Game data
+				gameManager.RestoreDataFromSaveGame (gameData);
 
-				foreach (SavedRegion savedRegion in gameData.regions) {
-					Region region = allRegions[savedRegion.regionType];
+				// Restore Economy data
+				FindObjectOfType<EconomyManager> ().RestoreDataFromSaveGame (gameData);
 
-					region.selected = savedRegion.selected;
-					region.isNazi = savedRegion.isNazi;
-					region.enabledRegion = savedRegion.enabledRegion;
-					region.actionGenerationLevel = savedRegion.actionGenerationLevel;
-					region.militaryLevel = savedRegion.militaryLevel;
-					region.regionType = savedRegion.regionType;
-				}
+				// Restore Technologies data
+				FindObjectOfType<ResearchManager> ().RestoreDataFromSaveGame (gameData);
+
+				// Refresh and go to the main map
+				gameManager.ShowMapAndHUD();
 			}
 
 		} else {
 			gameData = new SaveGameData ();
 		}
-
 
 	}
 
@@ -79,7 +89,22 @@ public class SaveGameManager : MonoBehaviour {
 	public class SaveGameData {
 		public bool tutoDone = false;
 
+		// Game data
+		public int turnNumber = 0;
+		// Region data
 		public List<SavedRegion> regions = new List<SavedRegion>();
+
+		// Economy data
+		public int militaryPoints;
+		public int availableActionPointsForThisTurn;
+		public int maximumActionsPerTurn;
+		public int totalActionGenerationPoints;
+		public int totalMilitaryGenerationPoints;
+
+		// Technology data
+		public TechnologyType currentResearchedTechnology = TechnologyType.None;
+		public int turnsToEndResearchingCurrentTech = 0;
+		public List<SavedTechnology> savedTechnologies = new List<SavedTechnology>();
 	}
 
 	[Serializable]
@@ -90,6 +115,7 @@ public class SaveGameManager : MonoBehaviour {
 		public int actionGenerationLevel;
 		public int militaryLevel;
 		public RegionType regionType;
+		public RegionArmySlot[] armySlots;
 
 		public SavedRegion(Region region){
 			selected = region.selected;
@@ -98,7 +124,19 @@ public class SaveGameManager : MonoBehaviour {
 			actionGenerationLevel = region.actionGenerationLevel;
 			militaryLevel = region.militaryLevel;
 			regionType = region.regionType;
+			armySlots = region.GetArmySlots();
 		}
 	}
-		
+
+	[Serializable]
+	public class SavedTechnology {
+		public TechnologyType type;
+		public bool alreadyResearched = false;
+
+		public SavedTechnology(Technology technology){
+			type = technology.technologyType;
+			alreadyResearched = technology.alreadyResearched;
+		}
+	}
+
 }

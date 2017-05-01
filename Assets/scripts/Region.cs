@@ -21,8 +21,8 @@ public class Region : MonoBehaviour {
 	}
 	private SpiedRegionInfo spiedRegionInfo;
 
-	// Use this for initialization
-	void Start () {
+	void Awake(){
+		// Restore all values from a previous game
 		int maxSlots = GetMaxSlots ();
 		armySlots = new RegionArmySlot[maxSlots];
 		ClearArmySlots ();
@@ -30,7 +30,7 @@ public class Region : MonoBehaviour {
 		FindObjectOfType<GameManager> ().AddRegionToList(this);
 
 		// FIXME: This is only for Testing. Add units to Enemy Regions
-	
+
 		if(isNazi){
 			AddUnitsToArmy (ArmyType.NaziTroop, 88);
 			AddUnitsToArmy (ArmyType.NaziMe262, 5);
@@ -50,6 +50,10 @@ public class Region : MonoBehaviour {
 			AddUnitsToArmy (ArmyType.TankToro, 69);
 			AddUnitsToArmy (ArmyType.Antiaereo, 34);
 		}
+	}
+
+	// Use this for initialization
+	void Start () {
 
 	}
 	
@@ -89,6 +93,10 @@ public class Region : MonoBehaviour {
 	public void SetNaziConquered(bool naziConquered){
 		isNazi = naziConquered;
 		
+		RefreshSprite ();
+	}
+
+	public void RefreshSprite(){
 		if(isNazi){
 			spriteRenderer.sprite = naziRegionSprite;
 		}
@@ -241,11 +249,13 @@ public class Region : MonoBehaviour {
 
 	public void Enable(){
 		enabledRegion = true;
+		RefreshSprite ();
 		spriteRenderer.material = UIManager.GetDefaultMaterial();
 	}
 
 	public void Disable(){
 		enabledRegion = false;
+		RefreshSprite ();
 		spriteRenderer.material = UIManager.GetDisabledMaterial();
 	}
 

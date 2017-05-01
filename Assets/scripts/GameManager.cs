@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour {
 		uiManager  = FindObjectOfType<UIManager>();
 
 		//FindLostReferences.FindMissingReferences();
+		SaveGameManager.Load ();
 	}
 	
 	// Update is called once per frame
@@ -314,5 +315,28 @@ public class GameManager : MonoBehaviour {
 	// Convenience method. Usually here just Unit tests
 	public void IncreaseCurrentTurn(){
 		currentTurnNumber ++;
+	}
+
+	public void RestoreDataFromSaveGame(SaveGameManager.SaveGameData gameData){
+
+		// Restore general game data
+		currentTurnNumber = gameData.turnNumber;
+
+		List<SaveGameManager.SavedRegion> savedRegionList = gameData.regions;
+
+		//Restore regions data
+		foreach (SaveGameManager.SavedRegion savedRegion in savedRegionList) {
+			Region region = allRegions[savedRegion.regionType];
+
+			region.selected = savedRegion.selected;
+			region.isNazi = savedRegion.isNazi;
+			region.enabledRegion = savedRegion.enabledRegion;
+			region.actionGenerationLevel = savedRegion.actionGenerationLevel;
+			region.militaryLevel = savedRegion.militaryLevel;
+			region.regionType = savedRegion.regionType;
+
+			region.armySlots = savedRegion.armySlots;
+		}
+
 	}
 }

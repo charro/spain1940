@@ -1,7 +1,9 @@
 using UnityEngine;
+using System;
 /**
  * Represents a Slot belonging to a Region, that can host an army
  * */
+[Serializable]
 public class RegionArmySlot
 {
 	public ArmyType armyType;

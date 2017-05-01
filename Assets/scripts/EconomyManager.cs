@@ -172,4 +172,20 @@ public class EconomyManager : MonoBehaviour {
 		// Not found, just return 0 => This should never happen
 		return 0;
 	}
+
+	public void RestoreDataFromSaveGame(SaveGameManager.SaveGameData gameData){
+		militaryPoints = gameData.militaryPoints;
+		availableActionPointsForThisTurn = gameData.availableActionPointsForThisTurn;
+		maximumActionsPerTurn = gameData.maximumActionsPerTurn;
+		totalActionGenerationPoints = gameData.totalActionGenerationPoints;
+		totalMilitaryGenerationPoints = gameData.totalMilitaryGenerationPoints;
+	}
+
+	public void FillSaveGameData(SaveGameManager.SaveGameData gameData){
+		gameData.militaryPoints = militaryPoints;
+		gameData.availableActionPointsForThisTurn = availableActionPointsForThisTurn;
+		gameData.maximumActionsPerTurn = maximumActionsPerTurn;
+		gameData.totalActionGenerationPoints = totalActionGenerationPoints;
+		gameData.totalMilitaryGenerationPoints = totalMilitaryGenerationPoints;
+	}
 }

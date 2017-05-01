@@ -7,7 +7,7 @@ public class TechnologyValues : MonoBehaviour {
 	private Dictionary<TechnologyType, Technology> technologiesDictionary;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		// Gets all Technology children and adds them to the HashMap
 		technologiesDictionary = new Dictionary<TechnologyType, Technology> ();
 
@@ -24,5 +24,22 @@ public class TechnologyValues : MonoBehaviour {
 
 	public Technology GetTechnology(TechnologyType type){
 		return technologiesDictionary[type];
+	}
+
+
+	public void RestoreDataFromSaveGame(SaveGameManager.SaveGameData gameData){
+		foreach(SaveGameManager.SavedTechnology savedTechnology in gameData.savedTechnologies){
+			Technology technology = technologiesDictionary[savedTechnology.type];
+
+			technology.alreadyResearched = savedTechnology.alreadyResearched;
+		}
+	}
+
+	public void FillSaveGameData(SaveGameManager.SaveGameData gameData){
+		gameData.savedTechnologies.Clear ();
+
+		foreach(Technology technology in technologiesDictionary.Values){
+			gameData.savedTechnologies.Add (new SaveGameManager.SavedTechnology(technology));
+		}
 	}
 }

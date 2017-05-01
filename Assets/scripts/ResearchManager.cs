@@ -73,4 +73,23 @@ public class ResearchManager : MonoBehaviour {
 	public int GetRemainingTurnsToEndResearch(){
 		return turnsToEndResearching;
 	}
+
+
+	public void RestoreDataFromSaveGame(SaveGameManager.SaveGameData gameData){
+		if (gameData.currentResearchedTechnology != TechnologyType.None) {
+			currentResearchedTechnology =  FindObjectOfType<TechnologyValues> ().GetTechnology (gameData.currentResearchedTechnology);
+			turnsToEndResearching = gameData.turnsToEndResearchingCurrentTech;
+		}
+
+		FindObjectOfType<TechnologyValues> ().RestoreDataFromSaveGame (gameData);
+	}
+
+	public void FillSaveGameData(SaveGameManager.SaveGameData gameData){
+		gameData.currentResearchedTechnology = 
+			(currentResearchedTechnology == null ? TechnologyType.None : currentResearchedTechnology.technologyType);
+
+		gameData.turnsToEndResearchingCurrentTech = turnsToEndResearching;
+
+		FindObjectOfType<TechnologyValues> ().FillSaveGameData (gameData);
+	}
 }
