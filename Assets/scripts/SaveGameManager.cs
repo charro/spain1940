@@ -11,6 +11,8 @@ public class SaveGameManager : MonoBehaviour {
 	private static SaveGameManager instance;
 	private SaveGameData gameData = new SaveGameData();
 
+	private static string saveFileName = "/savegame.sav";
+
 	void Start(){
 		instance = this;
 	}
@@ -27,10 +29,14 @@ public class SaveGameManager : MonoBehaviour {
 		return instance.gameData;
 	}
 
+	public static void Delete(){
+		instance.DeleteSave ();
+	}
+
 
 	public void SaveGame(){
 		BinaryFormatter formatter = new BinaryFormatter ();
-		FileStream saveGameFile = File.OpenWrite (Application.persistentDataPath + "/savegame.sav");
+		FileStream saveGameFile = File.OpenWrite (Application.persistentDataPath + saveFileName);
 
 		GameManager gameManager = FindObjectOfType<GameManager> ();
 		// Add general game data
@@ -55,7 +61,7 @@ public class SaveGameManager : MonoBehaviour {
 	}
 
 	public void LoadGame(){
-		String filePath = Application.persistentDataPath + "/savegame.sav";
+		String filePath = Application.persistentDataPath + saveFileName;
 		if (File.Exists (filePath)) {
 			BinaryFormatter formatter = new BinaryFormatter ();
 			FileStream saveGameFile = File.OpenRead (filePath);
@@ -83,6 +89,14 @@ public class SaveGameManager : MonoBehaviour {
 			gameData = new SaveGameData ();
 		}
 
+	}
+
+	public void DeleteSave (){
+		String filePath = Application.persistentDataPath + saveFileName;
+
+		if (File.Exists (filePath)) {
+			File.Delete (filePath);
+		}
 	}
 
 	[Serializable]

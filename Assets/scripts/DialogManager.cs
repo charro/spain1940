@@ -28,7 +28,7 @@ public class DialogManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetMouseButtonUp (0)) {
+		if (FindObjectOfType<LevelManager> ().storyFinished && Input.GetMouseButtonUp (0)) {
 			if (StillDialog ()) {
 				AdvanceDialog ();
 			} 

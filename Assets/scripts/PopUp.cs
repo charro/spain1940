@@ -53,6 +53,10 @@ public class PopUp : MonoBehaviour {
 				titleText.text = "Confirm Order";
 				bodyText.text = "Move these troops will consum 1 Action Point. Do you confirm to do the move ?";	
 				break;
+			case PopUpType.RestartGame:
+				titleText.text = "Surrender to Nazi army";
+				bodyText.text = "This will finish and restart your game. Do you confirm to surrender cowardly to the Nazis ?";	
+				break;
 		}
 	}
 
@@ -81,6 +85,9 @@ public class PopUp : MonoBehaviour {
 		case PopUpType.MoveTroops:
 				FindObjectOfType<MoveTroopsManager> ().EndUnitsMove ();
 				break;
+		case PopUpType.RestartGame:
+				FindObjectOfType<LevelManager> ().RestartGame ();
+				break;
 		}
 
 	}
@@ -93,6 +100,7 @@ public class PopUp : MonoBehaviour {
 			case PopUpType.ConfirmBuild:
 			case PopUpType.ConfirmResearch:
 			case PopUpType.MoveTroops:
+			case PopUpType.RestartGame:
 				break;
 		case PopUpType.ConfirmNewSpy:
 				FindObjectOfType<GameStateMachine> ().SwitchToState (GameState.IdleMapState);

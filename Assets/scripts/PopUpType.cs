@@ -9,6 +9,7 @@ public enum PopUpType
 	ConfirmNewSpy,
 	ConfirmResearch,
 	ConfirmAttack,
-	MoveTroops
+	MoveTroops,
+	RestartGame
 }
 

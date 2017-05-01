@@ -53,4 +53,13 @@ public class LevelManager : MonoBehaviour {
 	public void exitGame(){
 		Application.Quit ();
 	}
+
+	public void SurrenderButtonClicked(){
+		FindObjectOfType<UIManager>().ShowPopUp(PopUpType.RestartGame);
+	}
+
+	public void RestartGame(){
+		SaveGameManager.Delete ();
+		changeScene ("intro");
+	}
 }
