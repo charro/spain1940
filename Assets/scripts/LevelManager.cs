@@ -12,28 +12,37 @@ public class LevelManager : MonoBehaviour {
 	public bool naziFlagShown;
 	public bool storyFinished;
 
-	// Use this for initialization
 	void Start () {
 		naziFlagShown = false;
 		storyFinished = false;
-	}
-	
-	// Update is called once per frame
-	void Update () {
 
-		if(Input.GetMouseButtonUp (0)){
-			// Hide the cover once is clicked
-			if (cover.activeSelf) {
-				cover.SetActive (false);
-				canvas.SetActive (true);
-				storyContainer.SetActive (true);
-			} 
-			else if(storyFinished && storyContainer.activeSelf){
-				storyContainer.SetActive (false);
-			}
-			else if(naziFlagShown){
+		if(SceneManager.GetActiveScene ().name == "intro") {
+			// Load here the savegame data and decide if showing intro or not
+			SaveGameManager.Load();
+
+			if (SaveGameManager.GetGameData ().tutoDone) {
 				changeScene ("ejpanya");
 			}
+		}
+	}
+
+	void Update () {
+
+		if (SceneManager.GetActiveScene ().name == "intro") {
+			
+			if (Input.GetMouseButtonUp (0)) {
+				// Hide the cover once is clicked
+				if (cover.activeSelf) {
+					cover.SetActive (false);
+					canvas.SetActive (true);
+					storyContainer.SetActive (true);
+				} else if (storyFinished && storyContainer.activeSelf) {
+					storyContainer.SetActive (false);
+				} else if (naziFlagShown) {
+					changeScene ("ejpanya");
+				}
+			}
+
 		}
 	}
 

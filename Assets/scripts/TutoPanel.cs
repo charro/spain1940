@@ -20,8 +20,12 @@ public class TutoPanel : MonoBehaviour {
 	private int currentTutoStep = 0;
 
 	// Use this for initialization
-	void Start () {
-		StartTutorial ();
+	void Awake () {
+		if (SaveGameManager.GetGameData ().tutoDone) {
+			this.gameObject.SetActive(false);
+		} else {
+			StartTutorial ();
+		}
 	}
 	
 	// Update is called once per frame
@@ -88,6 +92,9 @@ public class TutoPanel : MonoBehaviour {
 	}
 
 	void EndTutorial(){
+		SaveGameManager.GetGameData ().tutoDone = true;
+		SaveGameManager.Save ();
+
 		this.gameObject.SetActive(false);
 		FindObjectOfType<GameStateMachine> ().SwitchBackToPreviousState ();
 	}
