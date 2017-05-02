@@ -310,6 +310,9 @@ public class GameManager : MonoBehaviour {
 			UIManager.ShowLoadingTmp ();
 		}
 		EventManager.TriggerPassTurnEvent ();
+
+		// Save game
+		SaveGameManager.Save();
 	}
 
 	// Convenience method. Usually here just Unit tests
