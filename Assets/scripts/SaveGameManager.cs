@@ -13,7 +13,7 @@ public class SaveGameManager : MonoBehaviour {
 
 	private static string saveFileName = "/savegame.sav";
 
-	void Start(){
+	void Awake(){
 		instance = this;
 	}
 

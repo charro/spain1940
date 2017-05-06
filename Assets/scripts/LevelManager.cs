@@ -12,7 +12,7 @@ public class LevelManager : MonoBehaviour {
 	public bool naziFlagShown;
 	public bool storyFinished;
 
-	void Start () {
+	void Awake () {
 		naziFlagShown = false;
 		storyFinished = false;
 
