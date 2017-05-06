@@ -97,6 +97,7 @@
      <Compile Include="Assets\scripts\ResearchManager.cs" />
      <Compile Include="Assets\scripts\ResearchPanel.cs" />
      <Compile Include="Assets\scripts\ResearchSpyPanel.cs" />
+     <Compile Include="Assets\scripts\RestartAnimationOnEnable.cs" />
      <Compile Include="Assets\scripts\SaveGameManager.cs" />
      <Compile Include="Assets\scripts\SpiedRegionInfo.cs" />
      <Compile Include="Assets\scripts\SpiesPanel.cs" />
