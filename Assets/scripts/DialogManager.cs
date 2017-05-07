@@ -6,13 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class DialogManager : MonoBehaviour {
 
+	public string[] introStrings;
+	public string[] winningStrings;
+	public string[] losingStrings;
 	public string[] dialogStrings;
 
 	public GameObject franz;
 	public GameObject francois;
 	public GameObject paquito;
-	public GameObject curtain;
+	public SkinnedMeshRenderer curtain;
 
+	public GameObject charactersContainer;
 	public GameObject dialogsContainer;
 	public GameObject leftDialog;
 	public Text leftText;
@@ -21,23 +25,51 @@ public class DialogManager : MonoBehaviour {
 	public GameObject rightDialog;
 	public Text rightText;
 
+	public Material naziMaterial;
+	public Material spainMaterial;
+
+	public Text resultTitle;
+
 	private int currentDialogIndex;
 
 	private bool dialogsEnabled;
 
+	private string[] currentStrings;
 
-	public void SetDialogsEnabled(bool enabled){
+	public void StartDialog(int dialogNumber){
+		StartDialog ((DialogType)dialogNumber);
+	}
+
+	public void StartDialog(DialogType dialogNumber){
+
+		switch(dialogNumber){
+		case DialogType.introDialog:
+			currentStrings = introStrings;
+			break;
+		case DialogType.winDialog:
+			currentStrings = winningStrings;
+			break;
+		case DialogType.loseDialog:
+			currentStrings = losingStrings;
+			break;
+		case DialogType.firstRegionDialog:
+			currentStrings = dialogStrings;
+			break;
+		}
+
 		dialogsEnabled = enabled;
+		currentDialogIndex = 0;
+		FindObjectOfType<GameStateMachine> ().SwitchToState (GameState.DialogState);
 	}
 
 	// Use this for initialization
 	void Start () {
-		currentDialogIndex = 0;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 
+		// INTRO SCENE DIALOG
 		if (SceneManager.GetActiveScene ().name == "intro") {
 			if (FindObjectOfType<LevelManager> ().storyFinished && Input.GetMouseButtonUp (0)) {
 				if (StillDialog ()) {
@@ -53,13 +85,13 @@ public class DialogManager : MonoBehaviour {
 			}
 		} 
 
+		// MAIN SCENE DIALOG
 		else {
 			if (dialogsEnabled && Input.GetMouseButtonUp (0)) {
 				if (StillDialog ()) {
 					AdvanceDialog ();
 				} else {
-					hideDialogs ();
-					this.gameObject.SetActive (false);
+					EndDialog ();
 				}
 			}
 		}
@@ -71,7 +103,11 @@ public class DialogManager : MonoBehaviour {
 	}
 
 	private void AdvanceDialog(){
-		string currentDialog = dialogStrings[currentDialogIndex];
+		if(!charactersContainer.activeSelf){
+			charactersContainer.SetActive (true);
+		}
+
+		string currentDialog = currentStrings[currentDialogIndex];
 
 		if (currentDialog.StartsWith ("L_")) {
 			currentDialog = currentDialog.Remove (0, 2);
@@ -79,9 +115,15 @@ public class DialogManager : MonoBehaviour {
 		} else if (currentDialog.StartsWith ("R_")) {
 			currentDialog = currentDialog.Remove (0, 2);
 			ShowRightText (currentDialog);
-		} else {
+		} else if (currentDialog.StartsWith ("M_")) {
 			currentDialog = currentDialog.Remove (0, 2);
 			ShowMiddleText (currentDialog);
+		} else if (currentDialog == "END_GAME_NAZI") {
+			hideAll ();
+			showCurtainAndEndGame (false);
+		} else if (currentDialog == "END_GAME_SPAIN") {
+			hideAll ();
+			showCurtainAndEndGame (true);
 		}
 
 		currentDialogIndex++;
@@ -128,5 +170,29 @@ public class DialogManager : MonoBehaviour {
 
 	private void hideDialogs(){
 		dialogsContainer.gameObject.SetActive (false);
+	}
+
+	private void hideAll(){
+		hideDialogs ();
+
+		francois.gameObject.SetActive (false);
+		paquito.gameObject.SetActive (false);
+		franz.gameObject.SetActive (false);
+	}
+
+	private void showCurtainAndEndGame(bool win){
+		dialogsEnabled = false;
+		this.gameObject.SetActive (true);
+
+		curtain.material = win ? spainMaterial : naziMaterial;
+		resultTitle.text = win ? "SI, SI, SI SPAIN IS NOW FREE !!!" : "NEIN NEIN NEIN !! THIRD REICH IS HERE !!";
+
+		curtain.gameObject.SetActive (true);
+		resultTitle.gameObject.SetActive (true);
+	}
+
+	private void EndDialog(){
+		charactersContainer.SetActive (false);
+		FindObjectOfType<GameStateMachine> ().SwitchToStateIdle ();
 	}
 }

@@ -60,6 +60,7 @@
      <Compile Include="Assets\scripts\BuildPanel.cs" />
      <Compile Include="Assets\scripts\BuildValues.cs" />
      <Compile Include="Assets\scripts\BuildingType.cs" />
+     <Compile Include="Assets\scripts\CharactersScreen.cs" />
      <Compile Include="Assets\scripts\CombatManager.cs" />
      <Compile Include="Assets\scripts\CombatResult.cs" />
      <Compile Include="Assets\scripts\CombatResultPanel.cs" />
@@ -67,6 +68,7 @@
      <Compile Include="Assets\scripts\CombatUnit.cs" />
      <Compile Include="Assets\scripts\Curtain.cs" />
      <Compile Include="Assets\scripts\DialogManager.cs" />
+     <Compile Include="Assets\scripts\DialogType.cs" />
      <Compile Include="Assets\scripts\DropDownMessages.cs" />
      <Compile Include="Assets\scripts\EconomyManager.cs" />
      <Compile Include="Assets\scripts\EventManager.cs" />

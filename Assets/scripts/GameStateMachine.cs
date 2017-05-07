@@ -70,6 +70,12 @@ public class GameStateMachine : MonoBehaviour {
 			case GameState.PopUpShownState:
 				// No need to do anything special
 				break;
+			case GameState.DialogState:
+				// Nothing special to do
+				break;
+			case GameState.EndGameState:
+				// This is the end my friend
+				break;
 		}
 	}
 
@@ -151,6 +157,9 @@ public class GameStateMachine : MonoBehaviour {
 			case GameState.TutorialState:
 				Debug.Log ("Region touched but we're in tuto. So no action expected here");
 				break;
+			default:
+				Debug.Log ("Region touched in a State with no action assigned to it");
+				break;			
 		}
 	}
 

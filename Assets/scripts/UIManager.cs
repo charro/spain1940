@@ -27,7 +27,7 @@ public class UIManager : MonoBehaviour {
 	private static UIManager singleton;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		singleton = this;
 	}
 	
