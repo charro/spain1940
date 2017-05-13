@@ -28,6 +28,7 @@ public class DialogManager : MonoBehaviour {
 	public Material naziMaterial;
 	public Material spainMaterial;
 
+	public GameObject resultContainer;
 	public Text resultTitle;
 
 	private int currentDialogIndex;
@@ -35,6 +36,14 @@ public class DialogManager : MonoBehaviour {
 	private bool dialogsEnabled;
 
 	private string[] currentStrings;
+
+	public void StartWinningDialog(){
+		StartDialog (DialogType.winDialog);
+	}
+		
+	public void StartLosingDialog(){
+		StartDialog (DialogType.loseDialog);
+	}
 
 	public void StartDialog(int dialogNumber){
 		StartDialog ((DialogType)dialogNumber);
@@ -64,6 +73,9 @@ public class DialogManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		if (SceneManager.GetActiveScene ().name == "intro") {
+			currentStrings = introStrings;
+		}
 	}
 
 	// Update is called once per frame
@@ -99,7 +111,7 @@ public class DialogManager : MonoBehaviour {
 	}
 
 	private bool StillDialog(){
-		return currentDialogIndex < dialogStrings.Length;
+		return currentDialogIndex < currentStrings.Length;
 	}
 
 	private void AdvanceDialog(){
@@ -184,8 +196,9 @@ public class DialogManager : MonoBehaviour {
 		dialogsEnabled = false;
 		this.gameObject.SetActive (true);
 
+		resultContainer.SetActive (true);
 		curtain.material = win ? spainMaterial : naziMaterial;
-		resultTitle.text = win ? "SI, SI, SI SPAIN IS NOW FREE !!!" : "NEIN NEIN NEIN !! THIRD REICH IS HERE !!";
+		resultTitle.text = win ? "SI, SI, SI \nSPAIN IS NOW FREE !!!\n CONGRATULATIONS !!" : "NEIN NEIN NEIN !! \n THE THIRD REICH IS HERE !!";
 
 		curtain.gameObject.SetActive (true);
 		resultTitle.gameObject.SetActive (true);
@@ -194,5 +207,6 @@ public class DialogManager : MonoBehaviour {
 	private void EndDialog(){
 		charactersContainer.SetActive (false);
 		FindObjectOfType<GameStateMachine> ().SwitchToStateIdle ();
+		dialogsEnabled = false;
 	}
 }

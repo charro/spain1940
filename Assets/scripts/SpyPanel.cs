@@ -28,8 +28,17 @@ public class SpyPanel : MonoBehaviour {
 		regionImage.SetActive(spy != null);
 		newSpyButton.SetActive(spy == null);
 
+		string spyName = "Marcelino";
+
 		if(spy != null){
-			spyText.GetComponent<Text>().text = "Espia Marcelino\n Still " + spy.turnsToEndSpying + " turns to end";
+			if(spy.spyLevel == 2){
+				spyName = "Eustaquio";
+			}
+			if(spy.spyLevel == 3){
+				spyName = "Jose Luis";
+			}
+
+			spyText.GetComponent<Text>().text = "Espia " + spyName + "\n Still " + spy.turnsToEndSpying + " turns to end";
 			regionImage.GetComponent<Image>().sprite = spy.spiedRegion.naziRegionSprite;
 		}
 	}

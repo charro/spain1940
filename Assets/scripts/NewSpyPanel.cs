@@ -20,7 +20,14 @@ public class NewSpyPanel : MonoBehaviour {
 	}
 
 	void OnEnable(){
+		SpyingValues spyValues = FindObjectOfType<SpyingValues> ();
+
 		newSpyButton.interactable = IsThisLevelResearched();
+
+		int spyValueIndex = spyLevel - 1;
+		descriptionText.text = "The spying will take " + spyValues.turnsNeededPerLevel[spyValueIndex] +" turns.\n" +
+			(spyValues.findArmyTypeChancePerLevel[spyValueIndex]*100) + "% chance of finding army types\n" + 
+			(spyValues.findArmyNumberChancePerLevel[spyValueIndex]*100) + "% chance of finding army numbers";
 	}
 
 	private bool IsThisLevelResearched(){
