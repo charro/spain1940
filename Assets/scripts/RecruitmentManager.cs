@@ -39,7 +39,7 @@ public class RecruitmentManager : MonoBehaviour {
 	public void RefreshUI(){
 		ResetUnits ();
 		UpdateRecruitmentPointsText ();
-		EnableResearchedUnits ();
+		EnableProperUnits ();
 	}
 
 	public void AddToUnit(int unitTypeInt){
@@ -194,16 +194,38 @@ public class RecruitmentManager : MonoBehaviour {
 		recruitmentPointsText.text = "" + economyManager.getMilitaryPoints();
 	}
 
-	private void EnableResearchedUnits(){
+	// Enable only units that are already Researched
+	// And then, if full slots, enable only already owned units
+	private void EnableProperUnits(){
+		Region selectedRegion = FindObjectOfType<GameManager>().GetSelectedRegion ();
+		bool hasFullSlots = selectedRegion.HasFullSlots ();
+
+		bool anyArmyDisabledBecauseSlotsFull = false;
+
 		foreach(RecruitListItem recruitListItem in recruitableListItems){
 			bool isResearched = 
 				FindObjectOfType<ResearchManager> ().IsAlreadyResearched (recruitListItem.army.requiredTechnology);
-			if(isResearched){
-				recruitListItem.EnableRecruitment();
+			
+			if (isResearched) {
+				bool thisArmyIsInRegion = selectedRegion.HasTroopOfType (recruitListItem.army.armyType);
+
+				// If all army slots have content, no more army types con be recruited
+				if (hasFullSlots && !thisArmyIsInRegion) {
+					recruitListItem.DisableRecruitment ();
+					anyArmyDisabledBecauseSlotsFull = true;
+				} 
+				else {
+					recruitListItem.EnableRecruitment ();
+				}
+			} 
+			else {
+				recruitListItem.DisableRecruitment ();
 			}
-			else{
-				recruitListItem.DisableRecruitment();
-			}
+		}
+
+		if(anyArmyDisabledBecauseSlotsFull){
+			// Show PopUp to inform why some units are disabled
+			FindObjectOfType<UIManager>().ShowPopUp(PopUpType.FullSlotsMessage);
 		}
 	}
 

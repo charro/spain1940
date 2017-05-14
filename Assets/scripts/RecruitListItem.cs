@@ -41,7 +41,8 @@ public class RecruitListItem : MonoBehaviour {
 		priceText.gameObject.SetActive (false);
 		militaryPointsImage.gameObject.SetActive (false);
 		//originalSprite = itemButton.image.sprite;
-		itemButton.image.sprite = FindObjectOfType<RecruitmentManager> ().unresearchedArmySprite;
+		//itemButton.image.sprite = FindObjectOfType<RecruitmentManager> ().unresearchedArmySprite;
+		itemButton.image.sprite = army.sprite;
 		itemButton.interactable = false;
 	}
 

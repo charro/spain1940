@@ -10,6 +10,7 @@ public enum PopUpType
 	ConfirmResearch,
 	ConfirmAttack,
 	MoveTroops,
-	RestartGame
+	RestartGame,
+	FullSlotsMessage
 }
 

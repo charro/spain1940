@@ -6,6 +6,8 @@ public class PopUp : MonoBehaviour {
 
 	public Text titleText;
 	public Text bodyText;
+	public Button yesButton;
+	public Button noButton;
 	private PopUpType type;
 
 	// Use this for initialization
@@ -57,6 +59,11 @@ public class PopUp : MonoBehaviour {
 				titleText.text = "Surrender to Nazi army";
 				bodyText.text = "This will finish and restart your game. Do you confirm to surrender cowardly to the Nazis ?";	
 				break;
+		case PopUpType.FullSlotsMessage:
+				titleText.text = "Maximum different armies";
+				bodyText.text = "The region has no empty army slots.\n Only already owned Army types will be enabled";
+				noButton.gameObject.SetActive (false);
+				break;
 		}
 	}
 
@@ -88,6 +95,9 @@ public class PopUp : MonoBehaviour {
 		case PopUpType.RestartGame:
 				FindObjectOfType<LevelManager> ().RestartGame ();
 				break;
+		case PopUpType.FullSlotsMessage:
+				// Nothing to do
+				break;				
 		}
 
 	}
@@ -101,6 +111,7 @@ public class PopUp : MonoBehaviour {
 			case PopUpType.ConfirmResearch:
 			case PopUpType.MoveTroops:
 			case PopUpType.RestartGame:
+			case PopUpType.FullSlotsMessage:
 				break;
 		case PopUpType.ConfirmNewSpy:
 				FindObjectOfType<GameStateMachine> ().SwitchToState (GameState.IdleMapState);
@@ -113,6 +124,8 @@ public class PopUp : MonoBehaviour {
 	private void PrePopUpActions(){
 		//Disable All Other elements on screen
 		FindObjectOfType<GameStateMachine>().ChangeToState(GameState.PopUpShownState);
+		yesButton.gameObject.SetActive (true);
+		noButton.gameObject.SetActive (true);
 	}
 
 

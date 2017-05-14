@@ -38,10 +38,11 @@ public class Region : MonoBehaviour {
 			AddUnitsToArmy (ArmyType.NaziBf109, 20);
 		}
 		if(regionType == RegionType.Asturias){
-			AddUnitsToArmy (ArmyType.Milicia, 88);
+			AddUnitsToArmy (ArmyType.Antiaereo, 88);
 			AddUnitsToArmy (ArmyType.TankBisonte, 6);
 			AddUnitsToArmy (ArmyType.TankToro, 44);
 			AddUnitsToArmy (ArmyType.FighterBomberHalcon, 55);
+			AddUnitsToArmy (ArmyType.BomberQuebrantahuesos, 55);
 		}
 		if(regionType == RegionType.Andalucia){
 			AddUnitsToArmy (ArmyType.TankToro, 66);
@@ -164,6 +165,26 @@ public class Region : MonoBehaviour {
 	public bool HasAnyTroops(){
 		foreach(RegionArmySlot armySlot in armySlots){
 			if(armySlot.armyType != ArmyType.Empty){
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	public bool HasFullSlots(){
+		foreach(RegionArmySlot armySlot in armySlots){
+			if(armySlot.armyType == ArmyType.Empty){
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+	public bool HasTroopOfType(ArmyType armyType){
+		foreach(RegionArmySlot armySlot in armySlots){
+			if(armySlot.armyType == armyType){
 				return true;
 			}
 		}

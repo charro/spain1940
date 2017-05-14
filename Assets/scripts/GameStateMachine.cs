@@ -134,13 +134,14 @@ public class GameStateMachine : MonoBehaviour {
 			case GameState.ActionsGUIState:
 				Debug.Log("Region touched while we are on ActionsGUI State");
 				break;
-			case GameState.MoveTroopsState:
-				Debug.Log("Region touched while we are on MoveTroopsState. Region selected to move troops to: " + region.name);
+		case GameState.MoveTroopsState:
+				Debug.Log ("Region touched while we are on MoveTroopsState. Region selected to move troops to: " + region.name);
 				// Set where to move the troops to
-				FindObjectOfType<MoveTroopsManager>().SetToRegion (region);
-				UIManager.hideAllPanels();
-				UIManager.ShowMoveTroopsPanel();
-				FindObjectOfType<MoveTroopsManager>().RefreshPanels();
+				FindObjectOfType<MoveTroopsManager> ().SetToRegion (region);
+				UIManager.hideAllPanels ();
+				UIManager.ShowMoveTroopsPanel ();
+				FindObjectOfType<MoveTroopsManager> ().RefreshPanels ();
+				FindObjectOfType<MoveTroopsManager> ().EnableOnlyOwnedIfAllSlotsFull ();
 				break;
 			case GameState.NewSpyState:
 				Debug.Log("Region touched while we are on NewSpyState. Region selected to send spy to: " + region.name);

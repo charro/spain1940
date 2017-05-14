@@ -70,6 +70,7 @@ public class MoveTroopsManager : MonoBehaviour {
 				unitSlotsFrom[i].GetComponentInChildren<Text>().text = "X " + fromArmySlots[i].armyAmount;
 				unitSlotsFrom[i].GetComponentInChildren<Image>().sprite = 
 					FindObjectOfType<ArmyValues>().GetArmy(fromArmySlots[i].armyType).sprite;
+				unitSlotsFrom[i].GetComponentInChildren<Button> ().interactable = true;
 			}
 		}
 
@@ -86,6 +87,39 @@ public class MoveTroopsManager : MonoBehaviour {
 				unitSlotsTo[i].GetComponentInChildren<Image>().sprite = 
 					FindObjectOfType<ArmyValues>().GetArmy(toArmySlots[i].armyType).sprite;
 			}
+		}
+
+	}
+
+	// Check if the "TO" Region has all slots full and then enable only those units in "FROM" Region
+	public void EnableOnlyOwnedIfAllSlotsFull(){
+		bool hasFullSlots = toRegion.HasFullSlots ();
+
+		bool anyArmyDisabledBecauseSlotsFull = false;
+
+		if(hasFullSlots){
+			// Disable any armyType in FROM Region that is not already in TO Region
+			for(int slotIndex=0; slotIndex<unitSlotsFrom.Length; slotIndex++){
+				GameObject slotFrom = unitSlotsFrom[slotIndex];
+				bool armyFoundInToRegion = false;
+
+				foreach(RegionArmySlot toArmySlot in toRegion.GetArmySlots()){
+					if(fromRegion.GetArmySlots()[slotIndex].armyType == toArmySlot.armyType){
+						armyFoundInToRegion = true;
+					}
+				}
+
+				if(!armyFoundInToRegion){
+					anyArmyDisabledBecauseSlotsFull = true;
+					slotFrom.GetComponentInChildren<Button> ().interactable = false;
+				}
+			}
+				
+		}
+
+		if(anyArmyDisabledBecauseSlotsFull){
+			// Show PopUp to inform why some units are disabled
+			FindObjectOfType<UIManager>().ShowPopUp(PopUpType.FullSlotsMessage);
 		}
 	}
 
