@@ -38,7 +38,7 @@ public class Region : MonoBehaviour {
 			AddUnitsToArmy (ArmyType.NaziBf109, 20);
 		}
 		if(regionType == RegionType.Asturias){
-			AddUnitsToArmy (ArmyType.TankLince, 5);
+			AddUnitsToArmy (ArmyType.Milicia, 88);
 			AddUnitsToArmy (ArmyType.TankBisonte, 6);
 			AddUnitsToArmy (ArmyType.TankToro, 44);
 			AddUnitsToArmy (ArmyType.FighterBomberHalcon, 55);

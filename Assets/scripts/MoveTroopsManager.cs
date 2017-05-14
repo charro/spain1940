@@ -137,6 +137,17 @@ public class MoveTroopsManager : MonoBehaviour {
 	}
 
 	public void ShowMoveConfirmPopup(){
-		FindObjectOfType<UIManager>().ShowPopUp(PopUpType.MoveTroops);
+
+		bool somethingToMove = false;
+
+		foreach(GameObject slot in unitSlotsTo){
+			if(slot.activeSelf){
+				somethingToMove = true;
+			}
+		}
+
+		if(somethingToMove){
+			FindObjectOfType<UIManager>().ShowPopUp(PopUpType.MoveTroops);
+		}
 	}
 }

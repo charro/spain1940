@@ -56,14 +56,17 @@ public class InfoPanel : MonoBehaviour {
 				RegionArmySlot[] armySlots = selectedRegion.GetArmySlots();
 
 				for(int i=0; i<armySlots.Length && i<unitSlots.Length; i++){
+					GameObject slot = unitSlots [i];
+
 					if(armySlots[i].armyType == ArmyType.Empty){
-						unitSlots[i].SetActive(false);
+						slot.SetActive(false);
 					}
 					else{
-						unitSlots[i].SetActive(true);
-						unitSlots[i].GetComponentInChildren<Text>().text = " X " + armySlots[i].armyAmount;
-						unitSlots[i].GetComponentInChildren<Image>().sprite = 
+						slot.SetActive(true);
+						slot.GetComponentInChildren<Text>().text = " X " + armySlots[i].armyAmount;
+						slot.GetComponentInChildren<Image>().sprite = 
 							FindObjectOfType<ArmyValues>().GetArmy(armySlots[i].armyType).sprite;
+						slot.GetComponentInChildren<Button> ().interactable = true;
 					}
 				}
 
@@ -78,24 +81,42 @@ public class InfoPanel : MonoBehaviour {
 			// For Nazi owned, only show spied values or Unknown if no spied values available
 			else{
 				for(int i=0; i<unitSlots.Length; i++){
-					unitSlots[i].SetActive(true);
-					unitSlots[i].GetComponentInChildren<Image>().sprite = unknownArmySprite;
-					unitSlots[i].GetComponentInChildren<Text>().text = "X ??";
+					GameObject slot = unitSlots [i];
+
+					slot.SetActive(true);
+					slot.GetComponentInChildren<Image>().sprite = unknownArmySprite;
+					slot.GetComponentInChildren<Text>().text = "X ??";
+					slot.GetComponentInChildren<Button> ().interactable = false;
 
 					// Show last spied info in case it exists
 					SpiedRegionInfo spiedInfo = selectedRegion.GetLastSpiedRegionInfo();
 					if(spiedInfo != null){
+						bool thereIsSpyInfoForThisRegion = false;
+
 						if(spiedInfo.spiedArmyTypes.Length >= i && spiedInfo.spiedArmyTypes[i] != ArmyType.Unknown &&
 						   spiedInfo.spiedArmyTypes[i] != ArmyType.Empty){
-							unitSlots[i].GetComponentInChildren<Image>().sprite = 
+							slot.GetComponentInChildren<Image>().sprite = 
 								FindObjectOfType<ArmyValues>().GetArmy(spiedInfo.spiedArmyTypes[i]).sprite;
+							thereIsSpyInfoForThisRegion = true;
 						}
 						if(spiedInfo.spiedArmyAmounts.Length >= i && spiedInfo.spiedArmyAmounts[i] > 0){
-							unitSlots[i].GetComponentInChildren<Text>().text = " X " + spiedInfo.spiedArmyAmounts[i];
+							slot.GetComponentInChildren<Text>().text = " X " + spiedInfo.spiedArmyAmounts[i];
+							thereIsSpyInfoForThisRegion = true;
+						}
+
+						if(thereIsSpyInfoForThisRegion){
+							slot.GetComponentInChildren<Button> ().interactable = true;
 						}
 					}
 
 				}
+
+				regionActionProduction.text = "??";
+				totalActionProduction.text = "??";
+
+				// Military Info
+				regionMilitaryProduction.text = "??";
+				totalMilitaryProduction.text = "??";
 			}
 		}
 	}
