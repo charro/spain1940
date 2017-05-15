@@ -15,3 +15,5 @@ Cover art by <a href='http://www.freepik.com/free-vector/war-illustration_766823
 <a href="http://www.flaticon.com/authors/rami-mcmin" title="Rami McMin" />
 
 <a href='http://www.freepik.com/free-vector/dragon-head-silhouette_753336.htm'>Designed by Freepik</a>
+
+<div>Iconos diseñados por <a href="http://www.freepik.com" title="Freepik">Freepik</a> desde <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> con licencia <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
