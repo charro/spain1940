@@ -101,9 +101,15 @@ public class ResearchManager : MonoBehaviour {
 	public int GetAdditionalAttackForArmyAndDefender (ArmyType armyType, ArmyType defenderArmy){
 		int additionalAttack = 0;
 
-		if(IsAlreadyResearched(TechnologyType.HeavyAmmo)){
-			
+		// Technologies advantages only apply to our regions, not for Nazi
+		if (!Army.isNazi (armyType)) {
+			if (IsAlreadyResearched (TechnologyType.HeavyAmmo) && 
+				armyType != ArmyType.Milicia) {
+				additionalAttack += 2;
+			}
 		}
+
+		additionalAttack += Army.GetAdditionalAttackForArmyType(armyType, defenderArmy);
 
 		return additionalAttack;
 	}
@@ -121,12 +127,11 @@ public class ResearchManager : MonoBehaviour {
 				additionalDefense += 1;
 			}
 
-			if(IsAlreadyResearched(TechnologyType.HeavyArmor)){
-				if(armyType != ArmyType.Milicia){
-					additionalDefense += 2;
-				}
+			if(IsAlreadyResearched(TechnologyType.HeavyArmor) &&
+				armyType != ArmyType.Milicia){
+				additionalDefense += 2;
 			}
-				
+
 		}
 
 		// Get Additional defense depending on type of armies in combat
@@ -143,12 +148,8 @@ public class ResearchManager : MonoBehaviour {
 	public int GetAdditionalSpeedForArmy (ArmyType armyType){
 		int additionalSpeed = 0;
 
-		if(IsAlreadyResearched(TechnologyType.JetEngine)){
-			if(armyType == ArmyType.BomberQuebrantahuesos ||
-				armyType == ArmyType.FighterAzor ||
-				armyType == ArmyType.FighterBomberHalcon){
-				additionalSpeed += 2;
-			}
+		if(IsAlreadyResearched(TechnologyType.JetEngine) && Army.isAirTroop(armyType)){
+			additionalSpeed += 2;
 		}
 
 		return additionalSpeed;

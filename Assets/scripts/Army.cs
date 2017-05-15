@@ -90,7 +90,8 @@ public class Army : MonoBehaviour {
 			break;
 
 		case ArmyType.TankBisonte:
-			if (attacker == ArmyType.NaziTroop) {
+			if (attacker == ArmyType.NaziTroop ||
+				attacker == ArmyType.NaziFlak) {
 				additionalDefense += 3;
 			}
 			if (attacker == ArmyType.NaziTiger) {
@@ -99,13 +100,15 @@ public class Army : MonoBehaviour {
 			break;
 
 		case ArmyType.TankLince:
-			if (attacker == ArmyType.NaziTroop) {
+			if (attacker == ArmyType.NaziTroop ||
+				attacker == ArmyType.NaziFlak) {
 				additionalDefense += 1;
 			}
 			break;
 
 		case ArmyType.TankToro:
-			if (attacker == ArmyType.NaziTroop) {
+			if (attacker == ArmyType.NaziTroop ||
+				attacker == ArmyType.NaziFlak) {
 				additionalDefense += 2;
 			}
 			break;
@@ -127,13 +130,15 @@ public class Army : MonoBehaviour {
 			break;
 
 		case ArmyType.NaziTiger:
-			if (attacker == ArmyType.Milicia) {
+			if (attacker == ArmyType.Milicia ||
+				attacker == ArmyType.Antiaereo) {
 				additionalDefense += 1;
 			}
 			break;
 
 		case ArmyType.NaziPanzer1:
-			if (attacker == ArmyType.Milicia) {
+			if (attacker == ArmyType.Milicia ||
+				attacker == ArmyType.Antiaereo) {
 				additionalDefense += 3;
 			}
 			if (attacker == ArmyType.TankLince) {
@@ -183,7 +188,9 @@ public class Army : MonoBehaviour {
 			break;
 
 		case ArmyType.Milicia:
-			// No advantages
+			if(defender == ArmyType.NaziFlak){
+				additionalAttack += 1;
+			}
 			break;
 
 		case ArmyType.TankBisonte:
@@ -193,22 +200,29 @@ public class Army : MonoBehaviour {
 			if (defender == ArmyType.NaziTiger) {
 				additionalAttack += 1;
 			}
+			if(defender == ArmyType.NaziFlak){
+				additionalAttack += 3;
+			}
 			break;
 
 		case ArmyType.TankLince:
-			if (defender == ArmyType.NaziTroop) {
+			if (defender == ArmyType.NaziTroop ||
+				defender == ArmyType.NaziFlak) {
 				additionalAttack += 2;
 			}
 			break;
 
 		case ArmyType.TankToro:
-			if (defender == ArmyType.NaziTroop) {
+			if (defender == ArmyType.NaziTroop ||
+				defender == ArmyType.NaziFlak) {
 				additionalAttack += 3;
 			}
 			break;
 
 		case ArmyType.NaziTroop:
-			// No advantages
+			if (defender == ArmyType.Antiaereo) {
+				additionalAttack += 1;
+			}
 			break;
 
 		case ArmyType.NaziBf109:
@@ -227,13 +241,15 @@ public class Army : MonoBehaviour {
 			break;
 
 		case ArmyType.NaziTiger:
-			if (defender == ArmyType.Milicia) {
+			if (defender == ArmyType.Milicia ||
+				defender == ArmyType.Antiaereo) {
 				additionalAttack += 1;
 			}
 			break;
 
 		case ArmyType.NaziPanzer1:
-			if (defender == ArmyType.Milicia) {
+			if (defender == ArmyType.Milicia ||
+				defender == ArmyType.Antiaereo) {
 				additionalAttack += 3;
 			}
 			if (defender == ArmyType.TankLince) {

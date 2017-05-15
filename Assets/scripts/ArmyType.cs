@@ -20,5 +20,6 @@ public enum ArmyType
 	NaziTiger=101,
 	NaziPanzer1=102,
 	NaziBf109=103,
-	NaziMe262=104
+	NaziMe262=104,
+	NaziFlak=105
 }

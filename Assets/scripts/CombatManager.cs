@@ -300,6 +300,11 @@ public class CombatManager : MonoBehaviour {
 			}
 		}
 
+		// If damage > life of existing units, limit to existing units
+		if(totalLostUnits > defenderUnit.armyAmount){
+			totalLostUnits = defenderUnit.armyAmount;
+		}
+
 		Debug.Log ("Life per defender unit: " + defenderLifePerUnit + " | Defender units destroyed: " + totalLostUnits);
 
 		return totalLostUnits;
