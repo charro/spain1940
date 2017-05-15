@@ -132,15 +132,18 @@ public class MoveTroopsManager : MonoBehaviour {
 		// Set the units corresponding to region TO
 		RegionArmySlot[] toArmySlots = toRegion.GetArmySlots ();
 
+		// Check if button ALL units is set and select ALL units if so
+		int unitsToMove = (unitsPerClick == -666 ? fromSlot.armyAmount : unitsPerClick);
+
 		// Check if there is already a slot with that type of unit and add it there
 		foreach(RegionArmySlot toSlot in toArmySlots){
-			if (fromSlot.armyAmount >= unitsPerClick) {
+			if (fromSlot.armyAmount >= unitsToMove) {
 
 				if (toSlot.armyType == fromSlot.armyType) {
 					Debug.Log ("MoveTroopsManager: Move unit of type " + toSlot.armyType + " from region " +
 					fromRegion.name + " to region " + toRegion.name);
-					toSlot.addUnits (unitsPerClick);
-					fromSlot.removeUnits (unitsPerClick);
+					toSlot.addUnits (unitsToMove);
+					fromSlot.removeUnits (unitsToMove);
 					RefreshPanels ();
 					return;
 				}
@@ -148,8 +151,8 @@ public class MoveTroopsManager : MonoBehaviour {
 				// Army type not yet found. If this is an empty slot, create it now
 				if (toSlot.armyType == ArmyType.Empty) {
 					toSlot.armyType = fromSlot.armyType;
-					toSlot.addUnits (unitsPerClick);
-					fromSlot.removeUnits (unitsPerClick);
+					toSlot.addUnits (unitsToMove);
+					fromSlot.removeUnits (unitsToMove);
 					RefreshPanels ();
 					return;
 				}
