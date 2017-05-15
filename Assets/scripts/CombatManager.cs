@@ -322,11 +322,43 @@ public class CombatManager : MonoBehaviour {
 
 	public void ResultsScreenClosed(){
 
-		if (attackerRegion.isNazi) {
-			UIManager.ShowLoadingTmp ();
+		// Decide if game ends here with win or lose
+		if(CheckIfWinConditions()){
+			FindObjectOfType<DialogManager> ().StartWinningDialog ();
+		}
+		else if(CheckIfLoseConditions()){
+			FindObjectOfType<DialogManager> ().StartLosingDialog ();
+		}
+		// We continue playing
+		else {
+			if (attackerRegion.isNazi) {
+				UIManager.ShowLoadingTmp ();
+			}
+
+			// End combat and back to Idle map
+			FindObjectOfType<GameStateMachine> ().SwitchToState (GameState.IdleMapState);
+		}
+	}
+
+	private bool CheckIfWinConditions(){
+		bool won = true;
+		foreach(Region region in FindObjectOfType<GameManager>().GetAllRegions().Values){
+			if(region.isNazi){
+				won = false;
+			}
 		}
 
-		// End combat and back to Idle map
-		FindObjectOfType<GameStateMachine> ().SwitchToState (GameState.IdleMapState);
+		return won;
+	}
+
+	private bool CheckIfLoseConditions(){
+		bool lost = true;
+		foreach(Region region in FindObjectOfType<GameManager>().GetAllRegions().Values){
+			if(!region.isNazi){
+				lost = false;
+			}
+		}
+
+		return lost;
 	}
 }
