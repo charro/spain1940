@@ -92,4 +92,65 @@ public class ResearchManager : MonoBehaviour {
 
 		FindObjectOfType<TechnologyValues> ().FillSaveGameData (gameData);
 	}
+
+	public int GetAdditionalAttackForArmy(ArmyType armyType){
+		return GetAdditionalAttackForArmyAndDefender (armyType, ArmyType.Empty);
+	}
+
+
+	public int GetAdditionalAttackForArmyAndDefender (ArmyType armyType, ArmyType defenderArmy){
+		int additionalAttack = 0;
+
+		if(IsAlreadyResearched(TechnologyType.HeavyAmmo)){
+			
+		}
+
+		return additionalAttack;
+	}
+
+	public int GetAdditionalDefenseForArmyAndRegion(ArmyType armyType, Region defenderArmyRegion){
+		return GetAdditionalDefenseForArmyRegionAndAttacker (armyType, defenderArmyRegion, ArmyType.Empty);
+	}
+
+	public int GetAdditionalDefenseForArmyRegionAndAttacker (ArmyType armyType, Region defenderArmyRegion, ArmyType attackerType){
+		int additionalDefense = 0;
+
+		// Technologies advantages only apply to our regions, not for Nazi
+		if(!Army.isNazi(armyType)){
+			if(IsAlreadyResearched(TechnologyType.LightArmor)){
+				additionalDefense += 1;
+			}
+
+			if(IsAlreadyResearched(TechnologyType.HeavyArmor)){
+				if(armyType != ArmyType.Milicia){
+					additionalDefense += 2;
+				}
+			}
+				
+		}
+
+		// Get Additional defense depending on type of armies in combat
+		additionalDefense += Army.GetAdditionalDefenseForArmyType (armyType, attackerType);
+
+		// Get Additional defense if highest military building built in army's Region
+		if(defenderArmyRegion != null && defenderArmyRegion.GetMilitaryLevel() > 1){
+			additionalDefense += 1;
+		}
+
+		return additionalDefense;
+	}
+
+	public int GetAdditionalSpeedForArmy (ArmyType armyType){
+		int additionalSpeed = 0;
+
+		if(IsAlreadyResearched(TechnologyType.JetEngine)){
+			if(armyType == ArmyType.BomberQuebrantahuesos ||
+				armyType == ArmyType.FighterAzor ||
+				armyType == ArmyType.FighterBomberHalcon){
+				additionalSpeed += 2;
+			}
+		}
+
+		return additionalSpeed;
+	}
 }

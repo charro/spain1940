@@ -27,12 +27,17 @@ public class ArmyUnitDetailsPanel : MonoBehaviour {
 		ArmyType armyType = gameManager.GetSelectedRegion().GetArmySlots()[armySlot].armyType;
 		Army army = FindObjectOfType<ArmyValues> ().GetArmy (armyType);
 
+		ResearchManager researchManager = FindObjectOfType<ResearchManager> ();
+		int additionalAttack = researchManager.GetAdditionalAttackForArmy (armyType);
+		int additionalDefense = researchManager.GetAdditionalDefenseForArmyAndRegion (armyType, gameManager.GetSelectedRegion());
+		int additionalSpeed = researchManager.GetAdditionalSpeedForArmy (armyType);
+
 		unitName.text = "" + army.armyDescription;
 		unitImage.sprite = army.sprite;
 
 		priceText.text = "" + army.price;
-		attackText.text = "" + army.attack;
-		defenseText.text = "" + army.defense;
-		speedText.text = "" + army.speed;
+		attackText.text = army.attack + (additionalAttack > 0 ? " (+" + additionalAttack + ")" : "");
+		defenseText.text = "" + army.defense + (additionalDefense > 0 ? " (+" + additionalDefense + ")" : "");
+		speedText.text = "" + army.speed + (additionalSpeed > 0 ? " (+" + additionalSpeed + ")" : "");
 	}
 }

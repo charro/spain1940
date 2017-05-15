@@ -155,7 +155,7 @@ public class CombatManager : MonoBehaviour {
 					RegionArmySlot defendingUnit = thisTurnDefenderArmy [targetUnit];
 					Debug.Log ("Defender: " + thisTurnDefenderRegion + " defending unit:" + defendingUnit);
 
-					int unitsKilled = CalculateUnitsKilled (nextAttackerUnit, defendingUnit, waitForIt);
+					int unitsKilled = CalculateUnitsKilled (nextAttackerUnit, defendingUnit, waitForIt, thisTurnDefenderRegion == defenderRegion);
 
 					// Perform the attack on the defending unit
 					ArmyType defendingUnitType = defendingUnit.armyType;
@@ -250,7 +250,7 @@ public class CombatManager : MonoBehaviour {
 	// Used to avoid the combat to enter in an infinite loop because no unit is killed by a single shot
 	Dictionary<ArmyType, int> accumulatedDamage = new Dictionary<ArmyType, int> ();
 
-	public int CalculateUnitsKilled(RegionArmySlot attackerUnit, RegionArmySlot defenderUnit, bool waitForIt){
+	public int CalculateUnitsKilled(RegionArmySlot attackerUnit, RegionArmySlot defenderUnit, bool waitForIt, bool defenderIsFromDefenderRegion){
 		ArmyValues armyValues = FindObjectOfType<ArmyValues> ();
 		Army attackerArmy = armyValues.GetArmy (attackerUnit.armyType);
 		Army defenderArmy = armyValues.GetArmy (defenderUnit.armyType);
@@ -259,10 +259,13 @@ public class CombatManager : MonoBehaviour {
 		int defenderUnits = defenderUnit.armyAmount;
 
 		// Total damage made by attacker troops
-		int totalAttackerDamage = attackerUnits * attackerArmy.attack;
+		int totalAttackerDamage = attackerUnits * (attackerArmy.GetTotalAttack(defenderUnit.armyType));
 
 		// Calculate damage reduction factor of defender, based on the defense of defender (Limited to 90% of damage)
-		float damageReduction = (Mathf.Pow(1.05f, (float)defenderArmy.defense)) - 1;
+		Region defenderUnitRegion = (defenderIsFromDefenderRegion ? defenderRegion : null);
+		float totalDefense = (float)defenderArmy.GetTotalDefense (defenderUnitRegion, attackerUnit.armyType);
+
+		float damageReduction = (Mathf.Pow(1.05f, totalDefense)) - 1;
 		damageReduction = (damageReduction > 0.9f ? 0.9f : damageReduction);
 
 		// Recalculate the total damage with the damage reduction
