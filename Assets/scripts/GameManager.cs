@@ -337,8 +337,11 @@ public class GameManager : MonoBehaviour {
 			region.actionGenerationLevel = savedRegion.actionGenerationLevel;
 			region.militaryLevel = savedRegion.militaryLevel;
 			region.regionType = savedRegion.regionType;
-
 			region.armySlots = savedRegion.armySlots;
+
+			if(savedRegion.spiedRegionInfo != null){
+				region.SetSpiedInfo (new SpiedRegionInfo(savedRegion.spiedRegionInfo));
+			}
 		}
 
 	}

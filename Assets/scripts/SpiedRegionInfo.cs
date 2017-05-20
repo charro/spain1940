@@ -6,6 +6,12 @@ public class SpiedRegionInfo: ScriptableObject
 	public int[] spiedArmyAmounts;
 	public int spiedTurnNumber;
 
+	public SpiedRegionInfo(SaveGameManager.SavedSpiedRegionInfo savedSpiedInfo){
+		spiedArmyTypes = savedSpiedInfo.spiedArmyTypes;
+		spiedArmyAmounts = savedSpiedInfo.spiedArmyAmounts;
+		spiedTurnNumber = savedSpiedInfo.spiedTurnNumber;
+	}
+
 	public void Initialize(Region spiedRegion,  float chanceOfFindingArmyType, float chanceOfFindingArmyAmount){
 		spiedTurnNumber = FindObjectOfType<GameManager> ().GetCurrentTurnNumber ();
 

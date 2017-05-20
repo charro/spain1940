@@ -102,6 +102,8 @@ public class SaveGameManager : MonoBehaviour {
 	[Serializable]
 	public class SaveGameData {
 		public bool tutoDone = false;
+		public bool firstRegionRecovered = false;
+		public bool firstRegionLost = false;
 
 		// Game data
 		public int turnNumber = 0;
@@ -130,6 +132,7 @@ public class SaveGameManager : MonoBehaviour {
 		public int militaryLevel;
 		public RegionType regionType;
 		public RegionArmySlot[] armySlots;
+		public SavedSpiedRegionInfo spiedRegionInfo;
 
 		public SavedRegion(Region region){
 			selected = region.selected;
@@ -139,6 +142,22 @@ public class SaveGameManager : MonoBehaviour {
 			militaryLevel = region.militaryLevel;
 			regionType = region.regionType;
 			armySlots = region.GetArmySlots();
+			if(region.GetLastSpiedRegionInfo() != null){
+				spiedRegionInfo = new SavedSpiedRegionInfo(region.GetLastSpiedRegionInfo());
+			}
+		}
+	}
+
+	[Serializable]
+	public class SavedSpiedRegionInfo {
+		public ArmyType[] spiedArmyTypes;
+		public int[] spiedArmyAmounts;
+		public int spiedTurnNumber;
+
+		public SavedSpiedRegionInfo(SpiedRegionInfo spiedInfo){
+			spiedArmyTypes = spiedInfo.spiedArmyTypes;
+			spiedArmyAmounts = spiedInfo.spiedArmyAmounts;
+			spiedTurnNumber = spiedInfo.spiedTurnNumber;
 		}
 	}
 

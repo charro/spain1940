@@ -263,6 +263,10 @@ public class Region : MonoBehaviour {
 		return spiedRegionInfo;
 	}
 
+	public void SetSpiedInfo(SpiedRegionInfo spiedInfo){
+		spiedRegionInfo = spiedInfo;
+	}
+
 	public bool IsBeingSpied(){
 		return FindObjectOfType<SpyManager> ().IsAnySpyInRegion (this);
 	}

@@ -10,6 +10,8 @@ public class DialogManager : MonoBehaviour {
 	public string[] winningStrings;
 	public string[] losingStrings;
 	public string[] dialogStrings;
+	public string[] firstRegionRecoveredStrings;
+	public string[] firstRegionLostStrings;
 
 	public GameObject franz;
 	public GameObject francois;
@@ -45,6 +47,14 @@ public class DialogManager : MonoBehaviour {
 		StartDialog (DialogType.loseDialog);
 	}
 
+	public void StartFirstRegionWonDialog(){
+		StartDialog (DialogType.firstRegionRecoveredDialog);
+	}
+
+	public void StartFirstRegionLostDialog(){
+		StartDialog (DialogType.firstRegionLostDialog);
+	}
+
 	public void StartDialog(int dialogNumber){
 		StartDialog ((DialogType)dialogNumber);
 	}
@@ -61,8 +71,11 @@ public class DialogManager : MonoBehaviour {
 		case DialogType.loseDialog:
 			currentStrings = losingStrings;
 			break;
-		case DialogType.firstRegionDialog:
-			currentStrings = dialogStrings;
+		case DialogType.firstRegionRecoveredDialog:
+			currentStrings = firstRegionRecoveredStrings;
+			break;
+		case DialogType.firstRegionLostDialog:
+			currentStrings = firstRegionLostStrings;
 			break;
 		}
 

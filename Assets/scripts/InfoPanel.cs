@@ -14,6 +14,7 @@ public class InfoPanel : MonoBehaviour {
 	public Text regionActionProduction;
 	public Text totalActionProduction;
 
+	public Text spiedTurnText;
 	public GameObject infoPanel;
 	public GameObject mainActionsPanel;
 	public GameObject mainEnemyActionsPanel;
@@ -77,9 +78,14 @@ public class InfoPanel : MonoBehaviour {
 				// Military Info
 				regionMilitaryProduction.text = "" + selectedRegion.GetMilitaryPointsGeneration ();
 				totalMilitaryProduction.text = "" + economyManager.GetTotalMilitaryGenerationPoints();
+
+				spiedTurnText.gameObject.SetActive (false);
 			}
 			// For Nazi owned, only show spied values or Unknown if no spied values available
 			else{
+				bool thereIsSpyInfoForThisRegion = false;
+				SpiedRegionInfo spiedInfo = selectedRegion.GetLastSpiedRegionInfo();
+
 				for(int i=0; i<unitSlots.Length; i++){
 					GameObject slot = unitSlots [i];
 
@@ -89,26 +95,32 @@ public class InfoPanel : MonoBehaviour {
 					slot.GetComponentInChildren<Button> ().interactable = false;
 
 					// Show last spied info in case it exists
-					SpiedRegionInfo spiedInfo = selectedRegion.GetLastSpiedRegionInfo();
-					if(spiedInfo != null){
-						bool thereIsSpyInfoForThisRegion = false;
+					if (spiedInfo != null) {
 
-						if(spiedInfo.spiedArmyTypes.Length >= i && spiedInfo.spiedArmyTypes[i] != ArmyType.Unknown &&
-						   spiedInfo.spiedArmyTypes[i] != ArmyType.Empty){
-							slot.GetComponentInChildren<Image>().sprite = 
-								FindObjectOfType<ArmyValues>().GetArmy(spiedInfo.spiedArmyTypes[i]).sprite;
+						if (spiedInfo.spiedArmyTypes.Length >= i && spiedInfo.spiedArmyTypes [i] != ArmyType.Unknown &&
+						   spiedInfo.spiedArmyTypes [i] != ArmyType.Empty) {
+							slot.GetComponentInChildren<Image> ().sprite = 
+								FindObjectOfType<ArmyValues> ().GetArmy (spiedInfo.spiedArmyTypes [i]).sprite;
 							thereIsSpyInfoForThisRegion = true;
 						}
-						if(spiedInfo.spiedArmyAmounts.Length >= i && spiedInfo.spiedArmyAmounts[i] > 0){
-							slot.GetComponentInChildren<Text>().text = " X " + spiedInfo.spiedArmyAmounts[i];
+						if (spiedInfo.spiedArmyAmounts.Length >= i && spiedInfo.spiedArmyAmounts [i] > 0) {
+							slot.GetComponentInChildren<Text> ().text = " X " + spiedInfo.spiedArmyAmounts [i];
 							thereIsSpyInfoForThisRegion = true;
 						}
 
-						if(thereIsSpyInfoForThisRegion){
+						if (thereIsSpyInfoForThisRegion) {
 							slot.GetComponentInChildren<Button> ().interactable = true;
 						}
+							
 					}
 
+				}
+
+				if (thereIsSpyInfoForThisRegion) {
+					spiedTurnText.gameObject.SetActive (true);
+					spiedTurnText.text = "( Spied info from TURN: " + spiedInfo.spiedTurnNumber + " )";
+				} else {
+					spiedTurnText.gameObject.SetActive (false);
 				}
 
 				regionActionProduction.text = "??";
