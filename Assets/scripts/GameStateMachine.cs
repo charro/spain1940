@@ -81,6 +81,16 @@ public class GameStateMachine : MonoBehaviour {
 
 	void EnterIdleMapState(){
 		FindObjectOfType<GameManager>().ShowMapAndHUD ();
+
+		if(SaveGameManager.GetGameData().firstRegionLost == SaveGameManager.eventFlagStatus.DONE){
+			FindObjectOfType<DialogManager> ().StartFirstRegionLostDialog ();
+			SaveGameManager.GetGameData ().firstRegionLost = SaveGameManager.eventFlagStatus.DONE_AND_NOTIFIED;
+		}
+
+		if(SaveGameManager.GetGameData().firstRegionRecovered == SaveGameManager.eventFlagStatus.DONE){
+			FindObjectOfType<DialogManager> ().StartFirstRegionWonDialog ();
+			SaveGameManager.GetGameData ().firstRegionRecovered = SaveGameManager.eventFlagStatus.DONE_AND_NOTIFIED;
+		}
 	}
 
 	void EnterMoveTroopsState(){

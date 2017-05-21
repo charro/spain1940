@@ -99,11 +99,17 @@ public class SaveGameManager : MonoBehaviour {
 		}
 	}
 
+	public enum eventFlagStatus {
+		NOT_DONE = 0,
+		DONE = 1,
+		DONE_AND_NOTIFIED=2
+	}
+
 	[Serializable]
 	public class SaveGameData {
 		public bool tutoDone = false;
-		public bool firstRegionRecovered = false;
-		public bool firstRegionLost = false;
+		public eventFlagStatus firstRegionRecovered = eventFlagStatus.NOT_DONE;
+		public eventFlagStatus firstRegionLost = eventFlagStatus.NOT_DONE;
 
 		// Game data
 		public int turnNumber = 0;

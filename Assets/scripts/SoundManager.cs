@@ -6,6 +6,10 @@ public class SoundManager : MonoBehaviour {
 
 	public AudioClip clickSound;
 
+	public AudioClip naziWonSong;
+	public AudioClip frenchySong;
+	public AudioClip spainWonSong;
+
 	private AudioSource audioSource;
 
 	// Use this for initialization
@@ -32,5 +36,20 @@ public class SoundManager : MonoBehaviour {
 
 	public void PlayClick(){
 		audioSource.PlayOneShot (clickSound);
+	}
+
+	public void PlayNaziWonSong(){
+		StopMusic ();
+		audioSource.PlayOneShot (naziWonSong);
+	}
+
+	public void PlayFrenchySong(){
+		StopMusic ();
+		audioSource.PlayOneShot (frenchySong);
+	}
+
+	public void PlaySpainWonSong(){
+		StopMusic ();
+		audioSource.PlayOneShot (spainWonSong);
 	}
 }

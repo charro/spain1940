@@ -38,6 +38,7 @@ public class LevelManager : MonoBehaviour {
 					storyContainer.SetActive (true);
 				} else if (storyFinished && storyContainer.activeSelf) {
 					storyContainer.SetActive (false);
+					FindObjectOfType<SoundManager> ().PlayFrenchySong ();
 				} else if (naziFlagShown) {
 					changeScene ("ejpanya");
 				}

@@ -35,4 +35,8 @@ public class Technology: MonoBehaviour
 			return allParentsResearched;
 		}
 	}
+
+	public string ToString(){
+		return name;
+	}
 }

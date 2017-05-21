@@ -315,6 +315,15 @@ public class CombatManager : MonoBehaviour {
 		if(attackerWins){
 			regionChangedPanel.Show (defenderRegion);  // => IMPORTANT. CALL THIS FIRST (DONT CHANGE REGION TO NAZI UNTIL IS CALLED OR WE WON'T SHOW THE PROPER FACTION)
 			defenderRegion.SetNaziConquered (attackerRegion.isNazi);
+
+			// Check if it's the first Region we lost/won to show the proper dialog
+			if(attackerRegion.isNazi && SaveGameManager.GetGameData().firstRegionLost == SaveGameManager.eventFlagStatus.NOT_DONE){
+				SaveGameManager.GetGameData ().firstRegionLost = SaveGameManager.eventFlagStatus.DONE;
+			}
+
+			if(!attackerRegion.isNazi && SaveGameManager.GetGameData().firstRegionRecovered == SaveGameManager.eventFlagStatus.NOT_DONE){
+				SaveGameManager.GetGameData ().firstRegionRecovered = SaveGameManager.eventFlagStatus.DONE;
+			}
 		}
 
 		combatScreen.gameObject.SetActive (false);
@@ -348,6 +357,7 @@ public class CombatManager : MonoBehaviour {
 		}
 	}
 
+	// Check if Game is Won
 	private bool CheckIfWinConditions(){
 		bool won = true;
 		foreach(Region region in FindObjectOfType<GameManager>().GetAllRegions().Values){
@@ -359,6 +369,7 @@ public class CombatManager : MonoBehaviour {
 		return won;
 	}
 
+	// Check if Game is Lost
 	private bool CheckIfLoseConditions(){
 		bool lost = true;
 		foreach(Region region in FindObjectOfType<GameManager>().GetAllRegions().Values){

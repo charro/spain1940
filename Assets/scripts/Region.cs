@@ -29,11 +29,13 @@ public class Region : MonoBehaviour {
 		spriteRenderer = GetComponent<SpriteRenderer>();
 		FindObjectOfType<GameManager> ().AddRegionToList(this);
 
-		if(isNazi){
+		if (isNazi) {
 			AddUnitsToArmy (ArmyType.NaziTroop, 50);
-			AddUnitsToArmy (ArmyType.NaziFlak, 30);
+		} else {
+			AddUnitsToArmy (ArmyType.Milicia, 20);
 		}
 			
+		/*
 		if(regionType == RegionType.Asturias){
 			AddUnitsToArmy (ArmyType.Antiaereo, 100);
 			AddUnitsToArmy (ArmyType.Milicia, 300);
@@ -49,6 +51,7 @@ public class Region : MonoBehaviour {
 			AddUnitsToArmy (ArmyType.TankToro, 69);
 			AddUnitsToArmy (ArmyType.Antiaereo, 34);
 		}
+		*/
 
 	}
 

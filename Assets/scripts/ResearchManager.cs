@@ -38,7 +38,7 @@ public class ResearchManager : MonoBehaviour {
 		// FindObjectOfType<EconomyManager> ().decreaseActionPoints (currentResearchedTechnology.actionsNeeded);
 		// FindObjectOfType<GameStateMachine> ().SwitchToState (GameState.IdleMapState);
 		FindObjectOfType<GameManager>().EndActionAndSwitchToIdleMap(currentResearchedTechnology.actionsNeeded);
-		FindObjectOfType<DropDownMessages> ().ShowDropDownMessageForSecs ("RESEARCH OF TECHNOLOGY " + currentResearchedTechnology + " STARTED", 5);
+		FindObjectOfType<DropDownMessages> ().ShowDropDownMessageForSecs ("RESEARCH OF TECHNOLOGY " + currentResearchedTechnology.name + " STARTED", 5);
 	}
 
 	public bool IsAnyTechnologyBeingResearched(){
@@ -61,7 +61,7 @@ public class ResearchManager : MonoBehaviour {
 	}
 
 	private void ResearchFinished(){
-		FindObjectOfType<DropDownMessages> ().ShowDropDownMessageForSecs ("TECHNOLOGY " + currentResearchedTechnology + " finished", 5);
+		FindObjectOfType<DropDownMessages> ().ShowDropDownMessageForSecs ("TECHNOLOGY " + currentResearchedTechnology.name + " finished", 5);
 		currentResearchedTechnology.alreadyResearched = true;
 		currentResearchedTechnology = null;
 	}

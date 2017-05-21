@@ -66,7 +66,7 @@ public class CombatResultPanel : MonoBehaviour {
 		// Change the view depending if we won or lost
 		if(naziWon){
 			titleText.text = "DEFEAT !! ;(";
-			audioSource.PlayOneShot(marchingSound, 0.7F);
+			audioSource.PlayOneShot(marchingSound, 1F);
 		}
 		else{
 			titleText.text = "VICTORY !! :D";

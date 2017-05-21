@@ -106,6 +106,7 @@ public class DialogManager : MonoBehaviour {
 					franz.gameObject.SetActive (true);
 					curtain.gameObject.SetActive (true);
 					this.gameObject.SetActive (false);
+					FindObjectOfType<SoundManager> ().PlayNaziWonSong ();
 				}
 			}
 		} 
@@ -215,6 +216,13 @@ public class DialogManager : MonoBehaviour {
 
 		curtain.gameObject.SetActive (true);
 		resultTitle.gameObject.SetActive (true);
+
+		SoundManager soundManager = FindObjectOfType<SoundManager> ();
+		if (win) {
+			soundManager.PlaySpainWonSong ();
+		} else {
+			soundManager.PlayNaziWonSong ();
+		}
 	}
 
 	private void EndDialog(){
