@@ -18,6 +18,7 @@ public class TechnologyButton : Button {
 		base.OnPointerClick (eventData);
 		if(interactable){
 			associatedTechnology.OpenTechnologyDetail ();
+			FindObjectOfType<SoundManager> ().PlayClick ();
 		}
 	}
 		
