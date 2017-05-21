@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour {
 
 	public GameObject cover;
+	public GameObject dedicatoria;
 	public GameObject canvas;
 	public GameObject storyContainer;
 
@@ -31,8 +32,12 @@ public class LevelManager : MonoBehaviour {
 		if (SceneManager.GetActiveScene ().name == "intro") {
 			
 			if (Input.GetMouseButtonUp (0)) {
+				// Hide dedicatoria
+				if(dedicatoria.activeSelf){
+					dedicatoria.SetActive (false);
+				}
 				// Hide the cover once is clicked
-				if (cover.activeSelf) {
+				else if (cover.activeSelf) {
 					cover.SetActive (false);
 					canvas.SetActive (true);
 					storyContainer.SetActive (true);
