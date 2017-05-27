@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TutoPanel : MonoBehaviour {
 
@@ -30,7 +31,8 @@ public class TutoPanel : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetMouseButtonUp (0)){
+		if(SceneManager.GetActiveScene ().name == "ejpanya" && 
+			Input.GetMouseButtonUp (0)){
 			// Advance with tutorial
 			NextTutoStep();
 		}

@@ -102,25 +102,25 @@ public class CombatScreen : MonoBehaviour {
 
 		// Remove all previous units (from any previous combat)
 		foreach(CombatUnit combatUnit in republicanCombatUnits){
-			combatUnit.gameObject.SetActive (false);
+			//combatUnit.gameObject.SetActive (false);
 			combatUnit.SetAssociatedArmySlot (emptySlot);
 		}
 		foreach(CombatUnit combatUnit in naziCombatUnits){
-			combatUnit.gameObject.SetActive (false);
+			//combatUnit.gameObject.SetActive (false);
 			combatUnit.SetAssociatedArmySlot (emptySlot);
 		}
 
 		for (int i = 0; i < republican.armySlots.Length && i < republicanCombatUnits.Length; i++) {
 			if(republican.armySlots[i].armyAmount > 0){
 				republicanCombatUnits [i].SetAssociatedArmySlot (republican.armySlots[i]);
-				republicanCombatUnits [i].gameObject.SetActive (true);
+				//republicanCombatUnits [i].gameObject.SetActive (true);
 			}
 		}
 
 		for (int i = 0; i < nazi.armySlots.Length && i < naziCombatUnits.Length; i++) {
 			if(nazi.armySlots[i].armyAmount > 0){
 				naziCombatUnits [i].SetAssociatedArmySlot (nazi.armySlots[i]);
-				naziCombatUnits [i].gameObject.SetActive (true);
+				//naziCombatUnits [i].gameObject.SetActive (true);
 			}
 		}
 	}

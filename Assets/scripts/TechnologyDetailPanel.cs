@@ -36,6 +36,8 @@ public class TechnologyDetailPanel : MonoBehaviour {
 	}
 
 	private bool IsResearchEnabled(Technology technology){
-		return !technology.alreadyResearched;
+		int availableActionPoints = FindObjectOfType<EconomyManager> ().getAvailableActionPoints ();
+
+		return !technology.alreadyResearched && (availableActionPoints >= technology.actionsNeeded);
 	}
 }

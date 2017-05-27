@@ -13,6 +13,7 @@ public class CombatUnit : MonoBehaviour {
 	public void SetAssociatedArmySlot(RegionArmySlot armySlot){
 		associatedArmySlot = armySlot;
 		lastTimeCheckedUnits = associatedArmySlot.armyAmount;
+		Refresh ();
 	}
 
 	public ArmyType GetArmyType(){
@@ -25,16 +26,22 @@ public class CombatUnit : MonoBehaviour {
 
 	void Awake () {
 		// lastTimeCheckedUnits = associatedArmySlot.
-		if (associatedArmySlot == null || associatedArmySlot.armyType == ArmyType.Empty) {
+		Refresh();
+	}
+
+	void Refresh (){
+		if (associatedArmySlot == null || associatedArmySlot.armyType == ArmyType.Empty ||
+			associatedArmySlot.armyAmount <= 0) {
 			gameObject.SetActive (false);
 		} else {
+			gameObject.SetActive (true);
 			image.sprite = 
 				FindObjectOfType<ArmyValues>().GetArmy(associatedArmySlot.armyType).sprite;
 			units.text = 
 				associatedArmySlot.armyAmount + "";
 		}
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		// Update the units number
