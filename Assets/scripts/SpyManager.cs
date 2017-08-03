@@ -38,7 +38,7 @@ public class SpyManager : MonoBehaviour {
 				Spy newSpy = ScriptableObject.CreateInstance<Spy>();
 				newSpy.InitializeSpy(lastSelectedSpiedRegion, lastSelectedSpyLevel);
 				activeSpies[i] = newSpy;
-				FindObjectOfType<EconomyManager>().decreaseActionPoints(1);
+				//FindObjectOfType<EconomyManager>().decreaseActionPoints(1);  => This is done in EndActionAndSwitchToIdleMap instead
 				FindObjectOfType<DropDownMessages>().
 						ShowDropDownMessageForSecs("Spy of level " + lastSelectedSpyLevel + 
 					                           " on his way to region " + lastSelectedSpiedRegion.name, 5);

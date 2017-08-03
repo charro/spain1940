@@ -239,10 +239,11 @@ public class Region : MonoBehaviour {
 		BuildValues buildValues = FindObjectOfType<BuildValues> ();
 		int militaryGenerationPoints = 0;
 
+		// Set the value for the highest building
 		for(int i=0; i<buildValues.militaryBuildingsList.Length; i++){
 			// If this building is built in this region, add its action generation points to the total
 			if(militaryLevel > i){
-				militaryGenerationPoints += buildValues.militaryPointsPerBuilding[i];
+				militaryGenerationPoints = buildValues.militaryPointsPerBuilding[i];
 			}
 		}
 

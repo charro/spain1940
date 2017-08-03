@@ -335,6 +335,7 @@ public class CombatManager : MonoBehaviour {
 
 		// Check for any change in Economy after losing/winning a Region
 		FindObjectOfType<EconomyManager> ().recalculateMaximumActionsPerTurn ();
+		FindObjectOfType<EconomyManager> ().RecalculateTotalMilitaryGenerationPoints ();
 	}
 
 	public void ResultsScreenClosed(){
