@@ -1,31 +1,28 @@
-# README #
+# SPAIN 1940 #
 
-TODO: FILL THIS README FILE
+### A turn-based strategy game for Android and Linux ###
 
-This README would normally document whatever steps are necessary to get your application up and running.
+The Spanish Civil War never happened, so Franco wasn't there to become Hitler's puppy.
 
-### What is this repository for? ###
+Meanwhile, the advance across Europe continues: Poland was first, then Netherlands, Belgium and France .... 
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+The Nazis are at the Pyrenees and they don't look like going home..... yet
 
-### How do I get set up? ###
+Will you be able to kick them out ?
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+Save Spain from the invaders !!
 
-### Contribution guidelines ###
+### SETUP ###
 
-* Writing tests
-* Code review
-* Other guidelines
+The game is made fully using Unity Editor for Linux (last version used: 5.6.0xf3).
+You should also be able to open it with a Windows or MacOS Unity
 
-### Who do I talk to? ###
+### Contact ###
 
-* Repo owner or admin
-* Other community or team contact
+For any contact, just use the mail you see here in GitHub
+
+### Assets ###
+
+Some of the assets were downloaded from free assets websites so all of them should be open source or at least with the proper rights to be included with the game code. In case you find something that isn't please contact me and I'll remove if needed.
+
+Check Credits.txt file to see the attibutions to the asset authors.
